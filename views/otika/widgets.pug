@@ -1,0 +1,934 @@
+doctype html
+html(lang='en')
+  // widget-chart.html  21 Nov 2019 03:49:32 GMT
+  head
+    meta(charset='UTF-8')
+    meta(content='width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no' name='viewport')
+    title Otika - Admin Dashboard Template
+    // General CSS Files
+    link(rel='stylesheet' href='assets/css/app.min.css')
+    link(rel='stylesheet' href='assets/bundles/jqvmap/dist/jqvmap.min.css')
+    link(rel='stylesheet' href='assets/bundles/flag-icon-css/css/flag-icon.min.css')
+    // Template CSS
+    link(rel='stylesheet' href='assets/css/style.css')
+    link(rel='stylesheet' href='assets/css/components.css')
+    // Custom style CSS
+    link(rel='stylesheet' href='assets/css/custom.css')
+    link(rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico')
+  body
+    .loader
+    #app
+      .main-wrapper.main-wrapper-1
+        .navbar-bg
+        nav.navbar.navbar-expand-lg.main-navbar.sticky
+          .form-inline.mr-auto
+            ul.navbar-nav.mr-3
+              li
+                a.nav-link.nav-link-lg.collapse-btn(href='#' data-toggle='sidebar')
+                  i(data-feather='align-justify')
+              li
+                a.nav-link.nav-link-lg.fullscreen-btn(href='#')
+                  i(data-feather='maximize')
+              li
+                form.form-inline.mr-auto
+                  .search-element
+                    input.form-control(type='search' placeholder='Search' aria-label='Search' data-width='200')
+                    button.btn(type='submit')
+                      i.fas.fa-search
+          ul.navbar-nav.navbar-right
+            li.dropdown.dropdown-list-toggle
+              a.nav-link.nav-link-lg.message-toggle(href='#' data-toggle='dropdown')
+                i(data-feather='mail')
+                span.badge.headerBadge1
+                  | 6
+              .dropdown-menu.dropdown-list.dropdown-menu-right.pullDown
+                .dropdown-header
+                  | Messages
+                  .float-right
+                    a(href='#') Mark All As Read
+                .dropdown-list-content.dropdown-list-message
+                  a.dropdown-item(href='#')
+                    span.dropdown-item-avatar.text-white
+                      img.rounded-circle(alt='image' src='assets/img/users/user-1.png')
+                    span.dropdown-item-desc
+                      span.message-user
+                        | John
+                        | Deo
+                      span.time.messege-text Please check your mail !!
+                      span.time 2 Min Ago
+                  a.dropdown-item(href='#')
+                    span.dropdown-item-avatar.text-white
+                      img.rounded-circle(alt='image' src='assets/img/users/user-2.png')
+                    span.dropdown-item-desc
+                      span.message-user
+                        | Sarah
+                        | Smith
+                      span.time.messege-text
+                        | Request for leave
+                        | application
+                      span.time 5 Min Ago
+                  a.dropdown-item(href='#')
+                    span.dropdown-item-avatar.text-white
+                      img.rounded-circle(alt='image' src='assets/img/users/user-5.png')
+                    span.dropdown-item-desc
+                      span.message-user
+                        | Jacob
+                        | Ryan
+                      span.time.messege-text
+                        | Your payment invoice is
+                        | generated.
+                      span.time 12 Min Ago
+                  a.dropdown-item(href='#')
+                    span.dropdown-item-avatar.text-white
+                      img.rounded-circle(alt='image' src='assets/img/users/user-4.png')
+                    span.dropdown-item-desc
+                      span.message-user
+                        | Lina
+                        | Smith
+                      span.time.messege-text
+                        | hii John, I have upload
+                        | doc
+                        | related to task.
+                      span.time
+                        | 30
+                        | Min Ago
+                  a.dropdown-item(href='#')
+                    span.dropdown-item-avatar.text-white
+                      img.rounded-circle(alt='image' src='assets/img/users/user-3.png')
+                    span.dropdown-item-desc
+                      span.message-user
+                        | Jalpa
+                        | Joshi
+                      span.time.messege-text
+                        | Please do as specify.
+                        | Let me
+                        | know if you have any query.
+                      span.time
+                        | 1
+                        | Days Ago
+                  a.dropdown-item(href='#')
+                    span.dropdown-item-avatar.text-white
+                      img.rounded-circle(alt='image' src='assets/img/users/user-2.png')
+                    span.dropdown-item-desc
+                      span.message-user
+                        | Sarah
+                        | Smith
+                      span.time.messege-text Client Requirements
+                      span.time 2 Days Ago
+                .dropdown-footer.text-center
+                  a(href='#')
+                    | View All 
+                    i.fas.fa-chevron-right
+            li.dropdown.dropdown-list-toggle
+              a.nav-link.notification-toggle.nav-link-lg(href='#' data-toggle='dropdown')
+                i.bell(data-feather='bell')
+              .dropdown-menu.dropdown-list.dropdown-menu-right.pullDown
+                .dropdown-header
+                  | Notifications
+                  .float-right
+                    a(href='#') Mark All As Read
+                .dropdown-list-content.dropdown-list-icons
+                  a.dropdown-item.dropdown-item-unread(href='#')
+                    span.dropdown-item-icon.bg-primary.text-white
+                      i.fas.fa-code
+                    span.dropdown-item-desc
+                      | Template update is
+                      | available now! 
+                      span.time
+                        | 2 Min
+                        | Ago
+                  a.dropdown-item(href='#')
+                    span.dropdown-item-icon.bg-info.text-white
+                      i.far.fa-user
+                    span.dropdown-item-desc
+                      b You
+                      |  and 
+                      b
+                        | Dedik
+                        | Sugiharto
+                      |  are now friends 
+                      span.time
+                        | 10 Hours
+                        | Ago
+                  a.dropdown-item(href='#')
+                    span.dropdown-item-icon.bg-success.text-white
+                      i.fas.fa-check
+                    span.dropdown-item-desc
+                      b Kusnaedi
+                      |  has
+                      |                     moved task 
+                      b Fix bug header
+                      |  to 
+                      b Done
+                      span.time
+                        | 12
+                        | Hours
+                        | Ago
+                  a.dropdown-item(href='#')
+                    span.dropdown-item-icon.bg-danger.text-white
+                      i.fas.fa-exclamation-triangle
+                    span.dropdown-item-desc
+                      | Low disk space. Let's
+                      | clean it! 
+                      span.time 17 Hours Ago
+                  a.dropdown-item(href='#')
+                    span.dropdown-item-icon.bg-info.text-white
+                      i.fas.fa-bell
+                    span.dropdown-item-desc
+                      | Welcome to Otika
+                      | template! 
+                      span.time Yesterday
+                .dropdown-footer.text-center
+                  a(href='#')
+                    | View All 
+                    i.fas.fa-chevron-right
+            li.dropdown
+              a.nav-link.dropdown-toggle.nav-link-lg.nav-link-user(href='#' data-toggle='dropdown')
+                img.user-img-radious-style(alt='image' src='assets/img/user.png')
+                span.d-sm-none.d-lg-inline-block
+              .dropdown-menu.dropdown-menu-right.pullDown
+                .dropdown-title Hello Sarah Smith
+                a.dropdown-item.has-icon(href='profile.html')
+                  i.far.fa-user
+                  |  Profile
+                a.dropdown-item.has-icon(href='timeline.html')
+                  i.fas.fa-bolt
+                  |                 Activities
+                a.dropdown-item.has-icon(href='#')
+                  i.fas.fa-cog
+                  |                 Settings
+                .dropdown-divider
+                a.dropdown-item.has-icon.text-danger(href='auth-login.html')
+                  i.fas.fa-sign-out-alt
+                  |                 Logout
+        .main-sidebar.sidebar-style-2
+          aside#sidebar-wrapper
+            .sidebar-brand
+              a(href='index.html')
+                img.header-logo(alt='image' src='assets/img/logo.png')
+                span.logo-name Otika
+            ul.sidebar-menu
+              li.menu-header Main
+              li.dropdown
+                a.nav-link(href='index.html')
+                  i(data-feather='monitor')
+                  span Dashboard
+              li.dropdown.active
+                a.menu-toggle.nav-link.has-dropdown(href='#')
+                  i(data-feather='briefcase')
+                  span Widgets
+                ul.dropdown-menu
+                  li.active
+                    a.nav-link(href='widget-chart.html') Chart Widgets
+                  li
+                    a.nav-link(href='widget-data.html') Data Widgets
+              li.dropdown
+                a.menu-toggle.nav-link.has-dropdown(href='#')
+                  i(data-feather='command')
+                  span Apps
+                ul.dropdown-menu
+                  li
+                    a.nav-link(href='chat.html') Chat
+                  li
+                    a.nav-link(href='portfolio.html') Portfolio
+                  li
+                    a.nav-link(href='blog.html') Blog
+                  li
+                    a.nav-link(href='calendar.html') Calendar
+              li.dropdown
+                a.menu-toggle.nav-link.has-dropdown(href='#')
+                  i(data-feather='mail')
+                  span Email
+                ul.dropdown-menu
+                  li
+                    a.nav-link(href='email-inbox.html') Inbox
+                  li
+                    a.nav-link(href='email-compose.html') Compose
+                  li
+                    a.nav-link(href='email-read.html') read
+              li.menu-header UI Elements
+              li.dropdown
+                a.menu-toggle.nav-link.has-dropdown(href='#')
+                  i(data-feather='copy')
+                  span
+                    | Basic
+                    | Components
+                ul.dropdown-menu
+                  li
+                    a.nav-link(href='alert.html') Alert
+                  li
+                    a.nav-link(href='badge.html') Badge
+                  li
+                    a.nav-link(href='breadcrumb.html') Breadcrumb
+                  li
+                    a.nav-link(href='buttons.html') Buttons
+                  li
+                    a.nav-link(href='collapse.html') Collapse
+                  li
+                    a.nav-link(href='dropdown.html') Dropdown
+                  li
+                    a.nav-link(href='checkbox-and-radio.html') Checkbox & Radios
+                  li
+                    a.nav-link(href='list-group.html') List Group
+                  li
+                    a.nav-link(href='media-object.html') Media Object
+                  li
+                    a.nav-link(href='navbar.html') Navbar
+                  li
+                    a.nav-link(href='pagination.html') Pagination
+                  li
+                    a.nav-link(href='popover.html') Popover
+                  li
+                    a.nav-link(href='progress.html') Progress
+                  li
+                    a.nav-link(href='tooltip.html') Tooltip
+                  li
+                    a.nav-link(href='flags.html') Flag
+                  li
+                    a.nav-link(href='typography.html') Typography
+              li.dropdown
+                a.menu-toggle.nav-link.has-dropdown(href='#')
+                  i(data-feather='shopping-bag')
+                  span Advanced
+                ul.dropdown-menu
+                  li
+                    a.nav-link(href='avatar.html') Avatar
+                  li
+                    a.nav-link(href='card.html') Card
+                  li
+                    a.nav-link(href='modal.html') Modal
+                  li
+                    a.nav-link(href='sweet-alert.html') Sweet Alert
+                  li
+                    a.nav-link(href='toastr.html') Toastr
+                  li
+                    a.nav-link(href='empty-state.html') Empty State
+                  li
+                    a.nav-link(href='multiple-upload.html') Multiple Upload
+                  li
+                    a.nav-link(href='pricing.html') Pricing
+                  li
+                    a.nav-link(href='tabs.html') Tab
+              li
+                a.nav-link(href='blank.html')
+                  i(data-feather='file')
+                  span Blank Page
+              li.menu-header Otika
+              li.dropdown
+                a.menu-toggle.nav-link.has-dropdown(href='#')
+                  i(data-feather='layout')
+                  span Forms
+                ul.dropdown-menu
+                  li
+                    a.nav-link(href='basic-form.html') Basic Form
+                  li
+                    a.nav-link(href='forms-advanced-form.html') Advanced Form
+                  li
+                    a.nav-link(href='forms-editor.html') Editor
+                  li
+                    a.nav-link(href='forms-validation.html') Validation
+                  li
+                    a.nav-link(href='form-wizard.html') Form Wizard
+              li.dropdown
+                a.menu-toggle.nav-link.has-dropdown(href='#')
+                  i(data-feather='grid')
+                  span Tables
+                ul.dropdown-menu
+                  li
+                    a.nav-link(href='basic-table.html') Basic Tables
+                  li
+                    a.nav-link(href='advance-table.html') Advanced Table
+                  li
+                    a.nav-link(href='datatables.html') Datatable
+                  li
+                    a.nav-link(href='export-table.html') Export Table
+                  li
+                    a.nav-link(href='editable-table.html') Editable Table
+              li.dropdown
+                a.menu-toggle.nav-link.has-dropdown(href='#')
+                  i(data-feather='pie-chart')
+                  span Charts
+                ul.dropdown-menu
+                  li
+                    a.nav-link(href='chart-amchart.html') amChart
+                  li
+                    a.nav-link(href='chart-apexchart.html') apexchart
+                  li
+                    a.nav-link(href='chart-echart.html') eChart
+                  li
+                    a.nav-link(href='chart-chartjs.html') Chartjs
+                  li
+                    a.nav-link(href='chart-sparkline.html') Sparkline
+                  li
+                    a.nav-link(href='chart-morris.html') Morris
+              li.dropdown
+                a.menu-toggle.nav-link.has-dropdown(href='#')
+                  i(data-feather='feather')
+                  span Icons
+                ul.dropdown-menu
+                  li
+                    a.nav-link(href='icon-font-awesome.html') Font Awesome
+                  li
+                    a.nav-link(href='icon-material.html') Material Design
+                  li
+                    a.nav-link(href='icon-ionicons.html') Ion Icons
+                  li
+                    a.nav-link(href='icon-feather.html') Feather Icons
+                  li
+                    a.nav-link(href='icon-weather-icon.html') Weather Icon
+              li.menu-header Media
+              li.dropdown
+                a.menu-toggle.nav-link.has-dropdown(href='#')
+                  i(data-feather='image')
+                  span Gallery
+                ul.dropdown-menu
+                  li
+                    a.nav-link(href='light-gallery.html') Light Gallery
+                  li
+                    a(href='gallery1.html') Gallery 2
+              li.dropdown
+                a.menu-toggle.nav-link.has-dropdown(href='#')
+                  i(data-feather='flag')
+                  span Sliders
+                ul.dropdown-menu
+                  li
+                    a(href='carousel.html') Bootstrap Carousel.html
+                  li
+                    a.nav-link(href='owl-carousel.html') Owl Carousel
+              li
+                a.nav-link(href='timeline.html')
+                  i(data-feather='sliders')
+                  span Timeline
+              li.menu-header Maps
+              li.dropdown
+                a.menu-toggle.nav-link.has-dropdown(href='#')
+                  i(data-feather='map')
+                  span
+                    | Google
+                    | Maps
+                ul.dropdown-menu
+                  li
+                    a(href='gmaps-advanced-route.html') Advanced Route
+                  li
+                    a(href='gmaps-draggable-marker.html') Draggable Marker
+                  li
+                    a(href='gmaps-geocoding.html') Geocoding
+                  li
+                    a(href='gmaps-geolocation.html') Geolocation
+                  li
+                    a(href='gmaps-marker.html') Marker
+                  li
+                    a(href='gmaps-multiple-marker.html') Multiple Marker
+                  li
+                    a(href='gmaps-route.html') Route
+                  li
+                    a(href='gmaps-simple.html') Simple
+              li
+                a.nav-link(href='vector-map.html')
+                  i(data-feather='map-pin')
+                  span
+                    | Vector
+                    | Map
+              li.menu-header Pages
+              li.dropdown
+                a.menu-toggle.nav-link.has-dropdown(href='#')
+                  i(data-feather='user-check')
+                  span Auth
+                ul.dropdown-menu
+                  li
+                    a(href='auth-login.html') Login
+                  li
+                    a(href='auth-register.html') Register
+                  li
+                    a(href='auth-forgot-password.html') Forgot Password
+                  li
+                    a(href='auth-reset-password.html') Reset Password
+                  li
+                    a(href='subscribe.html') Subscribe
+              li.dropdown
+                a.menu-toggle.nav-link.has-dropdown(href='#')
+                  i(data-feather='alert-triangle')
+                  span Errors
+                ul.dropdown-menu
+                  li
+                    a.nav-link(href='errors-503.html') 503
+                  li
+                    a.nav-link(href='errors-403.html') 403
+                  li
+                    a.nav-link(href='errors-404.html') 404
+                  li
+                    a.nav-link(href='errors-500.html') 500
+              li.dropdown
+                a.menu-toggle.nav-link.has-dropdown(href='#')
+                  i(data-feather='anchor')
+                  span
+                    | Other
+                    | Pages
+                ul.dropdown-menu
+                  li
+                    a.nav-link(href='create-post.html') Create Post
+                  li
+                    a.nav-link(href='posts.html') Posts
+                  li
+                    a.nav-link(href='profile.html') Profile
+                  li
+                    a.nav-link(href='contact.html') Contact
+                  li
+                    a.nav-link(href='invoice.html') Invoice
+              li.dropdown
+                a.menu-toggle.nav-link.has-dropdown(href='#')
+                  i(data-feather='chevrons-down')
+                  span Multilevel
+                ul.dropdown-menu
+                  li
+                    a(href='#') Menu 1
+                  li.dropdown
+                    a.has-dropdown(href='#') Menu 2
+                    ul.dropdown-menu
+                      li
+                        a(href='#') Child Menu 1
+                      li.dropdown
+                        a.has-dropdown(href='#') Child Menu 2
+                        ul.dropdown-menu
+                          li
+                            a(href='#') Child Menu 1
+                          li
+                            a(href='#') Child Menu 2
+                      li
+                        a(href='#')  Child Menu 3
+        // Main Content
+        .main-content
+          section.section
+            .section-body
+              .row
+                .col-xl-8.col-md-12.col-lg-8
+                  .card
+                    .card-header
+                      h4 Revenue Chart
+                    .card-body
+                      ul.list-inline.text-center
+                        li.list-inline-item.p-r-30
+                          i.col-green(data-feather='arrow-up-circle')
+                          h5.m-b-0 $675
+                          p.text-muted.font-14.m-b-0 Weekly Earnings
+                        li.list-inline-item.p-r-30
+                          i.col-orange(data-feather='arrow-down-circle')
+                          h5.m-b-0 $1,587
+                          p.text-muted.font-14.m-b-0 Monthly Earnings
+                        li.list-inline-item.p-r-30
+                          i.col-green(data-feather='arrow-up-circle')
+                          h5.mb-0.m-b-0 $45,965
+                          p.text-muted.font-14.m-b-0 Yearly Earnings
+                      #revenue
+                .col-xl-4.col-md-12.col-lg-4
+                  .card.l-bg-orange
+                    .card-body
+                      .text-white
+                        .row
+                          .col-md-6.col-lg-5
+                            h4.mb-0.font-26 $1,235
+                            p.mb-2 Avg Sales Per Month
+                            p.mb-0
+                              span.font-20 +11.25% 
+                              | Increase
+                          .col-md-6.col-lg-7
+                            .sparkline-bar.p-t-50
+                  .card.l-bg-cyan
+                    .card-body
+                      .text-white
+                        .row
+                          .col-md-6.col-lg-5
+                            h4.mb-0.font-26 758
+                            p.mb-2 Avg new Cust Per Month
+                            p.mb-0
+                              span.font-20 +25.11%
+                              |  Increase
+                          .col-md-6.col-lg-7
+                            .sparkline-line-chart2.p-t-50
+              .row
+                .col-12.col-sm-12.col-lg-6
+                  .card
+                    .card-header
+                      h4 Summary
+                      .card-header-action
+                        a.btn.active(href='#summary-chart' data-tab='summary-tab') Chart
+                        a.btn(href='#summary-text' data-tab='summary-tab') Text
+                    .card-body
+                      .summary
+                        #summary-text.summary-info(data-tab-group='summary-tab')
+                          h4 $3,157
+                          .text-muted Total Earning Today
+                          .d-block.mt-2
+                            a(href='#') View All
+                        #summary-chart.summary-chart.active(data-tab-group='summary-tab')
+                          canvas#myChart(height='180')
+                        .summary-item
+                          h6.mt-3
+                            | Recent Purchase 
+                            span.text-muted (4 Items)
+                          ul.list-unstyled.list-unstyled-border
+                            li.media
+                              img.mr-3.user-img-radious-style.user-list-img(alt='image' src='assets/img/users/user-1.png' width='40')
+                              .media-body
+                                .media-right $112
+                                .media-title
+                                  a(href='#') Sarah Smith
+                                .text-small.text-muted
+                                  | From 
+                                  a(href='#') London
+                                  .bullet
+                                  |  Monday
+                            li.media
+                              a(href='#')
+                                img.mr-3.user-img-radious-style.user-list-img(alt='image' src='assets/img/users/user-2.png' width='40')
+                              .media-body
+                                .media-right $225
+                                .media-title
+                                  a(href='#') Ashton Cox
+                                .text-small.text-muted
+                                  | From 
+                                  a(href='#') India
+                                  .bullet
+                                  |  Sunday
+                            li.media
+                              a(href='#')
+                                img.mr-3.user-img-radious-style.user-list-img(alt='image' src='assets/img/users/user-3.png' width='40')
+                              .media-body
+                                .media-right $479
+                                .media-title
+                                  a(href='#') John Doe
+                                .text-muted.text-small
+                                  | From 
+                                  a(href='#') China
+                                  .bullet
+                                  |  Friday
+                            li.media
+                              a(href='#')
+                                img.mr-3.user-img-radious-style.user-list-img(alt='image' src='assets/img/users/user-4.png' width='40')
+                              .media-body
+                                .media-right $669
+                                .media-title
+                                  a(href='#') Airi Satou
+                                .text-small.text-muted
+                                  | From 
+                                  a(href='#') Shilanka
+                                  .bullet
+                                  |  Tuesday
+                .col-12.col-sm-12.col-lg-6
+                  .card
+                    .card-header
+                      h4 Statistics
+                      .card-header-action
+                        a.btn.active(href='#') Week
+                        a.btn(href='#') Month
+                        a.btn(href='#') Year
+                    .card-body
+                      canvas#myChart2(height='180')
+                      .statistic-details.mt-1
+                        .statistic-details-item
+                          .text-small.text-muted
+                            span.text-primary
+                              i.fas.fa-caret-up
+                            |  12%
+                          .detail-value $125
+                          .detail-name Today
+                        .statistic-details-item
+                          .text-small.text-muted
+                            span.text-danger
+                              i.fas.fa-caret-down
+                            |  33%
+                          .detail-value $3,564
+                          .detail-name This Week
+                        .statistic-details-item
+                          .text-small.text-muted
+                            span.text-primary
+                              i.fas.fa-caret-up
+                            | 19%
+                          .detail-value $14,687
+                          .detail-name This Month
+                        .statistic-details-item
+                          .text-small.text-muted
+                            span.text-primary
+                              i.fas.fa-caret-up
+                            | 29%
+                          .detail-value $88,568
+                          .detail-name This Year
+                  .card.mt-4
+                    .card-header
+                      h4 Popular Browser
+                    .card-body
+                      .row
+                        .col.mb-4.mb-lg-0.text-center
+                          .browser.browser-chrome
+                          .mt-2.font-weight-bold Chrome
+                          .text-small.text-muted
+                            span.text-primary
+                              i.fas.fa-caret-up
+                            |  38%
+                        .col.mb-4.mb-lg-0.text-center
+                          .browser.browser-firefox
+                          .mt-2.font-weight-bold Firefox
+                          .text-small.text-muted
+                            span.text-primary
+                              i.fas.fa-caret-up
+                            |  22%
+                        .col.mb-4.mb-lg-0.text-center
+                          .browser.browser-safari
+                          .mt-2.font-weight-bold Safari
+                          .text-small.text-muted
+                            span.text-danger
+                              i.fas.fa-caret-down
+                            |  27%
+                        .col.mb-4.mb-lg-0.text-center
+                          .browser.browser-opera
+                          .mt-2.font-weight-bold Opera
+                          .text-small.text-muted 9%
+                        .col.mb-4.mb-lg-0.text-center
+                          .browser.browser-internet-explorer
+                          .mt-2.font-weight-bold IE
+                          .text-small.text-muted
+                            span.text-primary
+                              i.fas.fa-caret-up
+                            |  4%
+              .row
+                .col-lg-4.col-md-4.col-sm-12
+                  .card.card-statistic-2
+                    .card-icon.shadow-primary.bg-cyan
+                      i.fas.fa-hiking
+                    .card-wrap
+                      .card-header
+                        h4.pull-right New Clients
+                      .card-body.pull-right
+                        | 10,225
+                    .card-chart
+                      canvas#chart-1(height='80')
+                .col-lg-4.col-md-4.col-sm-12
+                  .card.card-statistic-2
+                    .card-icon.shadow-primary.bg-purple
+                      i.fas.fa-drafting-compass
+                    .card-wrap
+                      .card-header
+                        h4.pull-right Delivered Order
+                      .card-body.pull-right
+                        | 2,857
+                    .card-chart
+                      canvas#chart-2(height='80')
+                .col-lg-4.col-md-4.col-sm-12
+                  .card.card-statistic-2
+                    .card-icon.shadow-primary.bg-green
+                      i.fas.fa-dollar-sign
+                    .card-wrap
+                      .card-header
+                        h4.pull-right Total Earning
+                      .card-body.pull-right
+                        | $17,458
+                    .card-chart
+                      canvas#chart-3(height='80')
+              .row
+                .col-12.col-sm-12.col-lg-6
+                  .card
+                    .card-header
+                      h4 Visitors
+                    .card-body
+                      #visitorMap4(data-height='190')
+                    .card-footer.card-footer-grey.pt-0
+                      .statistic-details.mt-4.align-items-center.justify-content-center
+                        .statistic-details-item.col-sm-4.col-12
+                          .detail-chart
+                            .sparkline-line-chart
+                          .detail-value 11,365
+                          .detail-name Visits
+                        .statistic-details-item.col-sm-4.col-12
+                          .detail-chart
+                            .sparkline-line-chart
+                          .detail-value 32%
+                          .detail-name Referral
+                        .statistic-details-item.col-sm-4.col-12
+                          .detail-chart
+                            .sparkline-line-chart
+                          .detail-value 68%
+                          .detail-name Organic
+                  .card.mt-4
+                    .card-body
+                      .row
+                        .col-sm-3.col-6.mb-md-0.mb-4.text-center
+                          .img-shadow.flag-icon.flag-icon-au
+                          .mt-2.font-weight-bold.text-nowrap Australia
+                          .text-small.text-muted 9,500
+                        .col-sm-3.col-6.mb-md-0.mb-4.text-center
+                          .img-shadow.flag-icon.flag-icon-br
+                          .mt-2.font-weight-bold.text-nowrap Brazil
+                          .text-small.text-muted
+                            span.text-primary
+                              i.fas.fa-caret-up
+                            |  7,328
+                        .col-sm-3.col-6.text-center
+                          .img-shadow.flag-icon.flag-icon-in
+                          .mt-2.font-weight-bold.text-nowrap India
+                          .text-small.text-muted
+                            span.text-danger
+                              i.fas.fa-caret-down
+                            |  5,830
+                        .col-sm-3.col-6.text-center
+                          .img-shadow.flag-icon.flag-icon-ch
+                          .mt-2.font-weight-bold.text-nowrap Switzerland
+                          .text-small.text-muted 4,763
+                .col-12.col-sm-12.col-lg-6.mt-lg-0.mt-sm-4
+                  .card
+                    .card-header
+                      h4 Referral URL
+                    .card-body
+                      canvas#myChart3(height='170')
+                      .mb-4.mt-4
+                        .text-small.float-right.font-weight-bold.text-muted 558
+                        .font-weight-bold.mb-1 Google
+                        .progress(data-height='4' data-toggle='tooltip' title='58%')
+                          .progress-bar.bg-success(data-width='58%')
+                      .mb-4
+                        .text-small.float-right.font-weight-bold.text-muted 338
+                        .font-weight-bold.mb-1 Facebook
+                        .progress(data-height='4' data-toggle='tooltip' title='44%')
+                          .progress-bar.bg-purple(data-width='44%')
+                      .mb-4
+                        .text-small.float-right.font-weight-bold.text-muted 238
+                        .font-weight-bold.mb-1 Bing
+                        .progress(data-height='4' data-toggle='tooltip' title='32%')
+                          .progress-bar.bg-orange(data-width='32%')
+                      .mb-4
+                        .text-small.float-right.font-weight-bold.text-muted 190
+                        .font-weight-bold.mb-1 Yahoo
+                        .progress(data-height='4' data-toggle='tooltip' title='22%')
+                          .progress-bar.bg-cyan(data-width='22%')
+              .row
+                .col-lg-6.col-md-12.col-12.col-sm-12
+                  .card.mt-sm-5.mt-md-0
+                    .card-header
+                      h4 Visitors
+                    .card-body
+                      canvas#donutChart
+                      ul.p-t-30.list-unstyled
+                        li.padding-5
+                          span
+                            i.fa.fa-circle.m-r-5.col-black
+                          | Search Engines
+                          span.float-right 30%
+                        li.padding-5
+                          span
+                            i.fa.fa-circle.m-r-5.col-green
+                          | Direct Click
+                          span.float-right 50%
+                        li.padding-5
+                          span
+                            i.fa.fa-circle.m-r-5.col-orange
+                          | Video Click
+                          span.float-right 20%
+                .col-lg-6.col-md-12.col-12.col-sm-12
+                  .card
+                    .card-header
+                      h4 Authors
+                    .card-body
+                      h3.card-title
+                        i.fas.fa-dollar-sign.col-green.font-30.p-b-10
+                        |  763,215
+                      canvas#line-chart3
+                      .row.p-t-20
+                        .col-4
+                          p.text-muted.font-15.text-truncate.m-b-5 Target
+                          h5
+                            i.fas.fa-arrow-circle-up.col-green.m-r-5
+                            | $15.3k
+                        .col-4
+                          p.text-muted.font-15.text-truncate.m-b-5
+                            | Last
+                            | week
+                          h5
+                            i.fas.fa-arrow-circle-down.col-red.m-r-5
+                            | $2.8k
+                        .col-4
+                          p.text-muted.text-truncate.m-b-5
+                            | Last
+                            | Month
+                          h5
+                            i.fas.fa-arrow-circle-up.col-green.m-r-5
+                            | $12.5k
+          .settingSidebar
+            a.settingPanelToggle(href='javascript:void(0)')
+              i.fa.fa-spin.fa-cog
+            .settingSidebar-body.ps-container.ps-theme-default
+              .fade.show.active
+                .setting-panel-header
+                  | Setting Panel
+                .p-15.border-bottom
+                  h6.font-medium.m-b-10 Select Layout
+                  .selectgroup.layout-color.w-50
+                    label.selectgroup-item
+                      input.selectgroup-input-radio.select-layout(type='radio' name='value' value='1' checked='')
+                      span.selectgroup-button Light
+                    label.selectgroup-item
+                      input.selectgroup-input-radio.select-layout(type='radio' name='value' value='2')
+                      span.selectgroup-button Dark
+                .p-15.border-bottom
+                  h6.font-medium.m-b-10 Sidebar Color
+                  .selectgroup.selectgroup-pills.sidebar-color
+                    label.selectgroup-item
+                      input.selectgroup-input.select-sidebar(type='radio' name='icon-input' value='1')
+                      span.selectgroup-button.selectgroup-button-icon(data-toggle='tooltip' data-original-title='Light Sidebar')
+                        i.fas.fa-sun
+                    label.selectgroup-item
+                      input.selectgroup-input.select-sidebar(type='radio' name='icon-input' value='2' checked='')
+                      span.selectgroup-button.selectgroup-button-icon(data-toggle='tooltip' data-original-title='Dark Sidebar')
+                        i.fas.fa-moon
+                .p-15.border-bottom
+                  h6.font-medium.m-b-10 Color Theme
+                  .theme-setting-options
+                    ul.choose-theme.list-unstyled.mb-0
+                      li.active(title='white')
+                        .white
+                      li(title='cyan')
+                        .cyan
+                      li(title='black')
+                        .black
+                      li(title='purple')
+                        .purple
+                      li(title='orange')
+                        .orange
+                      li(title='green')
+                        .green
+                      li(title='red')
+                        .red
+                .p-15.border-bottom
+                  .theme-setting-options
+                    label.m-b-0
+                      input#mini_sidebar_setting.custom-switch-input(type='checkbox' name='custom-switch-checkbox')
+                      span.custom-switch-indicator
+                      span.control-label.p-l-10 Mini Sidebar
+                .p-15.border-bottom
+                  .theme-setting-options
+                    label.m-b-0
+                      input#sticky_header_setting.custom-switch-input(type='checkbox' name='custom-switch-checkbox')
+                      span.custom-switch-indicator
+                      span.control-label.p-l-10 Sticky Header
+                .mt-4.mb-4.p-3.align-center.rt-sidebar-last-ele
+                  a.btn.btn-icon.icon-left.btn-primary.btn-restore-theme(href='#')
+                    i.fas.fa-undo
+                    |  Restore Default
+        footer.main-footer
+          .footer-left
+            a(href='templateshub.net') Templateshub
+          .footer-right
+    // General JS Scripts
+    script(src='assets/js/app.min.js')
+    // JS Libraies
+    script(src='assets/bundles/chartjs/chart.min.js')
+    script(src='assets/bundles/jquery.sparkline.min.js')
+    script(src='assets/bundles/apexcharts/apexcharts.min.js')
+    script(src='assets/bundles/jqvmap/dist/jquery.vmap.min.js')
+    script(src='assets/bundles/jqvmap/dist/maps/jquery.vmap.world.js')
+    script(src='assets/bundles/jqvmap/dist/maps/jquery.vmap.indonesia.js')
+    // Page Specific JS File
+    script(src='assets/js/page/widget-chart.js')
+    // Template JS File
+    script(src='assets/js/scripts.js')
+    // Custom JS File
+    script(src='assets/js/custom.js')
+    // widget-chart.html  21 Nov 2019 03:50:03 GMT

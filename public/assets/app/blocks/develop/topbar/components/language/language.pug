@@ -1,0 +1,18 @@
+include ../../../../common/dropdown/dropdown
+
+mixin languages
+  .topbar__collapse.topbar__collapse--language
+    +dropdown-set('dropdown','content', "languages")
+      span.topbar__language-btn-title
+        img(src=global.jsons.topbar.language.items[2].link, alt="gb")
+        span=global.jsons.topbar.language.items[2].title
+      +lnr('chevron-down').topbar__icon
+    button.topbar__back.collapsed(data-target='#languages', data-toggle="collapse")
+    +dropdown-set('dropdown','toggle', "languages")
+      each item in global.jsons.topbar.language.items
+        button.topbar__language-btn
+          span.topbar__language-btn-title
+            img(src=item.link, alt="gb")
+            span=item.title
+    +dropdown("languages", global.jsons.topbar.language.classes)
+

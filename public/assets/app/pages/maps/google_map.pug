@@ -1,0 +1,20 @@
+extends ../../blocks/layout
+block layout
+  - var active_page = 'maps_google_map'
+
+block content
+  .container.todo-app
+    .row
+      .col-md-12
+        h3.page-title='Google Map'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-md-12.col-lg-12
+        +card('Basic map', [])
+          +map('1')
+      .col-md-12.col-lg-12
+        +card('Pin with info window', [])
+          +map('2')
+      .col-md-12.col-lg-12
+        +card('Monochrome map', [])
+          +map('3')

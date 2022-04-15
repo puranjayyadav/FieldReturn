@@ -1,0 +1,17 @@
+mixin chat-message(item)
+  .chat__bubble&attributes(attributes)
+    .chat__bubble-avatar
+      img(src=item.img, alt=item.name)
+    div(class=`chat__bubble-message-wrap ${item.file ? 'chat__bubble-message-wrap--file': ''}`)
+      p.chat__bubble-contact-name=item.name
+      if !item.file
+        p.chat__bubble-message=item.message
+        p.chat__bubble-date=item.date
+      else
+        img(src=item.file.url, alt=item.file.title)
+        p.chat__bubble-date=item.date
+        .chat__bubble-download-wrap
+          p.chat__bubble-file-name
+            span=item.file.title
+            span=`( ${item.file.size} Mb)`
+          a.chat__bubble-download(href=item.file.url)='Download'

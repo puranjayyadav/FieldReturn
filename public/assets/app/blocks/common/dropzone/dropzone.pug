@@ -1,0 +1,7 @@
+mixin dropzone(id, classes)
+  div(class=`dropzone ${classes}`, id=`dropzone${id}`)
+    .dropzone__input(id=`dropzone${id}-input`)
+      .dropzone__drop-here
+        span.lnr.lnr-upload
+        ='Drop file here to upload'
+        input(accept="image/jpeg, image/png", type="file", name="files", style="display: none;")

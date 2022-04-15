@@ -1,0 +1,30 @@
+extends ../../blocks/layout
+
+block layout
+  - var active_page = 'ui_slider'
+
+block content
+  .container
+    .row
+      .col-md-12
+        h3.page-title='Range sliders'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Slider without params', [{'type': 'normal', 'text': 'Use default slider'}])
+          +slider(id="slider1")
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Slider start point', [{'type': 'normal', 'text': 'Use default slider with value of property'}, {'type': 'red', 'text': 'value'}])
+          +slider(id="slider2")
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Double slider type', [{
+          'type': 'normal',
+          'text': 'Use default range'
+        }])
+          +slider(id="slider3")
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Slider with scale', [{
+          'type': 'normal',
+          'text': 'Use default slider with property '
+        }, {'type': 'red', 'text': 'marks'}])
+          +slider(id="slider4")

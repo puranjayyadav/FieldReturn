@@ -1,0 +1,246 @@
+mixin e-commerce-dashboard()
+  .container
+    .dashboards
+      .row
+        .col-md-12
+          h3.page-title='E-commerce Dashboard'
+      .row
+        .col-12.col-md-12.col-lg-6.col-xl-3
+          .card
+            .dashboard__card-widget.card-body
+              .card__title
+                h5.bold-text='TOTAL PRODUCTS'
+              .dashboard__total
+                +icon('dashboards', 'trending-up')(class='dashboard__trend-icon', width=24, height=24)
+                p.dashboard__total-stat
+                .dashboard__chart-container
+                  +chartjs('online-marketing-dashboard-visits')(style="max-height: 50px;")
+        .col-12.col-md-12.col-lg-6.col-xl-3
+          .card
+            .dashboard__card-widget.card-body
+              .card__title
+                h5.bold-text='TOTAL PROFIT'
+              .dashboard__total
+                +icon('dashboards', 'trending-up')(class='dashboard__trend-icon', width=24, height=24)
+                p.dashboard__total-stat
+                .dashboard__chart-container
+                  +chartjs('e-commerce-dashboard-total-profit')(style="max-height: 50px;")
+        .col-12.col-md-12.col-lg-6.col-xl-3
+          .card
+            .dashboard__card-widget.card-body
+              .card__title
+                h5.bold-text='ORDERS TODAY'
+              .dashboard__total
+                +icon('dashboards', 'trending-down')(class='dashboard__trend-icon', width=24, height=24)
+                p.dashboard__total-stat
+                .dashboard__chart-container
+                  +chartjs('online-marketing-dashboard-new-users')(style="max-height: 50px;")
+        .col-12.col-md-12.col-lg-6.col-xl-3
+          .card
+            .dashboard__card-widget.card-body
+              .card__title
+                h5.bold-text='SUBSCRIPTIONS'
+              .dashboard__total
+                +icon('dashboards', 'trending-up')(class='dashboard__trend-icon', width=24, height=24)
+                p.dashboard__total-stat
+                .dashboard__chart-container
+                  +chartjs('e-commerce-dashboard-subscriptions')(style="max-height: 50px;")
+      .row
+        .col-md-12.col-lg-12.col-xl-12
+          +panel('PRODUCT SALES', 'e-commerrce-product-sales').card
+            +echartjs('online-marketing-dashboard-analytics')
+        .col-12.col-md-12.col-lg-6.col-xl-3
+          +panel(null, 'e-commerce-panel').card
+            .dashboard__product
+              .dashboard__product-img
+                img(src='static/topbar/img/for_store/dog/1.png' alt="1")
+              h5.bold-text.dashboard__product-title="BASIC CARD"
+              h5.subhead.dashboard__product-subhead="Knowledge nay estimable questions repulsive daughters boy."
+              p
+                a(href="ecommerce/catalog")="View in the item list"
+        .col-12.col-md-12.col-lg-6.col-xl-3
+          +panel('SALES STATISTIC', 'e-commerce-salles', 'Top selling items statistic by last month').card
+            .dashboard__stat
+              .dashboard__stat-chart
+                +echartjs('online-marketing-dashboard-sales-statistic-1', null, '120px')
+                p(style="color: rgb(76, 225, 182);").dashboard__stat-label="80%"
+              .dashboard__stat-info
+                p="Top selling items statistic by last month"
+                h4.dashboard__-stat-number="$23,747.00"
+            .dashboard__stat
+              .dashboard__stat-chart
+                +echartjs('online-marketing-dashboard-sales-statistic-2', null, '120px')
+                p.dashboard__stat-label="50%"
+              .dashboard__stat-info
+                p="Top selling items statistic by last  month"
+                h4.dashboard__-stat-number="$23,747.00"
+        .col-md-12.col-lg-6.col-xl-3
+          +panel('MY TODOS', null, 'Do not forget to do everything').card
+            div.dashboard__commerce_todo
+              +check-box('checkbox-btn todo__checkbox', '1')='Call to Margaret and tell about EasyDEV'
+              +check-box('checkbox-btn todo__checkbox', '2')='Prepare docs for boss'
+              +check-box('checkbox-btn todo__checkbox', '3')='Calculate the company budget'
+              +check-box('checkbox-btn todo__checkbox', '4')='Find a manager'
+              +check-box('checkbox-btn todo__checkbox', '5')='Call to Sarah'
+              +check-box('checkbox-btn todo__checkbox', '6')='Make a sandwich'
+              +check-box('checkbox-btn todo__checkbox', '7')='Drink a coffee'
+              +check-box('checkbox-btn todo__checkbox', '8')='Walk with my dog'
+              +check-box('checkbox-btn todo__checkbox', '9')='Buy some milk, bread and a new car'
+        .col-12.col-md-12.col-lg-6.col-xl-3
+          +panel('SALES STATISTIC', 'e-commerce-sales-statistic', 'See how effective your business is').card
+              +echartjs('e-commerce-dashboard-sales-statistic-bar', null, '260px')
+              hr
+              label.toggle-btn.dashboard__sales-toggle(for="sales")
+                input.toggle-btn__input(type="checkbox", name="sales" id="sales")
+                span.dashboard__sales-toggle-left="Yearly"
+                span.toggle-btn__input-label="Toggle"
+                span.dashboard__sales-toggle-right="Monthly"
+
+        .col-12.col-sm-12.col-md-12.col-lg-7.col-xl-5
+          +panel('SALES REPORT', 'e-commerce-sales-report').card
+            .dashboard__sales-report
+              .progress-wrap.progress-wrap--small
+                p.dashboard__sales-report-title="Today"
+                p.dashboard__sales-report-now="$298,92"
+                p.dashboard__sales-report-plan="$250 planned"
+                p.dashboard__sales-report-value.progress__label="100%"
+                +progress-bar('middle', null, null, 100)
+              .progress-wrap.progress-wrap--small
+                p.dashboard__sales-report-title="This week"
+                p.dashboard__sales-report-now="$1423,01"
+                p.dashboard__sales-report-plan="$1500 planned"
+                p.dashboard__sales-report-value.progress__label="98%"
+                +progress-bar('middle', null, 'red', 98)
+              .progress-wrap.progress-wrap--small
+                p.dashboard__sales-report-title="This mounth"
+                p.dashboard__sales-report-now="$44321,74"
+                p.dashboard__sales-report-plan="$45000 planned"
+                p.dashboard__sales-report-value.progress__label="100%"
+                +progress-bar('middle', null, 'red', 87)
+        .col-12.col-sm-12.col-md-12.col-lg-5.col-xl-3
+          +panel('EMAILS', 'e-commerce-emails').card
+            .progress-wrap.progress-wrap--small.progress-wrap--pink.progress-wrap--label-top
+              p="Open rate"
+              +progress-bar('middle', null, null, 87)
+                p.progress__label="84%"
+            .progress-wrap.progress-wrap--small.progress-wrap--label-top
+              p="Sent"
+              +progress-bar('middle', null, null, 45)
+                p.progress__label="121/300"
+        .col-12.col-sm-12.col-md-12.col-lg-12.col-xl-4
+          +panel('SHORT REMINDERS', 'e-commerce-short-reminders').card
+            .dashboard__carousel
+              div
+                .dashboard__carousel-slide
+                  <svg class="mdi-icon " width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12,8C14.21,8 16,9.79 16,12C16,14.21 14.21,16 12,16C9.79,16 8,14.21 8,12C8,9.79 9.79,8 12,8M3.05,13H1V11H3.05C3.5,6.83 6.83,3.5 11,3.05V1H13V3.05C17.17,3.5 20.5,6.83 20.95,11H23V13H20.95C20.5,17.17 17.17,20.5 13,20.95V23H11V20.95C6.83,20.5 3.5,17.17 3.05,13M12,5C8.13,5 5,8.13 5,12C5,15.87 8.13,19 12,19C15.87,19 19,15.87 19,12C19,8.13 15.87,5 12,5Z"></path>
+                  </svg>
+                  p.dashboard__carousel-title="Our goal"
+                  p="is creating a chain of jewelery stores"
+              div
+                .dashboard__carousel-slide.dashboard__carousel-slide--red
+                  <svg class="mdi-icon " width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12,2C6.47,2 2,6.5 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M15.5,8C16.33,8 17,8.67 17,9.5C17,10.33 16.33,11 15.5,11C14.67,11 14,10.33 14,9.5C14,8.67 14.67,8 15.5,8M8.5,8C9.33,8 10,8.67 10,9.5C10,10.33 9.33,11 8.5,11C7.67,11 7,10.33 7,9.5C7,8.67 7.67,8 8.5,8M12,17.5C9.67,17.5 7.69,16.04 6.89,14H17.11C16.3,16.04 14.33,17.5 12,17.5Z"></path>
+                  </svg>
+                  p.dashboard__carousel-title="Our mission"
+                  p="is creating a chain of jewelery stores"
+              div
+                .dashboard__carousel-slide
+                  <svg class="mdi-icon " width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12,8C14.21,8 16,9.79 16,12C16,14.21 14.21,16 12,16C9.79,16 8,14.21 8,12C8,9.79 9.79,8 12,8M3.05,13H1V11H3.05C3.5,6.83 6.83,3.5 11,3.05V1H13V3.05C17.17,3.5 20.5,6.83 20.95,11H23V13H20.95C20.5,17.17 17.17,20.5 13,20.95V23H11V20.95C6.83,20.5 3.5,17.17 3.05,13M12,5C8.13,5 5,8.13 5,12C5,15.87 8.13,19 12,19C15.87,19 19,15.87 19,12C19,8.13 15.87,5 12,5Z"></path>
+                  </svg>
+                  p.dashboard__carousel-title="Our goal"
+                  p="is creating a chain of jewelery stores"
+              div
+                .dashboard__carousel-slide.dashboard__carousel-slide--red
+                  <svg class="mdi-icon " width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12,2C6.47,2 2,6.5 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M15.5,8C16.33,8 17,8.67 17,9.5C17,10.33 16.33,11 15.5,11C14.67,11 14,10.33 14,9.5C14,8.67 14.67,8 15.5,8M8.5,8C9.33,8 10,8.67 10,9.5C10,10.33 9.33,11 8.5,11C7.67,11 7,10.33 7,9.5C7,8.67 7.67,8 8.5,8M12,17.5C9.67,17.5 7.69,16.04 6.89,14H17.11C16.3,16.04 14.33,17.5 12,17.5Z"></path>
+                  </svg>
+                  p.dashboard__carousel-title="Our mission"
+                  p="is creating a chain of jewelery stores"
+        .col-12.col-md-12.col-lg-6.col-xl-6
+          +panel('TOP SELLING PRODUCTS' ,'e-commerce-top-selling').card
+            +echartjs('e-commerce-top-selling')
+        .col-md-12.col-lg-6.col-xl-6
+          +panel('NEW ORDERS', 'e-commerce-new-orders', 'Top sales of the last week').card
+            +table(
+            { wrap: 'table-responsive', table: 'dashboard__table-orders table table-striped' }, {
+              header: ['Product', '	Quantity', 'Sold', 'Total', ''],
+              items: [
+                [{
+                  type: 'td-with-image',
+                  pathToImg: '/static/table/shoes/01.png',
+                  name: 'Nike Air Max'
+                }, { type: 'td-quantity', amountLevel: 4, count: 142 }, '124', {
+                  type: 'td-with-classes',
+                  classes: 'dashboard__table-orders-total',
+                  value: '$ 4 234'
+                }, { type: 'dropdown' }],
+                [{
+                  type: 'td-with-image',
+                  pathToImg: '/static/table/shoes/02.png',
+                  name: 'Reebok ZigTech'
+                }, {
+                  type: 'td-quantity',
+                  amountLevel: 3,
+                  count: 98,
+                  classes: 'dashboard__table-orders-amount--medium'
+                }, '53', {
+                  type: 'td-with-classes',
+                  classes: 'dashboard__table-orders-total',
+                  value: '$ 1 754'
+                }, { type: 'dropdown' }],
+                [{
+                  type: 'td-with-image',
+                  pathToImg: '/static/table/shoes/03.png',
+                  name: 'Puma Suede'
+                }, {
+                  type: 'td-quantity',
+                  amountLevel: 2,
+                  count: 23,
+                  classes: 'dashboard__table-orders-amount--medium'
+                }, '21', {
+                  type: 'td-with-classes',
+                  classes: 'dashboard__table-orders-total',
+                  value: '$ 1 572'
+                }, { type: 'dropdown' }],
+                [{
+                  type: 'td-with-image',
+                  pathToImg: '/static/table/shoes/04.png',
+                  name: 'Puma Basket Platform'
+                }, {
+                  type: 'td-quantity',
+                  amountLevel: 1,
+                  count: 2,
+                  classes: 'dashboard__table-orders-amount--low'
+                }, '456', {
+                  type: 'td-with-classes',
+                  classes: 'dashboard__table-orders-total',
+                  value: '$ 989'
+                }, { type: 'dropdown' }],
+                [{
+                  type: 'td-with-image',
+                  pathToImg: '/static/table/shoes/05.png',
+                  name: 'Nike Jordan'
+                }, { type: 'td-quantity', amountLevel: 5, count: 189 }, '42', {
+                  type: 'td-with-classes',
+                  classes: 'dashboard__table-orders-total',
+                  value: '$ 542'
+                }, { type: 'dropdown' }],
+              ]
+            }, '/ecommerce/product_edit', true)
+            a(href="ecommerce/catalog").dashboard__table-orders-link='All products'
+        .col-md-12.col-lg-12.col-xl-12
+          +panel('RECENT ORDERS', 'e-commerce-recent-orders').card
+            +table(
+              {wrap: 'table-responsive', table: 'table--bordered table--head-accent table table-hover'}, {
+              header: ['#', 'Invoice', 'Customer Name', 'Product', 'Quantity', 'Date', 'Location', 'Status'],
+              items: [
+                ['In-123356', 'Lok Morrison', '	Xiaomi Mi 6','1', '	2017/12/25', 'Melbourne', {badge: true, type: 'success', value: 'In Progress'}],
+                ['In-254875', 'Norman Brown', 'Apple iPhone 6 Plus','1', '2017/12/13', 'Tokio',{badge: true, value: 'Completed', type: 'primary'}],
+                ['In-877868', 'Sam Medinberg', 'Xiaomi Mi 6','1', '2017/12/13', 'Moscow',{badge: true, value: 'In Progress', type: 'success'}],
+                ['In-619876', 'Dave Morisson', 'Apple iPhone 5 S','1', '2017/12/07', 'Melbourne',{badge: true, value: 'Completed', type: 'primary'}],
+                ['In-218778', 'Klara Brown', 'Apple iPhone 6 Plus','1', '2017/12/05', 'London',{badge: true, value: 'Completed', type: 'primary'}],
+                ['In-626268', 'Molly Medinberg', 'Apple iPhone 7 Plus', '1', '2017/12/01', 'Rome',{badge: true, value: 'Completed', type: 'primary'}],
+              ]
+            })

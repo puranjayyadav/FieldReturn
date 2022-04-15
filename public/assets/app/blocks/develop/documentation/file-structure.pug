@@ -1,0 +1,64 @@
+include ./components/documentation-nav
+include ./components/documentation-nav-bottom
+mixin documentation-file-structure()
+  .documentation__main.row
+    +documentation-nav
+    .col-12.col-sm-12.col-md-12.col-lg-9.col-xl-9
+      .card--not-full-height.card
+        .card-body
+          .card__title
+            h5.bold-text="PROJECT STRUCTURE"
+          p
+            b="/app/... "
+            | - contains all components and pages which you can to find
+            a(href="#", target="_blank")=" here"
+            |:
+          pre.documentation__structure
+            |easydev/
+            |├──app/
+            ||  ├──blocks/
+            ||  |  ├──common/               --common elements(btn, table, alert, etc...)
+            ||  |  ├──dashboard/
+            ||  |  ├──develop/              --elements that contain common elements(gallery, log-in, profile, etc...)
+            ||  |  ├──layout.pug            --default layout for all page
+            ||  |  ├──map.pug               --file map(automatically generated)
+            ||  ├──js/                      --default js files
+            ||  ├──pages/                   --pages (dashboards, tables, etc..)
+            ||  └──styles/                  --defautl styles
+            |├──dist/                      --Build will be here
+            |├──core/                      --Core
+            |├──tasks/                     --Tasks
+            |│
+            |├──gulpfile.js
+            |└──package.json
+          p
+            b="Blocks "
+            |has
+            a(href="https://en.bem.info/methodology/filestructure/#flat")=" flat "
+            |structure and all files and folders is optional:
+          pre.documentation__structure
+            | block/
+            | ├── fonts/               --Fonts
+            | │   └── Roboto.woff2
+            | │
+            | ├── img/                 --Any images for style
+            | │   │
+            | │   ├── sprite/          --Icons for sprite here (png or svg)
+            | │   │   ├── mail.png
+            | │   │   └── mail@2x.png
+            | │   │
+            | │   └── bg.png
+            | │
+            | ├── symbols/             --Icons for symbol sprite (only svg)
+            | │   └── arrow.svg
+            | │
+            | ├── assets/              --Any assets files
+            | │   └── image.jpg
+            | │
+            | ├── block.js
+            | ├── block.pug
+            | ├── block.scss
+            | ├── block__el.pug
+            | ├── block__el.scss
+            | └── block__el.js
+  +documentation-nav-bottom({path: 'documentation/installation', title: 'Installation'}, {path: 'documentation/components', title: 'Components'})

@@ -1,0 +1,41 @@
+{
+  "group-1": [
+    {
+      "elem": "dropdown",
+      "title": "Multilevel Menu",
+      "index": "online_marketing_dashboard",
+      "href": "/",
+      "icon": "menu",
+      "content": [
+        {
+          "elem": "href",
+          "title": "Second Level Item",
+          "href": "/",
+          "index": "secondlevelitem"
+        },
+        {
+          "elem": "dropdown",
+          "title": "Second Level Item",
+          "href": "/",
+          "index": "secondlevelitem2",
+          "content": [
+            {
+              "elem": "href",
+              "title": "Third Level Item",
+              "href": "/",
+              "index": "thirdlevelitem",
+              "icon": "home"
+            },
+            {
+              "elem": "href",
+              "title": "Third Level Item",
+              "href": "/",
+              "index": "thirdlevelitem2",
+              "icon": "home"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

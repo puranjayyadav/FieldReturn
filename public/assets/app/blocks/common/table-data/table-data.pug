@@ -1,0 +1,22 @@
+mixin table-data(classes, items, edit, need_index)
+  div(class=`${classes.wrap}`)
+    table(class=`table table-data ${classes.table}`, id=`${edit ? 'my-edit-table' : 'my-table'}`)
+      thead
+        tr
+          each item in items.header
+            if typeof item === 'string'
+              th=item
+            if item.badge
+              th
+                span.badge.badge-warning=item.value
+      tbody
+        each item, index in items.items
+          tr
+            if need_index
+              td(class=`${edit ? 'editMe' : ''}`)=index+1
+            each item_td in item
+              if typeof item_td === 'string'
+                td(class=`${edit ? 'editMe' : ''}`)!=item_td
+              if item_td.badge
+                td(class=`${edit ? 'editMe' : ''}`)
+                  span(class=`badge badge-${item_td.type}`)=item_td.value

@@ -1,0 +1,13 @@
+mixin carousel(items, classes)
+  div(class=`slick-slider carousel ${classes ? classes : ''}`)
+    each item in items
+      if(typeof item === "object")
+        div
+          img(src=item.link, alt=item.title)
+          .slick-slider__caption
+            p.slick-slider__caption-title=item.title
+            p.slick-slider__caption-description=item.description
+      else
+        div
+          img(src=item, alt=item)
+

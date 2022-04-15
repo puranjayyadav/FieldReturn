@@ -1,0 +1,6 @@
+mixin progress-bar(size, classes, color, value, label)
+  div(class=`progress-wrap ${size ? `progress-wrap--${size}` : '' } ${color ? `progress-wrap--${color}` : ''}`)
+    p.progress__label=label
+    .progress
+      div(class=`progress-bar ${classes ? classes : ''}`, style=`width:${value}%`, role="progressbar", aria-valuenow=`${value}`, aria-valuemin="0", aria-valuemax="100")
+        block

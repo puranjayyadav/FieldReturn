@@ -1,0 +1,130 @@
+mixin fitness-dashboard()
+  .container
+    .dashboards
+      .row
+        .col-md-12
+          h3.page-title='Fitness Dashboard'
+      .row
+        .col-12.col-md-12.col-lg-6.col-xl-3
+          .card
+              .dashboard__health-chart-card.card-body
+                .card__title
+                  h5.bold-text='HEARTRATE'
+                .dashboard__health-chart
+                  .recharts-responsive-container
+                    +echartjs('fitness-dashboard-heartrate', null, '180px')
+                  .dashboard__health-chart-info
+                    <svg class="mdi-icon " width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="fill: rgb(255, 72, 97);">
+                      <path d="M12.1,18.55L12,18.65L11.89,18.55C7.14,14.24 4,11.39 4,8.5C4,6.5 5.5,5 7.5,5C9.04,5 10.54,6 11.07,7.36H12.93C13.46,6 14.96,5 16.5,5C18.5,5 20,6.5 20,8.5C20,11.39 16.86,14.24 12.1,18.55M16.5,3C14.76,3 13.09,3.81 12,5.08C10.91,3.81 9.24,3 7.5,3C4.42,3 2,5.41 2,8.5C2,12.27 5.4,15.36 10.55,20.03L12,21.35L13.45,20.03C18.6,15.36 22,12.27 22,8.5C22,5.41 19.58,3 16.5,3Z"></path>
+                    </svg>
+                    p.dashboard__health-chart-number="96"
+                    p.dashboard__health-chart-units="b/min"
+                p.dashboard__goal="Reference: 58-120"
+
+        .col-12.col-md-12.col-lg-6.col-xl-3
+          .card
+            .dashboard__health-chart-card.card-body
+              .card__title
+                h5.bold-text='CALORIES BURN'
+              .dashboard__health-chart
+                .recharts-responsive-container
+                  +echartjs('fitness-dashboard-calories', null, '180px')
+                .dashboard__health-chart-info
+                  <svg class="mdi-icon " width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="fill: rgb(246, 218, 110);">
+                    <path d="M7,2V13H10V22L17,10H13L17,2H7Z"></path>
+                  </svg>
+                  p.dashboard__health-chart-number="360"
+                  p.dashboard__health-chart-units="kKal"
+              p.dashboard__goal="Goal: 500 kKal"
+
+        .col-12.col-md-12.col-lg-6.col-xl-3
+          .card
+            .dashboard__health-chart-card.card-body
+              .card__title
+                h5.bold-text='STEPS'
+              .dashboard__health-chart
+                .recharts-responsive-container
+                  +echartjs('fitness-dashboard-steps', null, '180px')
+                .dashboard__health-chart-info
+                  <svg class="mdi-icon " width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="fill: rgb(76, 225, 182);">
+                    <path d="M14.12,10H19V8.2H15.38L13.38,4.87C13.08,4.37 12.54,4.03 11.92,4.03C11.74,4.03 11.58,4.06 11.42,4.11L6,5.8V11H7.8V7.33L9.91,6.67L6,22H7.8L10.67,13.89L13,17V22H14.8V15.59L12.31,11.05L13.04,8.18M14,3.8C15,3.8 15.8,3 15.8,2C15.8,1 15,0.2 14,0.2C13,0.2 12.2,1 12.2,2C12.2,3 13,3.8 14,3.8Z"></path>
+                  </svg>
+                  p.dashboard__health-chart-number="1.2k"
+                  p.dashboard__health-chart-units="steps"
+              p.dashboard__goal="Goal: 2000 steps"
+
+        .col-12.col-md-12.col-lg-6.col-xl-3
+          .card
+            .dashboard__health-chart-card.card-body
+              .card__title
+                h5.bold-text='DISTANCE'
+              .dashboard__health-chart
+                .recharts-responsive-container
+                  +echartjs('fitness-dashboard-distance', null, '180px')
+                .dashboard__health-chart-info
+                  <svg class="mdi-icon " width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="fill: rgb(112, 187, 253);">
+                    <path d="M12,2C15.31,2 18,4.66 18,7.95C18,12.41 12,19 12,19C12,19 6,12.41 6,7.95C6,4.66 8.69,2 12,2M12,6C10.9,6 10,6.9 10,8C10,9.1 10.9,10 12,10C13.1,10 14,9.1 14,8C14,6.9 13.1,6 12,6M20,19C20,21.21 16.42,23 12,23C7.58,23 4,21.21 4,19C4,17.71 5.22,16.56 7.11,15.83L7.75,16.74C6.67,17.19 6,17.81 6,18.5C6,19.88 8.69,21 12,21C15.31,21 18,19.88 18,18.5C18,17.81 17.33,17.19 16.25,16.74L16.89,15.83C18.78,16.56 20,17.71 20,19Z"></path>
+                  </svg>
+                  p.dashboard__health-chart-number="3.8"
+                  p.dashboard__health-chart-units="km"
+              p.dashboard__goal="Goal: 4 km"
+      .row
+        .col-md-12.col-lg-12.col-xl-12
+          +panel('PRODUCT SALES', 'fitness-product-sales').card
+            +echartjs('online-marketing-dashboard-analytics')
+        .col-12.col-md-12.col-lg-12.col-xl-9
+          +panel('TODAY RUNNING MAP', 'fitness-today-running-map').card
+            +map('1')
+        .col-12.col-md-12.col-lg-5.col-xl-3
+          +panel('MY COMPETITORS', 'fitness-my-competitors').card
+            a(href="account/profile").dashboard__competitor
+              .dashboard__competitor-img
+                img(src="static/dashboards/users/1.png", alt="")
+              .dashboard__competitor-info
+                p.dashboard__competitor-name="Peter Jackson"
+                p.dashboard__competitor-result="12,254 km"
+            a(href="account/profile").dashboard__competitor
+              .dashboard__competitor-img
+                img(src="static/dashboards/users/2.png", alt="")
+              .dashboard__competitor-info
+                p.dashboard__competitor-name="Lora Melbourn"
+                p.dashboard__competitor-result="11,224 km"
+            a(href="account/profile").dashboard__competitor
+              .dashboard__competitor-img
+                img(src="static/dashboards/users/3.png", alt="")
+              .dashboard__competitor-info
+                p.dashboard__competitor-name="Cat Mew"
+                p.dashboard__competitor-result="9,921 km"
+            a(href="account/profile").dashboard__competitor
+              .dashboard__competitor-img
+                img(src="static/dashboards/users/4.png", alt="")
+              .dashboard__competitor-info
+                p.dashboard__competitor-name="Liza Orly"
+                p.dashboard__competitor-result="7,875 km"
+            a(href="account/profile").dashboard__competitor
+              .dashboard__competitor-img
+                img(src="static/dashboards/users/5.png", alt="")
+              .dashboard__competitor-info
+                p.dashboard__competitor-name="Michael Bro"
+                p.dashboard__competitor-result="6,154 km"
+            a(href="account/profile").dashboard__competitor
+              .dashboard__competitor-img
+                img(src="static/dashboards/users/6.png", alt="")
+              .dashboard__competitor-info
+                p.dashboard__competitor-name="Charlie Sunset"
+                p.dashboard__competitor-result="6,154 km"
+        .col-12.col-md-12.col-lg-7.col-xl-6
+          +panel('FAT BURNING', 'fitness-fat-burning').card
+            .dashboard__weight-stats
+              .dashboard__weight-stat
+                p.dashboard__weight-stat-title="Weight control"
+                p.dashboard__weight-stat-value.dashboard__weight-stat-value--control="+3 kg"
+              .dashboard__weight-stat
+                p.dashboard__weight-stat-title="Your total weight"
+                p.dashboard__weight-stat-value.dashboard__weight-stat-value--total="58 kg"
+            .recharts-responsive-container
+              +echartjs('fitness-dashboard-fat-burning')
+        .col-12.col-md-12.col-lg-7.col-xl-6
+          +panel('ACTIVITY RATING', 'fitness-activity-rating').card
+            .recharts-responsive-container.dashboard__chart-pie.dashboard__chart-pie--fitness
+              +echartjs('fitness-dashboard-activity', null, '380px')

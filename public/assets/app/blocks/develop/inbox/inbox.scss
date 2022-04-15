@@ -1,0 +1,1616 @@
+@import "../../../styles/variables.scss";
+.inbox {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+
+  @include themify($themes) {
+    background-color: themed('colorBackground');
+  }
+}
+
+.inbox__mailbox-list {
+  width: 245px;
+  min-width: 245px;
+  padding: 30px;
+
+  @include themify($themes) {
+    background-color: themed('colorHover');
+  }
+}
+
+.inbox__mailbox-list-btn {
+  width: 100%;
+  margin-bottom: 15px;
+  margin-right: 0;
+}
+
+.inbox__list-button {
+  background: transparent;
+  width: 100%;
+  border: none;
+}
+
+.inbox-button {
+  padding: 0!important;
+}
+
+.inbox__mailbox, .inbox__label {
+  display: flex;
+  padding: 10px;
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
+
+  @include themify($themes) {
+    color: themed('colorText');
+  }
+
+  svg {
+    width: 14px;
+    height: 14px;
+    margin-right: 10px;
+    transition: all 0.3s;
+
+    @include themify($themes) {
+      fill: themed('colorIcon');
+    }
+  }
+
+  &.active {
+    cursor: default;
+    font-weight: 500;
+
+    background-color: #f0eeee;
+
+    svg {
+
+      @include themify($themes) {
+        fill: #646777;
+      }
+    }
+
+    .inbox__mailbox-title {
+      font-weight: 500;
+    }
+
+    .inbox__mailbox-label {
+      background-color: $color-accent;
+      color: #ffffff;
+    }
+  }
+
+  &:hover, &.active:hover {
+    @include themify($themes) {
+      background-color: #f0eeee;
+    }
+  }
+}
+
+.inbox__mailbox-title {
+  line-height: 14px;
+  margin: 0;
+  transition: all 0.3s;
+}
+
+.inbox__mailbox-label {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  color: $color-additional;
+  transition: 0.3s;
+  margin-top: 10px;
+
+  @include themify($themes) {
+    background-color: themed('colorBackgroundBody');
+  }
+}
+
+.inbox__label-color {
+  display: block;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  margin-top: 4px;
+  margin-right: 10px;
+
+  &.inbox__label-color--green {
+    background-color: $color-accent;
+  }
+
+  &.inbox__label-color--red {
+    background-color: $color-red;
+  }
+
+  &.inbox__label-color--blue {
+    background-color: $color-blue;
+  }
+
+  &.inbox__label-color--yellow {
+    background-color: $color-yellow;
+  }
+}
+
+.inbox__labels {
+  font-size: 13px;
+  font-weight: 700;
+  padding-left: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.inbox__container {
+  padding: 30px;
+  width: 100%;
+
+  & .dropdown__menu {
+    top: 75%;
+  }
+}
+
+.inbox__files-btn {
+  margin: 0;
+}
+
+.inbox__compose-title {
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.inbox__email-list-item {
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+
+    @include themify($themes) {
+      background-color: themed('colorHover');
+    }
+  }
+
+  &.inbox__email-list-item--unread {
+
+    .inbox__email-table-name, .inbox__email-table-date {
+      font-weight: bold;
+    }
+  }
+
+  svg {
+    width: 14px;
+    height: 14px;
+
+    @include themify($themes) {
+      fill: themed('colorIcon');
+    }
+  }
+
+  .inbox__favorite {
+    transition: all 0.3s;
+
+    &.active {
+      fill: $color-yellow;
+    }
+  }
+
+  .inbox__email-list-item-checkbox {
+    position: relative;
+
+    svg {
+      fill: $color-accent;
+    }
+  }
+
+  td:first-child {
+    min-width: 32px;
+  }
+}
+
+.inbox__email-table-preview {
+  min-width: 200px;
+}
+
+.inbox__email-table-name, .inbox__email-table-date {
+  white-space: nowrap;
+}
+
+.inbox__emails-table {
+  margin-bottom: 10px;
+
+  tr td:first-child {
+    padding-left: 0;
+  }
+
+  tr td:last-child {
+    padding-right: 0;
+    text-align: right;
+  }
+}
+
+.inbox__emails-controls-wrap {
+  position: relative;
+}
+
+.inbox__emails-controls {
+  display: flex;
+  height: 50px;
+  padding-left: 40px;
+  position: relative;
+
+  @include themify($themes) {
+    border-bottom: 1px solid themed('colorBorder');
+  }
+
+  button {
+    padding: 2px 20px 2px 25px;
+    height: 30px;
+    p {
+      font-weight: 400;
+    }
+  }
+
+  .inbox__emails-control-reload {
+    padding: 4px 8px;
+
+    svg {
+      margin: 0;
+    }
+  }
+}
+
+.inbox__emails-control-checkbox {
+  position: absolute;
+  left: 0;
+  top: 5px
+}
+
+.inbox__emails-controls-right {
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.inbox__emails-control-search {
+  display: flex;
+  margin-right: 16px;
+
+  input {
+    height: 28px;
+    padding-left: 10px;
+    transition: all 0.3s;
+    border-radius: 14px 0 0 14px;
+    border: 1px solid transparent;
+    width: 120px;
+
+    @include themify($themes) {
+      color: themed('colorText');
+      background: themed('colorHover');
+    }
+
+    &:focus {
+      border-color: $color-accent;
+      outline: none;
+
+      & + .inbox__emails-control-search-icon {
+        background-color: $color-accent;
+
+        svg {
+          fill: white;
+        }
+      }
+    }
+
+    &::-webkit-input-placeholder {
+
+      @include themify($themes) {
+        color: themed('colorIcon');
+      }
+    }
+    &::-moz-placeholder {
+
+      @include themify($themes) {
+        color: themed('colorIcon');
+      }
+    }
+    /* Firefox 19+ */
+    &:-moz-placeholder {
+
+      @include themify($themes) {
+        color: themed('colorIcon');
+      }
+    }
+    /* Firefox 18- */
+    &:-ms-input-placeholder {
+
+      @include themify($themes) {
+        color: themed('colorIcon');
+      }
+    }
+  }
+}
+
+.inbox__emails-control-search-icon {
+  width: 28px;
+  padding: 5px;
+  height: 28px;
+  border-radius: 0 14px 14px 0;
+  transition: 0.3s;
+
+  @include themify($themes) {
+    background: themed('colorFieldsBorder');
+  }
+
+  svg {
+    height: 16px;
+    width: 16px;
+    margin-top: -3px;
+    transition: 0.3s;
+
+    @include themify($themes) {
+      fill: themed('colorIcon');
+    }
+  }
+}
+
+.inbox__email-header {
+  display: flex;
+  padding-bottom: 12px;
+  flex-wrap: wrap;
+
+  @include themify($themes) {
+    border-bottom: 1px solid themed('colorBorder');
+  }
+
+  .inbox__favorite {
+    transition: all 0.3s;
+
+    &.active {
+      fill: $color-yellow;
+    }
+  }
+}
+
+.inbox__email-back {
+  border: none;
+  background: none;
+  height: 35px;
+  padding-top: 10px;
+  width: 30px;
+  padding-left: 0;
+  cursor: pointer;
+
+  svg {
+    height: 18px;
+    width: 18px;
+    transition: all 0.3s;
+
+    @include themify($themes) {
+      fill: themed('colorText');
+    }
+  }
+
+  &:hover {
+
+    svg {
+      fill: $color-accent;
+    }
+  }
+}
+
+.inbox__email-ava {
+  height: 35px;
+  width: 35px;
+  overflow: hidden;
+}
+
+.inbox__email-info {
+  padding-left: 10px;
+}
+
+.inbox__email-name {
+  font-weight: 500;
+  line-height: 20px;
+
+  svg {
+    height: 14px;
+    width: 14px;
+    margin-left: 20px;
+
+    @include themify($themes) {
+      fill: themed('colorText');
+    }
+  }
+}
+
+.inbox__email-email {
+  margin: 0;
+  font-size: 10px;
+  line-height: 13px;
+  color: $color-additional;
+}
+
+.inbox__email-right {
+  margin-left: auto;
+  display: flex;
+}
+
+.inbox__email-left {
+  display: flex;
+}
+
+.inbox__email-time {
+  margin: auto 30px auto 0!important;
+}
+
+.inbox__email-btn {
+  border: none;
+  margin-right: 5px;
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
+
+  @include themify($themes) {
+    background: themed('colorBackgroundBody');
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  svg {
+    height: 14px;
+    width: 14px;
+    fill: $color-additional
+  }
+}
+
+.inbox__email-body {
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.inbox__email-attachment {
+  padding-top: 15px;
+  margin-bottom: 15px;
+
+  @include themify($themes) {
+    border-top: 1px solid themed('colorBorder');
+  }
+}
+
+.inbox__email-attachment-title {
+  font-size: 12px;
+}
+
+.inbox__email-attachment-link {
+  font-size: 10px;
+  margin-top: 10px;
+  display: flex;
+
+  svg {
+    fill: $color-additional;
+    height: 14px;
+    width: 14px;
+    margin-right: 5px;
+  }
+}
+
+.inbox__email-reply {
+  padding-top: 15px;
+  position: relative;
+}
+
+.inbox__email-reply-textarea {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100px;
+  padding: 10px 35px 10px 15px;
+  transition: all 0.3s;
+  background: transparent;
+
+  @include themify($themes) {
+    border: 1px solid themed('colorFieldsBorder');
+    color: themed('colorText');
+  }
+
+  &:focus, &:active {
+    outline: none;
+    border-color: $color-accent;
+  }
+}
+
+.inbox__email-reply-placeholder {
+  pointer-events: none;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  color: $color-additional;
+
+  span {
+    color: $color-blue;
+  }
+}
+
+.inbox__email-reply-btns {
+  margin-top: 10px;
+
+  button {
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.inbox__email-reply-btn-full {
+  border: none;
+  background: transparent;
+  color: $color-blue;
+  transition: all 0.3s;
+  cursor: pointer;
+  min-height: 32px;
+
+  &:hover {
+    color: $color-blue-hover;
+  }
+}
+
+.inbox__email-reply-close {
+  background: transparent;
+  border: none;
+  position: absolute;
+  right: 10px;
+  top: 28px;
+  height: 20px;
+  width: 20px;
+  padding: 0;
+  cursor: pointer;
+
+  svg {
+    height: 15px;
+    width: 15px;
+    fill: $color-additional;
+    transition: all 0.3s;
+  }
+
+  &:hover {
+
+    svg {
+      fill: $color-accent;
+    }
+  }
+}
+
+.inbox__topbar {
+  height: 50px;
+  display: none;
+}
+
+.inbox__topbar-button {
+  background-color: transparent;
+  border: none;
+  transition: all 0.3s;
+  cursor: pointer;
+  padding: 0;
+  margin-left: -2px;
+
+  &:hover {
+
+    .inbox__topbar-button-icon {
+      fill: $color-accent;
+    }
+
+  }
+}
+
+.inbox__topbar-button-icon {
+  transition: 0.3s;
+
+  @include themify($themes) {
+    fill: themed('colorIcon');
+  }
+}
+
+@media screen and (max-width: 1200px) {
+
+  .inbox__email-time {
+    margin: auto 20px auto 0;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+
+  .inbox__topbar {
+    display: block;
+
+    &.inbox__topbar--hide {
+      display: none;
+    }
+  }
+
+  .inbox__compose-title {
+    position: absolute;
+    top: 40px;
+    left: 70px;
+  }
+
+  .inbox__mailbox-list {
+    position: absolute;
+    top: 0;
+    transform: translateX(calc(-100% - 1px));
+    transition: 0.3s;
+    z-index: 99;
+    height: 100%;
+
+    @include themify($themes) {
+      background-color: themed('colorBackground');
+    }
+  }
+
+  .inbox__container {
+    width: 100%;
+  }
+
+  .inbox__email-time {
+    margin: auto 10px auto 0;
+  }
+
+  .inbox:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s, z-index 0.3s 0.3s;
+    background-color: $color-additional;
+  }
+
+  .inbox__emails-controls-right {
+    position: absolute;
+    top: -50px;
+    right: 0;
+  }
+
+  .inbox.inbox--show-mailboxes {
+
+    .inbox__mailbox-list {
+      transform: translateX(0);
+    }
+
+    &:before {
+      opacity: 0.2;
+      z-index: 1;
+      transition: opacity 0.3s, z-index 0s;
+      pointer-events: none;
+    }
+
+    .inbox__content {
+      pointer-events: none;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+
+  .inbox__email-left, .inbox__email-right {
+    width: 100%;
+  }
+
+  .inbox__email-right {
+    margin-top: 15px;
+  }
+
+  .inbox__email-time {
+    margin-right: auto;
+  }
+}
+
+@media screen and (max-width: 620px) {
+
+  .inbox__emails-control-search {
+    margin-right: 8px;
+
+    input {
+      width: 90px;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .inbox__emails-control-reload {
+    margin-right: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.checkbox-btn {
+  display: flex;
+  cursor: pointer;
+
+  &:hover {
+
+    .checkbox-btn__checkbox-custom {
+      border-color: $color-accent;
+    }
+
+    .checkbox-btn__label {
+      color: $color-accent;
+    }
+  }
+
+  &.disabled {
+    pointer-events: none;
+    cursor: default;
+
+    .checkbox-btn__checkbox-custom {
+      transition: 0s;
+
+      @include themify($themes) {
+        background-color: themed('colorHover');
+        border-color: themed('colorFieldsBorder');
+      }
+
+      svg {
+        fill: #dddddd;
+      }
+    }
+
+    .checkbox-btn__label {
+      color: #dddddd;
+    }
+  }
+
+  &.checkbox-btn--colored {
+
+    .checkbox-btn__checkbox-custom {
+      border-color: $color-accent;
+      background-color: $color-accent;
+
+      svg {
+        fill: #ffffff;
+      }
+    }
+
+    &.disabled {
+      opacity: 0.4;
+
+      .checkbox-btn__checkbox-custom {
+        border-color: $color-accent;
+        background-color: $color-accent;
+      }
+    }
+  }
+
+  &.checkbox-btn--colored-click {
+
+    .checkbox-btn__checkbox:checked + .checkbox-btn__checkbox-custom {
+      border-color: $color-accent;
+      background-color: $color-accent;
+
+      svg {
+        fill: #ffffff;
+      }
+    }
+
+    &.disabled {
+
+      .checkbox-btn__checkbox:checked + .checkbox-btn__checkbox-custom {
+
+        @include themify($themes) {
+          background-color: themed('colorHover');
+          border-color: themed('colorFieldsBorder');
+        }
+
+        svg {
+          fill: #dddddd;
+        }
+      }
+    }
+  }
+
+  &.checkbox-btn--button {
+    background: $color-accent;
+    min-width: 150px;
+    color: #ffffff;
+    height: 24px;
+    border-radius: 4px;
+    transition: all 0.3s;
+    padding: 0 6px;
+    width: 100%;
+
+    .checkbox-btn__label {
+      color: #ffffff;
+    }
+
+    .checkbox-btn__checkbox-custom {
+      display: none;
+    }
+
+    .checkbox-btn__label-svg {
+      margin: auto 4px auto auto;
+      height: 16px;
+      line-height: 1;
+
+      svg {
+        fill: #ffffff;
+        width: 14px;
+        height: 14px;
+      }
+
+      .checkbox-btn__label-check {
+        display: none;
+      }
+    }
+
+    .checkbox-btn__checkbox:checked ~ .checkbox-btn__label-svg {
+
+      .checkbox-btn__label-check {
+        display: block;
+      }
+
+      .checkbox-btn__label-uncheck {
+        display: none;
+      }
+    }
+
+    .checkbox-btn__label {
+      margin: auto auto auto 0;
+      padding: 0;
+    }
+
+    &:hover {
+      background: $color-accent-hover;
+
+      .checkbox-btn__label {
+        color: #ffffff;
+      }
+    }
+
+    &.disabled {
+      opacity: 0.4;
+
+      .checkbox-btn__label {
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+.checkbox-btn__checkbox {
+  display: none;
+}
+
+.checkbox-btn__checkbox-custom {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+
+  @include themify($themes) {
+    border: 1px solid themed('colorIcon');
+  }
+
+  svg {
+    transition: all 0.3s;
+    opacity: 0;
+    height: 16px;
+    width: 16px;
+    fill: $color-accent;
+    margin-top: -6px;
+  }
+}
+
+.checkbox-btn__label {
+  line-height: 18px;
+  padding-left: 28px;
+  padding-top: 2px;
+
+  @include themify($themes) {
+    color: themed('colorText');
+  }
+}
+
+.checkbox-btn__checkbox-custom,
+.checkbox-btn__label {
+  display: inline-block;
+  vertical-align: middle;
+  transition: all 0.3s;
+}
+
+.checkbox-btn__checkbox:checked + .checkbox-btn__checkbox-custom {
+
+  svg {
+    opacity: 1;
+  }
+}
+
+
+
+.pagination {
+
+}
+
+.pagination__link {
+  background: transparent;
+  border: none;
+  color: $color-additional;
+  height: 28px;
+  font-size: 10px;
+  padding: 5px;
+  text-align: center;
+  min-width: 28px;
+  transition: all 0.3s;
+  margin-right: 2px;
+
+  &:hover {
+    color: $color-accent;
+    background: transparent;
+  }
+
+  &:focus, &:active {
+    box-shadow: none;
+  }
+
+  svg {
+    transition: 0.3s;
+  }
+
+  &.pagination__link--arrow {
+    border-radius: 50% !important;
+    width: 28px;
+    height: 28px;
+
+    @include themify($themes) {
+      background: themed('colorFieldsBorder');
+    }
+
+    &:hover {
+      background: $color-accent;
+
+      svg {
+        fill: white;
+      }
+    }
+  }
+}
+
+.pagination__item {
+
+  &.active .pagination__link {
+    background-color: transparent;
+    font-weight: bold;
+
+    @include themify($themes) {
+      color: themed('colorText');
+    }
+  }
+
+  &.disabled {
+
+    .pagination__link svg {
+
+      @include themify($themes) {
+        fill: themed('colorIcon');
+      }
+    }
+  }
+}
+
+.pagination__link-icon {
+  width: 13px;
+  height: 13px;
+  fill: $color-additional;
+}
+
+.pagination__wrap {
+  display: flex;
+  margin-top: 15px;
+
+  &.pagination__wrap--small {
+    margin-top: 0;
+    display: block;
+  }
+}
+
+.pagination-info {
+  color: $color-additional;
+  font-size: 12px;
+  margin: auto 0 auto 10px;
+}
+
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+
+  input, textarea {
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 12px;
+    height: 32px;
+    transition: border 0.3s;
+    background: transparent;
+
+    &::-webkit-input-placeholder {
+      color: $color-additional;
+    }
+    &::-moz-placeholder {
+      color: $color-additional;
+    }
+    /* Firefox 19+ */
+    &:-moz-placeholder {
+      color: $color-additional;
+    }
+    /* Firefox 18- */
+    &:-ms-input-placeholder {
+      color: $color-additional;
+    }
+
+    @include themify($themes) {
+      border: 1px solid themed('colorFieldsBorder');
+      color: themed('colorText');
+    }
+
+    &[disabled] {
+
+      @include themify($themes) {
+        background: themed('colorBackgroundBody');
+      }
+
+      &:focus, &:active {
+
+        @include themify($themes) {
+          border-color: themed('colorBorder');
+        }
+      }
+    }
+
+    &:focus, &:active {
+      outline: none;
+      border-color: $color-accent;
+    }
+  }
+
+  textarea {
+    min-height: 85px;
+  }
+
+  &.form--horizontal {
+
+    .form__form-group {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .form__form-group-field {
+      width: calc(100% - 80px);
+      padding-left: 10px;
+      margin-left: 80px;
+    }
+
+    .form__form-group-label {
+      width: 80px;
+      max-height: 32px;
+      line-height: 18px;
+      margin: auto 0;
+
+      & + .form__form-group-field {
+        margin-left: 0;
+      }
+    }
+
+    .form__form-group-description {
+      margin-left: 90px;
+    }
+
+    .form__button-toolbar {
+      margin-left: 0;
+    }
+
+    .form__form-group-input-wrap--error-above {
+      margin-bottom: 15px;
+
+      .form__form-group-error {
+        top: -28px;
+      }
+    }
+
+    @media screen and (min-width: 480px) {
+
+      .form__form-group-label {
+        width: 120px;
+      }
+
+      .form__form-group-field {
+        width: calc(100% - 120px);
+        margin-left: 120px;
+        padding-left: 20px;
+      }
+
+      .form__form-group-description, .form__button-toolbar {
+        margin-left: 140px;
+      }
+    }
+  }
+
+  &.form--preview {
+    display: flex;
+
+    & > div:nth-child(2) {
+      margin-right: 50px;
+    }
+
+    .form__form-group {
+      margin-bottom: 10px;
+      width: auto;
+      min-height: 18px;
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+  }
+
+  &.form--justify {
+    display: flex;
+    flex-wrap: wrap;
+
+    .form__form-group {
+      width: 33.3333%;
+    }
+
+    .form__button-toolbar {
+      width: 100%;
+    }
+  }
+}
+
+.form__half {
+  width: calc(50% - 15px);
+  height: 100%;
+
+  &:first-child {
+    margin-right: 30px;
+  }
+
+  .form__button-toolbar {
+    float: right;
+  }
+
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+.form__form-group {
+  margin-bottom: 20px;
+  width: 100%;
+  position: relative;
+}
+
+.form__form-group--address {
+
+  input:last-child {
+    margin-left: 15px;
+    width: 70%;
+  }
+}
+
+.form__form-group-field {
+  width: 100%;
+  display: flex;
+  margin: auto;
+}
+
+.form__form-group-label {
+  margin-bottom: 4px;
+  display: inline-block;
+
+  @include themify($themes) {
+    color: themed('colorText');
+  }
+
+  span {
+    color: #dddddd;
+  }
+}
+
+.form__form-group-button {
+  padding: 6px;
+  height: 32px;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  @include themify($themes) {
+    background: themed('colorFieldsBorder');
+    border: 1px solid themed('colorFieldsBorder');
+  }
+
+  svg {
+    fill: $color-additional;
+    width: 18px;
+    height: 18px;
+    transition: all 0.3s;
+  }
+
+  &.active {
+    background: $color-accent;
+    border: 1px solid $color-accent;
+
+    svg {
+      fill: #ffffff;
+    }
+  }
+}
+
+.form__form-group-file {
+
+  label {
+    border-radius: 2px;
+    line-height: 18px;
+    font-size: 12px;
+    padding: 4px 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+
+    @include themify($themes) {
+      border: 1px solid themed('colorFieldsBorder');
+      color: themed('colorText');
+    }
+
+    &:hover {
+
+      @include themify($themes) {
+        background: themed('colorFieldsBorder');
+      }
+    }
+  }
+
+  span {
+    padding-left: 10px;
+  }
+
+  input {
+    display: none;
+  }
+}
+
+.form__form-group-icon {
+  padding: 6px;
+  height: 32px;
+
+  @include themify($themes) {
+    background: themed('colorFieldsBorder');
+    border: 1px solid themed('colorFieldsBorder');
+  }
+
+  svg {
+    fill: $color-additional;
+    width: 18px;
+    height: 18px;
+    transition: all 0.3s;
+  }
+}
+
+.form__form-group-description {
+  font-size: 10px;
+  color: $color-additional;
+  line-height: 13px;
+  margin-top: 2px;
+}
+
+.form__button-toolbar {
+  margin-top: 10px;
+}
+
+.form__form-group-input-wrap {
+  width: 100%;
+}
+
+.form__form-group-error {
+  font-size: 10px;
+  line-height: 13px;
+  color: #ad4444;
+  margin-bottom: -5px;
+  display: block;
+  margin-top: 5px;
+}
+
+.form__form-group-input-wrap--error-above {
+
+  .form__form-group-error {
+    position: absolute;
+    margin: 0;
+    right: 0;
+    top: 0;
+    padding: 5px 10px;
+    background: #ffbcbc;
+    border-radius: 3px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      right: 10px;
+      bottom: -8px;
+      border: 4px solid transparent;
+      border-top: 4px solid #ffbcbc;
+    }
+  }
+}
+
+.form__form-group-date-cvc {
+  display: flex;
+  width: 100%;
+
+  .form__form-group-date {
+    width: 100%;
+    margin-right: 20px;
+  }
+
+  .form__form-group-cvc {
+    max-width: 280px;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 767px) {
+    flex-wrap: wrap;
+
+    .form__form-group-date {
+      margin-right: 0;
+    }
+
+    .form__form-group-cvc {
+      max-width: 100%;
+    }
+  }
+}
+
+.form__form-group-id-category {
+  width: 100%;
+  display: flex;
+
+  .form__form-group-id {
+    min-width: 100px;
+    width: 40%;
+    margin-right: 20px;
+  }
+
+  @media screen and (max-width: 767px) {
+    flex-wrap: wrap;
+
+    .form__form-group-id {
+      margin-right: 0;
+      width: 100%;
+    }
+  }
+}
+
+.form__form-group-price-discount {
+  width: 100%;
+  display: flex;
+  margin-bottom: 20px;
+
+  & > div {
+    margin-bottom: 0;
+  }
+
+  .form__form-group-price {
+    margin-right: 20px;
+  }
+
+  @media screen and (max-width: 767px) {
+    flex-wrap: wrap;
+
+    .form__form-group-price {
+      margin-right: 0;
+    }
+  }
+}
+
+.text-editor {
+  position: relative;
+
+  .rdw-editor-toolbar {
+    margin: 0;
+    background: transparent;
+    border-radius: 0;
+
+    @include themify($themes) {
+      border: solid 1px themed('colorFieldsBorder');
+    }
+  }
+
+  .rdw-editor-toolbar {
+    padding: 0;
+
+    & > div {
+      height: 40px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      margin: 0;
+
+      img {
+        height: 13px;
+
+        @include themify($themes) {
+          fill: themed('colorText');
+        }
+      }
+    }
+
+    .rdw-option-active {
+      box-shadow: none;
+
+      @include themify($themes) {
+        background-color: themed('colorBorder');
+      }
+    }
+  }
+
+  .DraftEditor-root {
+    width: 100%;
+    min-height: 180px;
+
+    @include themify($themes) {
+      border: solid 1px themed('colorFieldsBorder');
+    }
+
+    border-top: none;
+  }
+
+  .public-DraftEditor-content {
+    padding: 6px 10px;
+
+    @include themify($themes) {
+      color: themed('colorText');
+    }
+
+  }
+
+  .draftJsMentionPlugin__input__1Wxng {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .public-DraftEditorPlaceholder-root {
+    position: absolute;
+    color: $color-additional;
+  }
+
+  .rdw-option-wrapper, .rdw-dropdown-wrapper {
+    border: none;
+    border-radius: 0;
+    transition: background 0.3s;
+    background: transparent;
+
+    &:hover {
+      box-shadow: none;
+
+      @include themify($themes) {
+        background: themed('colorHover');
+      }
+    }
+
+    img {
+
+      @include themify($themes) {
+        filter: themed('imgInvert');
+      }
+    }
+  }
+
+  .rdw-option-wrapper {
+    min-width: 0!important;
+    width: auto!important;
+  }
+
+  .rdw-dropdown-wrapper {
+
+    @include themify($themes) {
+      color: themed('colorText');
+    }
+
+    .rdw-dropdown-carettoclose {
+
+      @include themify($themes) {
+        border-bottom-color: themed('colorText');
+      }
+    }
+
+    .rdw-dropdown-carettoopen {
+
+      @include themify($themes) {
+        border-top-color: themed('colorText');
+      }
+    }
+  }
+
+  .rdw-dropdown-optionwrapper {
+    overflow: auto;
+
+    @include themify($themes) {
+      background-color: themed('colorBackground');
+      border-color: themed('colorBorder');
+    }
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+
+  .rdw-dropdownoption-default {
+    transition: background-color 0.3s;
+
+    &:hover {
+
+      @include themify($themes) {
+        background-color: themed('colorHover');
+      }
+    }
+
+    &.rdw-dropdownoption-active {
+
+      @include themify($themes) {
+        background-color: themed('colorHover');
+      }
+    }
+  }
+
+  button {
+
+    &:hover {
+      box-shadow: none;
+
+      @include themify($themes) {
+        background-color: themed('colorHover');
+      }
+    }
+
+    &[disabled] {
+      pointer-events: none;
+    }
+  }
+}
+
+
+.tox-tinymce {
+  border: 1px solid #f2f4f7 !important;
+}
+.tox:not([dir="rtl"]) .tox-toolbar__group:not(:last-of-type) {
+  border-right: 1px solid #f2f4f7 !important;
+}
+
+.tox .tox-toolbar, .tox .tox-toolbar__overflow, .tox .tox-toolbar__primary {
+  border-top: 1px solid #f2f4f7 !important;
+  border-bottom: 1px solid #f2f4f7 !important;
+}
+
+.tox .tox-tbtn svg {
+  fill: #646777 !important;
+}

@@ -1,0 +1,75 @@
+mixin gallery()
+  .container.todo-app
+    .row
+      .col-md-12
+        h3.page-title='Gallery'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-md-12.col-lg-12
+        .card.cart
+          .card-body
+            .card__title
+              h5.bold-text="FILTER GALLERY"
+            .tabs.gallery__tabs
+              +tabs-set('tabs', 'tabs', 1)
+                .gallery
+                  a(href="static/gallery/01.png").gallery__img-wrap
+                    img(src="static/gallery/01.png", alt="sneakers")
+                  a(href="static/gallery/02.png").gallery__img-wrap
+                    img(src="static/gallery/02.png", alt="sneakers")
+                  a(href="static/gallery/03.png").gallery__img-wrap
+                    img(src="static/gallery/03.png", alt="sneakers")
+                  a(href="static/gallery/04.png").gallery__img-wrap
+                    img(src="static/gallery/04.png", alt="cap")
+                  a(href="static/gallery/05.png").gallery__img-wrap
+                    img(src="static/gallery/05.png", alt="watch")
+                  a(href="static/gallery/06.png").gallery__img-wrap
+                    img(src="static/gallery/06.png", alt="sneakers")
+                  a(href="static/gallery/07.png").gallery__img-wrap
+                    img(src="static/gallery/07.png", alt="sneakers")
+                  a(href="static/gallery/08.png").gallery__img-wrap
+                    img(src="static/gallery/08.png", alt="sneakers")
+                  a(href="static/gallery/09.png").gallery__img-wrap
+                    img(src="static/gallery/09.png", alt="glasses")
+                  a(href="static/gallery/10.png").gallery__img-wrap
+                    img(src="static/gallery/10.png", alt="glasses")
+                  a(href="static/gallery/11.png").gallery__img-wrap
+                    img(src="static/gallery/11.png", alt="glasses")
+                  a(href="static/gallery/12.png").gallery__img-wrap
+                    img(src="static/gallery/12.png", alt="glasses")
+              +tabs-set('tabs','tabs', 2)
+                .gallery
+                  a(href="static/gallery/01.png").gallery__img-wrap
+                    img(src="static/gallery/01.png", alt="sneakers")
+                  a(href="static/gallery/02.png").gallery__img-wrap
+                    img(src="static/gallery/02.png", alt="sneakers")
+                  a(href="static/gallery/03.png").gallery__img-wrap
+                    img(src="static/gallery/03.png", alt="sneakers")
+                  a(href="static/gallery/06.png").gallery__img-wrap
+                    img(src="static/gallery/06.png", alt="sneakers")
+                  a(href="static/gallery/07.png").gallery__img-wrap
+                    img(src="static/gallery/07.png", alt="sneakers")
+                  a(href="static/gallery/08.png").gallery__img-wrap
+                    img(src="static/gallery/08.png", alt="sneakers")
+              +tabs-set('tabs','tabs', 3)
+                .gallery
+                  a(href="static/gallery/04.png").gallery__img-wrap
+                    img(src="static/gallery/04.png", alt="cap")
+              +tabs-set('tabs','tabs', 4)
+                .gallery
+                  a(href="static/gallery/05.png").gallery__img-wrap
+                    img(src="static/gallery/05.png", alt="watch")
+              +tabs-set('tabs','tabs', 5)
+                .gallery
+                  a(href="static/gallery/09.png").gallery__img-wrap
+                    img(src="static/gallery/09.png", alt="glasses")
+                  a(href="static/gallery/10.png").gallery__img-wrap
+                    img(src="static/gallery/10.png", alt="glasses")
+                  a(href="static/gallery/11.png").gallery__img-wrap
+                    img(src="static/gallery/11.png", alt="glasses")
+                  a(href="static/gallery/12.png").gallery__img-wrap
+                    img(src="static/gallery/12.png", alt="glasses")
+              +tabs-blocks({
+                links: ['ALL', 'SNEAKERS', 'CAP', 'WATCH', 'GLASSES'],
+                contents: [1, 2, 3, 4, 5]
+              }, 'tabs--bordered-bottom','', 'ALL')

@@ -1,0 +1,9 @@
+mixin project-member(img, name, post)
+  .project-member
+    .project-member__avatar-wrap
+      img(src=img, alt=name)
+    div
+      p.project-member__name=name
+      p.project-member__post=post
+    a.project-member__btn.btn.btn-outline-primary.btn-sm.icon(href='#')
+      +icon('form', 'email-outline')

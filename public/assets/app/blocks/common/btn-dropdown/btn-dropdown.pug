@@ -1,0 +1,19 @@
+mixin btn-dropdown(options)
+  .dropdown.btn-dropdown(tabindex="0")
+    if (options.separated)
+      .btn-group
+        +btn(options.classButton)(type="button", aria-haspopup="true", aria-expanded="false")
+          block
+        button(class=options.classIcon, type="button", aria-haspopup="true", aria-expanded="false")
+          +icon('btn', 'chevron-down')
+    else
+      +btn(options.classButton)(type="button", aria-haspopup="true", aria-expanded="false")
+        block
+        if(options.right)
+          +icon('btn', 'chevron-down')
+    .dropdown__menu.dropdown-menu(tabindex="-1", role="menu", aria-hidden="true")
+      each item in options.list
+        if(item)
+          button.dropdown-item(role="menuitem", tabindex="0", type="button")=item
+        else
+          .dropdown-divider(tabindex="-1")

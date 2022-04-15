@@ -1,0 +1,8 @@
+mixin alert(type, icon)
+  div(class=`alert alert-${type || ''} fade show`, role="alert")&attributes(attributes)
+    if (icon)
+      +alert__icon(icon)
+    button.close(type="button")
+      +lnr('cross')
+    +alert__content()
+      block

@@ -1,0 +1,22 @@
+include components/language/language
+include components/account/account
+include components/mail/mail
+include components/search/search
+include components/notification-toolbar/notification-toolbar
+
+mixin topbar
+  .topbar
+    .topbar__left
+      div
+        button.topbar__button.topbar__button--desktop
+          img.burget__icon(src="static/topbar/burger.svg", alt="burger")
+        button.topbar__button.topbar__button--mobile
+          img.burget__icon(src="static/topbar/burger.svg", alt="burger")
+      a(href="/dashboards/online_marketing_dashboard").topbar__logo
+        img(src="static/topbar/logo_ed.svg", alt="logo")
+    .topbar__right
+      +search
+      +notification-toolbar
+      +mail
+      +account
+      +languages

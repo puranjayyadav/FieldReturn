@@ -1,0 +1,20 @@
+include ../../../../common/dropdown/dropdown
+mixin account
+  .topbar__profile
+    +dropdown-set('dropdown','content', "account-topbar")
+      img.topbar__avatar-img(src="static/topbar/account.png", alt="account")
+      span.topbar__avatar-name
+        | Roman Johanson
+      +lnr('chevron-down')(class="topbar__icon")
+    button.topbar__back.collapsed(data-target='#account-topbar', data-toggle="collapse")
+    +dropdown-set('dropdown','toggle', "account-topbar")
+      .topbar__menu
+        each item in global.jsons.topbar.account['items']
+          if !item.divider
+            a.topbar__link(href=`${item.link}`)
+              span(class=`topbar__link-icon lnr lnr-${item.icon}`)
+              p.topbar__link-title=item.title
+          else
+            .topbar__menu-divider
+
+    +dropdown("account-topbar", global.jsons.topbar.account.classes)

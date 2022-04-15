@@ -1,0 +1,122 @@
+extends ../../blocks/layout
+block layout
+  - var active_page = 'ui_typography'
+  - var span = "<span class='highlight'>commodo</span>";
+block content
+  .container
+    .row
+      .col-md-12
+        h3.page-title='Typography'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-sm-12.col-md-6.col-lg-6
+        +card('Basic heading', [{'type': 'normal', 'text': 'Use tags '}, {'type': 'red', 'text': 'h1 to h6'}, {'type': 'normal', 'text': ' for get necessary heading.'}])
+          .typography-card
+            h1="H1 Type something"
+            h2="H1 Type something"
+            h3="H1 Type something"
+            h4="H1 Type something"
+            h5="H1 Type something"
+            h6="H1 Type something"
+      .col-sm-12.col-md-6.col-lg-6
+        +card('Basic heading', [{'type': 'normal', 'text': 'Use tags '}, {
+          'type': 'red',
+          'text': 'h1 to h6'
+        }, {'type': 'normal', 'text': ' for get necessary heading.'}])
+          .typography-card
+            .typography--inline
+              h1="H1 Type something"
+              h1.subhead="Subheading"
+            .typography--inline
+              h2="H1 Type something"
+              h2.subhead="Subheading"
+            .typography--inline
+              h3="H1 Type something"
+              h3.subhead="Subheading"
+            .typography--inline
+              h4="H1 Type something"
+              h4.subhead="Subheading"
+            .typography--inline
+              h5="H1 Type something"
+              h5.subhead="Subheading"
+            .typography--inline
+              h6="H1 Type something"
+              h6.subhead="Subheading"
+      .col-sm-12.col-md-6.col-lg-6
+        +card('Basic heading', [{'type': 'normal', 'text': 'Use tags '}, {
+          'type': 'red',
+          'text': 'h1 to h6'
+        }, {'type': 'normal', 'text': ' for get necessary heading.'}])
+          .typography-card
+            h1.bold-text="H1 Type something"
+            h2.bold-text="H1 Type something"
+            h3.bold-text="H1 Type something"
+            h4.bold-text="H1 Type something"
+            h5.bold-text="H1 Type something"
+            h6.bold-text="H1 Type something"
+      .col-sm-12.col-md-6.col-lg-6
+        +card('Basic heading', [])
+          h4.bold-text="This is a smaple heading for text part"
+          p="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales at. Nulla tellus elit, varius non commodo eget, mattis vel eros. In sed ornare nulla. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit."
+      .col-sm-12.col-md-6.col-lg-6
+        +card('Basic heading', [])
+          h4.bold-text="This is a smaple heading for text part"
+          h4.subhead="This is a smaple heading for text part"
+          p="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales at. Nulla tellus elit, varius non commodo eget, mattis vel eros. In sed ornare nulla. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit."
+
+      .col-sm-12.col-md-6.col-lg-6
+        +card('Basic heading', [])
+          ul.list
+            li
+              p="123"
+            li
+              p="123"
+            li
+              p="123"
+      .col-sm-12.col-md-6.col-lg-6
+        +card('Basic heading', [])
+          ul.list.list--icon
+            li
+              p
+                span.lnr.lnr-checkmark-circle
+                ="123"
+            li
+              p
+                span.lnr.lnr-checkmark-circle
+                ="123"
+            li
+              p
+                span.lnr.lnr-checkmark-circle
+                ="123"
+
+      .col-sm-12.col-md-6.col-lg-6
+        +card('Basic heading', [])
+          ul.list.list--icon.list--icon-green
+            li
+              p
+                span.lnr.lnr-checkmark-circle
+                ="123"
+            li
+              p
+                span.lnr.lnr-checkmark-circle
+                ="123"
+            li
+              p
+                span.lnr.lnr-checkmark-circle
+                ="123"
+      .col-sm-12.col-md-6.col-lg-6
+        +card('Basic heading', [])
+          ol.list
+            li
+              p="123"
+            li
+              p="123"
+            li
+              p="123"
+      .col-sm-12.col-md-6.col-lg-6
+        +card('Basic heading', [])
+          blockquote
+            p="Hello"
+      .col-sm-12.col-md-6.col-lg-6
+        +card('Basic heading', [])
+          p Nulla tellus elit, varius non !{span} eget, mattis vel eros. In sed ornare nulla. Nullam quis risuseget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes,nascetur ridiculus mus."

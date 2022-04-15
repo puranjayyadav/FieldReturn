@@ -1,0 +1,72 @@
+mixin menu_string(item)
+  li.menu__item=item
+
+mixin menu_item(item)
+  li.menu__item=item.content
+
+mixin menu_href(item, active, classes)
+  li(class=classes.li)
+    a(href=item.href, class=`${active && item.index === active ? classes.active : ''}`)
+      if (item.icon)
+        span(class=(classes["left-icon"] || "").replace('${item.icon}', item.icon))
+      p(class=classes.title)=item.title
+        if (item.badge)
+          span(class=classes.badge)
+            span=(item.badge.title)
+
+mixin submenu(item, classes, active)
+  - let id = item.title.replace(/\s/g, '').toLocaleLowerCase() + Math.random();
+  li
+    div(class=`${classes.wrap} ${(item.content || []).filter(x=>x.index === active).length ? 'sidebar__category-wrap--open' : ''}`)
+      +dropdown-set('dropdown','content', id)
+        if (item.icon)
+          span(class=(classes["left-icon"] || "").replace('${item.icon}', item.icon))
+        p(class=classes.title)=item.title
+          if (item.badge)
+            span(class=`${item.badge.title ? classes.badge.exist : classes.badge['no-exist']}`)
+              span=(item.badge.title)
+          span(class=classes['right-icon'])
+      +dropdown-set('dropdown','toggle', id)
+        ul(class=classes.submenu)
+          each item_content in (item.content || [])
+            if (typeof item_content === 'object' && item_content.elem === 'dropdown')
+              +submenu(item_content, classes)
+            else
+              if (item_content.type === 'button')
+                button(class=classes.item.button)
+                  p(class=classes.item.title)= item_content.title
+                  if (item_content.badge)
+                    span(class=classes.item.badge)
+                      span=(item_content.badge.title)
+              else
+                if (item_content.index === 'light_theme' || 'dark_theme')
+                  li.sidebar__link
+                    a(href=item_content.href, class=`${active && item_content.index === active ? classes.active : ''}`, id=`${item_content.index + Math.random()}`)
+                      p.sidebar__link-title=item_content.title
+                        if (item_content.badge)
+                          span(class=classes.item.badge)
+                            span=(item_content.badge.title)
+                else
+                  li.sidebar__link
+                    a(href=item_content.href, class=`${active && item_content.index === active ? classes.active : ''}`)
+                      p.sidebar__link-title=item_content.title
+                      if (item_content.badge)
+                        span(class=classes.item.badge)
+                          span=(item_content.badge.title)
+      +dropdown(id, classes, (item.content || []).filter(x=>x.index === active).length)
+
+
+
+mixin menu(items, active, classes)
+    ul.sidebar__block
+      each item in (items || [])
+        if (typeof item === 'string')
+          +menu_string(item)
+        else if (typeof item === 'object' && item.elem === 'item')
+          +menu_item(item)
+        else if (typeof item === 'object' && item.elem === 'href')
+          +menu_href(item, active, classes.href)
+        else if (typeof item === 'object' && item.elem === 'dropdown')
+          +submenu(item, classes.dropdown, active)
+        else
+          li.menu__item(style= 'background: red;') wrong type menu item

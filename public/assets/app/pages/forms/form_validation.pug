@@ -1,0 +1,184 @@
+extends ../../blocks/layout
+block layout
+  - var active_page = 'forms_form_validation'
+
+block content
+  .container.todo-app
+    .row
+      .col-md-12
+        h3.page-title='Form Validation'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Horizontal form validate', [{'type': 'normal', 'text': 'Errors are under fields'}])
+          form.form.form--horizontal
+            .form__form-group
+              span.form__form-group-label='Username'
+              div.form__form-group-field
+                .form__form-group-input-wrap
+                  input(placeholder='Name')
+                  span.form__form-group-error='Username field should not empty'
+            .form__form-group
+              span.form__form-group-label='E-mail'
+              div.form__form-group-field
+                .form__form-group-input-wrap
+                  input(placeholder='example@mail.com', type='email')
+                  span.form__form-group-error='Invalid email address'
+            .form__form-group
+              span.form__form-group-label='Url'
+              div.form__form-group-field
+                .form__form-group-input-wrap
+                  input(placeholder='https://themeforest.net')
+                  span.form__form-group-error='Invalid url address'
+            .form__form-group
+              span.form__form-group-label='Password'
+              div.form__form-group-field
+                .form__form-group-input-wrap
+                  input(placeholder='Password', type='password')
+                  span.form__form-group-error='The password is incorrect'
+                button.form__form-group-button.passwordClick
+                  +icon('form', 'eye')
+            .form__form-group
+              span.form__form-group-label='Select Option'
+              div.form__form-group-field
+                select(data-placeholder="Select...", class="basic-form-select chosen-select", style="width: 100%;", name='select')
+                  option(value='one')='One'
+                  option(value='two')='Two'
+            .form__form-group
+              div.form__form-group-field
+                +check-box('checkbox-btn')
+                  = 'Remember me'
+            .form__button-toolbar.btn-toolbar
+              button.btn.btn-primary='Submit'
+              button.btn.btn-secondary='Cancel'
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Horizontal form validate 2',
+          [{'type': 'normal', 'text': 'Errors are above fields, use class super '}, {'type': 'red', 'text': 'form__form-group-input-wrap--error-above'}])
+          form.form.form--horizontal
+            .form__form-group
+              span.form__form-group-label='Username'
+              div.form__form-group-field
+                .form__form-group-input-wrap.form__form-group-input-wrap--error-above
+                  input(placeholder='Name')
+                  span.form__form-group-error='Username field should not empty'
+            .form__form-group
+              span.form__form-group-label='E-mail'
+              div.form__form-group-field
+                .form__form-group-input-wrap.form__form-group-input-wrap--error-above
+                  input(placeholder='example@mail.com', type='email')
+                  span.form__form-group-error='Invalid email address'
+            .form__form-group
+              span.form__form-group-label='Url'
+              div.form__form-group-field
+                .form__form-group-input-wrap.form__form-group-input-wrap--error-above
+                  input(placeholder='https://themeforest.net')
+                  span.form__form-group-error='Invalid url address'
+            .form__form-group
+              span.form__form-group-label='Password'
+              div.form__form-group-field
+                .form__form-group-input-wrap.form__form-group-input-wrap--error-above
+                  input(placeholder='Password', type='password')
+                  span.form__form-group-error='The password is incorrect'
+                button.form__form-group-button.passwordClick
+                  +icon('form', 'eye')
+            .form__form-group
+              span.form__form-group-label='Select Option'
+              div.form__form-group-field
+                select(data-placeholder="Select...", class="basic-form-select chosen-select", style="width: 100%;", name='select')
+                  option(value='one')='One'
+                  option(value='two')='Two'
+            .form__form-group
+              div.form__form-group-field
+                +check-box('checkbox-btn')
+                  = 'Remember me'
+            .form__button-toolbar.btn-toolbar
+              button.btn.btn-primary='Submit'
+              button.btn.btn-secondary='Cancel'
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Vertical form validate', [{'type': 'normal', 'text': 'Errors are under fields'}])
+          form.form.form--horizontal
+            .form__form-group
+              span.form__form-group-label='Username'
+              div.form__form-group-field
+                .form__form-group-input-wrap
+                  input(placeholder='Name')
+                  span.form__form-group-error='Username field should not empty'
+            .form__form-group
+              span.form__form-group-label='E-mail'
+              div.form__form-group-field
+                .form__form-group-input-wrap
+                  input(placeholder='example@mail.com', type='email')
+                  span.form__form-group-error='Invalid email address'
+            .form__form-group
+              span.form__form-group-label='Url'
+              div.form__form-group-field
+                .form__form-group-input-wrap
+                  input(placeholder='https://themeforest.net')
+                  span.form__form-group-error='Invalid url address'
+            .form__form-group
+              span.form__form-group-label='Password'
+              div.form__form-group-field
+                .form__form-group-input-wrap
+                  input(placeholder='Password', type='password')
+                  span.form__form-group-error='The password is incorrect'
+                button.form__form-group-button.passwordClick
+                  +icon('form', 'eye')
+            .form__form-group
+              span.form__form-group-label='Select Option'
+              div.form__form-group-field
+                select(data-placeholder="Select...", class="basic-form-select chosen-select", style="width: 100%;", name='select')
+                  option(value='one')='One'
+                  option(value='two')='Two'
+            .form__form-group
+              div.form__form-group-field
+                +check-box('checkbox-btn')
+                  = 'Remember me'
+            .form__button-toolbar.btn-toolbar
+              button.btn.btn-primary='Submit'
+              button.btn.btn-secondary='Cancel'
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Vertical form validate 2',
+          [{'type': 'normal', 'text': 'Errors are above fields, use class super '}, {
+            'type': 'red',
+            'text': 'form__form-group-input-wrap--error-above'
+          }])
+          form.form
+            .form__form-group
+              span.form__form-group-label='Username'
+              div.form__form-group-field
+                .form__form-group-input-wrap.form__form-group-input-wrap--error-above
+                  input(placeholder='Name')
+                  span.form__form-group-error='Username field should not empty'
+            .form__form-group
+              span.form__form-group-label='E-mail'
+              div.form__form-group-field
+                .form__form-group-input-wrap.form__form-group-input-wrap--error-above
+                  input(placeholder='example@mail.com', type='email')
+                  span.form__form-group-error='Invalid email address'
+            .form__form-group
+              span.form__form-group-label='Url'
+              div.form__form-group-field
+                .form__form-group-input-wrap.form__form-group-input-wrap--error-above
+                  input(placeholder='https://themeforest.net')
+                  span.form__form-group-error='Invalid url address'
+            .form__form-group
+              span.form__form-group-label='Password'
+              div.form__form-group-field
+                .form__form-group-input-wrap.form__form-group-input-wrap--error-above
+                  input(placeholder='Password', type='password')
+                  span.form__form-group-error='The password is incorrect'
+                button.form__form-group-button.passwordClick
+                  +icon('form', 'eye')
+            .form__form-group
+              span.form__form-group-label='Select Option'
+              div.form__form-group-field
+                select(data-placeholder="Select...", class="basic-form-select chosen-select", style="width: 100%;", name='select')
+                  option(value='one')='One'
+                  option(value='two')='Two'
+            .form__form-group
+              div.form__form-group-field
+                +check-box('checkbox-btn')
+                  = 'Remember me'
+            .form__button-toolbar.btn-toolbar
+              button.btn.btn-primary='Submit'
+              button.btn.btn-secondary='Cancel'

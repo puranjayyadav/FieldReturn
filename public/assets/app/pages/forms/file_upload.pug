@@ -1,0 +1,25 @@
+extends ../../blocks/layout
+block layout
+  - var active_page = 'forms_file_upload'
+
+block content
+  .container.todo-app
+    .row
+      .col-md-12
+        h3.page-title='File upload'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-md-12.col-lg-12.col-xl-6
+        +card('File upload default', [{'type': 'normal', 'text': 'For files upload'}])
+          form.form
+            +dropzone('1', 'dropzone--single')
+            .form__button-toolbar.btn-toolbar
+              button(type="submit", class="btn btn-primary")='Submit'
+              button(type="reset", class="btn btn-secondary")='Cancel'
+      .col-md-12.col-lg-12.col-xl-6
+        +card('File upload custom height', [{'type': 'normal', 'text': 'For files upload, use property '}, {'type': 'red', 'text': 'customHeight'}])
+          form.form
+            +dropzone('2', 'dropzone--single dropzone--custom-height')
+            .form__button-toolbar.btn-toolbar
+              button(type="submit", class="btn btn-primary")='Submit'
+              button(type="reset", class="btn btn-secondary")='Cancel'

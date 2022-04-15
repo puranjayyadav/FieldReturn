@@ -1,0 +1,109 @@
+mixin booking-dashboard()
+  .container
+    .dashboards
+      .row
+        .col-md-12
+          h3.page-title='Booking Dashboard'
+      .row
+        .col-12.col-md-12.col-lg-6.col-xl-3
+          .card
+            .dashboard__booking-card.card-body
+              .dashboard__booking-total-container
+                h5.dashboard__booking-total-title.dashboard__booking-total-title--red='$ 465 832'
+                +icon('dashboards', 'trending-down')(class='dashboard__trend-icon', width=24, height=24)
+              h5.dashboard__booking-total-description="Total profit earned"
+              +progress-bar('middle', null, 'red', 87, '87%')
+        .col-12.col-md-12.col-lg-6.col-xl-3
+          .card
+            .dashboard__booking-card.card-body
+              .dashboard__booking-total-container
+                h5.dashboard__booking-total-title.dashboard__booking-total-title--green='1 472'
+                +icon('dashboards', 'trending-up')(class='dashboard__trend-icon', width=24, height=24)
+              h5.dashboard__booking-total-description='TOTAL BOOKINGS'
+              +progress-bar('middle', null, 'lime-gradient', 32, '32%')
+        .col-12.col-md-12.col-lg-6.col-xl-3
+          .card
+            .dashboard__booking-card.card-body
+              .dashboard__booking-total-container
+                h5.dashboard__booking-total-title.dashboard__booking-total-title--blue='3 235'
+                +icon('dashboards', 'trending-up')(class='dashboard__trend-icon', width=24, height=24)
+              h5.dashboard__booking-total-description="TOTAL CUSTOMERS"
+              +progress-bar('middle', null, 'blue-gradient', 79, '79%')
+        .col-12.col-md-12.col-lg-6.col-xl-3
+          .card
+            .dashboard__booking-card.card-body
+              .dashboard__booking-total-container
+                h5.dashboard__booking-total-title.dashboard__booking-total-title="34"
+                +icon('dashboards', 'trending-up')(class='dashboard__trend-icon', width=24, height=24)
+              h5.dashboard__booking-total-description="BOOKING CANCELS"
+              +progress-bar('middle', null, 'turquoise-gradient', 45, '45%')
+      .row
+        .col-md-12.col-lg-6.col-xl-3
+          +panel('RESERVATIONS', 'reservations', 'Reservation overview', null, null, null, null, 'dashboard__booking-reservations-panel card')
+            .dashboard__booking-reservations
+              p.dashboard__booking-reservations-title="Total visitors on 23.08.2018"
+              p.dashboard__booking-reservations-number="345"
+              .dashboard__booking-reservations-chart
+                +echartjs('booking-dashboard-reservation', null, '300px')
+                a(href="/").dashboard__booking-reservations-link="Download report"
+                  +icon('dashboards', 'arrow')(style="fill: #48b5ff;").mdi-icon.dashboard__booking-reservations-link-icon
+          div
+            .dashboard__booking-our-mission
+              +icon('dashboards', 'aim')(style="fill: #fff")
+              p.dashboard__booking-our-mission-title="Our mission"
+              p="We are inspired by the customer's happiness and their ability to travel! "
+        .col-md-12.col-lg-6.col-xl-3
+          +panel('WEEKLY STAT', 'weekly-stat', 'Top selling items statistic by last month').card.dashboard__booking-reservations-panel
+            .dashboard__weekly-stat
+              .dashboard__weekly-stat-chart
+                .dashboard__weekly-stat-chart-item
+                  .dashboard__weekly-stat-chart-pie
+                    +echartjs('booking-dashboard-weekly-stat-1', null, '100%')
+                    p(style="color: rgb(184, 233, 134);").dashboard__weekly-stat-label="78%"
+                  .dashboard__weekly-stat-info
+                    p="Customers satisfaction rate"
+                .dashboard__weekly-stat-chart-item
+                  .dashboard__weekly-stat-chart-pie
+                    +echartjs('booking-dashboard-weekly-stat-2', null, '100%')
+                    p(style="color: rgb(255, 72, 97);").dashboard__weekly-stat-label="25%"
+                  .dashboard__weekly-stat-info
+                    p="Customers satisfaction rate"
+              hr
+              .panel__title
+                h5.bold-text="Social score"
+              .dashboard__social-stat
+                .dashboard__social-stat-item
+                  .dashboard__social-stat-title="Booking.com"
+                  +progress-bar('middle', null, 'blue', 87, '87%')
+                .dashboard__social-stat-item
+                  .dashboard__social-stat-title="Airbnb"
+                  +progress-bar('middle', null, 'blue', 65, '65%')
+                .dashboard__social-stat-item
+                  .dashboard__social-stat-title="Tripadvisor"
+                  +progress-bar('middle', null, 'blue', 92, '92%')
+                .dashboard__social-stat-item
+                  .dashboard__social-stat-title="Tripadvisor"
+                  +progress-bar('middle', null, 'blue', 81, '81%')
+        .col-md-12.col-lg-12.col-xl-6
+          +panel('OCCUPANCY', 'occupancy', 'See how effective your business is')
+            +echartjs('booking-dashboard-occupancy', null, '260px')
+            hr
+            div
+              +table-colored(
+                {
+                  wrap: 'table-responsive', table: 'table dashboard__occupancy-table table'
+                },
+                {
+                  items: [
+                    ['Arrivals', 24, 74, 54, 57, 32, 68, 53],
+                    ['Departures', 75, 65, 46, 35, 65, 21, 34],
+                    ['Stay overs', 3113, 2424, 4545, 4543, 3432, 3211, 2112],
+                    ['Customers', 131, 133, 343, 342, 351, 234, 242]
+                  ]
+                },
+                {
+                  colors: ['blue', 'green']
+                }
+              )
+
+

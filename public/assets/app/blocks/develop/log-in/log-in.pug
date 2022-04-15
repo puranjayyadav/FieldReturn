@@ -1,0 +1,42 @@
+mixin log-in(classes)
+  div(class=`account log-in ${classes || ""}`)
+    .account__wrapper
+      .account__card
+        .account__head
+          h3.account__title='Welcome to '
+            span.account__logo='Easy'
+              span.account__logo-accent='DEV'
+          h4.account__subhead.subhead='Start your business easily'
+        form.form
+          .form__form-group
+            span.form__form-group-label='Username'
+            div.form__form-group-field
+              .form__form-group-icon
+                svg(width=24, height=24)
+                  use(xlink:href=`@symbol#form__account-outline`)
+              input(placeholder='Name', type='text')
+          .form__form-group
+            span.form__form-group-label='Password'
+            div.form__form-group-field
+              .form__form-group-icon
+                svg(width=24, height=24)
+                  use(xlink:href=`@symbol#form__key-variant`)
+              input(placeholder='Password', type='password')
+              button.form__form-group-button.passwordClick
+                +icon('form', 'eye')(width=24, height=24)
+            .account__forgot-password
+              a(href='/')='Forgot a password?'
+          .form__form-group
+            div.form__form-group-field
+              +check-box('checkbox-btn')
+                = 'Remember me'
+          .account__btns
+            a.btn.btn-primary.account__btn(href="dashboards/online_marketing_dashboard")='Sign In'
+            a.btn.btn-outline-primary.account__btn(href="account/register")='Create Account'
+        .account__or
+          p='Or Easily Using'
+        .account__social
+          a.account__social-btn.account__social-btn--facebook(href="dashboards/online_marketing_dashboard")
+            +icon('log-in', 'facebook')
+          a.account__social-btn.account__social-btn--google(href="dashboards/online_marketing_dashboard")
+            +icon('log-in', 'google-plus')

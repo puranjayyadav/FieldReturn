@@ -1,0 +1,32 @@
+.btn-group {
+  border-radius: 5px;
+  margin-bottom: -10px;
+
+  .btn {
+    margin-right: 0;
+    padding: 10px 15px;
+    font-weight: 500;
+  }
+
+  &.btn-group--justified {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .btn {
+      width: 100%;
+    }
+  }
+
+  &.btn-group--icons {
+
+    .btn {
+      padding: 7px 8px;
+      line-height: 14px;
+    }
+  }
+
+  &.open .dropdown-toggle {
+    box-shadow: none;
+  }
+}

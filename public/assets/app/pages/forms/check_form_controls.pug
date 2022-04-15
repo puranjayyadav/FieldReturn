@@ -1,0 +1,190 @@
+extends ../../blocks/layout
+block layout
+  - var active_page = 'forms_check_form_controls'
+
+block content
+  .container.todo-app
+    .row
+      .col-md-12
+        h3.page-title='Check Form Controls'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Default controls', [{'type': 'normal', 'text': 'Checkboxes and radio buttons'}])
+          .form.form--preview
+            div
+              p='Select color'
+              .form__select-color
+                each item,index in ['rgb(76, 225, 182)', 'rgb(112, 187, 253)', 'rgb(250, 74, 134)', 'rgb(246, 218, 110)','rgb(126, 211, 33)', 'rgb(182, 53, 186)', 'rgb(255, 72, 97)', 'rgb(56, 195, 215)', 'rgb(249, 131, 48)']
+                  .form__form-group
+                    .form__form-group-field
+                      +check-box(index + 'a', 'checkbox-btn checkbox-btn--colored', index + 'a', `background: ${item} none repeat scroll 0% 0%; border-color:${item};`)(checked=(index === 0))
+            div
+              each item,index in ['Checkbox 1', 'Checkbox 2', 'Checkbox Disabled', 'Disabled & checked']
+                .form__form-group
+                  .form__form-group-field
+                    +check-box('-c'+index, `checkbox-btn ${index>1 ? 'disabled' : ''}`, '-c'+index)(checked = (index===0 || index ===3))=item
+            div
+              each item,index in ['Radio button  1', 'Radio button  2', 'Radio button disabled']
+                .form__form-group
+                  .form__form-group-field
+                    +radio-btn('-r', `${index > 1 ? 'disabled' : ''}`)(checked = index===0 || index ===3)=item
+              +radio-btn('-r1', 'disabled')(checked)='Radio button disabled & checked'
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Colored controls', [{'type': 'normal', 'text': 'Checkboxes and radio buttons. Use class '}, {'type': 'red', 'text': 'colored'}])
+          .form.form--preview
+            div
+              p='Select color'
+              .form__select-color
+                each item,index in ['rgb(76, 225, 182)', 'rgb(112, 187, 253)', 'rgb(250, 74, 134)', 'rgb(246, 218, 110)','rgb(126, 211, 33)', 'rgb(182, 53, 186)', 'rgb(255, 72, 97)', 'rgb(56, 195, 215)', 'rgb(249, 131, 48)']
+                  .form__form-group
+                    .form__form-group-field
+                      +check-box(index + 'cc', 'checkbox-btn checkbox-btn--colored', index+'cc', `background: ${item} none repeat scroll 0% 0%; border-color:${item};`)(checked=(index === 0))
+            div
+              each item,index in ['Checkbox 1', 'Checkbox 2', 'Checkbox Disabled', 'Disabled & checked']
+                .form__form-group
+                  .form__form-group-field
+                    +check-box('-ca'+index, `checkbox-btn checkbox-btn--colored ${index > 1 ? 'disabled' : ''}`, '-ca'+index)(checked = (index === 0 || index === 3))=item
+            div
+              each item,index in ['Radio button  1', 'Radio button  2', 'Radio button disabled']
+                .form__form-group
+                  .form__form-group-field
+                    +radio-btn('-ra', `radio-btn--colored ${index > 1 ? 'disabled' : ''}`)(checked = (index===0 || index ===3))=item
+              +radio-btn('-r2', 'disabled')(checked)='Radio button disabled & checked'
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Colored controls on click', [{'type': 'normal', 'text': 'Checkboxes and radio buttons. Use class '}, {'type': 'red', 'text': 'colored-click'}])
+          .form.form--preview
+            div
+              p='Select color'
+              .form__select-color
+                each item,index in ['rgb(76, 225, 182)', 'rgb(112, 187, 253)', 'rgb(250, 74, 134)', 'rgb(246, 218, 110)','rgb(126, 211, 33)', 'rgb(182, 53, 186)', 'rgb(255, 72, 97)', 'rgb(56, 195, 215)', 'rgb(249, 131, 48)']
+                  .form__form-group
+                    .form__form-group-field
+                      +check-box(index + 'b', 'checkbox-btn checkbox-btn--colored', index+'b', `background: ${item} none repeat scroll 0% 0%; border-color:${item};`)(checked=(index === 0))
+            div
+              each item,index in ['Checkbox 1', 'Checkbox 2', 'Checkbox Disabled', 'Disabled & checked']
+                .form__form-group
+                  .form__form-group-field
+                    +check-box('-cb'+index, `checkbox-btn checkbox-btn--colored-click ${index > 1 ? 'disabled' : ''}`, '-cb'+index)(checked = (index === 0 || index === 3))=item
+            div
+              each item,index in ['Radio button  1', 'Radio button  2', 'Radio button disabled']
+                .form__form-group
+                  .form__form-group-field
+                    +radio-btn('-rb', `radio-btn--colored-click ${index > 1 ? 'disabled' : ''}`)(checked = (index === 0 || index === 3))=item
+              +radio-btn('-r3', 'disabled')(checked)='Radio button disabled & checked'
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Button type controls', [{'type': 'normal', 'text': 'Checkboxes and radio buttons. Use class '}, {'type': 'red', 'text': 'button'}])
+          .form.form--preview
+            div
+              p='Select color'
+              .form__select-color
+                each item,index in ['rgb(76, 225, 182)', 'rgb(112, 187, 253)', 'rgb(250, 74, 134)', 'rgb(246, 218, 110)','rgb(126, 211, 33)', 'rgb(182, 53, 186)', 'rgb(255, 72, 97)', 'rgb(56, 195, 215)', 'rgb(249, 131, 48)']
+                  .form__form-group
+                    .form__form-group-field
+                      +check-box(index + 'c', 'checkbox-btn checkbox-btn--colored', index + 'c', `background: ${item} none repeat scroll 0% 0%; border-color:${item};`)(checked=index === 0)
+            div
+              .form__form-group
+                .form__form-group-field
+                  label.checkbox-btn.checkbox-btn--button
+                    input.checkbox-btn__checkbox(type='checkbox', checked="")
+                    span.checkbox-btn__checkbox-custom
+                      svg(width=24, height=24)
+                        use(xlink:href=`@symbol#inbox__check`)
+                    span.checkbox-btn__label-svg
+                      svg.checkbox-btn__label-check(width=24, height=24)
+                        use(xlink:href=`@symbol#inbox__check`)
+                      svg.checkbox-btn__label-uncheck(width=24, height=24)
+                        use(xlink:href=`@symbol#inbox__close`)
+                    span.checkbox-btn__label="Checkbox 1"
+              .form__form-group
+                .form__form-group-field
+                  label.checkbox-btn.checkbox-btn--button
+                    input.checkbox-btn__checkbox(type='checkbox')
+                    span.checkbox-btn__checkbox-custom
+                      svg(width=24, height=24)
+                        use(xlink:href=`@symbol#inbox__check`)
+                    span.checkbox-btn__label-svg
+                      svg.checkbox-btn__label-check(width=24, height=24)
+                        use(xlink:href=`@symbol#inbox__check`)
+                      svg.checkbox-btn__label-uncheck(width=24, height=24)
+                        use(xlink:href=`@symbol#inbox__close`)
+                    span.checkbox-btn__label="Checkbox 2"
+              .form__form-group
+                .form__form-group-field
+                  label.checkbox-btn.disabled.checkbox-btn--button
+                    input.checkbox-btn__checkbox(type='checkbox')
+                    span.checkbox-btn__checkbox-custom
+                      svg(width=24, height=24)
+                        use(xlink:href=`@symbol#inbox__check`)
+                    span.checkbox-btn__label-svg
+                      svg.checkbox-btn__label-check(width=24, height=24)
+                        use(xlink:href=`@symbol#inbox__check`)
+                      svg.checkbox-btn__label-uncheck(width=24, height=24)
+                        use(xlink:href=`@symbol#inbox__close`)
+                    span.checkbox-btn__label="Checkbox Disabled"
+              .form__form-group
+                .form__form-group-field
+                  label.checkbox-btn.disabled.checkbox-btn--button
+                    input.checkbox-btn__checkbox(type='checkbox', checked="")
+                    span.checkbox-btn__checkbox-custom
+                      svg(width=24, height=24)
+                        use(xlink:href=`@symbol#inbox__check`)
+                    span.checkbox-btn__label-svg
+                      svg.checkbox-btn__label-check(width=24, height=24)
+                        use(xlink:href=`@symbol#inbox__check`)
+                      svg.checkbox-btn__label-uncheck(width=24, height=24)
+                        use(xlink:href=`@symbol#inbox__close`)
+                    span.checkbox-btn__label="Disabled & checked"
+            div
+              .form__form-group
+                .form__form-group-field
+                  label.radio-btn.radio-btn--button
+                    input.radio-btn__radio(type='radio', name='radio', checked='')
+                    span.radio-btn__radio-custom
+                      svg(width=24, height=24)
+                        use(xlink:href=`@symbol#inbox__check`)
+                    span.radio-btn__label-svg
+                      svg.radio-btn__label-check(width=24, height=24)
+                        use(xlink:href=`@symbol#inbox__check`)
+                      svg.radio-btn__label-uncheck(width=24, height=24)
+                        use(xlink:href=`@symbol#inbox__close`)
+                    span.radio-btn__label="Radio button 1"
+              .form__form-group
+                .form__form-group-field
+                  label.radio-btn.radio-btn--button
+                    input.radio-btn__radio(type='radio', name='radio')
+                    span.radio-btn__radio-custom
+                      svg(width=24, height=24)
+                        use(xlink:href=`@symbol#inbox__check`)
+                    span.radio-btn__label-svg
+                      svg.radio-btn__label-check(width=24, height=24)
+                        use(xlink:href=`@symbol#inbox__check`)
+                      svg.radio-btn__label-uncheck(width=24, height=24)
+                        use(xlink:href=`@symbol#inbox__close`)
+                    span.radio-btn__label="Radio button 2"
+              .form__form-group
+                .form__form-group-field
+                  label.radio-btn.disabled.radio-btn--button
+                    input.radio-btn__radio(type='radio', name='radio')
+                    span.radio-btn__radio-custom
+                      svg(width=24, height=24)
+                        use(xlink:href=`@symbol#inbox__check`)
+                    span.radio-btn__label-svg
+                      svg.radio-btn__label-check(width=24, height=24)
+                        use(xlink:href=`@symbol#inbox__check`)
+                      svg.radio-btn__label-uncheck(width=24, height=24)
+                        use(xlink:href=`@symbol#inbox__close`)
+                    span.radio-btn__label="Radio button disabled"
+              .form__form-group
+                .form__form-group-field
+                  label.radio-btn.disabled.radio-btn--button
+                    input.radio-btn__radio(type='radio', name='radio1', checked='')
+                    span.radio-btn__radio-custom
+                      svg(width=24, height=24)
+                        use(xlink:href=`@symbol#inbox__check`)
+                    span.radio-btn__label-svg
+                      svg.radio-btn__label-check(width=24, height=24)
+                        use(xlink:href=`@symbol#inbox__check`)
+                      svg.radio-btn__label-uncheck(width=24, height=24)
+                        use(xlink:href=`@symbol#inbox__close`)
+                    span.radio-btn__label="Disabled & checked"

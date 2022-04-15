@@ -1,0 +1,161 @@
+include components/chat-contact
+include components/chat-message
+mixin chat()
+  .chat(role='presentation')
+    .chat__contact-list
+      .chat__search
+        input.chat__search-input(placeholder="Search")
+        svg(width=24, height=24)
+          use(xlink:href=`@symbol#chat__magnify`)
+      .chat__contacts
+        section.scroll.chat__contacts-scroll(style="overflow: hidden; outline: currentcolor none medium;")
+          div.scroll-content
+            .div
+              +chat-contact({
+                img: 'static/topbar/img/11.png',
+                name: 'Peter Jackson',
+                post: 'Designer',
+                active: true,
+                message: 'Eldest father can design tastes did joy settle. Roused future he ye an marked. Arose mr rapid in so vexed words. Gay welcome led add lasting chiefly say looking. ',
+              })
+              +chat-contact({
+                img: 'static/topbar/img/12.png',
+                name: 'Lora Melbourn',
+                post: 'Marketologist',
+                message: 'new contact',
+              })
+              +chat-contact({
+                img: 'static/topbar/img/15.png',
+                name: 'Cat Mew',
+                post: 'Backend Developer',
+                message: 'Unpleasing pianoforte unreserved as oh he unpleasant no inquietude insipidity. ',
+              })
+              +chat-contact({
+                img: 'static/topbar/img/14.png',
+                name: 'Liza Orly',
+                post: 'Senior Frontend Developer',
+                message: 'Unpleasing pianoforte unreserved as oh he unpleasant no inquietude insipidity. ',
+              })
+              +chat-contact({
+                img: 'static/topbar/img/24_mail_ava.png',
+                name: 'Michael Bro',
+                post: 'Backend Developer',
+                message: 'Unpleasing pianoforte unreserved.',
+              })
+    .chat__dialog
+      .chat__topbar
+        button#chat-mobile-button.chat__topbar-button.chat__topbar-button--menu(type="button")
+          svg.chat__topbar-button-icon(width=24, height=24)
+            use(xlink:href=`@symbol#chat__burger`)
+        .chat__topbar-contact
+          p.chat__topbar-contact-name='Peter Jackson'
+          p.chat__topbar-contact-post='Designer'
+        .chat__topbar-right
+          .chat__topbar-controls
+            button.chat__topbar-button
+              svg.chat__topbar-button-icon(width=24, height=24)
+                use(xlink:href=`@symbol#chat__video`)
+            button.chat__topbar-button
+              svg.chat__topbar-button-icon(width=24, height=24)
+                use(xlink:href=`@symbol#chat__phone`)
+            button.chat__topbar-button
+              svg.chat__topbar-button-icon(width=24, height=24)
+                use(xlink:href=`@symbol#chat__star`)
+          button.chat__topbar-button(type='button')
+            svg.chat__topbar-button-icon(width=24, height=24)
+              use(xlink:href=`@symbol#chat__dots-vertical`)
+      section.scroll.chat__scroll(style="overflow: hidden; outline: currentcolor none medium;")
+        div.scroll-content
+          .div
+            .chat__dialog-messages-wrap.chat1
+              .chat__dialog-messages
+                +chat-message({
+                  img: 'static/topbar/img/11.png',
+                  name: 'Peter Jackson',
+                  message: 'Of be talent me answer do relied. Mistress in on so laughing throwing endeavor occasion welcomed. Gravity sir brandon calling can. No years do widow house delay stand. Prospect six kindness use steepest new ask.🙏',
+                  date: '10:21 AM'
+                })
+                +chat-message({
+                  img: 'static/topbar/img/ava.png',
+                  name: 'Roman Johanson',
+                  message: 'Reasonably how possession shy way introduced age inquietude. Missed he engage no exeter of 🙏',
+                  date: '10:21 AM'
+                })
+                +chat-message({
+                  img: 'static/topbar/img/11.png',
+                  name: 'Peter Jackson',
+                  file: {
+                    url: 'static/topbar/img/landing/demos/default_light.png',
+                    title: 'Sales static.png',
+                    size: '2,1'
+                  },
+                  date: '10:21 AM'
+                })
+                +chat-message({
+                  img: 'static/topbar/img/ava.png',
+                  name: 'Roman Johanson',
+                  message: 'Hello. Sounds good, Thank you 👌',
+                  date: '10:21 AM'
+                })
+                +chat-message({
+                  img: 'static/topbar/img/11.png',
+                  name: 'Peter Jackson',
+                  message: 'Eldest father can design tastes did joy settle. Roused future he ye an marked. Arose mr rapid in so vexed words. Gay welcome led add lasting chiefly say looking. ',
+                  date: '10:21 AM'
+                })
+            .chat__dialog-messages-wrap.chat2
+              .chat__dialog-messages
+                .chat__dialog-messages-empty
+                  p='No messages'
+            .chat__dialog-messages-wrap.chat3
+              .chat__dialog-messages
+                +chat-message({
+                  img: 'static/topbar/img/ava.png',
+                  name: 'Roman Johanson',
+                  message: 'Knowledge nay estimable questions repulsive daughters boy. Solicitude gay way unaffected expression for. His mistress ladyship required off horrible disposed rejoiced. Unpleasing pianoforte unreserved as oh he unpleasant no inquietude insipidity. ',
+                  date: '10:22 AM'
+                })
+                +chat-message({
+                  img: 'static/topbar/img/15.png',
+                  name: 'Cat Mew',
+                  message: 'Solicitude gay way unaffected expression for?🙏',
+                  date: '12:12 PM'
+                })
+                +chat-message({
+                  img: 'static/topbar/img/ava.png',
+                  name: 'Roman Johanson',
+                  message: 'Unpleasing pianoforte unreserved as oh he unpleasant no inquietude insipidity. ',
+                  date: '10:35 PM'
+                })
+            .chat__dialog-messages-wrap.chat4
+              .chat__dialog-messages
+                +chat-message({
+                  img: 'static/topbar/img/ava.png',
+                  name: 'Roman Johanson',
+                  message: 'Reasonably how possession shy way introduced age inquietude. Missed he engage no exeter of 🙏',
+                  date: '10:21 AM'
+                })
+            .chat__dialog-messages-wrap.chat5
+              .chat__dialog-messages
+                +chat-message({
+                  img: 'static/topbar/img/24_mail_ava.png',
+                  name: 'Michael Bro',
+                  message: 'Unpleasing pianoforte unreserved as oh he unpleasant no inquietude insipidity. ',
+                  date: '12:35 PM'
+                })
+                +chat-message({
+                  img: 'static/topbar/img/24_mail_ava.png',
+                  name: 'Michael Bro',
+                  message: 'Reasonably how possession shy way introduced age inquietude. Missed he engage no exeter of 🙏',
+                  date: '12:35 PM'
+                })
+      .chat__text-field
+        form.chat__form
+          input.chat__field-input.form-control(name='chatField', placeholder='Type here...', type='text')
+          .chat__field-controls
+            button.chat__icon-button(type="button")
+              svg.chat__topbar-button-icon(width=24, height=24)
+                use(xlink:href=`@symbol#chat__emoticon`)
+            button.chat__icon-button(type="button")
+              svg.chat__topbar-button-icon(width=24, height=24)
+                use(xlink:href=`@symbol#chat__paperclip`)

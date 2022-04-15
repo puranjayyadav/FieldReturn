@@ -1,0 +1,13 @@
+mixin check-box(name, classes, prefix, style, isThrough, check)
+  -var rand = prefix ? prefix :  Math.floor(Math.random() * 100);
+  label(class=`${classes ? classes : 'check-box checkbox-btn checkbox-btn--colored-click inbox__emails-control-checkbox'}`, for=`checkbox-${rand}`)
+    input(id=`checkbox-${rand}`, class="checkbox-btn__checkbox", type="checkbox", name=name, checked=check)&attributes(
+    attributes)
+    span.checkbox-btn__checkbox-custom(style=`${style || ''}`)
+      +icon('inbox', 'check')(width=24, height=24)
+    if (!isThrough)
+      span.checkbox-btn__label
+        block
+    else
+      span.checkbox-btn__label.todo__checkbox-label
+        block

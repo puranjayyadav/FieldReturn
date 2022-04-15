@@ -1,0 +1,128 @@
+include map
+//- Layout
+
+block layout
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    meta(name="theme-color", content="#000000")
+    title EasyDev
+    base(href="/")
+    link(href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900", rel="stylesheet")
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css")
+    link(rel="stylesheet", href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css")
+    link(rel="stylesheet", href="https://cdn.materialdesignicons.com/3.6.95/css/materialdesignicons.min.css")
+    link(rel="stylesheet", type="text/css", href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css")
+    link(rel="stylesheet", type="text/css", href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css")
+    link(rel="stylesheet", type="text/css", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css")
+    link(rel="stylesheet", type="text/css", href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css")
+    link(rel="stylesheet", type="text/css", href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css")
+    link(rel="stylesheet", type="text/css", href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.css")
+    link(rel="stylesheet", type="text/css", href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.css")
+    link(rel="stylesheet", type="text/css", href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.monolith.min.css")
+    link(rel="stylesheet", type="text/css", href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.nano.min.css")
+    link(rel="stylesheet", type="text/css", href="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.1/chartist.min.css")
+    link(rel="stylesheet", type="text/css", href="https://fonts.googleapis.com/icon?family=Material+Icons")
+    link(rel="stylesheet", type="text/css", href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css")
+    link(rel="shortcut icon" href="favicons/favicon.ico" type="image/x-icon")
+    link(rel="icon" href="favicons/favicon-16x16.png" sizes="16x16" type="image/png")
+    link(rel="icon" href="favicons/favicon-32x32.png" sizes="32x32" type="image/png")
+    block style
+    script(
+      src="https://code.jquery.com/jquery-3.4.1.min.js",
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=",
+      crossorigin="anonymous"
+    )
+    script(src="https://maps.googleapis.com/maps/api/js?key=&v=3.exp&libraries=geometry,drawing,places")
+    script(src="scripts/tinymce/tinymce.min.js")
+    // @include:styles
+  body.app
+    // GAP:Header
+
+    <!-- BEMGO:symbol -->
+    .theme-light.theme
+      .wrapper
+        main
+          div
+            .layout
+              .customizer
+                button.customizer__btn
+                  img.customizer__btn-icon(src="static/topbar/customizer.svg", alt="customizer")
+                .customizer__wrap
+                  .customizer__title-wrap
+                    h5='Theme Customizer'
+                    button.customizer__close-btn
+                      svg.mdi-icon(width="24", height="24", fill="currentColor", viewBox="0 0 24 24")
+                        path(d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z")
+                  p.customizer__caption='This customizer.svg allows you to see the different variations of the EasyDev. Create your own visual style for every project you do!'
+                  .toggle-btn.customizer__toggle
+                    input.toggle-btn__input(type="checkbox", name="collapse_toggle")
+                    button.toggle-btn__input-label='Toggle'
+                    span='Collapsed Menu'
+                  .toggle-btn.customizer__toggle
+                    input.toggle-btn__input(type="checkbox", name="top_menu_toggle")
+                    button.toggle-btn__input-label='Toggle'
+                    span='Top Menu'
+                  .toggle-btn.customizer__toggle
+                    input.toggle-btn__input(type="checkbox", name="theme_toggle")
+                    button.toggle-btn__input-label
+                    span="Dark Theme"
+                  .toggle-btn.customizer__toggle
+                    input.toggle-btn__input(type="checkbox", name="square_toggle")
+                    button.toggle-btn__input-label='Toggle'
+                    span='Squared borders'
+                  .toggle-btn.customizer__toggle
+                    input.toggle-btn__input(type="checkbox", name="shadow_toggle")
+                    button.toggle-btn__input-label='Toggle'
+                    span="Block's Shadows"
+              +topbar
+              +buy-now
+              +sidebar(active_page || false)
+            .container__wrap
+              block content
+    block extra-content
+    // @include:scripts
+    script
+      | $(document).ready(()=>Scrollbar.init(document.querySelector('.scroll')));
+      | $(document).ready(()=>document.querySelector('.chat__contacts-scroll') ? Scrollbar.init(document.querySelector('.chat__contacts-scroll')) : null);
+      | $(document).ready(()=>document.querySelector('.chat__scroll') ? Scrollbar.init(document.querySelector('.chat__scroll')) : null);
+      | $(document).ready(()=>$(".slick-slider:not(.slick-slider--single)").slick({
+      |       dots: true,
+      |       infinite: true,
+      |       speed: 500,
+      |       autoplay: true,
+      |       swipeToSlide: true,
+      |       slidesToScroll: 1,
+      |       responsive: [
+      |         { breakpoint: 768, settings: { slidesToShow: 1 } },
+      |         { breakpoint: 992, settings: { slidesToShow: 2 } },
+      |         { breakpoint: 1200, settings: { slidesToShow: 3 } },
+      |         { breakpoint: 100000, settings: { slidesToShow: 4 } },
+      |       ],
+      |     }));
+      | $(document).ready(()=>$(".slick-slider--single").slick({
+      |       dots: true,
+      |       infinite: true,
+      |       speed: 500,
+      |       autoplay: true,
+      |       swipeToSlide: true,
+      |       slidesToScroll: 1,
+      |       slidesToShow: 1,
+      |     }));
+      | RangeSlider('#slider1', {min: 0, max: 100, value: 0}).init()
+      | RangeSlider('#slider2', {min: 0, max: 129, value: 25}).init()
+      | DoubleRangeSlider('#slider3', {min: 0, max: 100, value1: 25, value2: 60}).init()
+      | RangeSlider('#slider4', {min: 0, max: 100, value: 25, marks: true, marksItems:[{val:0, left: 0},{val:10, left: 10},{val:20, left: 20},{val:30, left: 30},{val:40, left: 40},{val:50, left: 50},{val:60, left: 60},{val:70, left: 70},{val:80, left: 80},{val:90, left: 90},{val:100, left: 100},]}).init()
+      | $(document).ready(function () {
+      |   $('[data-toggle="tooltip"]').tooltip()
+      | })
+      | $(document).ready(function () {$('[data-toggle="popover"]').popover()})
+      | Dropzone.autoDiscover = false;
+      | $(document).ready(function(){
+      |   $("#documentation").sticky({topSpacing: 75});
+      | });
+      | $(".dashboard__table-finance td button.dropdown-item").on('click', function() { console.log($(this).parent().parent().parent().parent().remove())})
+      | $(".panel .collapse").on('show.bs.collapse', function(e) { $(this).closest('.panel').removeClass('panel--collapse')})
+      | $(".panel .collapse").on('hide.bs.collapse', function(e) { $(this).closest('.panel').addClass('panel--collapse')})

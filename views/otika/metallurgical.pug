@@ -1,0 +1,334 @@
+extends base
+block content			
+    // Main Content
+    .main-content
+        section.section
+            .section-body
+                .row.clearfix
+                    .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                        .card
+                            .card-header
+                                h4 Pump Data Submission
+                            .card-body
+                                form#wizard_with_validation
+                                    h3 Pump Data
+                                    fieldset
+                                        .form-group.form-float
+                                            .form-line
+                                                label Pump Type 
+                                                input#pumpType.form-control(type='text')
+
+                                            .form-line
+                                                label Serial Number
+                                                .input-group
+                                                    .input-group-prepend
+                                                        .input-group-text
+                                                            i.fas.fa-list-ol 
+                                                    input#serialNumber.form-control(type='text')
+                                                #pwindicator.pwindicator
+                                                    .bar
+                                                    .label
+
+
+
+                                            .form-line
+                                                label Failure Hours
+                                                select#failureHours.form-control
+                                                    option  0 - 50
+                                                    option 50 - 100
+                                                    option 100 - 200
+                                                    option 200 - 400
+                                                    option 400 - 500
+                                                    option 500 - 600
+                                                    option 600 - 700
+                                                    option 700 - 800
+                                                    option 800 - 900
+                                                    option  more than 1000 hours  
+                                            .form-line
+                                                label Customer
+                                                input#Customer.form-control.invoice-input(type='text')
+                                            .form-line
+                                                label OEM
+                                                input#OEM.form-control.invoice-input(type='text')
+                                            .form-line
+                                                label Date
+                                                input#Date.form-control.datemask(type='date' placeholder='YYYY/MM/DD')
+                                            .form-line
+                                                label City
+                                                input#city.form-control.invoice-input(type='text' placeholder='Eg: Jaipur')
+                                            .form-line
+                                                label State
+                                                input#state.form-control.invoice-input(type='text' placeholder='Eg: Rajasthan')
+                                            .form-line
+                                                label Country
+                                                input#country.form-control.invoice-input(type='text' placeholder='Eg: India')
+                                        .section-title Upload Photos of Front  , Top  , Side , Bottom , Right  , Left View
+                                        .custom-file
+                                            input#image.custom-file-input(type='file',accept ='image/*' ,name='image', multiple="multiple")
+                                            label.custom-file-label(for='image')   Front  , Top  , Side , Bottom , Right  , Left View
+                                            br
+                                            br
+                                            br
+                                            br
+                                        .form-group.mb-0.row
+                                            label.col-sm-3.col-form-label Complaint Description
+                                            .col-sm-9
+                                                textarea#complaintDescription.form-control(required='')
+                                                .invalid-feedback
+                                                    | Please specify complaint description
+                                    h3 Dimensional
+                                    fieldset
+                                        .form-group.form-float
+                                            .section-title Camplate Values
+
+                                            .form-line
+                                                label Camp taper 
+                                                input#DimensionalCamplateCamptaper.form-control(type='text')
+                                            .form-line
+                                                label TPI Values
+                                                input#DimensionalCamplateTPI.form-control( placeholder='TPI 1')
+                                                br
+                                                input.form-control( placeholder = 'TPI 2')
+
+                                                small.form-text.text-muted
+                                                | Please upload appropriate values of TPI 
+                                                br
+                                            .form-line
+                                                label Cam Profile
+                                                input#DimensionalCamplateCamProfile.form-control(type='text')
+                                                br
+                                            .form-line
+                                                label Rz Values
+                                                input#DimensionalCamplateRZMax.form-control(type='text', placeholder= 'R Max')
+                                            .form-line
+                                                label Rz Values
+                                                input#DimensionalCamplateRZMin.form-control(type='text', placeholder= 'R Min')
+                                            .section-title Roller Values
+
+                                            .form-line
+                                                label Sphericity 
+                                                input#DimensionalRollerSphericity.form-control(type='text')
+                                                br
+                                            .form-line
+                                                label Line Profile
+                                                input#DimensionalRollerLineProfile.form-control( placeholder='')    
+                                                br
+                                            .form-line
+                                                label Runout
+                                                input#DimensionalRolleRunout.form-control(type='text')
+                                            .form-line
+                                                label Ballekit
+                                                input#DimensionalRollerBallekit.form-control( placeholder='')
+                                            .section-title Ballekit Photo Upload
+                                            .custom-file
+                                                input#DimensionalRollerBallekitImages.custom-file-input(type='file',accept ='image/*' ,name='Ballekitimage', multiple="multiple")
+                                                label.custom-file-label(for='Ballekitimage')   Ballekit Photo Upload
+                                            .section-title Cross Disc
+                                            .form-line
+                                                label Claw Width 
+                                                input#DimensionalCrossDiscClawValue1.form-control(type='text' placeholder='Claw Width 1')
+                                                br
+                                                input#DimensionalCrossDiscClawValue2.form-control(type='text' placeholder='Claw Width 2')
+                                                br
+                                                input#DimensionalCrossDiscClawValue3.form-control(type='text' placeholder='Claw Width 3')
+                                                br
+                                                input#DimensionalCrossDiscClawValue4.form-control(type='text' placeholder='Claw Width 4')
+                                            br
+                                            .form-line
+                                                label Perpendicularity ( Claw To Face )
+                                                input#DimensionalPerpendicularity1.form-control( placeholder='Value 1')
+                                                br
+                                                input#DimensionalPerpendicularity2.form-control( placeholder = 'Value 2')
+
+                                                small.form-text.text-muted
+                                                | Please upload appropriate values of Perpendicularity 
+                                                br
+                                            
+                                            .section-title Vane Pump
+                                            .form-line
+                                                label Vane to Impeller Height 
+                                                label.sr-only(for='inlineFormInputName2') Vane height 1 
+                                                input#DimensionalVaneHeight1.form-control.mb-2.mr-sm-2(type='text' placeholder='Vane Height 1')
+                                                label.sr-only(for='inlineFormInputGroupUsername2') Vane Height 2 
+                                                .input-group.mb-2.mr-sm-2
+                                                    input#DimensionalVaneHeight2.form-control(type='text' placeholder='Vane Height 2')
+                                                label.sr-only(for='inlineFormInputGroupUsername2') Vane Height 3 
+                                                .input-group.mb-2.mr-sm-2
+                                                    input#DimensionalVaneHeight3.form-control(type='text' placeholder='Vane Height 3')
+                                                label.sr-only(for='inlineFormInputGroupUsername2') Vane Height 4
+                                                .input-group.mb-2.mr-sm-2
+                                                    input#DimensionalVaneHeight4.form-control(type='text' placeholder='Vane Height 4')
+
+                                                small.form-text.text-muted
+                                                | Please upload appropriate values of Vane Height  
+                                                br
+                                                br
+                                            .form-line
+                                                label Impeller to EC ring height
+
+                                                label.sr-only(for='inlineFormInputName2') Vane Height 1 
+                                                input#DimensionalVaneHeightEC1.form-control.mb-2.mr-sm-2(type='text' placeholder='Vane Height 1')
+                                                label.sr-only(for='inlineFormInputGroupUsername2') Vane Height 2 
+                                                .input-group.mb-2.mr-sm-2
+                                                    input#DimensionalVaneHeightEC2.form-control(type='text' placeholder='Vane Height 2')
+                                                br
+                                             
+
+                                            .section-title Housing 
+                                            .form-line
+                                                label Feed Pump bore runout with respect to Bush
+
+                                                input#FeederBoreRunout.form-control.mb-2.mr-sm-2(type='text' placeholder='')
+                                                label Housing Bore Concentricity
+                                                input#HousingBoreConcentricity.form-control.mb-2.mr-sm-2(type='text' placeholder=' ')
+                                            .section-title Roller Ring  
+                                            .form-line
+                                                label Slot height
+
+                                                label.sr-only(for='inlineFormInputGroupUsername2') Slot Height 1 
+                                                .input-group.mb-2.mr-sm-2
+                                                    input#DimensionalRollerSlotHeight1.form-control(type='text' placeholder='Slot Height 1')
+                                                label.sr-only(for='inlineFormInputGroupUsername2') Slot Height 2 
+                                                .input-group.mb-2.mr-sm-2
+                                                    input#DimensionalRollerSlotHeight2.form-control(type='text' placeholder='Slot Height 2')
+                                                label.sr-only(for='inlineFormInputGroupUsername2') Slot Height 3
+                                                .input-group.mb-2.mr-sm-2
+                                                    input#DimensionalRollerSlotHeight3.form-control(type='text' placeholder='Slot Height 3')
+                                                label.sr-only(for='inlineFormInputName2') Slot Height 4 
+                                                    input#DimensionalRollerSlotHeight4.form-control.mb-2.mr-sm-2(type='text' placeholder='Slot Height 4')
+                                                label.sr-only(for='inlineFormInputGroupUsername2') Slot Height 5 
+                                                .input-group.mb-2.mr-sm-2
+                                                    input#DimensionalRollerSlotHeight5.form-control(type='text' placeholder='Slot Height 5')
+                                                label.sr-only(for='inlineFormInputGroupUsername2') Slot Height 6 
+                                                .input-group.mb-2.mr-sm-2
+                                                    input#DimensionalRollerSlotHeight6.form-control(type='text' placeholder='Slot Height 6')
+                                                label.sr-only(for='inlineFormInputGroupUsername2') Slot Height 7
+                                                .input-group.mb-2.mr-sm-2
+                                                    input#DimensionalRollerSlotHeight7.form-control(type='text' placeholder='Slot Height 7')
+                                                label.sr-only(for='inlineFormInputGroupUsername2') Slot Height 8
+                                                .input-group.mb-2.mr-sm-2
+                                                    input#DimensionalRollerSlotHeight8.form-control(type='text' placeholder='Slot Height 8')
+
+                                                label Slot Width 
+                                                label.sr-only(for='inlineFormInputGroupUsername2') Slot Width 1 
+                                                .input-group.mb-2.mr-sm-2
+                                                    input#DimensionalRollerSlotWidth1.form-control(type='text' placeholder='Slot Width 1')
+                                                label.sr-only(for='inlineFormInputGroupUsername2') Slot Width 2 
+                                                .input-group.mb-2.mr-sm-2
+                                                    input#DimensionalRollerSlotWidth2.form-control(type='text' placeholder='Slot Width 2')
+                                                label.sr-only(for='inlineFormInputGroupUsername2') Slot Width 3
+                                                .input-group.mb-2.mr-sm-2
+                                                    input#DimensionalRollerSlotWidth3.form-control(type='text' placeholder='Slot Width 3')
+                                                label.sr-only(for='inlineFormInputName2') Slot Width 4 
+                                                    input#DimensionalRollerSlotWidth4.form-control.mb-2.mr-sm-2(type='text' placeholder='Slot Width 4')
+                                                label.sr-only(for='inlineFormInputGroupUsername2') Slot Width 5 
+                                                .input-group.mb-2.mr-sm-2
+                                                    input#DimensionalRollerSlotWidth5.form-control(type='text' placeholder='Slot Width 5')
+                                                label.sr-only(for='inlineFormInputGroupUsername2') Slot Width 6 
+                                                .input-group.mb-2.mr-sm-2
+                                                    input#DimensionalRollerSlotWidth6.form-control(type='text' placeholder='Slot Width 6')
+                                                label.sr-only(for='inlineFormInputGroupUsername2') Slot Width 7
+                                                .input-group.mb-2.mr-sm-2
+                                                    input#DimensionalRollerSlotWidth7.form-control(type='text' placeholder='Slot Width 7')
+                                                label.sr-only(for='inlineFormInputGroupUsername2') Slot Width 8
+                                                .input-group.mb-2.mr-sm-2
+                                                    input#DimensionalRollerSlotWidth8.form-control(type='text' placeholder='Slot Width 8')
+                                                label Roller Height
+                                                label.sr-only(for='inlineFormInputGroupUsername2') Roller Height 1 
+                                                .input-group.mb-2.mr-sm-2
+                                                    input#DimensionalRollerHeight1.form-control(type='text' placeholder='Roller Height 1')
+                                                label.sr-only(for='inlineFormInputGroupUsername2') Roller Height 2 
+                                                .input-group.mb-2.mr-sm-2
+                                                    input#DimensionalRollerHeight2.form-control(type='text' placeholder='Roller Height 2')
+                                                label.sr-only(for='inlineFormInputGroupUsername2') Roller Height 3
+                                                .input-group.mb-2.mr-sm-2
+                                                    input#DimensionalRollerHeight3.form-control(type='text' placeholder='Roller Height 3')
+                                                label.sr-only(for='inlineFormInputGroupUsername2') Roller Height 4
+                                                .input-group.mb-2.mr-sm-2
+                                                    input#DimensionalRollerHeight4.form-control(type='text' placeholder='Roller Height 4')
+                                    h3 Component Photos
+                                    fieldset
+                                        .form-group.form-float
+                                            .section-title Camplate Photos
+                                            label Upload photo of Lobe 1 , Lobe 2 , Lobe 3, Lobe 4, Lobe 5, Lobe 6
+                                            .custom-file
+                                                    input#ComplateLobes.custom-file-input(type='file',accept ='image/*' ,name='Ballekitimage', multiple="multiple")
+                                                    label.custom-file-label(for='Ballekitimage')   Ballekit Photo Upload
+                                             
+                                            .section-title Slim face photo 
+                                            label Upload Slim face photo
+                                            .custom-file
+                                                    input#SlimFacePhoto.custom-file-input(type='file',accept ='image/*' ,name='Ballekitimage', multiple="multiple")
+                                                    label.custom-file-label(for='Ballekitimage')   Ballekit Photo Upload
+                                            .section-title Claw Photo
+                                            label Upload Claw Photo1 and 2
+                                            .custom-file
+                                                    input#ClawPhoto.custom-file-input(type='file',accept ='image/*' ,name='Ballekitimage', multiple="multiple")
+                                                    label.custom-file-label(for='Ballekitimage')   Ballekit Photo Upload
+                                             
+                                            .section-title Cross Disc Photo
+                                            label Upload OD1 , OD 2 , Claw 1 , Claw 2
+                                            .custom-file
+                                                    input#CrossDisk.custom-file-input(type='file',accept ='image/*' ,name='Ballekitimage', multiple="multiple")
+                                                    label.custom-file-label(for='Ballekitimage')   Ballekit Photo Upload
+                                             
+                                            .section-title Drive Shaft Photo
+                                            label Lobe 1
+                                            .custom-file
+                                                    input#DriveShaft.custom-file-input(type='file',accept ='image/*' ,name='Ballekitimage', multiple="multiple")
+                                                    label.custom-file-label(for='Ballekitimage')   Ballekit Photo Upload
+                                            .section-title Roller Photo
+                                            label Upload Roller Photo 1 ,2 ,3 , 4
+                                            .custom-file
+                                                    input#Roller.custom-file-input(type='file',accept ='image/*' ,name='Ballekitimage', multiple="multiple")
+                                                    label.custom-file-label(for='Ballekitimage')   Ballekit Photo Upload
+                                             
+                                            .section-title Steel Washer Head Photo
+                                            label Upload Photos of 1 and 2
+                                            .custom-file
+                                                    input#SteelWasherHead.custom-file-input(type='file',accept ='image/*' ,name='Ballekitimage', multiple="multiple")
+                                                    label.custom-file-label(for='Ballekitimage')   Ballekit Photo Upload
+                                             
+                                            .section-title Roller Ring Photo
+                                            label Upload photos OD 1 and OD 2
+                                            .custom-file
+                                                    input#RollerRing.custom-file-input(type='file',accept ='image/*' ,name='Ballekitimage', multiple="multiple")
+                                                    label.custom-file-label(for='Ballekitimage')    OD 1 
+                                             
+                                            .section-title Housing
+                                            label Upload All housing photos
+                                            .custom-file
+                                                    input#Housing.custom-file-input(type='file',accept ='image/*' ,name='Ballekitimage', multiple="multiple")
+                                                    label.custom-file-label(for='Ballekitimage')  Feed Area 
+                                             
+                                    h3 Conclusion
+                                    fieldset
+                                        .form-group.form-float
+                                            .section-title Conclusion 
+                                            label Failure Symptom
+                                            label.sr-only(for='inlineFormInputGroupUsername2') Slot Width 1 
+                                            .input-group.mb-2.mr-sm-2
+                                                input#faliureSymptom.form-control(type='text' placeholder='Slot Width 1')
+                                            label Hypothesis
+                                            label.sr-only(for='inlineFormInputGroupUsername2') Slot Width 2 
+                                            .input-group.mb-2.mr-sm-2
+                                                input#hypothesis.form-control(type='text' placeholder='Slot Width 2')
+                                            label Root Cause Analysis
+                                            label.sr-only(for='inlineFormInputGroupUsername2') Slot Width 3
+                                            .input-group.mb-2.mr-sm-2
+                                                input#rootCauseAnalysis.form-control(type='text' placeholder='Slot Width 3')
+                                            label Permanent Correction Analysis 
+                                            label.sr-only(for='inlineFormInputName2') Slot Width 4 
+                                                input#correctiveAction.form-control(type='text' placeholder='Slot Width 3')
+                                            label Action Effective Tracking 
+                                            label.sr-only(for='inlineFormInputGroupUsername2') Slot Width 5 
+                                            .input-group.mb-2.mr-sm-2
+                                                input#actionEffectivenessTracking.form-control(type='text' placeholder='Slot Width 5')
+                                             
+                                       
+
+
+
+                                    
+                            .card-footer.text-right
+                                button.btn.btn-primary.mr-1.updateMetal(type='submit') Submit			 

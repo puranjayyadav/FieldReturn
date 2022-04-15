@@ -1,0 +1,49 @@
+{
+  "sidebar": [
+    {
+      "elem": "href",
+      "title": "Online Marketing Dashboard",
+      "href": "/"
+    },
+    "E-commerce Dashboard",
+    "Fitness Dashboard",
+    "Finance Dashboard",
+    "Booking Dashboard",
+    "App Dashboard",
+    "Fitness Dashboard",
+    {
+      "elem": "dropdown",
+      "title": "Layout",
+      "content": [
+        "dropdown item 1",
+        "dropdown item 2",
+        "dropdown item 3"
+      ]
+    },
+    {
+      "elem": "group",
+      "content": [
+        "menu item 5 in group",
+        "menu item 6 in group",
+        "menu item 7 in group",
+        "menu item 8 in group"
+      ]
+    },
+    "menu item 9",
+    "menu item 10",
+    "menu item 11",
+    "menu item 12",
+    {
+      "elem": "dropdown",
+      "content": [
+        "dropdown item 1",
+        "dropdown item 2",
+        "dropdown item 3"
+      ]
+    },
+    "menu item 9",
+    "menu item 10",
+    "menu item 11",
+    "menu item 12"
+  ]
+}

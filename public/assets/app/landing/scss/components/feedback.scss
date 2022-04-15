@@ -1,0 +1,32 @@
+$landing-accent-color: #2c86a2;
+
+.landing__feedback-title {
+  padding-top: 150px;
+  max-width: 680px;
+  line-height: normal;
+  color: $text-color-main;
+  margin: auto auto 20px;
+  font-size: 1.65em;
+}
+
+.landing__feedback-subhead {
+  color: $text-color-main;
+  font-size: 18px;
+  line-height: 32px;
+  max-width: 700px;
+  margin: 0 auto 70px auto;
+}
+
+.landing__feedback-form {
+  margin-bottom: 20px;
+}
+
+.feedback-design-img {
+  max-width: 800px;
+  margin-bottom: 30px;
+}
+
+.feedback-catalog-img {
+  width: 80%;
+}
+

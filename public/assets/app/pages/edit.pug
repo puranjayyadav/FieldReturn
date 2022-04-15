@@ -1,0 +1,37 @@
+extends ../blocks/layout
+block layout
+  - var active_page = 'Edit'
+
+block content
+  .container
+    .dashboards
+      .row
+        .col-md-12
+          .card
+            .card-body
+              .card__title
+                h5.bold-text="EDIT BITCOIN"
+              form.form.form--horizontal
+                .form__form-group
+                  span.form__form-group-label="Market Cap"
+                  .form__form-group-field
+                    input(type="text" name="market_cap" value="$ 131 131 454 444")
+                .form__form-group
+                  span.form__form-group-label="Price"
+                  .form__form-group-field
+                    input(type="text" name="market_cap" value="$ 6 432,23")
+                .form__form-group
+                  span.form__form-group-label="Volume"
+                  .form__form-group-field
+                    input(type="text" name="market_cap" value="$ 6 432 323 455")
+                .form__form-group
+                  span.form__form-group-label="Supply"
+                  .form__form-group-field
+                    input(type="text" name="market_cap" value="$ 6 432 323")
+                .form__form-group
+                  span.form__form-group-label="Change"
+                  .form__form-group-field
+                    input(type="text" name="market_cap" value="0,59%")
+                .form__button-toolbar.btn-toolbar
+                  a(href="finance_dashboard").btn.btn-primary="Submit"
+                  a(href="finance_dashboard").btn.btn-secondary="Cancel"

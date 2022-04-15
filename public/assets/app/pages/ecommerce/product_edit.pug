@@ -1,0 +1,83 @@
+extends ../../blocks/layout
+block layout
+  - var active_page = 'ecommerce_product_edit'
+
+block content
+  .container.todo-app
+    .row
+      .col-md-12
+        h3.page-title='Product Edit'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-md-12.col-lg-12
+        +card('Main information', [])
+          .form.product-edit
+            .form__half
+              .form__form-group
+                span.form__form-group-label
+                .form__form-group-field
+                  input(name='name', type='text', value='')
+              .form__form-group-id-category
+                .form__form-group.form__form-group-id
+                  span.form__form-group-label='ID'
+                  .form__form-group-field
+                    input(name='id', type='text', value='')
+                .form__form-group
+                  span.form__form-group-label='Category'
+                  .form__form-group-field
+                    input(name='category', type='text', value='')
+              .form__form-group
+                span.form__form-group-label='Short description'
+                  span='(300 characters max)'
+                .form__form-group-field
+                  input(name='description', type='text', value='')
+              .form__form-group
+                span.form__form-group-label='Full description'
+                .form__form-group-field
+                  textarea(name='description', rows=5)
+              .card__title
+                h5.bold-text='Pricing'
+              .form__form-group-price-discount
+                .form__form-group.form__form-group-price
+                  span.form__form-group-label='Price'
+                  .form__form-group-field
+                    .form__form-group-icon
+                      +icon('form', 'currency-usd')
+                    input(name='price', type='text', value='')
+                .form__form-group
+                  span.form__form-group-label='Discount'
+                  .form__form-group-field
+                    .form__form-group-icon
+                      +icon('form', 'tag')
+                    input(name='discount', type='text', value='')
+              .card__title
+                h5.bold-text='General information'
+              .form.form--horizontal
+                .form__form-group
+                  span.form__form-group-label='Brand Name'
+                  .form__form-group-field
+                    input(name='brand', type='text', value='')
+                .form__form-group
+                  span.form__form-group-label='Category'
+                  .form__form-group-field
+                    input(name='general_category', type='text', value='')
+                .form__form-group
+                  span.form__form-group-label='Delivery Condition'
+                  .form__form-group-field
+                    input(name='delivery', type='text', value='')
+                .form__form-group
+                  span.form__form-group-label='Weight'
+                  .form__form-group-field
+                    input(name='weight', type='text', value='')
+                .form__form-group
+                  span.form__form-group-label='Size'
+                  .form__form-group-field
+                    input(name='size', type='text', value='')
+            .form__half
+              .form__form-group
+                span.form__form-group-label='Upload photo'
+                .form__form-group-field
+                  +dropzone('1', 'dropzone--single')
+            .form__button-toolbar.btn-toolbar
+              button.btn.btn-primary='Save'
+              button.btn.btn-secondary='Cancel'

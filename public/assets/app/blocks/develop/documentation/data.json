@@ -1,0 +1,8 @@
+{
+  "0": {
+    "version": "v1.0",
+    "data": "22-August-2019",
+    "text": "Initial release. It's a restricted version. Some customization functions will come soon:",
+    "changes": ["top menu", "dark theme", "squared borders", "block's shadows", "RTL mode"]
+  }
+}

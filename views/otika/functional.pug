@@ -1,0 +1,188 @@
+doctype html
+html(lang='en')
+  // editable-table.html  21 Nov 2019 03:56:01 GMT
+  head
+    meta(charset='UTF-8')
+    meta(content='width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no' name='viewport')
+    title Otika - Admin Dashboard Template
+    // General CSS Files
+    link(rel='stylesheet' href='assets/css/app.min.css')
+    link(rel='stylesheet' href='assets/bundles/datatables/datatables.min.css')
+    link(rel='stylesheet' href='assets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css')
+    link(rel='stylesheet' href='assets/bundles/datatables/Select-1.2.4/css/select.bootstrap4.min.css')
+    // Template CSS
+    link(rel='stylesheet' href='assets/css/style.css')
+    link(rel='stylesheet' href='assets/css/components.css')
+    // Custom style CSS
+    link(rel='stylesheet' href='assets/css/custom.css')
+    link(rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico')
+    body
+		.loader
+		#app
+			.main-wrapper.main-wrapper-1
+				.navbar-bg
+				nav.navbar.navbar-expand-lg.main-navbar.sticky
+					.form-inline.mr-auto
+						ul.navbar-nav.mr-3
+							li
+								a.nav-link.nav-link-lg.collapse-btn(href='#' data-toggle='sidebar')
+									i(data-feather='align-justify')
+							li
+								a.nav-link.nav-link-lg.fullscreen-btn(href='#')
+									i(data-feather='maximize')
+							li
+								form.form-inline.mr-auto
+									.search-element
+										input.form-control(type='search' placeholder='Search' aria-label='Search' data-width='200')
+										button.btn(type='submit')
+											i.fas.fa-search
+					ul.navbar-nav.navbar-right
+
+				.main-sidebar.sidebar-style-2
+					aside#sidebar-wrapper
+						.sidebar-brand
+							a(href='index.html')
+								img.header-logo(alt='image' src='assets/img/logo.png')
+						ul.sidebar-menu
+
+							li.menu-header Pump Data
+							li.dropdown.active
+								a.menu-toggle.nav-link.has-dropdown(href='#')
+									i(data-feather='layout')
+									span Pump Form
+								ul.dropdown-menu
+									li
+                    a.nav-link(href=`/functional`) Functional Data
+                  li
+                                a.nav-link(href='/metallurgical') Metallurgical Analysis
+                            li
+                                a.nav-link(href='/uploadphotos') Upload Camplate Photos 
+                            li.active
+                                a.nav-link(href=`/dimensional`) Dimensional Analysis 
+        // Main Content
+        .main-content
+          section.section
+            .section-body
+              .row
+                .col-12
+                  .card
+                    .card-header
+                      h4 Editable DataTables
+                    .card-body
+                      .table-responsive
+                        table#mainTable.table.table-striped
+                          thead
+                            tr
+                              th Name
+                              th Cost
+                              th Profit
+                              th Fun
+                          tbody
+                            tr
+                              td Car
+                              td 100
+                              td 200
+                              td 0
+                            tr
+                              td Bike
+                              td 330
+                              td 240
+                              td 1
+                            tr
+                              td Plane
+                              td 430
+                              td 540
+                              td 3
+                            tr
+                              td Yacht
+                              td 100
+                              td 200
+                              td 0
+                            tr
+                              td Segway
+                              td 330
+                              td 240
+                              td 1
+                          tfoot
+                            tr
+                              th
+                                strong TOTAL
+                              th 1290
+                              th 1420
+                              th 5
+          .settingSidebar
+            a.settingPanelToggle(href='javascript:void(0)')
+              i.fa.fa-spin.fa-cog
+            .settingSidebar-body.ps-container.ps-theme-default
+              .fade.show.active
+                .setting-panel-header
+                  | Setting Panel
+                .p-15.border-bottom
+                  h6.font-medium.m-b-10 Select Layout
+                  .selectgroup.layout-color.w-50
+                    label.selectgroup-item
+                      input.selectgroup-input-radio.select-layout(type='radio' name='value' value='1' checked='')
+                      span.selectgroup-button Light
+                    label.selectgroup-item
+                      input.selectgroup-input-radio.select-layout(type='radio' name='value' value='2')
+                      span.selectgroup-button Dark
+                .p-15.border-bottom
+                  h6.font-medium.m-b-10 Sidebar Color
+                  .selectgroup.selectgroup-pills.sidebar-color
+                    label.selectgroup-item
+                      input.selectgroup-input.select-sidebar(type='radio' name='icon-input' value='1')
+                      span.selectgroup-button.selectgroup-button-icon(data-toggle='tooltip' data-original-title='Light Sidebar')
+                        i.fas.fa-sun
+                    label.selectgroup-item
+                      input.selectgroup-input.select-sidebar(type='radio' name='icon-input' value='2' checked='')
+                      span.selectgroup-button.selectgroup-button-icon(data-toggle='tooltip' data-original-title='Dark Sidebar')
+                        i.fas.fa-moon
+                .p-15.border-bottom
+                  h6.font-medium.m-b-10 Color Theme
+                  .theme-setting-options
+                    ul.choose-theme.list-unstyled.mb-0
+                      li.active(title='white')
+                        .white
+                      li(title='cyan')
+                        .cyan
+                      li(title='black')
+                        .black
+                      li(title='purple')
+                        .purple
+                      li(title='orange')
+                        .orange
+                      li(title='green')
+                        .green
+                      li(title='red')
+                        .red
+                .p-15.border-bottom
+                  .theme-setting-options
+                    label.m-b-0
+                      input#mini_sidebar_setting.custom-switch-input(type='checkbox' name='custom-switch-checkbox')
+                      span.custom-switch-indicator
+                      span.control-label.p-l-10 Mini Sidebar
+                .p-15.border-bottom
+                  .theme-setting-options
+                    label.m-b-0
+                      input#sticky_header_setting.custom-switch-input(type='checkbox' name='custom-switch-checkbox')
+                      span.custom-switch-indicator
+                      span.control-label.p-l-10 Sticky Header
+                .mt-4.mb-4.p-3.align-center.rt-sidebar-last-ele
+                  a.btn.btn-icon.icon-left.btn-primary.btn-restore-theme(href='#')
+                    i.fas.fa-undo
+                    |  Restore Default
+        footer.main-footer
+          .footer-left
+            a(href='templateshub.net') Templateshub
+          .footer-right
+    // General JS Scripts
+    script(src='assets/js/app.min.js')
+    // JS Libraies
+    script(src='assets/bundles/editable-table/mindmup-editabletable.js')
+    // Page Specific JS File
+    script(src='assets/js/page/editable-table.js')
+    // Template JS File
+    script(src='assets/js/scripts.js')
+    // Custom JS File
+    script(src='assets/js/custom.js')
+    // editable-table.html  21 Nov 2019 03:56:04 GMT

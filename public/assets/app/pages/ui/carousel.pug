@@ -1,0 +1,48 @@
+extends ../../blocks/layout
+
+block layout
+  - var active_page = 'ui_carousel'
+
+block content
+  .container
+    .row
+      .col-md-12
+        h3.page-title='Carousel'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-md-12.col-lg-12
+        +card('Basic carousel', [
+          {'type': 'normal', 'text': 'Use the component '},
+          {'type': 'red', 'text': 'CarouselMultiply'}
+        ])
+          +carousel(
+            ["static/topbar/img/1.png",
+              "static/topbar/img/2.png",
+              "static/topbar/img/3.png",
+              "static/topbar/img/4.png",
+              "static/topbar/img/1.png",
+              "static/topbar/img/2.png",
+              "static/topbar/img/3.png",
+              "static/topbar/img/4.png"])
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Basic carousel without caption', [
+          {'type': 'normal', 'text': 'Use the component '},
+          {'type': 'red', 'text': 'CarouselSingle'}
+        ])
+          +carousel(
+            ["static/topbar/img/5.png", "static/topbar/img/6.png", "static/topbar/img/5.png", "static/topbar/img/6.png"],
+            ' slick-slider--single')
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Basic carousel', [
+          {'type': 'normal', 'text': 'Use the component '},
+          {'type': 'red', 'text': 'CarouselSingle'},
+          {'type': 'normal', 'text': ' with text'}
+        ])
+          +carousel(
+            [
+              {"title": "Sayan mountains, Siberia", "description":"Folly words widow one downs few age every seven.", "link": "static/topbar/img/5.png"},
+              {"title": "Sayan mountains, Siberia", "description":"Folly words widow one downs few age every seven.", "link": "static/topbar/img/6.png"},
+              {"title": "Sayan mountains, Siberia", "description":"Folly words widow one downs few age every seven.", "link": "static/topbar/img/5.png"},
+              {"title": "Sayan mountains, Siberia", "description":"Folly words widow one downs few age every seven.", "link": "static/topbar/img/6.png"}],
+            ' slick-slider--single')
+

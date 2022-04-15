@@ -1,0 +1,21 @@
+
+-var demoItems = [{name: "App Dashboard", img: "app_dashboard.png", link: "dashboards/app_dashboard"}, {name: "Booking Dashboard", img: "booking_dashboard.png", link: "dashboards/booking_dashboard"}, {name: "Finance Dashboard", img: "finance_dashboard.png", link: "dashboards/finance_dashboard"}, {name: "E-commerce Dashboard", img: "e_commerce_dashboard.png", link: "dashboards/e_commerce_dashboard"}, {name: "Online Marketing Dashboard", img: "online_marketing_dashboard.png", link: "dashboards/online_marketing_dashboard"}, {name: "Fitness Dashboard", img: "fitness_dashboard.png", link: "dashboards/fitness_dashboard"}]
+
+mixin block-demo(pathToImg, link, title)
+  .landing__demo-wrap.row
+    .col-lg-8
+      a(href=link).landing__demo-link
+        .landing__demo-img-wrap
+          img(src=pathToImg, alt="")
+    .landing__demo-title-wrap.col-lg-4
+      p.landing__demo-title=title
+
+
+a(id='demo')
+section.section.section--demo
+  .container
+    .row
+      .col-md-12
+        h3.section__title="EasyDEV Demos"
+    each item in demoItems
+      +block-demo("landing/assets/img/demo/" + item.img, item.link, item.name)

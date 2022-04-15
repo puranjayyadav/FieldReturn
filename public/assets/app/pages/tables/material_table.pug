@@ -1,0 +1,44 @@
+extends ../../blocks/layout
+block layout
+  - var active_page = 'tables_material_table'
+
+block content
+  .container.todo-app
+    .row
+      .col-md-12
+        h3.page-title='Material table'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-md-12.col-lg-12.material
+        .card
+          .card-body
+            .card__title
+              h5.bold-text='Material table'
+              .material-table__toolbar-wrap
+                .material-table__toolbar
+            .material-table__wrap.material-class
+              table.mdl-data-table.mdl-js-data-table.mdl-data-table--selectable.material-table
+                thead
+                  tr
+                    th(style='text-align: left;')='Dessert (100g serving)'
+                    th(style='text-align: center;')='Calories'
+                    th(style='text-align: center;')='Fat (g)'
+                    th(style='text-align: center;')='Carbs (g)'
+                    th(style='text-align: center;')='Protein (g)'
+                tbody
+            .material-table__pagination.material-class
+              span='Rows:'
+              div
+                div(id="rowsPerPage", class="mdl-button mdl-js-button")
+                  label='5'
+                  i.material-icons="keyboard_arrow_down"
+                ul(class="mdl-menu  mdl-js-menu mdl-js-ripple-effect")
+                  li.mdl-menu__item='5'
+                  li.mdl-menu__item='10'
+                  li.mdl-menu__item='15'
+              span(id='page')='1-5 of 13'
+              div
+                button(class="mdl-button mdl-js-button mdl-button--icon", id='prevPage')
+                  i.material-icons="keyboard_arrow_left"
+                button(class="mdl-button mdl-js-button mdl-button--icon", id='nextPage')
+                  i.material-icons="keyboard_arrow_right"

@@ -1,0 +1,12 @@
+mixin documentation-nav-bottom(left, right)
+  .documentation__nav-bottom
+    .documentation__nav-bottom-left
+      if(left)
+        a(href=`${left.path}`)
+          +icon('documentation', 'arrow-left')
+          p=`${left.title}`
+    .documentation__nav-bottom-right
+      if(right)
+        a(href=`${right.path}`)
+          p=`${right.title}`
+          +icon('documentation', 'arrow-left')

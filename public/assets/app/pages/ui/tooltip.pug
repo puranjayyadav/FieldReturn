@@ -1,0 +1,75 @@
+extends ../../blocks/layout
+
+block layout
+  - var active_page = 'ui_tooltip'
+
+block content
+  .container
+    .row
+      .col-md-12
+        h3.page-title='Tooltips & Popovers'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-sm-12.col-md-6.col-lg-6.col-xl-3
+        +card('Tooltip on top', [{'type': 'normal', 'text': 'Use default tooltip with placement '}, {'type': 'red', 'text': 'top'}])
+          .btn-toolbar--center.btn-toolbar
+            +btn('btn-outline-secondary')(data-toggle="tooltip", data-placement="top", title="Do you like dragons?")="Tooltip on Top"
+            +tooltip
+      .col-sm-12.col-md-6.col-lg-6.col-xl-3
+        +card('Tooltip on bottom', [{'type': 'normal', 'text': 'Use default tooltip with placement '}, {
+          'type': 'red',
+          'text': 'bottom'
+        }])
+          .btn-toolbar--center.btn-toolbar
+            +btn('btn-outline-secondary')(data-toggle="tooltip", data-placement="bottom", title="Do you like dragons?")="Tooltip on Bottom"
+            +tooltip
+      .col-sm-12.col-md-6.col-lg-6.col-xl-3
+        +card('Tooltip on right', [{'type': 'normal', 'text': 'Use default tooltip with placement '}, {
+          'type': 'red',
+          'text': 'right'
+        }])
+          .btn-toolbar--center.btn-toolbar
+            +btn('btn-outline-secondary')(data-toggle="tooltip", data-placement="right", title="Do you like dragons?")="Tooltip on Right"
+            +tooltip
+      .col-sm-12.col-md-6.col-lg-6.col-xl-3
+        +card('Tooltip on left', [{'type': 'normal', 'text': 'Use default tooltip with placement '}, {
+          'type': 'red',
+          'text': 'left'
+        }])
+          .btn-toolbar--center.btn-toolbar
+            +btn('btn-outline-secondary')(data-toggle="tooltip", data-placement="left", title="Do you like dragons?")="Tooltip on Left"
+            +tooltip
+
+
+      .col-sm-12.col-md-6.col-lg-6.col-xl-3
+        +card('Popover on top', [{'type': 'normal', 'text': 'Use default popover with placement '}, {
+          'type': 'red',
+          'text': 'top'
+        }])
+          .btn-toolbar--center.btn-toolbar
+            +btn('btn-outline-secondary')(data-toggle="popover", data-placement="top", title="Popover on Top", data-content="Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.")="Popover on Top"
+            +tooltip
+      .col-sm-12.col-md-6.col-lg-6.col-xl-3
+        +card('Popover on bottom', [{'type': 'normal', 'text': 'Use default popover with placement '}, {
+          'type': 'red',
+          'text': 'bottom'
+        }])
+          .btn-toolbar--center.btn-toolbar
+            +btn('btn-outline-secondary')(data-toggle="popover", data-placement="bottom", title="Popover on Bottom", data-content="Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.")="Popover on Bottom"
+            +tooltip
+      .col-sm-12.col-md-6.col-lg-6.col-xl-3
+        +card('Popover on right', [{'type': 'normal', 'text': 'Use default popover with placement '}, {
+          'type': 'red',
+          'text': 'right'
+        }])
+          .btn-toolbar--center.btn-toolbar
+            +btn('btn-outline-secondary')(data-toggle="popover", data-placement="right", title="Popover on Right", data-content="Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.")="Popover on Right"
+            +tooltip
+      .col-sm-12.col-md-6.col-lg-6.col-xl-3
+        +card('Popover on left', [{'type': 'normal', 'text': 'Use default popover with placement '}, {
+          'type': 'red',
+          'text': 'left'
+        }])
+          .btn-toolbar--center.btn-toolbar
+            +btn('btn-outline-secondary')(data-toggle="popover", data-placement="left", title="Popover on Left", data-content="Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.")="Popover on Left"
+            +tooltip

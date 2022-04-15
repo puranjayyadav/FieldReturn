@@ -1,0 +1,163 @@
+.product-card {
+  display: flex;
+  flex-wrap: wrap;
+
+  .product-card__btn-toolbar {
+    margin-bottom: 10px;
+  }
+}
+
+.product-card__info {
+  width: calc(100% - 440px);
+  padding-left: 42px;
+
+  @media screen and (max-width: 1199px) {
+    width: 100%;
+    padding-left: 0;
+    padding-top: 35px;
+  }
+}
+
+.product-card__wish-btn {
+  display: block;
+  padding: 10px 0;
+  font-size: 14px;
+  color: $color-blue;
+  height: 42px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  svg {
+    height: 14px;
+    fill: $color-blue;
+    transition: all 0.3s;
+  }
+
+  &:hover {
+    color: $color-blue-hover;
+
+    svg {
+      fill: $color-blue-hover;
+    }
+  }
+}
+
+.product-card__title {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.product-card__rate {
+  display: flex;
+  margin-bottom: 30px;
+
+  svg {
+    fill: $color-yellow;
+    height: 14px;
+    width: 14px;
+  }
+}
+
+.product-card__link {
+  font-size: 12px;
+  color: $color-blue;
+  line-height: 16px;
+  display: block;
+  margin-left: 5px;
+
+  &:hover {
+    color: $color-blue-hover;
+    text-decoration: none;
+  }
+}
+
+.product-card__price {
+  margin-bottom: 25px;
+}
+
+.product-card__old-price {
+  font-size: 24px;
+  color: $color-additional;
+  text-decoration: line-through;
+}
+
+.product-card__form {
+  margin-top: 20px;
+}
+
+.product-card__form-label {
+  font-weight: 500;
+}
+
+.product-gallery {
+  max-width: 440px;
+  width: 100%;
+}
+
+.product-gallery__current-img {
+  max-width: 440px;
+  height: 440px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 10px;
+
+  @include themify($themes) {
+    border: 1px solid themed('colorBorder');
+  }
+
+  img {
+    height: 100%;
+    width: auto;
+  }
+}
+
+.product_gallery__gallery {
+  display: flex;
+}
+
+.product-gallery__img-preview {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  margin-right: 10px;
+  padding: 0;
+  background: transparent;
+
+  @include themify($themes) {
+    border: 1px solid themed('colorBorder');
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  img {
+    height: 80px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+
+  .product-gallery {
+    margin: auto;
+  }
+}
+
+.pink{
+  &:after{
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #f7a9c4;
+    border-radius: 0.5em;
+    position: absolute;
+    margin-left: 5px;
+    margin-top: 3px;
+  }
+}

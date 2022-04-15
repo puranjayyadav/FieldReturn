@@ -1,0 +1,46 @@
+mixin inbox-mail()
+  .inbox__email-header
+    .inbox__email-left
+      button.inbox__email-back(type="button")
+        +icon('inbox', 'arrow-left')(width=24, height=24)
+      .inbox__email-ava
+        img(src="static/topbar/img/24_mail_ava.png", alt="ava")
+      .inbox__email-info
+        h5.inbox__email-name
+          ='Nikolay Moriis'
+          +icon('inbox', 'star')(width=24, height=24, class='inbox__favorite active')
+        p.inbox__email-email='mailexample@mail.com'
+    .inbox__email-right
+      p.inbox__email-time='July 12 11:30 PM'
+      button.inbox__email-btn
+        +icon('inbox', 'reply')(width=24, height=24)
+      button.inbox__email-btn
+        +icon('inbox', 'delete')(width=24, height=24)
+      button.inbox__email-btn
+        +icon('inbox', 'printer')(width=24, height=24)
+  .inbox__email-body
+    div
+      h4
+        b='Congratulations! You are win!'
+      p='Knowledge nay estimable questions repulsive daughters boy. Solicitude gay way unaffected expression for. His mistress ladyship required off horrible disposed rejoiced. Unpleasing pianoforte unreserved as oh he unpleasant no inquietude insipidity. Advantages can discretion possession add favourable cultivated admiration far. Why rather assure how esteem end hunted nearer and before. By an truth after heard going early given he. Charmed to it excited females whether at examine. Him abilities suffering may are yet dependent. Barton did feebly change man she afford square add. Want eyes by neat so just must. Past draw tall up face show rent oh mr.'
+      p='Best regards,'
+      p='Nikolay'
+  .inbox__email-attachment
+    h5.inbox__email-attachment-title='Attachment (2 file 12Mb):'
+    .inbox__email-attachment-link
+      +icon('inbox', 'paperclip')(width=24, height=24)
+      a(href="./fav.ico")='Project Design.psd(11mb)'
+    .inbox__email-attachment-link
+      +icon('inbox', 'paperclip')(width=24, height=24)
+      a(href="./fav.ico")='Project Design.psd(11mb)'
+  .inbox__email-reply
+    textarea.inbox__email-reply-textarea
+    p.inbox__email-reply-placeholder
+      ='Click here to '
+      span='reply'
+    div
+      button.inbox__email-reply-close
+        +icon('inbox', 'close')(width=24, height=24)
+      .inbox__email-reply-btns.btn-toolbar
+        button.btn.btn-primary.btn-sm='Send'
+        button.inbox__email-reply-btn-full='Go to full answer form'

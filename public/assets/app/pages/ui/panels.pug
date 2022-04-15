@@ -1,0 +1,38 @@
+extends ../../blocks/layout
+
+block layout
+  - var active_page = 'ui_panel'
+
+block content
+  .container
+    .row
+      .col-md-12
+        h3.page-title='Panels'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-12.col-md-12.col-lg-6
+        +panel('Default panel', 'default')
+      .col-12.col-md-12.col-lg-6
+        +panel('Default panel with subhead', 'with-subhead', 'Folly words widow one downs few age every seven.')
+      .col-12.col-md-12.col-lg-6
+        +panel('Default panel with divider', 'Default panel with divider'.split(' ').join(''), null, 'divider')
+      .col-12.col-md-12.col-lg-6
+        +panel('Label panel divider', 'Label panel divider'.split(' ').join(''), null, 'divider', {type:'secondary', text:'Label'})
+      .col-12.col-md-12.col-lg-6
+        +panel('Icon panel divider', 'Icon panel divider'.split(' ').join(''), null, 'divider', null, 'icon')
+      .col-12.col-md-12.col-lg-6
+        +panel('Tabs panel divider', 'Tabs panel divider'.split(' ').join(''), null, 'divider', null, null, {
+          links: ['Sales', 'Statistic', 'Offers', 'Refounds'],
+          contents: [
+            "Direction has strangers now believing. Respect enjoyed gay far exposed parlors towards. Enjoyment use tolerably dependent listening men.",
+            "Direction has strangers now believing. Respect enjoyed gay far exposed parlors towards. Enjoyment use tolerably dependent listening men. No peculiar in handsome together unlocked do by.",
+            "Direction has strangers now believing. Respect enjoyed gay far exposed parlors towards. Enjoyment use tolerably dependent listening men. No peculiar in handsome together unlocked do by.",
+            "Enjoyment use tolerably dependent listening men. No peculiar in handsome together unlocked do by. Article concern joy anxious did picture sir her."
+          ]
+        })
+      .col-12.col-md-12.col-lg-6
+        +panel('Success panel', 'Success panel'.split(' ').join(''), null, 'success')
+      .col-12.col-md-12.col-lg-6
+        +panel('Warning panel', 'Warning panel'.split(' ').join(''), null, 'warning')
+      .col-12.col-md-12.col-lg-6
+        +panel('Danger panel', 'Danger panel'.split(' ').join(''), null, 'danger')

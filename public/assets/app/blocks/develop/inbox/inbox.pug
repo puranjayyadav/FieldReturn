@@ -1,0 +1,38 @@
+include ./components/compose-button
+include components/inbox-dir
+include components/inbox-label
+include components/inbox-mail
+include components/inbox-row
+include components/inbox-compose
+include components/inbox-controls
+
+mixin inbox()
+  .inbox(role="presentation")
+    .inbox__mailbox-list
+      +compose-button='Compose'
+      +inbox-dir('Inbox', '21', true, 'inbox-arrow-down')
+      +inbox-dir('Send Mail', null, false, 'email')
+      +inbox-dir('Drafts', '2', false, 'tooltip-edit')
+      +inbox-dir('Tagged', null, false, 'star')
+      +inbox-dir('Deleted', null, false, 'delete')
+      p.inbox__labels="Labels"
+      +inbox-label('Freelance', 'green', true)
+      +inbox-label('Work', 'red')
+      +inbox-label('Travel', 'blue')
+      +inbox-label('Clients', 'yellow')
+    .inbox__container
+      .inbox__topbar
+        button.inbox__topbar-button
+          +icon('inbox', 'menu')(width=24, height=24)
+      .mailhide
+        +inbox-mail()
+      .composehide.form.inbox__content
+        +inbox-compose()
+      div.tablehide
+        .inbox__content
+          +inbox-controls()
+          .table-responsive
+            table.table--bordered.inbox__emails-table.table
+              tbody
+                each item, index in [{"title": 'Anna Boo', 'text': 'By ignorant at on wondered relation. ', 'date': '09:54 AM', read: true},{'title': 'Nikolay Morris', 'text': 'Breakfast agreeable incommode departure it an. ', 'date': 'July 12', file: true},{'title': 'Anna Boo', 'text': 'By ignorant at on wondered relation. ', 'date': 'July 12', read: true},{'title': 'Aspirity Team', 'text': 'Death there mirth way the noisy merit. ', 'date': 'July 10', read: true},{'title': 'Leonardo Crown', 'text': 'Attempt offices own improve now see. ', 'date': 'July 10', read: true},{'title': 'Cortney White', 'text': 'Him had wound use found hoped. ', 'date': 'July 07', read: true},{'title': 'Anna Boo', 'text': 'By ignorant at on wondered relation. ', 'date': 'July 06'},{'title': 'Aspirity Team', 'text': 'Death there mirth way the noisy merit. ', 'date': 'July 05', read: true},{'title': 'Leonardo Crown', 'text': 'Attempt offices own improve now see. ', 'date': 'July 05', read: true},{'title': 'Nikolay Morris', 'text': 'Breakfast agreeable incommode departure it an. ', 'date': '04:23 PM', file: true},{'title': 'Anna Boo', 'text': 'By ignorant at on wondered relation. ', 'date': '09:54 AM', read: true},{'title': 'Nikolay Morris', 'text': 'Breakfast agreeable incommode departure it an. ', 'date': 'July 12', file: true},{'title': 'Anna Boo', 'text': 'By ignorant at on wondered relation. ', 'date': 'July 12'},{'title': 'Aspirity Team', 'text': 'Death there mirth way the noisy merit. ', 'date': 'July 10'},]
+                  +inbox-row(item, index, 'checkMail')

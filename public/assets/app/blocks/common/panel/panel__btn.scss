@@ -1,0 +1,19 @@
+.panel__btn {
+  width: 14px;
+  height: 14px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  margin-left: 10px;
+
+  svg {
+    width: 14px;
+    height: 14px;
+    fill: $color-additional;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

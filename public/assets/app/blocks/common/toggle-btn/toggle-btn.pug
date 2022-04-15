@@ -1,0 +1,7 @@
+mixin toggle-btn(checked)
+  .toggle-btn
+    if checked
+      input.toggle-btn__input(type="checkbox", name="email_notifications", checked='')
+    else
+      input.toggle-btn__input(type="checkbox", name="email_notifications")
+    button(type="button", class="toggle-btn__input-label")='Toggle'

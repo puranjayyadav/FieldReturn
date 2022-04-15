@@ -1,0 +1,63 @@
+    .loader
+#app
+    .main-wrapper.main-wrapper-1
+        .navbar-bg
+        nav.navbar.navbar-expand-lg.main-navbar.sticky
+            .form-inline.mr-auto
+                ul.navbar-nav.mr-3
+                    li
+                        a.nav-link.nav-link-lg.collapse-btn(href='#' data-toggle='sidebar')
+                            i(data-feather='align-justify')
+                    li
+                        a.nav-link.nav-link-lg.fullscreen-btn(href='#')
+                                i(data-feather='maximize')
+                    li
+                        form.form-inline.mr-auto
+                            .search-element
+                                input.form-control(type='search' placeholder='Search' aria-label='Search' data-width='200')
+                                button.btn(type='submit')
+                                    i.fas.fa-search
+            ul.navbar-nav.navbar-right
+                if user
+                     
+                    li.dropdown
+                        a.nav-link.dropdown-toggle.nav-link-lg.nav-link-user(href='#' data-toggle='dropdown')
+                            img.user-img-radious-style(alt='image' src='assets/img/user.png')
+                            span.d-sm-none.d-lg-inline-block
+                        .dropdown-menu.dropdown-menu-right.pullDown
+                            .dropdown-title.span= `Hello ${user.name}` 
+                            a.dropdown-item.has-icon(href='/updateMe')
+                                i.far.fa-user
+                                |  Profile
+                            a.dropdown-item.has-icon(href='timeline.html')
+                                i.fas.fa-bolt
+                                |                 Activities
+                            a.dropdown-item.has-icon(href='#')
+                                i.fas.fa-cog
+                                |                 Settings
+                                .dropdown-divider
+                            a.dropdown-item.has-icon.text-danger 
+                                i.fas.fa-sign-out-alt.logout
+                                |                 Logout
+                else 
+                    .buttons
+                        a.btn.btn-primary(href='#') Login
+        .main-sidebar.sidebar-style-2
+            aside#sidebar-wrapper
+                .sidebar-brand
+                    a(href='index.html')
+                        img.header-logo(alt='image' src='assets/img/logo.png')
+                ul.sidebar-menu
+
+                    li.menu-header Pump Data
+                    li.dropdown.active
+                        a.menu-toggle.nav-link.has-dropdown(href='#')
+                            i(data-feather='layout')
+                            span Pump Form
+                        ul.dropdown-menu
+                            li
+                                a.nav-link(href='/metallurgical') Metallurgical Analysis
+                            li
+                                a.nav-link(href='/ComponentPhotos') Upload Camplate Photos 
+                            li.active
+                                a.nav-link(href=`/dimensional`) Dimensional Analysis

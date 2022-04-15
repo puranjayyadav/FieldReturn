@@ -1,0 +1,36 @@
+mixin invoice()
+  .invoice
+    .invoice__head
+      .invoice__head-left
+        .invoice__logo
+        p="Aspirity Creative Web Studio "
+        p="44 Shirley Ave. "
+        p="West Chicago,"
+        p="IL 60185"
+        p="+8 (224) 243-4543"
+
+      .invoice__head-right
+        h4="Invoice #2308"
+        p.invoice__date="August 23, 2016"
+        p="Maria Morris"
+        p="Project Manager at BLX"
+        p="mariam@company.co"
+        p="44 Shirley Ave."
+        p="West Chicago, IL 60185"
+    +table(
+      {wrap: 'table-responsive', table: 'table--bordered table'}, {
+      header: ['#', '	Item Name', 'Quantity', '	Unit Cost', '	Total'],
+      items: [
+        ['Wordpress Plugin Apollo 200', '1', '$27', '$27'],
+        ['Easy Pro Admin Template', '1', '$59', '$59'],
+        ['Spirit HTML Template', '2', '$20','$40'],
+      ]
+    })
+
+    .invoice__total
+      p="Sub - Total amount: $126.00"
+      p="VAT: $20.00"
+      p.invoice__grand-total="Grand Total: $146.00"
+      .invoice__toolbar.btn-toolbar
+        +btn('btn-primary', type="button")='Proceed to payment'
+        +btn('btn-secondary', type="button")='Print'

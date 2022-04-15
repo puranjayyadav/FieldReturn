@@ -1,0 +1,29 @@
+extends ../../blocks/layout
+block layout
+  - const active_page = 'charts_chartist_js'
+
+block content
+  .container.todo-app
+    .row
+      .col-md-12
+        h3.page-title='Chartist'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-md-12.col-lg-12
+        +card('PLOTS', [])
+          +chartistjs('1')
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Line series with point', [])
+          +chartistjs('2')
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Mark series', [])
+          +chartistjs('3')
+      .col-12.col-md-12.col-lg-12.col-xl-4
+        +card('Line series', [])
+          +chartistjs('4')
+      .col-12.col-md-12.col-lg-12.col-xl-4
+        +card('Line series with many colors', [])
+          +chartistjs('5')
+      .col-12.col-md-12.col-lg-12.col-xl-4
+        +card('Bars', [])
+          +chartistjs('6')

@@ -1,0 +1,125 @@
+mixin todo()
+  .todo.col-md-9.col-xl-10
+    div
+      .card
+        .todo__item.card-body
+          label.todo__label-checkbox(for='create-the-main-page-design-1')
+            input(id="create-the-main-page-design-1", class="todo__complete-toggle", type="checkbox")
+            span.checkbox-indicator
+          .todo__info
+            .todo__header
+              h3='Create the main page design'
+              .todo__additional
+                p.todo__due-date='Due date: 22.05.19'
+                span.todo__priority='Priority:'
+                span.todo__priority-indicator.high
+            .todo__content
+              .todo__description='Eldest father can design tastes did joy settle. Roused future he ye an marked. Arose mr rapid in so vexed words. Gay welcome led add lasting chiefly say looking. '
+              button.todo__delete-btn(type='button')
+
+    div
+      .card
+        .todo__item.card-body
+          label.todo__label-checkbox(for='create-the-main-page-design-2')
+            input(id="create-the-main-page-design-2", class="todo__complete-toggle", type="checkbox")
+            span.checkbox-indicator
+          .todo__info
+            .todo__header
+              h3='Create the main page design'
+              .todo__additional
+                p.todo__due-date='Due date: 22.05.19'
+                span.todo__priority='Priority:'
+                span.todo__priority-indicator.high
+            .todo__content
+              .todo__description='Eldest father can design tastes did joy settle. Roused future he ye an marked. Arose mr rapid in so vexed words. Gay welcome led add lasting chiefly say looking. '
+              button.todo__delete-btn(type='button')
+    div
+      .card
+        .todo__item.card-body
+          label.todo__label-checkbox(for='create-the-main-page-design-3')
+            input(id="create-the-main-page-design-3", class="todo__complete-toggle", type="checkbox")
+            span.checkbox-indicator
+          .todo__info
+            .todo__header
+              h3='Create the main page design'
+              .todo__additional
+                p.todo__due-date='Due date: 22.05.19'
+                span.todo__priority='Priority:'
+                span.todo__priority-indicator.high
+            .todo__content
+              .todo__description='Eldest father can design tastes did joy settle. Roused future he ye an marked. Arose mr rapid in so vexed words. Gay welcome led add lasting chiefly say looking. '
+              button.todo__delete-btn(type='button')
+    .col-md-12
+      .todo-app__divider
+        .todo-app__divider-line
+        .todo-app__divider-title='Done'
+        .todo-app__divider-line
+    div.todo__item-comleted
+      .card
+        .todo__item.card-body
+          label.todo__label-checkbox(for='create-the-main-page-design-4')
+            input(id="create-the-main-page-design-4", class="todo__complete-toggle", type="checkbox",checked="")
+            span.checkbox-indicator
+          .todo__info
+            .todo__header
+              h3='Create the main page design'
+              .todo__additional
+                p.todo__due-date='Due date: 22.05.19'
+                span.todo__priority='Priority:'
+                span.todo__priority-indicator.high
+            .todo__content
+              .todo__description='Eldest father can design tastes did joy settle. Roused future he ye an marked. Arose mr rapid in so vexed words. Gay welcome led add lasting chiefly say looking. '
+              button.todo__delete-btn(type='button')
+
+    div.todo__item-comleted
+      .card
+        .todo__item.card-body
+          label.todo__label-checkbox(for='create-the-main-page-design-5')
+            input(id="create-the-main-page-design-5", class="todo__complete-toggle", type="checkbox",checked="")
+            span.checkbox-indicator
+          .todo__info
+            .todo__header
+              h3='Create the main page design'
+              .todo__additional
+                p.todo__due-date='Due date: 22.05.19'
+                span.todo__priority='Priority:'
+                span.todo__priority-indicator.high
+            .todo__content
+              .todo__description='Eldest father can design tastes did joy settle. Roused future he ye an marked. Arose mr rapid in so vexed words. Gay welcome led add lasting chiefly say looking. '
+              button.todo__delete-btn(type='button')
+  .col-md-3.col-xl-2
+    .todo__input-new
+      .todo__sidebar
+        img.todo_sidebar-image(src='static/topbar/img/todo.svg', alt="todo")
+        button.todo__btn-add-new.btn.btn-secondary(type='button', data-toggle="modal", data-target="#add_todo")
+          svg(width=24, height=24)
+            use(xlink:href=`@symbol#todo__plus`)
+          ='New task'
+        .todo__date-filter
+          p.title='Status'
+          ul.todo__date-filter-list
+            li
+              input(id='all-tasks', class='todo__filter-radio', type='radio', name='date-filter', value='all-tasks', checked='')
+              label(for="all-tasks")='All tasks'
+            li
+              input(id='pedning-tasks', class='todo__filter-radio', type='radio', name='date-filter', value='pedning-tasks')
+              label(for="pedning-tasks")='Pending tasks'
+            li
+              input(id='completed-tasks', class='todo__filter-radio', type='radio', name='date-filter', value='completed-tasks')
+              label(for="completed-tasks")='Completed tasks'
+        .todo__priority-filter
+          p.title='Priority'
+          ul.todo__priority-filter-list
+            li
+              input(id='priority-all', class='todo__filter-radio', type='radio', name='priority-filter', value='all', checked='')
+              label(for="priority-all")='All'
+            li
+              input(id='priority-low', class='todo__filter-radio', type='radio', name='priority-filter', value='low')
+              label(for="priority-low")='Low'
+            li
+              input(id='priority-medium', class='todo__filter-radio', type='radio', name='priority-filter', value='medium')
+              label(for="priority-medium")='Medium'
+            li
+              input(id='priority-high', class='todo__filter-radio', type='radio', name='priority-filter', value='high')
+              label(for="priority-high")='High'
+

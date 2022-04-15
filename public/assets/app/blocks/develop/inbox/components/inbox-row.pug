@@ -1,0 +1,17 @@
+mixin inbox-row(item, index, name)
+  tr(class=`inbox__email-list-item ${item.read ? '' : 'inbox__email-list-item--unread'}`)
+    td
+      +check-box(name, 'checkbox-btn checkbox-btn--colored-click inbox__email-list-item-checkbox',
+      index+item.title.replace(/\s+/g, ''))
+    td
+      +icon('inbox', 'star')(width=24, height=24, class="pagination__link-icon")
+    td.inbox__email-table-name
+      =item.title
+    td
+      div
+        b=item.text
+    td
+      if(item.file)
+        +icon('inbox', 'paperclip')
+    td.inbox__email-table-date
+      =item.date

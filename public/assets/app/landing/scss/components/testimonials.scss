@@ -1,0 +1,137 @@
+.testimonials{
+
+  .testimonials__slide-wrap{
+    padding: 0 15px;
+    margin-bottom: 48px;
+    height: 100%;
+
+    &:focus{
+      outline: none;
+    }
+  }
+
+  .testimonials__slide{
+    background: white;
+    padding: 30px 40px;
+    box-shadow: 0 15px 20px 0 rgba(57, 99, 112, 0.06);
+    height: 100%;
+  }
+
+  .testimonials__slide-info{
+    padding-left: 80px;
+    position: relative;
+    height: 60px;
+    margin-bottom: 20px;
+  }
+
+  .testimonials__slide-img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+  }
+
+  .testimonials__slide-review{
+    font-size: 13px;
+    line-height: 1.54;
+  }
+
+  .testimonials__slide-name{
+    color: $color-accent;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 1.33;
+    margin-bottom: 1px;
+  }
+
+  .testimonials__slide-work{
+    font-size: 12px;
+    line-height: 1.33;
+    margin-bottom: 10px;
+  }
+
+  .testimonials__slide-rate{
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+  .testimonials__slide-star{
+    margin-right: 5px;
+
+    &.testimonials__slide-star--active{
+      color: #f9ce31;
+    }
+  }
+
+  .testimonials__dots{
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    height: 8px;
+
+    li{
+      position: relative;
+      width: 8px;
+      cursor: pointer;
+      margin-right: 10px;
+
+      &:last-child{
+        margin-right: 0;
+      }
+
+      &:before{
+        content: '';
+        width: 8px;
+        height: 8px;
+        opacity: 0.28;
+        background-color: #adc0c6;
+        position: absolute;
+        border-radius: 50%;
+        transition: 0.3s;
+        cursor: pointer;
+      }
+
+      &:hover{
+
+        &:before{
+          opacity: 0.5;
+        }
+      }
+
+      &.slick-active:before{
+        background-color: $pricing-accent;
+        opacity: 1;
+      }
+    }
+
+    button{
+      opacity: 0;
+      width: 8px;
+      padding: 0;
+      cursor: pointer;
+    }
+  }
+
+  @media screen and (max-width: 420px){
+
+    .testimonials__slide-info{
+      height: auto;
+      text-align: center;
+      padding: 0;
+    }
+
+    .testimonials__slide-img{
+      position: relative;
+      margin: 0 auto 20px auto;
+    }
+  }
+}

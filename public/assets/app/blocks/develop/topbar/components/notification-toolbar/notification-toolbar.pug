@@ -1,0 +1,21 @@
+include ../../../../common/dropdown/dropdown
+
+mixin notification-toolbar
+  .topbar__collapse
+    +dropdown-set('dropdown','content', "notification")
+      i.mdi.mdi-bell
+    button.topbar__back.collapsed(data-target='#notification', data-toggle="collapse")
+    +dropdown-set('dropdown','toggle', "notification")
+      .topbar__collapse-title-wrap
+        p.topbar__collapse-title='Notification'
+        button.topbar__collapse-button(type="button")='Mark all as read'
+      each item in global.jsons.topbar.notification.items
+        .topbar__collapse-item
+          .topbar__collapse-img-wrap
+            img.topbar__collapse-img(src=item.link, alt=item.name)
+          p.topbar__collapse-message
+            span.topbar__collapse-name=item.name
+            |  #{item.message}
+          p.topbar__collapse-date=item.date
+      a.topbar__collapse-link(href="/")='See all notifications'
+    +dropdown("notification", global.jsons.topbar.notification.classes)

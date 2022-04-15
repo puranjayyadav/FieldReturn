@@ -1,0 +1,99 @@
+mixin app-dashboard()
+  .container
+    .dashboards
+      .row
+        .col-md-12
+          h3.page-title='App Dashboard'
+      .row
+        .col-md-12.col-lg-6.col-xl-4
+          +panel('CURRENT USERS', 'mobile-current-users', 'Last 10 minutes').card
+            .dashboard__current-users
+              .dashboard__current-users-chart
+                +echartjs('dashboard-mobile-current-users', '280px', '150px')
+                p.dashboard__current-users-label="345"
+              .dashboard__current-users-info
+                p.dashboard__current-users-day
+                  span="7d min"
+                  span="0"
+                p.dashboard__current-users-day
+                  span="7d max"
+                  span="500"
+        .col-md-12.col-lg-6.col-xl-8
+          +panel('Active users', 'mobile-active-users', 'See how users involve into app')
+            +echartjs('dashboard-mobile-active-users', null, '190px')
+      .row
+        .col-12.col-md-12.col-lg-6.col-xl-3
+          .card
+            .dashboard__card-widget.card-body
+              .mobile-app-widget
+                .mobile-app-widget__top-line.mobile-app-widget__top-line--pink
+                  p.mobile-app-widget__total-stat="17 148"
+                .mobile-app-widget__title
+                  h5="SESSIONS"
+                +progress-bar('middle', null, 'pink-gradient', 87, '87%')
+        .col-12.col-md-12.col-lg-6.col-xl-3
+          .card
+            .dashboard__card-widget.card-body
+              .mobile-app-widget
+                .mobile-app-widget__top-line.mobile-app-widget__top-line--lime
+                  p.mobile-app-widget__total-stat="1 472"
+                .mobile-app-widget__title
+                  h5="ACTIVE USERS"
+                +progress-bar('middle', null, 'lime-gradient', 32, '32%')
+        .col-12.col-md-12.col-lg-6.col-xl-3
+          .card
+            .dashboard__card-widget.card-body
+              .mobile-app-widget
+                .mobile-app-widget__top-line.mobile-app-widget__top-line--blue
+                  p.mobile-app-widget__total-stat="568"
+                .mobile-app-widget__title
+                  h5="NEW USERS"
+                +progress-bar('middle', null, 'blue-gradient', 79, '79%')
+        .col-12.col-md-12.col-lg-6.col-xl-3
+          .card
+            .dashboard__card-widget.card-body
+              .mobile-app-widget
+                .mobile-app-widget__top-line.mobile-app-widget__top-line--turquoise
+                  p.mobile-app-widget__total-stat="21 534"
+                .mobile-app-widget__title
+                  h5="PAGEVIEWS"
+                +progress-bar('middle', null, 'turquoise-gradient', 45, '45%')
+      .row
+        .col-md-12.col-lg-6.col-xl-6
+          +panel('APP TITLE CLICKS', 'mobile-app-title-clicks', 'How effective your business is in comparison with the previous month').card
+            +echartjs('app-dashboard-title-clicks', null, '300px')
+        .col-12.col-md-12.col-lg-6.col-xl-3
+          +panel('WEEKLY STAT', 'mobile-weekly-stat', 'Top selling items statistic by last month').card
+            .dashboard__weekly-stat
+              .dashboard__weekly-stat-chart
+                .dashboard__weekly-stat-chart-item
+                  .dashboard__weekly-stat-chart-pie
+                    +echartjs('app-dashboard-weekly-stat1')
+                  .dashboard__weekly-stat-info
+                    p="Customers satisfaction rate"
+                .dashboard__weekly-stat-chart-item
+                  .dashboard__weekly-stat-chart-pie
+                    +echartjs('app-dashboard-weekly-stat2')
+                  .dashboard__weekly-stat-info
+                    p="Customers satisfaction rate"
+
+        .col-12.col-md-12.col-lg-6.col-xl-3
+          +panel('SOCIAL MARKETING', 'mobile-social-marketing', 'Comes from social networks').card
+            .dashboard__social-marketing
+              .dashboard__social-stat
+                .dashboard__social-stat-item
+                  .dashboard__social-stat-title="Twitter"
+                  +progress-bar('middle', null, 'blue-gradient', 87, '87%')
+                .dashboard__social-stat-item
+                  .dashboard__social-stat-title="Facebook"
+                  +progress-bar('middle', null, 'blue-gradient', 65, '65%')
+                .dashboard__social-stat-item
+                  .dashboard__social-stat-title="VK"
+                  +progress-bar('middle', null, 'blue-gradient', 92, '92%')
+                .dashboard__social-stat-item
+                  .dashboard__social-stat-title="Instagram"
+                  +progress-bar('middle', null, 'blue-gradient', 81, '81%')
+                .dashboard__social-stat-item
+                  .dashboard__social-stat-title="Linkedin"
+                  +progress-bar('middle', null, 'blue-gradient', 81, '81%')
+

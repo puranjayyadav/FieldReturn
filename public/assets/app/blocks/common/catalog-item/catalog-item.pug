@@ -1,0 +1,17 @@
+- const path = 'static/topbar/img/for_store/catalog/';
+
+mixin catalog-item(lable, img, title, description, price, colors, old_price)
+  .catalog-item
+    a.catalog-item__link(href='ecommerce/product_page')
+      if(lable)
+        img.catalog-item__label(src=`${path}${lable}.png`, alt=lable)
+      .catalog-item__img-wrap
+        img.catalog-item__img(src=`${path}${img}.png`, alt=img)
+      .catalog-item__info
+        h4.catalog-item__title=title
+        p.catalog-item__description=description
+        h1.catalog-item__price=price
+        if(old_price)
+          .catalog-item__old-price=old_price
+        each color in colors
+          span.catalog-item__color(style=`background: ${color} none repeat scroll 0% 0%;`)

@@ -1,0 +1,24 @@
+mixin tabs(tabs, extra, prefix, active)
+  div(class=`tabs ${extra ? extra : ''}`)
+    .tabs__wrap
+      ul.applications__slider.nav(role="tablist")
+        each item in tabs.links
+          li.nav-item
+            a(class=`applications__slider-btn ${active === item ? 'active show' : 'false'}`,
+            id=`${item}-tab-${Math.random()}`
+            data-toggle="tab"
+            href=`#${item}${prefix}`
+            role="tab"
+            aria-controls=`${item}${prefix}`
+            aria-selected=`${active === item ? 'true' : 'false'}`)=item
+      .tab-content
+        each item, index in (tabs.contents || [])
+          div(class=`applications__slider-body ${active === tabs.links[index] ? 'active show' : 'false'} ${' tab-pane'}`, id=`${tabs.links[index]}${prefix}` role="tabpanel")
+            img.applications__decor.applications__decor--plus-lg(src="landing/assets/img/decor/plus-lg.png", alt="decoration")
+            img.applications__decor.applications__decor--plus-md(src="landing/assets/img/decor/plus-lg.png", alt="decoration")
+            img.applications__decor.applications__decor--plus-sm(src="landing/assets/img/decor/plus-lg.png", alt="decoration")
+            img.applications__decor.applications__decor--point(src="landing/assets/img/decor/plus-lg.png", alt="decoration")
+            img.applications__slider-body-img(src=item, alt="applications")
+            p.applications__slider-body-caption=tabs.captions[index]
+
+- blocks={};

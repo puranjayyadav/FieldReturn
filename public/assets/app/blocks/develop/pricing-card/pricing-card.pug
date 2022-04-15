@@ -1,0 +1,13 @@
+mixin pricing-card(type, src, title, price, users, storage, monthly, support)
+  div(class=` pricing-card pricing-card--${type} card`)
+    .pricing-card__body.card-body
+      img.pricing-card__img(src=src, alt=title)
+      h3.pricing-card__plan=title
+      hr
+      p.pricing-card__price=`$${price}`
+        span='/mo'
+      p.pricing-card__feature=`${users} Users`
+      p.pricing-card__feature=`${storage} Gb storage`
+      p.pricing-card__feature=monthly
+      p.pricing-card__feature=support
+      +btn('btn-primary', 'pricing-card__button')='Sign Up'

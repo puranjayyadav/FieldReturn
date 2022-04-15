@@ -1,0 +1,40 @@
+mixin project-summary()
+  .project-summary
+    .card__title
+      h5.bold-text='NES website for global company'
+      button.project-summary__btn.btn.btn-outline-secondary.btn-sm='Edit'
+    table.project-summary__info
+      tbody
+        tr
+          th='Project owner: '
+          td='Mary McCorny'
+        tr
+          th='Due date: '
+          td='21/12/2018'
+        tr
+          th='Client Brief: '
+          td
+            a(href='#')='Design Brief_Global Co.txt'
+    p='Knowledge nay estimable questions repulsive daughters boy. Solicitude gay way unaffected expression for. His mistress ladyship required off horrible disposed rejoiced. Unpleasing pianoforte unreserved as oh he unpleasant no inquietude insipidity. Advantages can discretion possession add favourable cultivated admiration far. Why rather assure how esteem end hunted nearer and before. By an truth after heard going early given he.'
+    .project-summary__stats
+      .project-summary__stat
+        p='123'
+          span='Tasks'
+      .project-summary__stat
+        p='12'
+         span='Users'
+      .project-summary__stat
+        p='71'
+         span='Bugs'
+      .project-summary__progress.progress-wrap.progress-wrap--middle
+        +progress-bar('middle', null, null, 74)
+          | 74% completed
+    hr
+    .project-summary__statistics
+      button.project-summary__btn.btn.btn-ouline-secondary.btn-sm(type='button')='Update Data'
+      .project-summary__statistic
+        p.project-summary__statistic-title='Task statistic'
+        .project-summary__chart(id='project-summary__chart1', style='width: 100%; height: 400px')
+      .project-summary__statistic
+        p.project-summary__statistic-title='Bug statistic'
+        .project-summary__chart(id='project-summary__chart2', style='width: 100%; height: 400px')

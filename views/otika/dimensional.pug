@@ -1,0 +1,213 @@
+extends base
+block content                             
+                            
+        // Main Content
+        .main-content
+          section.section
+            .section-body
+              .row
+                .col-12.col-md-6.col-lg-6
+                  .card
+                    .card-header
+                      h4 Camplate Values
+                    .card-body
+                      form.form
+                      .form-group
+                        label Camp taper 
+                        input#taper.form-control(type='text')
+                      .form-group
+                        label TPI Values
+                        input#tpi.form-control( placeholder='TPI 1')
+                        br
+                        input.form-control( placeholder = 'TPI 2')
+
+                        small.form-text.text-muted
+                          | Please upload appropriate values of TPI 
+                    
+                      .form-group
+                        label Cam Profile
+                        input.form-control(type='text')
+                      .custom-file
+                        input#customFile.custom-file-input(type='file')
+                        label.custom-file-label(for='customFile') Upload Cam Photo
+                        
+                        br
+                        small.form-text.text-muted
+                            | Please Upload both the Value and Photo of Cam Profile
+                            
+                        br
+                      .form-group
+                        label Rz Values
+                        input.form-control(type='text', placeholder= 'R Max')
+            
+                    .card-footer.text-right
+                      button.btn.btn-primary.mr-1(type='submit') Submit
+                      button.btn.btn-secondary(type='reset') Reset
+                  .card
+                    .card-header
+                      h4 Roller Values
+                    .card-body
+                      form.form-inline
+                        label.sr-only(for='inlineFormInputName2') Sphericity
+                        input#inlineFormInputName2.form-control.mb-2.mr-sm-2(type='text' placeholder='Sphericity')
+                        label.sr-only(for='inlineFormInputGroupUsername2') Line Profile
+                        .input-group.mb-2.mr-sm-2
+                          input#inlineFormInputGroupUsername2.form-control(type='text' placeholder='Line Profile')
+                        label.sr-only(for='inlineFormInputGroupUsername2') Runout 
+                        .input-group.mb-2.mr-sm-2
+                          input#inlineFormInputGroupUsername2.form-control(type='text' placeholder='Runout')
+                        label.sr-only(for='inlineFormInputGroupUsername2') Ballekit
+                        .input-group.mb-2.mr-sm-2
+                          input#inlineFormInputGroupUsername2.form-control(type='text' placeholder='Ballekit')
+                        .form-group
+                        
+                        .custom-file
+                            input#customFile.custom-file-input(type='file')
+                            label.custom-file-label(for='customFile') Upload Ballekit Photo
+                        
+                  .card
+                    .card-header
+                      h4 Cross Disc
+                    .card-body
+                      label Claw Width 
+                      form.form-inline
+                        label.sr-only(for='inlineFormInputName2') Claw Value 1 
+                        input#inlineFormInputName2.form-control.mb-2.mr-sm-2(type='text' placeholder='Claw Value 1')
+                        label.sr-only(for='inlineFormInputGroupUsername2') Claw Value 2 
+                        .input-group.mb-2.mr-sm-2
+                          input#inlineFormInputGroupUsername2.form-control(type='text' placeholder='Claw Value 2')
+                        label.sr-only(for='inlineFormInputGroupUsername2') Claw Value 3 
+                        .input-group.mb-2.mr-sm-2
+                          input#inlineFormInputGroupUsername2.form-control(type='text' placeholder='Claw Value 3')
+                        label.sr-only(for='inlineFormInputGroupUsername2') Claw Value 4
+                        .input-group.mb-2.mr-sm-2
+                          input#inlineFormInputGroupUsername2.form-control(type='text' placeholder='Claw Value 4')
+                        .form-group
+                      br
+                      
+                      label Perpendicularity ( Claw to Face)
+                      form.form-inline
+                        label.sr-only(for='inlineFormInputName2') Value 1 
+                        input#inlineFormInputName2.form-control.mb-2.mr-sm-2(type='text' placeholder='Value 1')
+                        label.sr-only(for='inlineFormInputGroupUsername2') Value 2 
+                        .input-group.mb-2.mr-sm-2
+                         input#inlineFormInputGroupUsername2.form-control(type='text' placeholder='Value 2')
+
+                  
+                .col-12.col-md-6.col-lg-6
+                  .card
+                    .card-header
+                      h4 Vane Pump 
+                    .card-body
+                      .form-group
+                        label
+                          | Vane to Impeller height 
+                      form.form-inline(method='post' action='/addanything')
+                        label.sr-only(for='inlineFormInputName2') Claw Value 1 
+                        input#inlineFormInputName2.form-control.mb-2.mr-sm-2(type='text' placeholder='Vane Height 1')
+                        label.sr-only(for='inlineFormInputGroupUsername2') Vane Height 2 
+                        .input-group.mb-2.mr-sm-2
+                          input#inlineFormInputGroupUsername2.form-control(type='text' placeholder='Vane Height 2')
+                        label.sr-only(for='inlineFormInputGroupUsername2') Vane Height 3 
+                        .input-group.mb-2.mr-sm-2
+                          input#inlineFormInputGroupUsername2.form-control(type='text' placeholder='Vane Height 3')
+                        label.sr-only(for='inlineFormInputGroupUsername2') Vane Height 4
+                        .input-group.mb-2.mr-sm-2
+                          input#inlineFormInputGroupUsername2.form-control(type='text' placeholder='Vane Height 4')
+                      .form-group
+                        label Impeller to EC ring Height 
+                      form.form-inline
+                        label.sr-only(for='inlineFormInputName2') Vane Height 1 
+                        input#inlineFormInputName2.form-control.mb-2.mr-sm-2(type='text' placeholder='Vane Height 1')
+                        label.sr-only(for='inlineFormInputGroupUsername2') Vane Height 2 
+                        .input-group.mb-2.mr-sm-2
+                          input#inlineFormInputGroupUsername2.form-control(type='text' placeholder='Vane Height 2')
+
+                  .card
+                    .card-header
+                      h4 Housing Values 
+                    .card-body
+                      .form-group
+                        label
+                          | Housing Bore Concentricity 
+                        input.form-control.form-control.mb-2.mr-sm-2(type='text' placeholder='Claw Value 1')
+                      .form-group
+                        label Impeller to EC ring Height 
+                        input.form-control.form-control.mb-2.mr-sm-2(type='text' placeholder='Claw Value 1')
+                  .card
+                    .card-header
+                      h4 Roller Ring 
+                    .card-body
+                      .form-group
+                        label
+                          | Slot Height 
+                      form.form-inline
+                        label.sr-only(for='inlineFormInputGroupUsername2') Slot Height 1 
+                        .input-group.mb-2.mr-sm-2
+                          input#inlineFormInputGroupUsername2.form-control(type='text' placeholder='Slot Height 1')
+                        label.sr-only(for='inlineFormInputGroupUsername2') Slot Height 2 
+                        .input-group.mb-2.mr-sm-2
+                          input#inlineFormInputGroupUsername2.form-control(type='text' placeholder='Slot Height 2')
+                        label.sr-only(for='inlineFormInputGroupUsername2') Slot Height 3
+                        .input-group.mb-2.mr-sm-2
+                          input#inlineFormInputGroupUsername2.form-control(type='text' placeholder='Slot Height 3')
+                        label.sr-only(for='inlineFormInputName2') Slot Height 4 
+                        input#inlineFormInputName2.form-control.mb-2.mr-sm-2(type='text' placeholder='Slot Height 4')
+                        label.sr-only(for='inlineFormInputGroupUsername2') Slot Height 5 
+                        .input-group.mb-2.mr-sm-2
+                          input#inlineFormInputGroupUsername2.form-control(type='text' placeholder='Slot Height 5')
+                        label.sr-only(for='inlineFormInputGroupUsername2') Slot Height 6 
+                        .input-group.mb-2.mr-sm-2
+                          input#inlineFormInputGroupUsername2.form-control(type='text' placeholder='Slot Height 6')
+                        label.sr-only(for='inlineFormInputGroupUsername2') Slot Height 7
+                        .input-group.mb-2.mr-sm-2
+                          input#inlineFormInputGroupUsername2.form-control(type='text' placeholder='Slot Height 7')
+                        label.sr-only(for='inlineFormInputGroupUsername2') Slot Height 8
+                        .input-group.mb-2.mr-sm-2
+                          input#inlineFormInputGroupUsername2.form-control(type='text' placeholder='Slot Height 8')
+                      .form-group
+                        label
+                          | Slot Width 
+                      form.form-inline
+                        label.sr-only(for='inlineFormInputGroupUsername2') Slot Width 1 
+                        .input-group.mb-2.mr-sm-2
+                          input#inlineFormInputGroupUsername2.form-control(type='text' placeholder='Slot Width 1')
+                        label.sr-only(for='inlineFormInputGroupUsername2') Slot Width 2 
+                        .input-group.mb-2.mr-sm-2
+                          input#inlineFormInputGroupUsername2.form-control(type='text' placeholder='Slot Width 2')
+                        label.sr-only(for='inlineFormInputGroupUsername2') Slot Width 3
+                        .input-group.mb-2.mr-sm-2
+                          input#inlineFormInputGroupUsername2.form-control(type='text' placeholder='Slot Width 3')
+                        label.sr-only(for='inlineFormInputName2') Slot Width 4 
+                        input#inlineFormInputName2.form-control.mb-2.mr-sm-2(type='text' placeholder='Slot Width 4')
+                        label.sr-only(for='inlineFormInputGroupUsername2') Slot Width 5 
+                        .input-group.mb-2.mr-sm-2
+                          input#inlineFormInputGroupUsername2.form-control(type='text' placeholder='Slot Width 5')
+                        label.sr-only(for='inlineFormInputGroupUsername2') Slot Width 6 
+                        .input-group.mb-2.mr-sm-2
+                          input#inlineFormInputGroupUsername2.form-control(type='text' placeholder='Slot Width 6')
+                        label.sr-only(for='inlineFormInputGroupUsername2') Slot Width 7
+                        .input-group.mb-2.mr-sm-2
+                          input#inlineFormInputGroupUsername2.form-control(type='text' placeholder='Slot Width 7')
+                        label.sr-only(for='inlineFormInputGroupUsername2') Slot Width 8
+                        .input-group.mb-2.mr-sm-2
+                          input#inlineFormInputGroupUsername2.form-control(type='text' placeholder='Slot Width 8')
+                      .form-group
+                        label
+                          | Roller Height 
+                      form.form-inline
+                        label.sr-only(for='inlineFormInputGroupUsername2') Roller Height 1 
+                        .input-group.mb-2.mr-sm-2
+                          input#inlineFormInputGroupUsername2.form-control(type='text' placeholder='Roller Height 1')
+                        label.sr-only(for='inlineFormInputGroupUsername2') Roller Height 2 
+                        .input-group.mb-2.mr-sm-2
+                          input#inlineFormInputGroupUsername2.form-control(type='text' placeholder='Roller Height 2')
+                        label.sr-only(for='inlineFormInputGroupUsername2') Roller Height 3
+                        .input-group.mb-2.mr-sm-2
+                          input#inlineFormInputGroupUsername2.form-control(type='text' placeholder='Roller Height 3')
+                        label.sr-only(for='inlineFormInputGroupUsername2') Roller Height 4
+                        .input-group.mb-2.mr-sm-2
+                          input#inlineFormInputGroupUsername2.form-control(type='text' placeholder='Roller Height 4') 
+                       
+                    .card-footer
+                      button.btn.btn-primary Submit

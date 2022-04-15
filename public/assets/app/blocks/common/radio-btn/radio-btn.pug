@@ -1,0 +1,6 @@
+mixin radio-btn(name, classes)
+  label(class=`radio-btn ${classes || ''}`)
+    input.radio-btn__radio(type='radio', name=name)&attributes(attributes)
+    span.radio-btn__radio-custom
+    span.radio-btn__label
+      block

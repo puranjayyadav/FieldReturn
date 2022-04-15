@@ -1,0 +1,33 @@
+doctype html
+html(lang='en')
+  // errors-403.html  21 Nov 2019 04:05:02 GMT
+  include _header
+  
+  body
+    .loader
+    #app
+      section.section
+        .container.mt-5
+          .page-error
+            .page-inner
+              h1 403
+              .page-description= msg
+                | 
+              .page-search
+                form
+                  .form-group.floating-addon.floating-addon-not-append
+                    .input-group
+                      .input-group-prepend
+                        .input-group-text
+                          
+                .mt-3
+                  a(href='/') Back to Home
+    // General JS Scripts
+    script(src='assets/js/app.min.js')
+    // JS Libraies
+    // Page Specific JS File
+    // Template JS File
+    script(src='assets/js/scripts.js')
+    // Custom JS File
+    script(src='assets/js/custom.js')
+    // errors-403.html  21 Nov 2019 04:05:02 GMT

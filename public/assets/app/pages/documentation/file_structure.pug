@@ -1,0 +1,10 @@
+extends ../../blocks/layout
+block layout
+  - var active_page = 'documentation_file_stricture'
+
+block content
+  .container.documentation
+    .row
+      .col-md-12
+        h3.page-title='Documentation / File structure'
+    +documentation-file-structure

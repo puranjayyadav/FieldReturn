@@ -1,0 +1,59 @@
+extends ../../blocks/layout
+block layout
+  - var active_page = 'forms_mask_form'
+
+block content
+  .container.todo-app
+    .row
+      .col-md-12
+        h3.page-title='Mask form'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-md-12.col-lg-12
+        +card('Mask examples', [])
+          form.form
+            .form__form-group
+              span.form__form-group-label='Phone '
+                span='(xxx)-xxx-xxxx'
+              div.form__form-group-field
+                .form__form-group-input-wrap
+                  input.mask(placeholder='Name', id='1-mask')
+            .form__form-group
+              span.form__form-group-label='Phone with code '
+                span='+23-xxx-xxxx'
+              div.form__form-group-field
+                .form__form-group-input-wrap
+                  input.mask(placeholder='Name', id='2-mask')
+            .form__form-group
+              span.form__form-group-label='Date '
+                span='dd/mm/yyyy'
+              div.form__form-group-field
+                .form__form-group-input-wrap
+                  input.mask(placeholder='Name', id='3-mask')
+            .form__form-group
+              span.form__form-group-label='Date '
+                span='dd-mm-yyyy'
+              div.form__form-group-field
+                .form__form-group-input-wrap
+                  input.mask(placeholder='Name', id='4-mask')
+            .form__form-group
+              span.form__form-group-label='Currency '
+                span='$xxx,xxx,xxx.xx'
+              div.form__form-group-field
+                .form__form-group-input-wrap
+                  input.mask(placeholder='Name', id='5-mask')
+            .form__form-group
+              span.form__form-group-label='Licence key '
+                span='xxxx-xxxx-xxxx-xxxx'
+              div.form__form-group-field
+                .form__form-group-input-wrap
+                  input.mask(placeholder='Name', id='6-mask')
+            .form__form-group
+              span.form__form-group-label='IP Address '
+                span='xxx.xxx.xxx.xxx'
+              div.form__form-group-field
+                .form__form-group-input-wrap
+                  input.mask(placeholder='Name', id='7-mask')
+            .form__button-toolbar.btn-toolbar
+              button.btn.btn-primary='Submit'
+              button.btn.btn-secondary(type="button")='Cancel'

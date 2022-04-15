@@ -1,0 +1,22 @@
+include ../topbar/components/search/search
+
+mixin sidebar(active)
+  .sidebar
+    button.sidebar__back
+    section.sidebar__scroll.scroll
+        div
+          .sidebar__wrapper.sidebar__wrapper--desktop
+            .sidebar__content
+              +menu(global.jsons.sidebar['group-1'], active, global.jsons.sidebar['classes'])
+              +menu(global.jsons.sidebar['group-2'], active, global.jsons.sidebar['classes'])
+              +menu(global.jsons.sidebar['group-3'], active, global.jsons.sidebar['classes'])
+              +menu(global.jsons.sidebar['group-4'], active, global.jsons.sidebar['classes'])
+              +menu(global.jsons.sidebar['group-5'], active, global.jsons.sidebar['classes'])
+          .sidebar__wrapper.sidebar__wrapper--mobile
+            .sidebar__content
+              +search-mobile
+              +menu(global.jsons.sidebar['group-1'], active, global.jsons.sidebar['classes'])
+              +menu(global.jsons.sidebar['group-2'], active, global.jsons.sidebar['classes'])
+              +menu(global.jsons.sidebar['group-3'], active, global.jsons.sidebar['classes'])
+              +menu(global.jsons.sidebar['group-4'], active, global.jsons.sidebar['classes'])
+              +menu(global.jsons.sidebar['group-5'], active, global.jsons.sidebar['classes'])

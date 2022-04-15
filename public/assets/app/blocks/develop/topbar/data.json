@@ -1,0 +1,41 @@
+{
+  "language": {
+    "classes": {"button": "topbar__btn", "collapse": "topbar__collapse-content topbar__collapse-content--language"},
+    "items": [
+      { "link":"static/topbar/language/de.png", "title":"DE"},
+      { "link":"static/topbar/language/fr.png", "title":"FR"},
+      { "link":"static/topbar/language/gb.png", "title":"EN"}
+    ]
+  },
+  "mail": {
+    "classes": {"button": "topbar__btn topbar__btn--mail topbar__btn--new", "collapse": "topbar__collapse-content"},
+    "items": [
+      { "link":"static/topbar/topbar/ava.png", "name": "Cristopher Changer", "date": "09:02", "message": "Good but communication was good e.."},
+      { "link":"static/topbar/topbar/ava2.png", "name": "Sveta Narry", "date": "09:00", "message": "It is a long established fact that a read.."},
+      { "link":"static/topbar/topbar/ava3.png", "name": "Lory McQueen", "date": "08:43", "message": "There are many variations of passages.."},
+      { "link":"static/topbar/topbar/ava.png", "name": "Cristopher Changer", "date": "08:43", "message": "Yas sent you an invitation to join proj.."}
+    ]
+  },
+  "notification": {
+    "classes": {"button": "topbar__btn", "collapse": "topbar__collapse-content"},
+    "items": [
+      { "link":"static/topbar/topbar/ava.png", "name": "Cristopher Changer", "date": "09:02", "message": "has started a new project"},
+      { "link":"static/topbar/topbar/ava2.png", "name": "Sveta Narry", "date": "09:00", "message": "has closed a project"},
+      { "link":"static/topbar/topbar/ava3.png", "name": "Lory McQueen", "date": "08:43", "message": "has started a new project as a Project Manager"},
+      { "link":"static/topbar/topbar/ava.png", "name": "Cristopher Changer", "date": "08:43", "message": "has closed a project"}
+    ]
+  },
+  "account": {
+    "classes": {"button": "topbar__avatar", "collapse":"topbar__menu-wrap"},
+    "items": [
+      { "link":"account/profile", "title":"My Profile", "icon": "user"},
+      { "link":"default_pages/calendar", "title":"Calendar", "icon": "calendar-full"},
+      { "link":"todo", "title":"Tasks", "icon": "list"},
+      { "link":"mail", "title":"Inbox", "icon": "inbox"},
+      { "divider": true },
+      { "link":"account/profile", "title":"Account Settings", "icon": "cog"},
+      { "link":"account/lock_screen", "title":"Lock Screen", "icon": "lock"},
+      { "link":"account/log_in", "title":"Log Out", "icon": "exit"}
+    ]
+  }
+}

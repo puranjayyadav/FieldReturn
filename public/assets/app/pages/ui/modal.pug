@@ -1,0 +1,45 @@
+extends ../../blocks/layout
+
+block layout
+  - var active_page = 'ui_modals'
+
+block content
+  .container
+    .row
+      .col-md-12
+        h3.page-title='Modals'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-12.col-md-12.col-lg-6.col-xl-4
+        +card('Default modals', [{'type': 'normal', 'text': 'Use default modal'}])
+          .btn-toolbar
+            +btn('btn-primary')(data-toggle="modal", data-target="#modal-1")='Default'
+            +btn('btn-success')(data-toggle="modal", data-target="#modal-2")='Success'
+            +btn('btn-warning')(data-toggle="modal", data-target="#modal-3")='Warning'
+            +btn('btn-danger')(data-toggle="modal", data-target="#modal-4")='Danger'
+      .col-12.col-md-12.col-lg-6.col-xl-4
+        +card('COLORED modals', [{'type': 'normal', 'text': 'Use default modal with property '}, {'type': 'red', 'text': 'colored'}])
+          .btn-toolbar
+            +btn('btn-primary')(data-toggle="modal", data-target="#modal-5")='Default'
+            +btn('btn-success')(data-toggle="modal", data-target="#modal-6")='Success'
+            +btn('btn-warning')(data-toggle="modal", data-target="#modal-7")='Warning'
+            +btn('btn-danger')(data-toggle="modal", data-target="#modal-8")='Danger'
+      .col-12.col-md-12.col-lg-6.col-xl-4
+        +card('HEADER modals', [{'type': 'normal', 'text': 'Use default modal with property '}, {'type': 'red', 'text': 'header'}])
+          .btn-toolbar
+            +btn('btn-primary')(data-toggle="modal", data-target="#modal-9")='Default'
+            +btn('btn-success')(data-toggle="modal", data-target="#modal-10")='Success'
+            +btn('btn-warning')(data-toggle="modal", data-target="#modal-11")='Warning'
+            +btn('btn-danger')(data-toggle="modal", data-target="#modal-12")='Danger'
+  +modal('modal-1', "Expect warmly its tended garden him esteem had remove off. Effects dearest staying now sixteen nor improve.", "primary")
+  +modal('modal-2', "Expect warmly its tended garden him esteem had remove off. Effects dearest staying now sixteen nor improve.", "success")
+  +modal('modal-3', "Expect warmly its tended garden him esteem had remove off. Effects dearest staying now sixteen nor improve.", "warning")
+  +modal('modal-4', "Expect warmly its tended garden him esteem had remove off. Effects dearest staying now sixteen nor improve.", "danger")
+  +modal('modal-5', "Expect warmly its tended garden him esteem had remove off. Effects dearest staying now sixteen nor improve.", "primary", "colored")
+  +modal('modal-6', "Expect warmly its tended garden him esteem had remove off. Effects dearest staying now sixteen nor improve.", "success", "colored")
+  +modal('modal-7', "Expect warmly its tended garden him esteem had remove off. Effects dearest staying now sixteen nor improve.", "warning", "colored")
+  +modal('modal-8', "Expect warmly its tended garden him esteem had remove off. Effects dearest staying now sixteen nor improve.", "danger", "colored")
+  +modal('modal-9', "Expect warmly its tended garden him esteem had remove off. Effects dearest staying now sixteen nor improve.", "primary", "header")
+  +modal('modal-10', "Expect warmly its tended garden him esteem had remove off. Effects dearest staying now sixteen nor improve.", "success", "header")
+  +modal('modal-11', "Expect warmly its tended garden him esteem had remove off. Effects dearest staying now sixteen nor improve.", "warning", "header")
+  +modal('modal-12', "Expect warmly its tended garden him esteem had remove off. Effects dearest staying now sixteen nor improve.", "danger", "header")

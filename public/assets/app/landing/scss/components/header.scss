@@ -1,0 +1,58 @@
+.header {
+  padding-top: 215px;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  .header__title {
+    max-width: 680px;
+    line-height: normal;
+    margin: auto;
+    color: $text-color-main;
+    margin-bottom: 20px;
+  }
+
+  .header__img {
+    margin-top: 40px;
+    max-width: 1000px;
+    padding-bottom: 60px;
+  }
+
+  .header__technologies-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    :not(:last-child){
+      margin-right: 40px;
+    }
+  }
+
+  .header__technology-logo {
+    width: 80px;
+    margin-right: 0 !important;
+    margin-bottom: 24px;
+  }
+
+  .header__technology-text {
+    text-decoration-line: underline;
+    font-weight: 600;
+    font-size: 24px;
+    color: black;
+  }
+
+  .header__subhead {
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 500px;
+    margin-bottom: 30px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.landing__header-subhead-update {
+  text-decoration: underline;
+  font-weight: 700;
+  color: #244153;
+}

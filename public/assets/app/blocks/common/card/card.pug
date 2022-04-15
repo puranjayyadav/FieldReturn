@@ -1,0 +1,31 @@
+mixin subhead(subhead)
+  h5.subhead
+    each item in subhead
+      if (item.type !== 'red')
+        =`${item.text} `
+      else
+        +red-text=item.text
+
+mixin card_title(item)
+  .card__title
+    h5.bold-text=item.title
+    if item.subhead && !Array.isArray(item.subhead)
+      each r in item.subhead.items
+        each i in r
+          +subhead(i)
+    else
+      +subhead(item.subhead)
+
+mixin card(title, subhead, double_title, extraBold, classes)
+  .card
+    div(class=`card-body ${classes ? classes : ''}`)
+      +card_title({
+        title,
+        subhead
+      })
+      if (extraBold)
+        h5.bold-text=extraBold
+      if (double_title)
+        +card_title({title: double_title.title, subhead: double_title.subhead})
+      block
+

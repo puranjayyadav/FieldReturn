@@ -1,0 +1,185 @@
+extends ../../blocks/layout
+block layout
+  - var active_page = 'forms_form_layouts'
+
+block content
+  .container.todo-app
+    .row
+      .col-md-12
+        h3.page-title='Form layouts'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Horizontal form', [{'type': 'normal', 'text': 'Labels are left from fields'}])
+          form.form.form--horizontal
+            .form__form-group
+              span.form__form-group-label='Username'
+              div.form__form-group-field
+                input(placeholder='Default label')
+            .form__form-group
+              span.form__form-group-label='E-mail'
+              div.form__form-group-field
+                input(placeholder='example@mail.com', type='email')
+            .form__form-group
+              span.form__form-group-label='Url'
+              div.form__form-group-field
+                input(placeholder='https://themeforest.net')
+            .form__form-group
+              span.form__form-group-label='Password'
+              div.form__form-group-field
+                input(placeholder='Password', type='password')
+                button.form__form-group-button.passwordClick
+                  +icon('form', 'eye')
+            .form__form-group
+              div.form__form-group-field
+                +check-box('checkbox-btn')
+                  = 'Remember me'
+            .form__button-toolbar.btn-toolbar
+              button.btn.btn-primary(type='submit')='Submit'
+              button.btn.btn-secondary(type='button')='Cancel'
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Horizontal form with icons', [{'type': 'normal', 'text': 'Labels are left from fields and icons'}])
+          form.form.form--horizontal
+            .form__form-group
+              span.form__form-group-label='Username'
+              div.form__form-group-field
+                .form__form-group-icon
+                  +icon('form', 'account-outline')
+                input(placeholder='Default label')
+            .form__form-group
+              span.form__form-group-label='E-mail'
+              div.form__form-group-field
+                .form__form-group-icon
+                  +icon('form', 'mail-ru')
+                input(placeholder='example@mail.com', type='email')
+            .form__form-group
+              span.form__form-group-label='Url'
+              div.form__form-group-field
+                .form__form-group-icon
+                  +icon('form', 'web')
+                input(placeholder='https://themeforest.net')
+            .form__form-group
+              span.form__form-group-label='Password'
+              div.form__form-group-field
+                .form__form-group-icon
+                  +icon('form', 'key-variant')
+                input(placeholder='Password', type='password')
+                button.form__form-group-button.passwordClick
+                  +icon('form', 'eye')
+            .form__form-group
+              div.form__form-group-field
+                +check-box('checkbox-btn')
+                  = 'Remember me'
+            .form__button-toolbar.btn-toolbar
+              button.btn.btn-primary='Submit'
+              button.btn.btn-secondary(type='button')='Cancel'
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Vertical form', [{'type': 'normal', 'text': 'Labels are left from fields'}])
+          form.form
+            .form__form-group
+              span.form__form-group-label='Username'
+              div.form__form-group-field
+                input(placeholder='Default label')
+            .form__form-group
+              span.form__form-group-label='E-mail'
+              div.form__form-group-field
+                input(placeholder='example@mail.com', type='email')
+            .form__form-group
+              span.form__form-group-label='Url'
+              div.form__form-group-field
+                input(placeholder='https://themeforest.net')
+            .form__form-group
+              span.form__form-group-label='Password'
+              div.form__form-group-field
+                input(placeholder='Password', type='password')
+                button.form__form-group-button.passwordClick
+                  +icon('form', 'eye')
+            .form__form-group
+              div.form__form-group-field
+                +check-box('checkbox-btn')
+                  = 'Remember me'
+            .form__button-toolbar.btn-toolbar
+              button.btn.btn-primary(type='submit')='Submit'
+              button.btn.btn-secondary(type='button')='Cancel'
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Vertical form with icons', [{'type': 'normal', 'text': 'Labels are left from fields and icons'}])
+          form.form
+            .form__form-group
+              span.form__form-group-label='Username'
+              div.form__form-group-field
+                .form__form-group-icon
+                  +icon('form', 'account-outline')
+                input(placeholder='Default label')
+            .form__form-group
+              span.form__form-group-label='E-mail'
+              div.form__form-group-field
+                .form__form-group-icon
+                  +icon('form', 'mail-ru')
+                input(placeholder='example@mail.com', type='email')
+            .form__form-group
+              span.form__form-group-label='Url'
+              div.form__form-group-field
+                .form__form-group-icon
+                  +icon('form', 'web')
+                input(placeholder='https://themeforest.net')
+            .form__form-group
+              span.form__form-group-label='Password'
+              div.form__form-group-field
+                .form__form-group-icon
+                  +icon('form', 'key-variant')
+                input(placeholder='Password', type='password')
+                button.form__form-group-button.passwordClick
+                  +icon('form', 'eye')
+            .form__form-group
+              div.form__form-group-field
+                +check-box('checkbox-btn')
+                  = 'Remember me'
+            .form__button-toolbar.btn-toolbar
+              button.btn.btn-primary='Submit'
+              button.btn.btn-secondary(type='button')='Cancel'
+      .col-md-12.col-lg-12
+        +card('Vertical form', [{'type': 'normal', 'text': 'Labels are above fields, use div with class super '}, {'type': 'red', 'text': 'form_half'}])
+          form.form
+            .form__half
+              .form__form-group
+                span.form__form-group-label='First Name'
+                div.form__form-group-field
+                  input(placeholder='Name')
+              .form__form-group
+                span.form__form-group-label='Last Name'
+                div.form__form-group-field
+                  input(placeholder='Last Name')
+              .form__form-group
+                span.form__form-group-label='Date of Birth'
+                div.form__form-group-field
+                  +datepicker()
+              .form__form-group
+                span.form__form-group-label='Gender'
+                div.form__form-group-field
+                  label.radio-btn
+                    input.radio-btn__radio(type='radio' name="gender")
+                    span.radio-btn__radio-custom
+                    span.radio-btn__label="Male"
+                  label.radio-btn
+                    input.radio-btn__radio(type='radio' name="gender")
+                    span.radio-btn__radio-custom
+                    span.radio-btn__label="Female"
+            .form__half
+              .form__form-group
+                span.form__form-group-label='Select your country'
+                div.form__form-group-field
+                  select(data-placeholder="Select...", class="basic-form-select chosen-select", style="width: 100%;", name='select')
+                    option(value='one')='One'
+                    option(value='two')='Two'
+              .form__form-group
+                span.form__form-group-label='City'
+                div.form__form-group-field
+                  input(placeholder='City')
+              .form__form-group
+                span.form__form-group-label='ZIP Code'
+                div.form__form-group-field
+                  input(placeholder='ZIP Code')
+              .form__button-toolbar.btn-toolbar
+                button.btn.btn-primary='Submit'
+                button.btn.btn-secondary(type='button')='Cancel'
+

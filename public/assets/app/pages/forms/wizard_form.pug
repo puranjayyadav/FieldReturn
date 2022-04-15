@@ -1,0 +1,92 @@
+extends ../../blocks/layout
+block layout
+  - var active_page = 'forms_wizard_form'
+
+block content
+  .container.todo-app
+    .row
+      .col-md-12
+        h3.page-title='Wizard form'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-md-12.col-lg-12
+        .card
+          .wizard
+            .wizard__steps
+              .wizard__step.wizard__step--active
+                p='Step 1'
+              .wizard__step
+                p='Step 2'
+              .wizard__step
+                p='Step 3'
+            .wizard__form-wrapper
+              .step1
+                .form.form--horizontal.wizard__form
+                  h3.wizard__title='Fill your personal data'
+                  .form__form-group
+                    span.form__form-group-label='Username'
+                    div.form__form-group-field
+                      input(placeholder='Name')
+                  .form__form-group
+                    span.form__form-group-label='E-mail'
+                    div.form__form-group-field
+                      input(placeholder='example@mail.com', type='email')
+                  .form__form-group
+                    span.form__form-group-label='Url'
+                    div.form__form-group-field
+                      input(placeholder='https://themeforest.net', type='text')
+                  .form__form-group
+                    span.form__form-group-label='Password'
+                    div.form__form-group-field
+                      input(placeholder='example@example.com', type='password')
+                      button.form__form-group-button.passwordClick
+                        +icon('form', 'eye')
+                  .form__button-toolbar.btn-toolbar.wizard__toolbar
+                    button.btn.previous.btn-primary.disabled='Back'
+                    button.btn.next.btn-primary='Next'
+              .step2
+                .form.form--horizontal.wizard__form
+                  h3.wizard__title="What's your address"
+                  .form__form-group
+                    span.form__form-group-label='Country'
+                    div.form__form-group-field
+                      select(data-placeholder="Select...", class="basic-form-select chosen-select", style="width: 100%;", name='select')
+                        option(value='one')='One'
+                        option(value='two')='Two'
+                  .form__form-group
+                    span.form__form-group-label='City'
+                    div.form__form-group-field
+                      input(placeholder='City name', type='text')
+                  .form__form-group
+                    span.form__form-group-label='Address'
+                    div.form__form-group-field
+                      input(placeholder='Street name', type='text')
+                      input(placeholder='Building', type='text')
+                  .form__form-group
+                    span.form__form-group-label='ZIP Code'
+                    div.form__form-group-field
+                      input(placeholder='', type='text')
+                  .form__button-toolbar.btn-toolbar.wizard__toolbar
+                    button.previous.btn.btn-primary='Back'
+                    button.next.btn.btn-primary='Next'
+              .step3
+                .form.form--horizontal.wizard__form
+                  h3.wizard__title='Set the preferences'
+                  .form__form-group
+                    span.form__form-group-label='Change Plan'
+                    div.form__form-group-field
+                      select(data-placeholder="Select...", class="basic-form-select chosen-select", style="width: 100%;", name='select')
+                        option(value='one')='One'
+                  .form__form-group
+                    span.form__form-group-label='E-Mail Notifications'
+                    .form__form-group-field
+                      +toggle-btn(true)
+                    p.wizard__description='Agreement offending commanded my an. Change wholly say why eldest period.'
+                  .form__form-group
+                    span.form__form-group-label='Phone Notifications'
+                    .form__form-group-field
+                      +toggle-btn()
+                    p.wizard__description='Are projection put celebrated particular unreserved joy unsatiable its. In then dare good am rose bred or.'
+                  .form__button-toolbar.btn-toolbar.wizard__toolbar
+                    button.previous.btn.btn-primary='Back'
+                    button.btn.btn-primary='Submit'

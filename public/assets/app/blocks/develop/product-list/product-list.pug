@@ -1,0 +1,35 @@
+mixin product-list()
+  .card__title.cart
+    h5.bold-text='Products list'
+    .products-list__btn-toolbar-top.btn-toolbar(role='toolbar')
+      form.form
+        .form__form-group.products-list__search
+          input(placeholder="Search...", name='search')
+          +icon('inbox', 'magnify')(width=24, height=24)
+      a.btn.btn-primary.products-list__btn-add(href='/ecommerce/product_edit')='Add new product'
+    p
+      ='Show'
+      select(data-placeholder="", class="basic-form-select chosen-select order_list-select", style="width: 100%;", name='select')
+        option(value='10')='10'
+        option(value='20')='20'
+        option(value='30')='30'
+      ='entries'
+  +table-data(
+    {wrap: 'table-responsive', table: 'table table-hover'}, {
+    header: ['ID', 'Photo', 'Name', 'Category', 'Quantity', 'Articul', 'Price', 'Status'],
+    items: (new Array(30).fill(0)).map(() => {
+        const value = ['Enabled', 'Disabled'][Math.floor((Math.random() * 2))];
+        return [
+          Math.min(99999, Math.round((Math.random() * 99999) + 1000)).toString(),
+          `<div><div class="products-list__img-wrap"><img src="static/topbar/img/for_store/${['pillow_dog.png','vase_3.png', 'pillow_2.png','vase_2.png','pillow.png','fur.png'][Math.floor((Math.random() * 6))]}" alt="list"/></div></div>`,
+          ['Pillow', 'Glass Vase'][Math.floor((Math.random() * 2))],
+          'Home accessories',
+          Math.min(1000, (Math.random() * 1000) + 20).toFixed(2).toString(),
+          `art${Math.min(1000, (Math.random() * 999999) + 1000).toString()}`,
+          Math.min(10, Math.random() * 10).toFixed(2).toString(),
+          {badge: true, value, type: value === 'Enabled' ? 'success' : 'disabled'}
+        ];
+      }
+    )
+  }, false, false)
+

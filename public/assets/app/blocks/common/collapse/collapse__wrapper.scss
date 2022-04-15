@@ -1,0 +1,123 @@
+.collapse__wrapper {
+
+  &.opened, &.opening {
+
+    .collapse__title {
+
+      span {
+        color: $color-additional;
+      }
+
+      .minus-icon {
+        fill: $color-additional;
+        display: inline-block;
+      }
+      .plus-icon {
+        display: none;
+      }
+    }
+  }
+
+  &.boxed {
+    border: solid 1px #dddddd;
+    margin-top: -1px;
+
+    .collapse__title {
+      background-color: #f2f4f7;
+      border-bottom: solid 1px #dddddd;
+      padding: 8px 15px;
+
+      span {
+        color: #444444;
+      }
+
+      .minus-icon {
+        display: none;
+      }
+      .plus-icon {
+        display: none;
+      }
+    }
+
+    .collapse__content {
+      padding: 16px 20px 20px 15px;
+    }
+
+    &.closed {
+
+      .collapse__title {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &.with-shadow {
+    margin-bottom: 10px;
+    box-shadow: none;
+
+    .collapse__content {
+      padding: 15px 20px 0 25px;
+      max-width: 1320px;
+
+      @include themify($themes) {
+        color: themed('colorText');
+      }
+    }
+
+    .collapse__title {
+      padding: 15px 25px;
+      box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.05);
+      transition: background-color 0.3s;
+
+      @include themify($themes) {
+        color: themed('colorText');
+      }
+
+      &:hover {
+
+        @include themify($themes) {
+          background-color: themed('colorHover');
+        }
+      }
+
+      svg {
+        display: none;
+      }
+
+      p {
+
+        svg {
+          display: block;
+          top: calc(50% - 7px);
+          transition: all 0.3s;
+
+          @include themify($themes) {
+            fill: themed('colorText');
+          }
+        }
+      }
+    }
+
+    &.opened .collapse__title,
+    &.opening .collapse__title {
+
+      span {
+        color: inherit;
+      }
+
+      svg {
+        fill: inherit;
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &.closing {
+
+    .collapse__content {
+      padding-top: 0;
+      padding-bottom: 0;
+      transition: all 0.3s;
+    }
+  }
+}

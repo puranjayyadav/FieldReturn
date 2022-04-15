@@ -1,0 +1,4 @@
+mixin inbox-label(title, color, active)
+  button(class=`inbox__list-button inbox__label ${active ? 'active' : ''}`)
+    span(class=`inbox__label-color inbox__label-color--${color}`)
+    =title

@@ -1,0 +1,10 @@
+extends ../../blocks/layout
+block layout
+  - const active_page = 'account_email_confirmation'
+
+block content
+  .container
+    .row
+      .col-md-12
+        +card('', [])
+          +email-confirmation()

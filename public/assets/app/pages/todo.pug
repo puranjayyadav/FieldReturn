@@ -1,0 +1,37 @@
+extends ../blocks/layout
+block layout
+  - var active_page = 'todo'
+
+block content
+  .container.todo-app
+    .row
+      .col-md-12
+        h3.page-title='Todo Application'
+    .row
+      +todo
+      div.modal.fade(id='add_todo', tabindex="-1", role="dialog", aria-hidden="true")
+        div.modal-dialog.todo__add-modal.theme-light
+          .modal-content
+            form.form
+              .form__form-group
+                span.form__form-group-label='Title'
+                div.form__form-group-field
+                  input(placeholder='title...', type='text', required, name="title")
+              .form__form-group
+                span.form__form-group-label='Description'
+                div.form__form-group-field
+                  textarea(placeholder='what to do..', required, name="text")
+              .form__form-group
+                span.form__form-group-label='Due Date'
+                div.form__form-group-field
+                  +datepicker()
+              .form__form-group
+                span.form__form-group-label='Priority'
+                div.form__form-group-field
+                  select(data-placeholder="Select...", class="todo-select chosen-select", style="width: 100%;", name='select')
+                    option(value='low')='Low'
+                    option(value='medium')='Medium'
+                    option(value='high')='High'
+              .form__button-toolbar.btn-toolbar
+                button.btn.btn-primary(type='submit')='Add'
+                button.btn.btn-secondary='Cancel'

@@ -1,0 +1,9 @@
+mixin chat-contact(item)
+  div
+    div(class=`chat__contact ${item.active ? 'chat__contact--active' : ''}`)
+      .chat__contact-avatar
+        img(src=item.img, alt=item.name)
+      .chat__contact-preview
+        p.chat__contact-name=item.name
+        p.chat__contact-post=item.post
+        p.chat__contact-last-message=item.message

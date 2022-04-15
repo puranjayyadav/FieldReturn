@@ -1,0 +1,18 @@
+extends ../../blocks/layout
+block layout
+  - var active_page = 'forms_form_dropzone'
+
+block content
+  .container.todo-app
+    .row
+      .col-md-12
+        h3.page-title='Form Dropzone'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-md-12.col-lg-12
+        +card('Horizontal form', [{'type': 'normal', 'text': 'Labels are left from fields'}])
+          form.form
+            +dropzone('1', 'dropzone--multiple dropzone--custom-height')
+            .form__button-toolbar.btn-toolbar
+              button(type="submit", class="btn btn-primary")='Submit'
+              button(type="reset", class="btn btn-secondary")='Cancel'

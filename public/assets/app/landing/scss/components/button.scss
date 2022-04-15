@@ -1,0 +1,50 @@
+.btn {
+  background-color: #ffffff;
+  box-shadow: 0 20px 30px 0 rgba(89, 181, 210, 0.31);
+  color: $color-accent;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 14px;
+  border-radius: 23px;
+  height: 46px;
+  padding: 16px 30px;
+  transition: 0.3s;
+  white-space: nowrap;
+
+  &:hover {
+    background: darken(#ffffff, 3%);
+    box-shadow: 0 5px 15px 0 rgba(89, 181, 210, 0.5);
+  }
+
+  &.btn--header{
+    margin: 0 15px;
+    display: inline-block;
+    margin-bottom: 20px;
+    align-items: center;
+    width: auto;
+    padding: 16px 30px;
+  }
+
+  &.btn--gradient {
+    background: $landing-gradient;
+    color: #ffffff;
+
+    &:hover {
+      background: $landing-gradient-hover;
+    }
+  }
+  &.btn--feedback {
+    display: inline-block;
+    width: 174px;
+    height: 50px;
+    padding: 16px 30px;
+    font-family: 'Poppins', sans-serif;
+    line-height: 20px;
+  }
+}
+
+.center-btn {
+  text-align: center;
+  margin-top: -20px;
+  height: 40px;
+}

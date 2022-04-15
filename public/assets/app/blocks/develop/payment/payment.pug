@@ -1,0 +1,52 @@
+mixin payment()
+  .payment
+    form.payment__credit-cards.form
+     .form__form-group
+       span.form__form-group-label='Choose payment method:'
+       .form__form-group-field
+         .payment__credit-card
+           label.radio-btn
+             input.radio-btn__radio(type='radio', checked="", name='card')
+             span.radio-btn__radio-custom
+             span.radio-btn__label
+               span
+                img(src="static/topbar/img/for_store/cards/mc.svg", alt="MasterCard")
+                span.payment__credit-name='MasterCard'
+         .payment__credit-card
+           label.radio-btn
+             input.radio-btn__radio(type='radio', name='card')
+             span.radio-btn__radio-custom
+             span.radio-btn__label
+              span
+                img(src="static/topbar/img/for_store/cards/visa.svg", alt="Visa")
+                span.payment__credit-name='Visa'
+         .payment__credit-card
+           label.radio-btn
+             input.radio-btn__radio(type='radio', name='card')
+             span.radio-btn__radio-custom
+             span.radio-btn__label
+              span
+                img(src="static/topbar/img/for_store/cards/paypal.svg", alt="paypal")
+                span.payment__credit-name='PayPal'
+     .form__form-group
+       .form__form-group-label='Card number'
+       .form__form-group-field
+         .form__form-group-icon
+           +icon('payment', 'credit-card')(width=24, height=24)
+         input(name='card_number', placeholder='xxxx-xxxx-xxxx-xxxx', type='text', value='', id='mask_card-1')
+     .form__form-group-date-cvc
+       .form__form-group.form__form-group-date
+         span.form__form-group-label='Expiration Date'
+         div.form__form-group-field
+           +datepicker()
+       .form__form-group.form__form-group-cvc
+         span.form__form-group-label='CVC'
+         .form__form-group-field
+           input(name='cvc', placeholder="", type="text", value="")
+     .form__form-group
+       span.form__form-group-label='Cardholder name'
+       .form__form-group-field
+         input(name='name', placeholder='Name and Surname', type='text', value='')
+     h4.payment__total='Total Price: $348.00'
+     .form__button-toolbar.btn-toolbar(role='toolbar')
+       +btn('btn-primary')(type='submit')='Make Payment'

@@ -1,0 +1,37 @@
+include ./components/documentation-nav
+include ./components/documentation-nav-bottom
+mixin documentation-introdaction()
+  .documentation__main.row
+    +documentation-nav
+    .col-12.col-sm-12.col-md-12.col-lg-9.col-xl-9
+      .card--not-full-height.card
+        .card-body
+          .card__title
+            h5.bold-text="INTRODUCTION"
+          p="EasyDEV is a modern dashboard template based on Pug and Bootstrap 4 Framework. We've used modern technologies and best practices to make our product easy to work with. It's the most convenient template for developers, because of Pug mixins, clean code and detailed documentation, which allows you to build any projects easily! Use it for e-commerce, analytics, sports and other types of web or mobile applications."
+          .card__title
+            h5.bold-text="FEATURES"
+          ul
+            li="Bootstrap 4.1.3"
+            li="Pug"
+            li="Sass"
+            li="Material Design Icons"
+            li="Slick Carousel 1.8.1"
+            li="Font awesome"
+            li="Jqueryui"
+            li="3 Kinds of Charts (Echarts, Chart.js, Chartis)"
+            li="Magnific Popup"
+            li="Popper"
+            li="Colored Tables and DataTables"
+            li="Smooth scrollbar"
+            li="Material-ui"
+            li="Form Wizards"
+            li="Responsive Navbar Menu"
+            li="Dashboard Cards & Widgets"
+            li="Form Validation"
+            li="Dropzone"
+            li="Chosen"
+            li="Google and Vector Maps"
+            li="FREE Lifetime Updates"
+            li="and much much more..."
+  +documentation-nav-bottom(null, {path: 'documentation/installation', title: 'installation'})

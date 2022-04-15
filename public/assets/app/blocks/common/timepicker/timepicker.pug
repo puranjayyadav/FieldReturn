@@ -1,0 +1,24 @@
+mixin timepicker(id, pm)
+  div.timepicker(id=id)
+    a(role="button", class="rc-time-picker-clear", title="clear", tabindex="0")
+      i.rc-time-picker-clear-icon
+    input(placeholder=``, type='text', readonly='', name='time', class=`time-picker`)
+    .dropdown__menu.dropdown-menu(tabindex="-1", role="menu", aria-hidden="true")
+      .rc-time-picker-panel-combobox
+        if !pm
+          .rc-time-picker-panel-select.hour(data-scrollbar)
+            each item in (new Array(24)).fill(0).map((_, index) => index<10 ? `0${index}` : `${index}`)
+              button.dropdown-item(role="menuitem", tabindex="0", type="button")=item
+          .rc-time-picker-panel-select.minute(data-scrollbar)
+            each item in (new Array(60)).fill(0).map((_, index) => index<10 ? `0${index}` : `${index}`)
+              button.dropdown-item(role="menuitem", tabindex="0", type="button")=item
+        else
+          .rc-time-picker-panel-select.hour(data-scrollbar)
+            each item in (new Array(12)).fill(0).map((_, index) => index<10 ? `0${index}` : `${index}`)
+              button.dropdown-item(role="menuitem", tabindex="0", type="button")=item
+          .rc-time-picker-panel-select.minute(data-scrollbar)
+            each item in (new Array(60)).fill(0).map((_, index) => index<10 ? `0${index}` : `${index}`)
+              button.dropdown-item(role="menuitem", tabindex="0", type="button")=item
+          .rc-time-picker-panel-select.pm(data-scrollbar)
+              button.dropdown-item(role="menuitem", tabindex="0", type="button")='am'
+              button.dropdown-item(role="menuitem", tabindex="0", type="button")='pm'

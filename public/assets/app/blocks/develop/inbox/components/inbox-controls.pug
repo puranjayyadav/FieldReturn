@@ -1,0 +1,25 @@
+mixin inbox-controls()
+  .inbox__emails-controls-wrap
+    .inbox__emails-controls
+      +check-box('checkAll')
+      +btn-dropdown({
+        classButton: 'icon icon--right btn btn-outline-secondary btn-sm',
+        list:["Name","Date","Favorite"]
+      })
+        | Filter By
+      +btn('icon inbox__emails-control-reload btn-outline-secondary btn-sm')
+        +icon('inbox', 'reload')(width=24, height=24)
+    .inbox__emails-controls-right
+      .inbox__emails-control-search
+        input(placeholder="Search")
+        .inbox__emails-control-search-icon
+          +icon('inbox', 'magnify')(width=24, height=24)
+      .pagination__wrap.pagination__wrap--small
+        nav.pagination(aria-label="pagination")
+          ul.pagination
+            li.pagination__item.page-item
+              button.pagination__link.pagination__link--arrow.page-link
+                +icon('inbox', 'chevron-left')(width=24, height=24, class="pagination__link-icon")
+            li.pagination__item.page-item
+              button.pagination__link.pagination__link--arrow.page-link
+                +icon('inbox', 'chevron-right')(width=24, height=24, class="pagination__link-icon")

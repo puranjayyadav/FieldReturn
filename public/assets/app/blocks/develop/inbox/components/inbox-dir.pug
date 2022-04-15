@@ -1,0 +1,8 @@
+mixin inbox-dir(title, badge, active, icon)
+  button(class=`inbox__list-button inbox__label inbox-button ${active ? 'active' : ''}`)
+    span.inbox__mailbox
+      svg
+        use(xlink:href=`@symbol#inbox__${icon}`)
+      span.inbox__mailbox-title=title
+      if(badge)
+        span.inbox__mailbox-label.badge.badge-secondary=badge

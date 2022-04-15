@@ -1,0 +1,20 @@
+extends base
+block content 
+ 
+        // Main Content
+        .main-content
+          section.section
+            .section-body
+              .row.clearfix
+                .col-lg-12.col-md-12.col-sm-12.col-xs-12.col-12
+                  .card
+                    .card-header
+                      h4 Recently Uploaded Photos of Components
+                    .card-body
+                      #aniimated-thumbnials.list-unstyled.row.clearfix
+                        each pump in pumps
+                          each value , index in pump.mettalurigcal[0].Images
+                            
+                              .col-lg-3.col-md-4.col-sm-6.col-xs-12
+                                a(href=`/img/mettalurgical/${value}` data-sub-html=`Pump Type - ${pump.pumpType}`)
+                                  img.img-responsive.thumbnail(src=`/img/mettalurgical/${value}` alt='')

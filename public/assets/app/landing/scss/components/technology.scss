@@ -1,0 +1,38 @@
+.technology {
+  text-align: center;
+  max-width: 168px;
+  margin: auto;
+
+  .technology__img-wrap {
+    width: 100%;
+    height: 156px;
+    display: flex;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .technology__img {
+    width: 100%;
+    margin: auto;
+  }
+
+  .technology__title {
+    font-size: 18px;
+    line-height: 1.44;
+    margin: 0;
+  }
+
+  &.technology--small {
+    max-width: 126px;
+    margin-top: 75px;
+
+    .technology__img-wrap {
+      height: 64px;
+    }
+
+    .technology__img {
+      width: auto;
+    }
+  }
+}

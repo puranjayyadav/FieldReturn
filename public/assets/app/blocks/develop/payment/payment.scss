@@ -1,0 +1,48 @@
+.payment {
+  max-width: 740px;
+}
+
+.payment__total {
+  width: 100%;
+  font-weight: 700;
+  margin-bottom: 5px;
+  margin-top: 20px;
+}
+
+.payment__credit-name {
+  font-size: 10px;
+  line-height: 13px;
+  margin-top: 3px;
+  color: $color-additional;
+  text-align: center;
+  height: 0;
+  display: block;
+}
+
+.payment__credit-card {
+  margin-right: 80px;
+  @media screen and (max-width: 748px) {
+    margin-right: 40px;
+  }
+
+  @media screen and (max-width: 574px) {
+    margin-right: 20px;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+  img {
+    width: 50px;
+    @media screen and (max-width: 380px) {
+      width: 30px;
+    }
+  }
+}
+
+.payment {
+  .radio-btn {
+    display: flex;
+    align-items: center;
+  }
+}

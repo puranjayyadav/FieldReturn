@@ -1,0 +1,30 @@
+[
+  {
+    "pumpType": "TPM",
+    "serialNumber": "0460494489",
+    "customer": "KOEH",
+    "failureHours": 400,
+    "complaintDescription": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "OEM": 4.7
+  },
+  {
+    "pumpType": "TPM",
+    "serialNumber": "0460494481",
+    "customer": "KOEH",
+    "failureHours": 400,
+    "complaintDescription": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "OEM": 4.7,
+    "Dimensional":{
+      "camplate":{ "campTaper": 20, 
+                    "camProfile": 8, 
+                    "tpi":[0.2, 0.6],
+                    "rz": [10,20]
+      }
+    
+    },
+    "activeUser":[
+      "6205f16ba210430b08960f63",
+      "62034c4f2d6d2e35bcaa39b1"
+    ]
+  }
+] 

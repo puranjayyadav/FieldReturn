@@ -1,0 +1,19 @@
+.hire-us{
+  position: fixed;
+  bottom: 30px;
+  right: 10px;
+  z-index: 1;
+  background-color: transparent;
+
+  button {
+    background-color: $pricing-accent;
+    color: white;
+    font-weight: 600;
+
+    &:hover {
+      color: $pricing-accent;
+      background-color: white;
+      border-color: $pricing-accent;
+    }
+  }
+}

@@ -1,0 +1,3 @@
+mixin chartjs(type, height)
+  div(class="chart-container", style=`height: ${height ? height : 'inherit'}; position: relative;`)
+    canvas.chartjs(id=type)&attributes(attributes)

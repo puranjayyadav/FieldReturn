@@ -1,0 +1,132 @@
+mixin online-marketing-dashboard()
+  .container
+    .dashboards
+      .row
+        .col-md-12
+          h3.page-title='Online Marketing Dashboard'
+      .row
+        .col-12.col-md-12.col-lg-6.col-xl-3
+          .card
+            .dashboard__card-widget.card-body
+              .card__title
+                h5.bold-text='Visits'
+              .dashboard__total
+                +icon('dashboards', 'trending-up')(class='dashboard__trend-icon', width=24, height=24)
+                p.dashboard__total-stat
+                .dashboard__chart-container
+                  +chartjs('online-marketing-dashboard-visits')(style="max-height: 50px;")
+        .col-12.col-md-12.col-lg-6.col-xl-3
+          .card
+            .dashboard__card-widget.card-body
+              .card__title
+                h5.bold-text='TOTAL PAGE VIEWS'
+              .dashboard__total
+                +icon('dashboards', 'trending-up')(class='dashboard__trend-icon', width=24, height=24)
+                p.dashboard__total-stat
+                .dashboard__chart-container
+                  +chartjs('online-marketing-dashboard-views')(style="max-height: 50px;")
+        .col-12.col-md-12.col-lg-6.col-xl-3
+          .card
+            .dashboard__card-widget.card-body
+              .card__title
+                h5.bold-text='NEW USERS'
+              .dashboard__total
+                +icon('dashboards', 'trending-down')(class='dashboard__trend-icon', width=24, height=24)
+                p.dashboard__total-stat
+                .dashboard__chart-container
+                  +chartjs('online-marketing-dashboard-new-users')(style="max-height: 50px;")
+        .col-12.col-md-12.col-lg-6.col-xl-3
+          .card
+            .dashboard__card-widget.card-body
+              .card__title
+                h5.bold-text='BOUNCE RATE'
+              .dashboard__total
+                +icon('dashboards', 'trending-up')(class='dashboard__trend-icon', width=24, height=24)
+                p.dashboard__total-stat
+                .dashboard__chart-container
+                  +chartjs('online-marketing-dashboard-bonuce-rate')(style="max-height: 50px;")
+      .row
+        .col-md-12.col-lg-12.col-xl-12
+          +panel('A/B TESTING ANALYTICS', 'online-marketing-dashboard-analytics-panel')
+              +echartjs('online-marketing-dashboard-analytics', null, '250px')
+        .col-md-12.col-lg-6.col-xl-5
+          +panel('BOUNCE RATE', 'default-bounce-rate').card
+            p.dashboard__bounce-percent="32%"
+            +echartjs('online-marketing-dashboard-bonuse', null, '220px')
+        .col-md-12.col-lg-6.col-xl-4
+          +panel('VISITOR SESSIONS', 'default-visitor-sessions', 'What browsers are most popular').card
+            p.dashboard__visitors-chart-title="Total visitors "
+              span="on 23.08.2017"
+            p.dashboard__visitors-chart-number="12,384"
+            +echartjs('online-marketing-dashboard-visitor', null, '290px')
+        .col-12.col-md-12.col-lg-6.col-xl-3
+          +panel('SALES STATISTIC', 'default-sales-statistic', 'Top selling items statistic by last month').card
+            .dashboard__stat
+              .dashboard__stat-chart
+                +echartjs('online-marketing-dashboard-sales-statistic-1', null, '120px')
+                p(style="color: rgb(76, 225, 182);").dashboard__stat-label="80%"
+              .dashboard__stat-info
+                p="Top selling items statistic by last month"
+                h4.dashboard__-stat-number="$23,747.00"
+            .dashboard__stat
+              .dashboard__stat-chart
+                +echartjs('online-marketing-dashboard-sales-statistic-2', null, '120px')
+                p.dashboard__stat-label="50%"
+              .dashboard__stat-info
+                p="Top selling items statistic by last  month"
+                h4.dashboard__-stat-number="$23,747.00"
+        .col-md-12.col-lg-6.col-xl-4
+          +panel('BUDGET STATISTIC', 'default-budget-statistic').card
+            .dashboard__stat.dashboard__stat--budget
+              .dashboard__stat-main
+                p.dashboard__stat-main-title="Total Budget"
+                p.dashboard__stat-main-number="$12,321"
+                hr
+              .dashboard__stat-chart
+                +echartjs('online-marketing-dashboard-budget', null, '120px')
+                p.dashboard__stat-label="$"
+              .dashboard__stat-data
+                div
+                  p.dashboard__stat-data-number="$4,937"
+                  p(style="color: rgb(238, 238, 238);")="Completed"
+                div
+                  p.dashboard__stat-data-number="$4,937"
+                  p(style="color: rgb(76, 225, 182);")="Remaining"
+        .col-md-12.col-lg-12.col-xl-8
+            +panel('AUDIENCE BY COUNTRY', 'default-adience').card
+              +table(
+                {wrap: 'table-responsive', table: 'table--bordered table'}, {
+                header: ['Country', '	Page views', 'Device', '	Bounce rate'],
+                items: [
+                  ['<img class="dashboard__table-flag" src="static/dashboards/flags/Brasil.svg" alt="Brasil"/> Brasil', '12134', 'Desktop',  {type: 'progress-bar', values: ['middle', null, 'blue', 41], block: '41%'}],
+                  ['<img class="dashboard__table-flag" src="static/dashboards/flags/Argentina.svg" alt="Argentina"/> Argentina', '47584', 'Mobile', {type: 'progress-bar', values: ['middle', null, 'blue', 30], block: '30%'}],
+                  ['<img class="dashboard__table-flag" src="static/dashboards/flags/Gabon.svg" alt="Gabon"/> Gabon', '24235', 'Mobile',{type: 'progress-bar', values: ['middle', null, 'blue', 65], block: '65%'}],
+                  ['<img class="dashboard__table-flag" src="static/dashboards/flags/Italia.svg" alt="Italia"/> Italia', '2255', 'Desktop',{type: 'progress-bar', values: ['middle', null, 'blue', 41], block: '41%'}],
+                  ['<img class="dashboard__table-flag" src="static/dashboards/flags/Sierra.svg" alt="Sierra"/> Sierra Leone', '24212', 'Tablet', {type: 'progress-bar', values: ['middle', null, 'blue', 30], block: '30%'}],
+                  ['<img class="dashboard__table-flag" src="static/dashboards/flags/Ireland.svg" alt="Ireland"/> Ireland', '805', 'Mobile', {type: 'progress-bar', values: ['middle', null, 'blue', 70], block: '70%'}],
+                ]
+              }, true)
+        .col-md-12.col-lg-12.col-xl-8
+          +panel('BEST SELLING REGIONS', 'default-best-selling').card
+            +map('1')
+        .col-md-12.col-lg-6.col-xl-4
+          +panel('GOAL COMPLETION', 'default-goal-completion', 'What\'s your progress').card
+
+            p="Completed Purchase"
+            +progress-bar('middle', null, null, 46)
+              | 46%
+            p="New clients"
+            +progress-bar('middle', null, null, 67)
+              | 67%
+            p="New subscribers"
+            +progress-bar('middle', null, null, 87)
+              | 87%
+            p="Site visits from ADS banners"
+            +progress-bar('middle', null, null, 24)
+              | 24%
+            p="Total page views"
+            +progress-bar('middle', null, null, 56)
+              | 56%
+            p="Positive feedback"
+            +progress-bar('middle', null, null, 46)
+              | 46%

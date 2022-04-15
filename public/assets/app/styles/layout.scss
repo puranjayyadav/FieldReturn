@@ -1,0 +1,69 @@
+@import 'variables.scss';
+.grid {
+  padding-bottom: 20px;
+
+  .card-body {
+    padding: 0;
+    text-align: center;
+    height: 62px;
+  }
+
+  .grid__small {
+
+    @media screen and (min-width: 768px) and (max-width: 1920px) {
+      display: none;
+    }
+  }
+
+  p {
+    margin-bottom: 0;
+    padding: 20px 15px;
+  }
+}
+
+.container {
+
+  @media screen and (min-width: 768px) {
+    width: 100%;
+    max-width: 1630px;
+  }
+}
+
+.container__wrap {
+  padding-left: 0;
+  padding-top: 90px;
+  min-height: 100vh;
+  transition: padding-left 0.3s;
+
+  @include themify($themes) {
+    background: themed('colorBackgroundBody');
+  }
+
+  @media screen and (min-width: 576px) {
+    padding-left: 250px;
+  }
+}
+
+.layout {
+
+  &.layout--collapse {
+
+    & + .container__wrap {
+      padding-left: 0;
+
+      @media screen and (min-width: 576px) {
+        padding-left: 60px;
+      }
+    }
+  }
+
+  &.layout--top-navigation{
+
+    & + .container__wrap{
+
+      @media screen and (min-width: 576px) {
+        padding-left: 0;
+      }
+    }
+  }
+}

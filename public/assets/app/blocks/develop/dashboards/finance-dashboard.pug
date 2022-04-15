@@ -1,0 +1,134 @@
+mixin finance-dashboard()
+  .container
+    .dashboards
+      .row
+        .col-md-12
+          h3.page-title='Finance Dashboard'
+      .row
+        .col-12.col-md-12.col-lg-6.col-xl-3
+          .card
+            .dashboard__card-widget.card-body
+              .card__title
+                h5.bold-text='BTC'
+                h5.subhead='Bitcoin'
+              .dashboard__total.dashboard__total--area
+                +icon('dashboards', 'trending-up').mdi-icon.dashboard__trend-icon
+                p.dashboard__total-stat='$70.23'
+                .dashboard__chart-container
+                  +echartjs('finance-dashboard-course-1', null, '70px')
+        .col-12.col-md-12.col-lg-6.col-xl-3
+          .card
+            .dashboard__card-widget.card-body
+              .card__title
+                h5.bold-text='ETH'
+                h5.subhead='Ethereum'
+              .dashboard__total.dashboard__total--area
+                +icon('dashboards', 'trending-up').mdi-icon.dashboard__trend-icon
+                p.dashboard__total-stat='$70.23'
+                .dashboard__chart-container
+                  +echartjs('finance-dashboard-course-2', null, '70px')
+        .col-12.col-md-12.col-lg-6.col-xl-3
+          .card
+            .dashboard__card-widget.card-body
+              .card__title
+                h5.bold-text='BCH'
+                h5.subhead='Bitcoin Cash'
+              .dashboard__total.dashboard__total--area
+                +icon('dashboards', 'trending-up').mdi-icon.dashboard__trend-icon
+                p.dashboard__total-stat='$70.23'
+                .dashboard__chart-container
+                  +echartjs('finance-dashboard-course-3', null, '70px')
+        .col-12.col-md-12.col-lg-6.col-xl-3
+          .card
+            .dashboard__card-widget.card-body
+              .card__title
+                h5.bold-text='XRP'
+                h5.subhead='Ripple'
+              .dashboard__total.dashboard__total--area
+                +icon('dashboards', 'trending-up').mdi-icon.dashboard__trend-icon
+                p.dashboard__total-stat='$70.23'
+                .dashboard__chart-container
+                  +echartjs('finance-dashboard-course-4', null, '70px')
+      .row
+        .col-12.col-md-12.col-lg-5.col-xl-4
+          +panel('TRADE HISTORY', 'finance-dashboard-trade-history', 'Ratings by Market Capitalization').card
+            +table(
+              { wrap: 'table-responsive', table: 'table-striped'  },
+              { header: ['Coin', 'Cost', 'Change %'],
+                items: [
+                  ['<p class="bold-text dashboard__btc">BTC</p>', '$134,23', '+12,21%'],
+                  ['<p class="bold-text dashboard__eth">ETH</p>', '$12,23', '+0,21%'],
+                  ['<p class="bold-text dashboard__neo">NEO</p>', '$112,23', '-2,27%'],
+                  ['<p class="bold-text dashboard__ste">STE</p>', '$84,23', '-10,01'],
+                  ['<p class="bold-text dashboard__eos">EOS</p>', '$134,23', '-14,01%'],
+                  ['<p class="bold-text dashboard__lit">LIT</p>', '$94,23', '-1,96%']
+                ]
+              }, true
+            )
+        .col-12.col-md-12.col-lg-7.col-xl-8
+          +panel('BTC & ETH', 'finance-dashboard-btc-eth', 'Ratings by Market Capitalization').card
+            +echartjs('finance-dashboard-btc-eth', null, '280px')
+        .col-12.col-lg-12.col-xl-6
+          +panel('CRYPTOTRENDS TODAY', 'finance-dashboard-today', 'Top selling items statistic by last month').card
+            +echartjs('finance-dashboard-today')
+        .col-12.col-lg-12.col-xl-6
+          +panel('TRADE HISTORY', 'finance-dashboard-trade-gistory', 'You can buy or sell a cryptocurrency').card
+            .dashboard__place-order
+              .dashboard__place-order-form
+                h5.bold-text="By BTC"
+                h5.dashboard__place-order-form-subhead.subhead="USD Balance: $12 232,34"
+                form.form.form--horizontal
+                  .form__form-group
+                    span.form__form-group-label='Price'
+                    .form__form-group-field
+                      input(name='price', placeholder='$ 1322323,3')
+                  .form__form-group
+                    span.form__form-group-label='Amount'
+                    .form__form-group-field
+                      input(name='price', placeholder='0,000334 BTC')
+                  .form__form-group
+                    span.form__form-group-label='Total'
+                    .form__form-group-field
+                      input(name='price', placeholder='$ 112,454')
+                  .form__button-toolbar.btn-toolbar.buy_finance_button
+                    +btn('btn-primary')(type="button")
+                      ="Buy BTC"
+              .dashboard__place-order-form
+                h5.bold-text="Sell BTC"
+                h5.dashboard__place-order-form-subhead.subhead="BTC Balance: 2.232344"
+                form.form.form--horizontal
+                  .form__form-group
+                    span.form__form-group-label='Price'
+                    .form__form-group-field
+                      input(name='price', placeholder='$ 1322323,3')
+                  .form__form-group
+                    span.form__form-group-label='Amount'
+                    .form__form-group-field
+                      input(name='price', placeholder='0,000334 BTC')
+                  .form__form-group
+                    span.form__form-group-label='Total'
+                    .form__form-group-field
+                      input(name='price', placeholder='$ 112,454')
+                  .form__button-toolbar.btn-toolbar.buy_finance_button
+                    +btn('btn-success')(type="button")
+                      ="Sell BTC"
+        .col-lg-12
+          +panel('TOP 10 CRYPTOCURRENCIES', 'finance-dashboard-top').card
+            +table(
+              { wrap: 'table-responsive', table: 'table--bordered dashboard__table-finance table'  },
+              { header: ['#', 'Name', 'Market Cap', 'Price', 'Volume', 'Circulating Supply', 'Change', 'Graph (7 days)', ''],
+                items: [
+                  ['Bitcoin', '$ 131 131 454 444', '$ 6 432,23', '$ 6 432 323 455', '$ 6 432 323 btc', '0,59%', {type: 'echartjs', values: ['finance-dashboard-top-10--1', null, '36px']}, {type: 'dropdown'}],
+                  ['Ethereum', '$ 131 131 454 444', '$ 6 432,23', '$ 6 432 323 455', '$ 6 432 323 eth', '0,59%', {type: 'echartjs', values: ['finance-dashboard-top-10--2', null, '36px']}, {type: 'dropdown'}],
+                  ['Ripple', '$ 131 131 454 444', '$ 6 432,23', '$ 6 432 323 455', '$ 6 432 323 xrp', '0,59%', {type: 'echartjs', values: ['finance-dashboard-top-10--3', null, '36px']}, {type: 'dropdown'}],
+                  ['Bitcoin Cash', '$ 131 131 454 444', '$ 6 432,23', '$ 6 432 323 455', '$ 6 432 323 bch', '0,59%', {type: 'echartjs', values: ['finance-dashboard-top-10--4', null, '36px']}, {type: 'dropdown'}],
+                  ['Eos', '$ 131 131 454 444', '$ 6 432,23', '$ 6 432 323 455', '$ 6 432 323 eos', '0,59%', {type: 'echartjs', values: ['finance-dashboard-top-10--5', null, '36px']}, {type: 'dropdown'}],
+                  ['Litecoin', '$ 131 131 454 444', '$ 6 432,23', '$ 6 432 323 455', '$ 6 432 323 ltc', '0,59%', {type: 'echartjs', values: ['finance-dashboard-top-10--6', null, '36px']}, {type: 'dropdown'}],
+                  ['Cardano', '$ 131 131 454 444', '$ 6 432,23', '$ 6 432 323 455', '$ 6 432 323 ada', '0,59%', {type: 'echartjs', values: ['finance-dashboard-top-10--7', null, '36px']}, {type: 'dropdown'}],
+                  ['Stellar', '$ 131 131 454 444', '$ 6 432,23', '$ 6 432 323 455', '$ 6 432 323 xlm', '0,59%', {type: 'echartjs', values: ['finance-dashboard-top-10--8', null, '36px']}, {type: 'dropdown'}],
+                  ['IOTA', '$ 131 131 454 444', '$ 6 432,23', '$ 6 432 323 455', '$ 6 432 323 iota', '0,59%', {type: 'echartjs', values: ['finance-dashboard-top-10--9', null, '36px']}, {type: 'dropdown'}],
+                  ['NEO', '$ 131 131 454 444', '$ 6 432,23', '$ 6 432 323 455', '$ 6 432 323 neo', '0,59%', {type: 'echartjs', values: ['finance-dashboard-top-10--10', null, '36px']}, {type: 'dropdown'}],
+                ]
+              }, '/htmleasydev/dashboards/edit', false
+            )
+

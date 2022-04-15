@@ -1,0 +1,30 @@
+extends ../../blocks/layout
+block layout
+  - var active_page = 'tables_editable_table'
+
+block content
+  .container.todo-app
+    .row
+      .col-md-12
+        h3.page-title='Editable table'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-md-12.col-lg-12
+        +card('Editable table', [{'type': 'normal', 'text': 'Use default table '},{'type': 'red', 'text': 'editable'}])
+          +table-data(
+            {wrap: 'table-responsive', table: 'table table-hover'}, {
+            header: ['#', 'First Name', 'Last Name', 'Username', 'Age', 'Date', 'Location', 'Work'],
+            items: [
+              ['Alexander', 'Medinberg', '@cat', '29', '17.12.1990', 'Moscow', 'Business Bro'],
+              ['Bobby', 'Brown', '@dragon', '20', '05.11.1968', 'Rome', 'Nova Soft'],
+              ['Maria', 'Brown', '@hamster', '49', '14.03.1963', 'Moscow', 'Aspirity'],
+              ['Maria', 'Brown', '@dragon', '37', '10.08.1975', 'Tokio', 'Nova Soft'],
+              ['Alexander', 'Brown', '@dragon', '46', '10.09.2001', 'Rome', 'Starlight'],
+              ['Alexander', 'Brown', '@dragon', '30', '24.08.1991', 'Rome', 'Aspirity'],
+              ['Bobby', 'Morrison', '@dragon', '40', '29.11.1994', 'Moscow', 'Aspirity'],
+              ['Bobby', 'Medinberg', '@hamster', '28', '22.09.1962', 'Tokio', 'Nova Soft'],
+              ['Alexander', 'Brown', '@cat', '38', '25.02.1966', 'Tokio', 'Dog Shop'],
+              ['Maria', 'Brown', '@dragon', '22', '14.06.1997', 'Moscow', 'Business Bro'],
+
+            ]
+          }, true, true)

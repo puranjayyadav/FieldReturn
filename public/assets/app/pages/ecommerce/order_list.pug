@@ -1,0 +1,15 @@
+extends ../../blocks/layout
+block layout
+  - var active_page = 'ecommerce_order_list'
+
+block content
+  .container.todo-app
+    .row
+      .col-md-12
+        h3.page-title='Cart'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-md-12.col-lg-12
+        .card.cart
+          .card-body
+            +order()

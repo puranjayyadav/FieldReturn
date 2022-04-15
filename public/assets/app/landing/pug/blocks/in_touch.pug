@@ -1,0 +1,15 @@
+- var caption = 'We don\'t share your personal info with anyone.<br/> Check out our <a href="">Privacy Policy</a> for more information.'
+
+section.section
+  .container
+    .row
+      .col-md-12
+        h3.section__title Keep in touch
+    .row.in-touch
+      .col-md-12
+        p Subscribe to our email newsletter today to recieve updates on the latest news, tutorials and special offers
+        form.in-touch__form
+          .in-touch__form-group
+            input(name='email' type='email' placeholder='Your e-mail address')
+            button(type='submit').in-touch__send.mdi.mdi-near-me
+            p.in-touch__caption!= caption

@@ -1,0 +1,75 @@
+.in-touch{
+
+  p{
+    opacity: 0.9;
+    font-size: 24px;
+    line-height: normal;
+    margin: auto auto 30px;
+    max-width: 745px;
+    text-align: center;
+    font-weight: 300;
+  }
+
+  .in-touch__form{
+    display: flex;
+    justify-content: center;
+  }
+
+  .in-touch__form-group{
+    position: relative;
+    max-width: 555px;
+    width: 100%;
+
+    input{
+      padding: 20px 30px;
+      border: none;
+      box-shadow: 0 15px 20px 0 rgba(57, 99, 112, 0.06);
+      border-radius: 30px;
+      width: 100%;
+      font-size: 14px;
+      transition: 0.3s;
+      font-family: "Poppins", sans-serif;
+
+      &:focus{
+        outline: none;
+        box-shadow: 0 5px 15px 0 rgba(89, 181, 210, 0.5);
+      }
+
+      &:hover {
+        background: darken(#ffffff, 3%);
+        box-shadow: 0 5px 15px 0 rgba(89, 181, 210, 0.5);
+      }
+
+      &::-webkit-input-placeholder {
+        color: $text-color-main;
+      }
+      &::-moz-placeholder {
+        color: $text-color-main;
+      }
+      &:-ms-input-placeholder {
+        color: $text-color-main;
+      }
+      &:-moz-placeholder {
+        color: $text-color-main;
+      }
+    }
+  }
+
+  .in-touch__send{
+    border: none;
+    background: transparent;
+    position: absolute;
+    right: 30px;
+    top: 15px;
+    color: $color-accent;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .in-touch__caption{
+    font-size: 12px;
+    line-height: 1.5;
+    max-width: 440px;
+    margin: 20px auto 0 auto;
+  }
+}

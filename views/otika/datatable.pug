@@ -1,0 +1,34 @@
+extends base
+block content 
+        // Main Content
+        .main-content
+          section.section
+            .section-body      
+              .row
+                .col-12
+                  .card
+                    .card-header
+                      h4 Pump Data Overview
+                    .card-body
+                      .table-responsive
+                        table#save-stage.table.table-striped.table-hover(style='width:100%;')
+                          thead
+                            tr
+                              th Pump Type
+                              th Serial Number 
+                              th Customer
+                              th Failure Hours
+                              th OEM
+                            
+                          tbody
+                          each pump in pumps
+                            tr
+                              td=`${pump.pumpType}`
+                              td=`${pump.serialNumber}`
+                              td= `${pump.customer}`
+                              td= `${pump.failureHours}`
+                              td= `${pump.OEM}`
+                              
+                        
+          
+ 

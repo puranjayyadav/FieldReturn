@@ -1,0 +1,71 @@
+extends ../../blocks/layout
+block layout
+  - var active_page = 'forms_form_picker'
+
+block content
+  .container.todo-app
+    .row
+      .col-md-12
+        h3.page-title='Form-picker'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Date picker', [])
+          .form
+            .form__form-group
+              span.form__form-group-label='Default Date Picker'
+              div.form__form-group-field
+                +datepicker('blue')
+                .form__form-group-icon
+                  +icon('form', 'calendar-blank')
+            .form__form-group
+              span.form__form-group-label='Date and Time Picker'
+              div.form__form-group-field
+                +datepicker('blue timepicker')
+                .form__form-group-icon
+                  +icon('form', 'timetable')
+            .form__form-group
+              span.form__form-group-label='Interval Date Picker'
+              div.form__form-group-field
+                .date-picker.date-picker--interval
+                  +datepicker('blue', 'From')
+                  +icon('form', 'minus')(width=24, height=24)
+                  +datepicker('blue', 'To')
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Time picker', [])
+          .form
+            .form__form-group
+              span.form__form-group-label='Default Time Picker'
+              div.form__form-group-field
+                +timepicker('first-timepicker')
+                button.form__form-group-button.timepicker-button
+                  +icon('form', 'av-timer')
+            .form__form-group
+              span.form__form-group-label='Twelve hours mode'
+              div.form__form-group-field
+                +timepicker('second-timepicker', true)
+                button.form__form-group-button.timepicker-button
+                  +icon('form', 'av-timer')
+      .col-md-12.col-lg-12
+        +card('Color picker', [])
+          .form.form--justify
+            .col-lg-4.col-md-6.col-sm-12
+              span.form__form-group-label='Full picker'
+              div.form__form-group-field
+                .form__form-group-input-wrap
+                  +colorpicker('', 'full')
+            .col-lg-4.col-md-6.col-sm-12
+              span.form__form-group-label='Nano picker'
+              div.form__form-group-field
+                .form__form-group-input-wrap
+                  +colorpicker2('', 'nano')
+            .col-lg-4.col-md-6.col-sm-12
+              span.form__form-group-label='Standard color-picker'
+              div.form__form-group-field
+                .form__form-group-input-wrap
+                  .color-picker.colorpicker(id=`standard-picker-root`)
+                    label.color-picker__button(id=`standard-picker`)
+                      span.color-picker__color='#70bbfd'
+                      div(class="standard-picker", style="background-color: #70bbfd;")
+                        input(type='color', value="#70bbfd", onchange="onChangeColor(this)", onkeyup="onChangeColor(this)")
+

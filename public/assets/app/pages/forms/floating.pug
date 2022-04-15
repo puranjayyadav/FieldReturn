@@ -1,0 +1,39 @@
+extends ../../blocks/layout
+block layout
+  - var active_page = 'forms_floating'
+
+block content
+  .container.todo-app
+    .row
+      .col-md-12
+        h3.page-title='Floating Labels Form'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-md-12.col-lg-12
+        +card('Animated line inputs forms with floating labels', [{'type': 'normal', 'text': 'Material fields with a property '}, {'type': 'red', 'text': 'label'}])
+          form.material-form
+            div.material.material-class
+              div.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.material-form__field
+                input.mdl-textfield__input(type='text', id='username')
+                label.mdl-textfield__label(for='username')='Username'
+              div.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.material-form__field
+                input.mdl-textfield__input(type='text', id='email')
+                label.mdl-textfield__label(for='email')='Email'
+              div.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.material-form__field
+                input.mdl-textfield__input(type='text', id='url')
+                label.mdl-textfield__label(for='url')='URL'
+              div.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.material-form__field
+                input.mdl-textfield__input(type='password', id='password')
+                label.mdl-textfield__label(for='password')='Password'
+              div.mdl-textfield.mdl-textfield--floating-label.mdl-js-textfield.material-form__field.is-dirty
+                label.mdl-textfield__label(for='selection')='Select Option'
+                select(data-placeholder="Select...", class="todo-select chosen-select", style="width: 100%;", name='select', id='selection')
+                  option(value='low')='Low'
+                  option(value='medium')='Medium'
+                  option(value='high')='High'
+              div.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.material-form__field
+                textarea.mdl-textfield__input(id='textarea', rows="2" )
+                label.mdl-textfield__label(for='textarea')='Text Area'
+              .form__button-toolbar.btn-toolbar
+                button.btn.btn-primary='Submit'
+                button.btn.btn-secondary='Cancel'

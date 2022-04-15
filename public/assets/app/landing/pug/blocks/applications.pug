@@ -1,0 +1,20 @@
+include ./tabs
+
+section.section--applications.applications(style='background-image: url(\'landing/assets/img/applications_bg.png\')')
+  img.applications__decor.applications__decor--plus-lg(src="landing/assets/img/decor/points-lg.png", alt="decoration")
+  img.applications__decor.applications__decor--points-md(src="landing/assets/img/decor/points-md.png", alt="decoration")
+  img.applications__decor.applications__decor--points-sm(src="landing/assets/img/decor/points-sm.png", alt="decoration")
+  img.applications__decor.applications__decor--sin-lg(src="landing/assets/img/decor/sin-lg.png", alt="decoration")
+  img.applications__decor.applications__decor--sin-md(src="landing/assets/img/decor/sin-md.png", alt="decoration")
+  div(style={"text-align": "center"})
+    h2.landing__feedback-title Applications
+    p.landing__feedback-subhead  With the help of components and layouts, we created four different applications. They are a good way to get you started if you want to build something similar.
+    +tabs({
+    links: ['E-mail', 'Calendar', 'Chat', 'Todo'],
+    contents: ["landing/assets/img/applications_email.png", "landing/assets/img/applications_calendar.png",
+      "landing/assets/img/applications_chat.png", "landing/assets/img/applications_todo.png"],
+    captions:['Simple and convenient application for collecting and viewing letters',
+      'Do not miss a single important event in your life with the calendar application',
+      'Communicate, make new acquaintances, save the history of correspondence. It\'s easy with our Chat app',
+      'Make a plan for the day, month, year, to forget nothing. Our task manager will help you!']
+  }, null, 'Default', 'E-mail')

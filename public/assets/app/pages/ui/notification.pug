@@ -1,0 +1,103 @@
+extends ../../blocks/layout
+
+block layout
+  - var active_page = 'ui_notification'
+
+block content
+  .container
+    .row
+      .col-md-12
+        h3.page-title='Notifications'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-12.col-md-12.col-lg-6
+        +card('BASIC notifications', [
+          {'type': 'normal', 'text': 'Use BasicNotification with necessary value of property '},
+          {'type': 'red', 'text':'position'}])
+          .btn-toolbar
+            +btn('btn-outline-secondary notification-caller')(data-notification-type="left", data-notification-title="Remember!", data-notification-text="Learning day desirous informed expenses material returned six the. She enabled invited exposed him another.")='Left Up'
+            +btn('btn-outline-secondary notification-caller')(data-notification-type="right", data-notification-title="Remember!", data-notification-text="Learning day desirous informed expenses material returned six the. She enabled invited exposed him another.")='Right Up'
+      .col-12.col-md-12.col-lg-6
+        +card('Image notifications', [
+          {'type': 'normal', 'text': 'Use ImageNotification with necessary value of properties '},
+          {'type': 'red', 'text': 'position'},
+          {'type': 'normal', 'text': ' and '},
+          {'type': 'red', 'text': 'img'}])
+          .btn-toolbar
+            +btn('btn-outline-secondary notification-caller')(
+              data-notification-type="left",
+              data-notification-title="Remember!",
+              data-notification-extra="image",
+              data-notification-img="static/topbar/img/photo_notification.png"
+              data-notification-text="Learning day desirous informed expenses material returned six the. She enabled invited exposed him another.")='Left Up'
+            +btn('btn-outline-secondary notification-caller')(data-notification-extra="image",
+              data-notification-img="static/topbar/img/photo_notification.png", data-notification-type="right", data-notification-title="Remember!", data-notification-text="Learning day desirous informed expenses material returned six the. She enabled invited exposed him another.")='Right Up'
+
+      .col-12.col-md-12.col-lg-6
+        +card('Color notifications', [{'type': 'normal', 'text': 'Use BasicNotification with class '},
+          {'type': 'red', 'text': 'primary'},
+          {'type': 'normal', 'text': ', '},
+          {'type': 'red', 'text': 'success'},
+          {'type': 'normal', 'text': ', '},
+          {'type': 'red', 'text': 'warning'},
+          {'type': 'normal', 'text': ', '},
+          {'type': 'red', 'text': 'danger'}])
+          .btn-toolbar
+            +btn('btn-primary notification-caller')(
+              data-notification-type="left",
+              data-notification-title="Remember!",
+              data-notification-extra="primary",
+              data-notification-text="Learning day desirous informed expenses material returned six the. She enabled invited exposed him another.")='Primary'
+            +btn('btn-success notification-caller')(
+              data-notification-type="left",
+              data-notification-title="Remember!",
+              data-notification-extra="success",
+              data-notification-text="Learning day desirous informed expenses material returned six the. She enabled invited exposed him another.")='Success'
+            +btn('btn-warning notification-caller')(
+              data-notification-type="left",
+              data-notification-title="Remember!",
+              data-notification-extra="warning",
+              data-notification-text="Learning day desirous informed expenses material returned six the. She enabled invited exposed him another.")='Warning'
+            +btn('btn-danger notification-caller')(
+              data-notification-type="left",
+              data-notification-title="Remember!",
+              data-notification-extra="danger",
+              data-notification-text="Learning day desirous informed expenses material returned six the. She enabled invited exposed him another.")='Danger'
+      .col-12.col-md-12.col-lg-6
+        +card('Color states full width', [
+          {'type': 'normal', 'text': 'Use FullWideNotification with color: '},
+          {'type': 'red', 'text': 'primary'},
+          {'type': 'normal', 'text': ', '},
+          {'type': 'red', 'text': 'success'},
+          {'type': 'normal', 'text': ', '},
+          {'type': 'red', 'text': 'warning'},
+          {'type': 'normal', 'text': ', '},
+          {'type': 'red', 'text': 'danger'}])
+          .btn-toolbar
+            +btn('btn-primary notification-caller')(
+              data-notification-type="left",
+              data-notification-title="Remember!",
+              data-notification-extra="primary",
+              data-notification-text="Learning day desirous informed expenses material returned six the. She enabled invited exposed him another.",
+              data-notification-full="true")='Primary'
+            +btn('btn-success notification-caller')(
+              data-notification-type="left",
+              data-notification-title="Remember!",
+              data-notification-extra="success",
+              data-notification-text="Learning day desirous informed expenses material returned six the. She enabled invited exposed him another.",
+              data-notification-full="true")='Success'
+            +btn('btn-warning notification-caller')(
+              data-notification-type="left",
+              data-notification-title="Remember!",
+              data-notification-extra="warning",
+              data-notification-text="Learning day desirous informed expenses material returned six the. She enabled invited exposed him another.",
+              data-notification-full="true")='Warning'
+            +btn('btn-danger notification-caller')(
+              data-notification-type="left",
+              data-notification-title="Remember!",
+              data-notification-extra="danger",
+              data-notification-text="Learning day desirous informed expenses material returned six the. She enabled invited exposed him another.",
+              data-notification-full="true")='Danger'
+
+block extra-content
+  +rc-notification("")

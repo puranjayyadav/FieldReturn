@@ -1,0 +1,214 @@
+include ./components/documentation-nav
+include ./components/documentation-nav-bottom
+mixin documentation-components()
+  .documentation__main.row
+    +documentation-nav
+    .col-12.col-sm-12.col-md-12.col-lg-9.col-xl-9
+      .card--not-full-height.card
+        .card-body
+          .card__title
+            h5.bold-text="COMPONENTS (Pug mixins)"
+          p="These are the examples of using template mixins. All mixins have a basic structure and configuration. Just copy a component with its styles to your project."
+          p
+            | Read more about pug mixins
+            a(href="https://pugjs.org/language/mixins.html", target="_blank")="here."
+          p
+            |Also recall that all blocks has
+            a(href="https://en.bem.info/methodology/filestructure/#flat")=" flat "
+            |structure and all files and folders is optional.
+            a(href="documentation/file_structure")=" More details"
+      .card--not-full-height.card
+        .card-body
+          .card__title
+            h5.bold-text="Allerts"
+          p="Example of using:"
+          pre
+            code.language-pug
+              |each item in [['info', '', 'Information:'], ['success', '', 'Congratulations!'], ['warning', '', 'Attention!'], ['danger', '', 'Warning!']]
+              |  +alert(item[0], item[1])
+              |    span.bold-text=`${item[2]}`
+              |      | Learning day desirous informed expenses material returned six the. She enabled invited exposed him another.
+          p="Params of Alerts"
+          +table(
+            {wrap: 'table-responsive', table: 'table--bordered table--head-accent table'}, {
+            header: ['Property', 'Type', 'Description', ''],
+            items: [
+              ['type', 'string', 'Type of alerts: <span class="red-text">"info"</span>, <span class="red-text">"success"</span>, <span class="red-text">"danger"</span>'],
+              ['icon', 'string', 'Desired icon. The icon should be in the block folder in the folder "symbols"']
+              ]}, true)
+      .card--not-full-height.card
+        .card-body
+          .card__title
+            h5.bold-text="BUTTONS"
+          p="Example of using:"
+          pre
+            code.language-pug
+              |+btn('btn-primary')(type="button")="Buy BTC"
+          p="Params of buttons"
+          +table(
+            {wrap: 'table-responsive', table: 'table--bordered table--head-accent table'}, {
+            header: ['Property', 'Type', 'Description', ''],
+            items: [
+              ['type', 'string', 'Type of btn like a <a href="https://getbootstrap.com/docs/4.0/components/buttons/">bootstrap 4</a>'],
+              ['classes', 'string', 'Custom classes for button'],
+              ['icon', 'string', 'Desired icon. The icon should be in the block folder in the folder "symbols"']
+              ]}, true)
+      .card--not-full-height.card
+        .card-body
+          .card__title
+            h5.bold-text="Carousels"
+          p
+            |Carousels is based on
+            a(href="https://kenwheeler.github.io/slick/")=" slick."
+            |Example of using:
+          pre
+            code.language-pug
+              |+carousel(
+              |["static/topbar/img/5.png", "static/topbar/img/6.png", "static/topbar/img/5.png", "static/topbar/img/6.png"],
+              |'slick-slider--single')
+              |
+              |+carousel(
+              |[{"title": "Sayan mountains, Siberia", "description":"Folly words widow one downs few age every seven.", "link": "static/topbar/img/5.png"},
+              |{"title": "Sayan mountains, Siberia", "description":"Folly words widow one downs few age every seven.", "link": "static/topbar/img/6.png"},
+              |{"title": "Sayan mountains, Siberia", "description":"Folly words widow one downs few age every seven.", "link": "static/topbar/img/5.png"},
+              |{"title": "Sayan mountains, Siberia", "description":"Folly words widow one downs few age every seven.", "link": "static/topbar/img/6.png"}],
+              |'slick-slider--single')
+          p="Params of carousel"
+          +table(
+            {wrap: 'table-responsive', table: 'table--bordered table--head-accent table'}, {
+            header: ['Property', 'Type', 'Description', ''],
+            items: [
+              ['items', 'array', 'Array with paths to images <span class="red-text">or</span> object(title, description, pathToImg).'],
+              ['classes', 'string', 'Slick-carousel classes']
+              ]}, true)
+      .card--not-full-height.card
+        .card-body
+          .card__title
+            h5.bold-text="Collapse"
+          p="Example of using:"
+          pre
+            code.language-pug
+              |+collapse("How I can manage my account?", "minimalCollapse-1", "with-shadow")
+              |  div
+              |    p
+              |      |Breakfast agreeable incommode departure it an. By ignorant at on wondered relation. Enough at tastes really so cousin am of. Extensive
+              |therefore supported by extremity of contented. Is pursuit compact demesne invited elderly be. View him she roof tell her case has sigh.
+          p="Params of collapse"
+          +table(
+            {wrap: 'table-responsive', table: 'table--bordered table--head-accent table'}, {
+            header: ['Property', 'Type', 'Description', ''],
+            items: [
+              ['title', 'string', ''],
+              ['id', 'string', ''],
+              ['classes', 'string', 'You can use classes: <span class="red-text">"with-shadow", "boxed"</span>']
+              ]}, true)
+      .card--not-full-height.card
+        .card-body
+          .card__title
+            h5.bold-text="Dropzone"
+          p="Example of using:"
+          pre
+            code.language-pug
+              |.form__form-group-field
+              |   +dropzone('1', 'dropzone--single')
+          p="Params of collapse"
+          +table(
+            {wrap: 'table-responsive', table: 'table--bordered table--head-accent table'}, {
+            header: ['Property', 'Type', 'Description', ''],
+            items: [
+              ['id', 'string', 'Dropzone ID'],
+              ['classes', 'string', 'Additional classes for dropzone']
+              ]}, true)
+      .card--not-full-height.card
+        .card-body
+          .card__title
+            h5.bold-text="MODALS"
+          p="Example of using:"
+          pre
+            code.language-pug
+              |+modal('modal-1', "Expect warmly its tended garden him esteem had remove off. Effects dearest staying now sixteen nor improve.", "primary")
+              |+modal('modal-5', "Expect warmly its tended garden him esteem had remove off. Effects dearest staying now sixteen nor improve.", "warning", "colored")
+              |+modal('modal-10', "Expect warmly its tended garden him esteem had remove off. Effects dearest staying now sixteen nor improve.", "success", "header")
+          p="Params of Modals"
+          +table(
+            {wrap: 'table-responsive', table: 'table--bordered table--head-accent table'}, {
+            header: ['Property', 'Type', 'Description', ''],
+            items: [
+              ['id', 'string', 'Modal ID'],
+              ['text', 'string', 'Modal body text'],
+              ['type', 'string', 'Type of modal: <span class="red-text">"primary", "success", "warning", "danger"</span>'],
+              ['extra', 'string', 'Extra mode: <span class="red-text">"colored", "header"</span>']
+              ]}, true)
+      .card--not-full-height.card
+        .card-body
+          .card__title
+            h5.bold-text="PANEL"
+          p="Example of using:"
+          pre
+            code.language-pug
+              |+panel('RESERVATIONS', 'reservations', 'Reservation overview', null, null, null, 'dashboard__booking-reservations-panel card')
+              |  .dashboard__booking-reservations
+              |    p.dashboard__booking-reservations-title="Total visitors on 23.08.2018"
+              |    p.dashboard__booking-reservations-number="345"
+          p="Params of PANEL"
+          +table(
+            {wrap: 'table-responsive', table: 'table--bordered table--head-accent table'}, {
+            header: ['Property', 'Type', 'Description', ''],
+            items: [
+              ['title', 'string', 'Panel title'],
+              ['id', 'string', 'Panel ID'],
+              ['subhead', 'string', 'Panel subhead'],
+              ['type', 'string', 'Type of panel <b>success</b>,<b>warning</b>,<b>danger</b>'],
+              ['icon', 'icon', 'Icon panel'],
+              ['tabs', 'object', 'Tabs panel'],
+              ['classes', 'string', 'Additional classes for panel']
+              ]}, true)
+      .card--not-full-height.card
+        .card-body
+          .card__title
+            h5.bold-text="Progress bar"
+          p="Example of using:"
+          pre
+            code.language-pug
+              |+progress-bar('middle', null, null, 67)
+              |  |67%     //-Value into progress line
+              |+progress-bar('middle', null, 'blue-gradient', 79, '79%')
+          p="Params of progress bar"
+          +table(
+            {wrap: 'table-responsive', table: 'table--bordered table--head-accent table'}, {
+            header: ['Property', 'Type', 'Description', ''],
+            items: [
+              ['size', 'string', 'Size progress bar: <span class="red-text">"small", "middle", "big"</span>'],
+              ['classes', 'string', 'Classes for progress bar'],
+              ['color', 'string', 'Color progress bar: <span class="text-red">"red", "blue", "blue-gradient", "pink-gradient", "lime-gradient", "turquoise-gradient"</span>'],
+              ['value', 'string', 'Percent progress bar'],
+              ['lable', 'string', 'Lable progress bar']
+              ]}, true)
+      .card--not-full-height.card
+        .card-body
+          .card__title
+            h5.bold-text="Tabs"
+          p="Example of using:"
+          pre
+            code.language-pug
+              |+tabs({
+              |links: ['Sales', 'Statistic', 'Offers', 'Refounds'],
+              |contents: [
+              | "Direction has strangers now believing. Respect enjoyed gay far exposed parlors towards. Enjoyment use tolerably dependent listening men.",
+              | "Direction has strangers now believing. Respect enjoyed gay far exposed parlors towards. Enjoyment use tolerably dependent listening men.",
+              | "Direction has strangers now believing. Respect enjoyed gay far exposed parlors towards. Enjoyment use tolerably dependent listening men.",
+              | "Enjoyment use tolerably dependent listening men. No peculiar in handsome together unlocked do by. Article concern joy anxious did picture sir her."
+              |]
+              |}, 'tabs--bordered-top', 'bordered', 'Sales')
+          p="Params of tabs"
+          +table(
+            {wrap: 'table-responsive', table: 'table--bordered table--head-accent table'}, {
+            header: ['Property', 'Type', 'Description', ''],
+            items: [
+              ['content', 'Object', 'Object.links - tabs headers. Object.items'],
+              ['classes', 'string', 'Classes for progress bar'],
+              ['color', 'string', 'Color progress bar: <span class="red-text">"red", "blue", "blue-gradient", "pink-gradient", "lime-gradient", "turquoise-gradient"</span>'],
+              ['value', 'string', 'Percent progress bar'],
+              ['lable', 'string', 'Lable progress bar']
+              ]}, true)
+  +documentation-nav-bottom({path: 'documentation/file_structure', title: 'Filte sctructure'}, {path: 'documentation/color_scheme', title: 'Color scheme'})

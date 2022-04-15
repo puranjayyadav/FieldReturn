@@ -1,0 +1,146 @@
+extends ../../blocks/layout
+block layout
+  - var active_page = 'forms_basic_form'
+
+block content
+  .container.todo-app
+    .row
+      .col-md-12
+        h3.page-title='Basic Form'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-md-12.col-lg-12
+        +card('Horizontal form', [{'type': 'normal', 'text': 'Labels are left from fields'}])
+          .form.form--horizontal
+            .form__form-group
+              span.form__form-group-label='Default Label'
+              div.form__form-group-field
+                input(placeholder='Default Input')
+            .form__form-group
+              span.form__form-group-label='Disable Field'
+              div.form__form-group-field
+                input(placeholder='Disable Input', disabled='')
+            .form__form-group
+              span.form__form-group-label='Email'
+              div.form__form-group-field
+                input(placeholder='example@example.com', type='email')
+            .form__form-group
+              span.form__form-group-label='Password'
+              div.form__form-group-field
+                input(placeholder='Password', type='password')
+                button.form__form-group-button.passwordClick
+                  svg(width=24, height=24)
+                    use(xlink:href=`@symbol#form__eye`)
+            .form__form-group
+              span.form__form-group-label='Icon Left'
+              div.form__form-group-field
+                .form__form-group-icon
+                  svg(width=24, height=24)
+                    use(xlink:href=`@symbol#form__email`)
+                input(placeholder='Icon Left Input', type='text')
+            .form__form-group
+              span.form__form-group-label='Icon Right'
+              div.form__form-group-field
+                input(placeholder='Icon Right Input', type='text')
+                .form__form-group-icon
+                  svg(width=24, height=24)
+                    use(xlink:href=`@symbol#form__account-search`)
+            .form__form-group
+              span.form__form-group-label='Field with description'
+              div.form__form-group-field
+                input(placeholder='example@example.com', type='email')
+              span.form__form-group-description='Zealously now pronounce existence add you instantly say offending.'
+            .form__form-group
+              span.form__form-group-label='Dropdown'
+              div.form__form-group-field
+                select(data-placeholder="", class="basic-form-select chosen-select", style="width: 100%;", name='select')
+                  option(value='one')='One'
+                  option(value='two')='Two'
+            .form__form-group
+              span.form__form-group-label='Multiselect'
+              div.form__form-group-field
+                select(data-placeholder="", class="basic-form-select-multi chosen-select", multiple, style="width: 100%;", name='select')
+                  option(value='one')='One'
+                  option(value='two')='Two'
+            .form__form-group
+              span.form__form-group-label='Textarea'
+              .form__form-group-field
+                textarea
+            .form__form-group
+              span.form__form-group-label='Add file'
+              div.form__form-group-field
+                div.form__form-group-input-wrap
+                  div.form__form-group-file
+                    label(for='file')='Choose the file'
+                    input(type='file', name='file', id='file')
+            .form__button-toolbar.btn-toolbar
+              button.btn.btn-primary='Submit'
+              button.btn.btn-secondary='Cancel'
+    .row
+      .col-md-12.col-lg-12
+        +card('Vertical form', [{'type': 'normal', 'text': 'Labels are left from fields'}])
+          .form
+            .form__form-group
+              span.form__form-group-label='Default Label'
+              div.form__form-group-field
+                input(placeholder='Default Input')
+            .form__form-group
+              span.form__form-group-label='Disable Field'
+              div.form__form-group-field
+                input(placeholder='Disable Input', disabled='')
+            .form__form-group
+              span.form__form-group-label='Email'
+              div.form__form-group-field
+                input(placeholder='example@example.com', type='email')
+            .form__form-group
+              span.form__form-group-label='Password'
+              div.form__form-group-field
+                input(placeholder='Password', type='password')
+                button.form__form-group-button
+                  svg(width=24, height=24)
+                    use(xlink:href=`@symbol#form__eye`)
+            .form__form-group
+              span.form__form-group-label='Icon Left'
+              div.form__form-group-field
+                .form__form-group-icon
+                  svg(width=24, height=24)
+                    use(xlink:href=`@symbol#form__email`)
+                input(placeholder='Icon Left Input', type='text')
+            .form__form-group
+              span.form__form-group-label='Icon Right'
+              div.form__form-group-field
+                input(placeholder='Icon Right Input', type='text')
+                .form__form-group-icon
+                  svg(width=24, height=24)
+                    use(xlink:href=`@symbol#form__account-search`)
+            .form__form-group
+              span.form__form-group-label='Field with description'
+              div.form__form-group-field
+                input(placeholder='example@example.com', type='email')
+              span.form__form-group-description='Zealously now pronounce existence add you instantly say offending.'
+            .form__form-group
+              span.form__form-group-label='Dropdown'
+              div.form__form-group-field
+                select(data-placeholder="", class="basic-form-select chosen-select", style="width: 100%;", name='select')
+                  option(value='one')='One'
+                  option(value='two')='Two'
+            .form__form-group
+              span.form__form-group-label='Multiselect'
+              div.form__form-group-field
+                select(data-placeholder="", class="basic-form-select-multi chosen-select", multiple, style="width: 100%;", name='select')
+                  option(value='one')='One'
+                  option(value='two')='Two'
+            .form__form-group
+              span.form__form-group-label='Textarea'
+              .form__form-group-field
+                textarea
+            .form__form-group
+              span.form__form-group-label='Add file'
+              div.form__form-group-field
+                div.form__form-group-input-wrap
+                  div.form__form-group-file
+                    label(for='vertical-file')='Choose the file'
+                    input(type='file', name='vertical-file', id='vertical-file')
+            .form__button-toolbar.btn-toolbar
+              button.btn.btn-primary='Submit'
+              button.btn.btn-secondary='Cancel'

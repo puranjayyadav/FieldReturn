@@ -1,0 +1,35 @@
+extends ../../blocks/layout
+block layout
+  - const active_page = 'charts_echarts'
+
+block content
+  .container.todo-app
+    .row
+      .col-md-12
+        h3.page-title='Echarts'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Simple line chart', [])
+          +echartjs('1')
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Dashed line chart', [])
+          +echartjs('2')
+      .col-12.col-md-12.col-lg-12.col-xl-4
+        +card('Simple area chart', [])
+          +echartjs('3')
+      .col-12.col-md-12.col-lg-12.col-xl-4
+        +card('Stacked area chart', [])
+          +echartjs('4')
+      .col-12.col-md-12.col-lg-12.col-xl-4
+        +card('Multiple yaxes scatter chart', [])
+          +echartjs('5')
+      .col-12.col-md-12.col-lg-12.col-xl-4
+        +card('Simple radial bar chart', [])
+          +echartjs('6')
+      .col-12.col-md-12.col-lg-12.col-xl-4
+        +card('Simple radar chart', [])
+          +echartjs('7')
+      .col-12.col-md-12.col-lg-12.col-xl-4
+        +card('Two level pie chart', [])
+          +echartjs('8')

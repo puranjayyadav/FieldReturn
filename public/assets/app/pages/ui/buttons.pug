@@ -1,0 +1,256 @@
+extends ../../blocks/layout
+
+block layout
+  - const active_page = 'ui_buttons'
+
+block content
+  .container
+    .row
+      .col-md-12
+        h3.page-title='Buttons'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Default buttons', [
+          {'type': 'normal', 'text': 'Use default btn with necessary values of properties'},
+          {'type': 'red', 'text': 'color'},
+          {'type': 'normal', 'text': ','},
+          {'type': 'red', 'text': 'outline'},
+          {'type': 'normal', 'text': ' and'},
+          {'type': 'red', 'text': 'disabled'},
+        ],
+          {
+            "title": "", "subhead": {
+              "items": [{
+                "title": "", "subhead": [
+                  {'type': 'normal', 'text': 'Modifier color '},
+                  {'type': 'red', 'text': 'primary'},
+                  {'type': 'normal', 'text': ', '},
+                  {'type': 'red', 'text': 'success'},
+                  {'type': 'normal', 'text': ', '},
+                  {'type': 'red', 'text': 'warning'},
+                  {'type': 'normal', 'text': ', '},
+                  {'type': 'red', 'text': 'danger'},
+                ]
+              },
+              {
+                "title": "", "subhead": [
+                  {'type': 'normal', 'text': 'Modifier outline and disabled '},
+                  {'type': 'red', 'text': 'true'},
+                  {'type': 'normal', 'text': ', '},
+                  {'type': 'red', 'text': 'false'}
+                ]
+              }]
+            }
+          })
+          .btn-toolbar
+            +btn('btn-outline-secondary')='Minimal'
+            +btn('btn-secondary')='Secondary'
+            +btn('btn-secondary', 'disabled')='Disabled'
+            +btn('btn-primary')='Primary'
+            +btn('btn-success')='Success'
+            +btn('btn-warning')='Warning'
+            +btn('btn-danger')='Danger'
+            +btn('btn-outline-primary')='Primary'
+            +btn('btn-outline-success')='Success'
+            +btn('btn-outline-warning')='Warning'
+            +btn('btn-outline-danger')='Danger'
+
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Buttons icons and expand', [],
+          {
+            "title": "", "subhead": {
+              "items": [{
+                "title": "", "subhead": [
+                  {'type': 'normal', 'text': 'Use default buttons with class '},
+                  {'type': 'red', 'text': 'icon'},
+                  {'type': 'normal', 'text': ', '},
+                  {'type': 'red', 'text': 'icon'},
+                  {'type': 'normal', 'text': ' '},
+                  {'type': 'red', 'text': 'icon-right'}
+                ]
+              }]
+            }
+          }, "Icon buttons")
+          .btn-toolbar
+            +btn('icon btn-outline-secondary',null, 'settings')='Settings'
+            +btn('icon btn-outline-secondary','disabled', 'settings')='Disabled'
+            +btn('icon btn-outline-primary icon--right',null, 'send')='Settings'
+            +btn('icon btn-primary',null, 'settings')='Settings'
+            +btn('icon btn-success',null, 'thumb-up-outline')='Success'
+            +btn('icon btn-warning',null, 'comment-alert-outline')='Danger'
+            +btn('icon btn-danger',null, 'close-circle')='Warning'
+          h5.bold-text="Expand"
+          .btn-toolbar
+            +btn('icon btn-outline-secondary expand',null, 'icon')='Settings'
+            +btn('icon btn-primary expand',null, 'icon')='Settings'
+
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Square buttons', [
+          {'type': 'normal', 'text': 'Use default btn with class '},
+          {'type': 'red', 'text': 'square'}
+        ])
+          .btn-toolbar
+            +btn('btn-outline-secondary square')='Minimal'
+            +btn('btn-secondary square')='Secondary'
+            +btn('btn-secondary square', 'disabled')='Disabled'
+            +btn('btn-primary square')='Primary'
+            +btn('btn-success square')='Success'
+            +btn('btn-warning square')='Warning'
+            +btn('btn-danger square')='Danger'
+            +btn('btn-outline-primary square')='Primary'
+            +btn('btn-outline-success square')='Success'
+            +btn('btn-outline-warning square')='Warning'
+            +btn('btn-outline-danger square')='Danger'
+
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Rounded buttons', [
+          {'type': 'normal', 'text': 'Use default btn with class '},
+          {'type': 'red', 'text': 'rounded'}
+        ])
+          .btn-toolbar
+            +btn('btn-outline-secondary rounded')='Minimal'
+            +btn('btn-secondary rounded')='Secondary'
+            +btn('btn-secondary rounded', 'disabled')='Disabled'
+            +btn('btn-primary rounded')='Primary'
+            +btn('btn-success rounded')='Success'
+            +btn('btn-warning rounded')='Warning'
+            +btn('btn-danger rounded')='Danger'
+            +btn('btn-outline-primary rounded')='Primary'
+            +btn('btn-outline-success rounded')='Success'
+            +btn('btn-outline-warning rounded')='Warning'
+            +btn('btn-outline-danger rounded')='Danger'
+      .col-md-12.col-lg-12
+        +card('Status buttons', [
+          {'type': 'normal', 'text': 'Use default buttons with property '},
+          {'type': 'red', 'text': 'size'}
+        ], null, 'Small buttons')
+          .card__title
+            h5.subhead="Use the modifier "
+              +red-text="sm"
+          .btn-toolbar
+            +btn('btn-outline-secondary btn-sm')='Minimal'
+            +btn('btn-secondary btn-sm')='Secondary'
+            +btn('btn-secondary btn-sm', 'disabled')='Disabled'
+            +btn('btn-primary btn-sm')='Primary'
+            +btn('btn-success btn-sm')='Success'
+            +btn('btn-warning btn-sm')='Warning'
+            +btn('btn-danger btn-sm')='Danger'
+            +btn('btn-outline-primary btn-sm')='Primary'
+            +btn('btn-outline-success btn-sm')='Success'
+            +btn('btn-outline-warning btn-sm')='Warning'
+            +btn('btn-outline-danger btn-sm')='Danger'
+          h5.bold-text="Expand"
+          .card__title
+            h5.subhead="Use the modifier "
+             +red-text="lg"
+          .btn-toolbar
+            +btn('btn-outline-secondary btn-lg')='Minimal'
+            +btn('btn-secondary btn-lg')='Secondary'
+            +btn('btn-secondary btn-lg', 'disabled')='Disabled'
+            +btn('btn-primary btn-lg')='Primary'
+            +btn('btn-success btn-lg')='Success'
+            +btn('btn-warning btn-lg')='Warning'
+            +btn('btn-danger btn-lg')='Danger'
+            +btn('btn-outline-primary btn-lg')='Primary'
+            +btn('btn-outline-success btn-lg')='Success'
+            +btn('btn-outline-warning btn-lg')='Warning'
+            +btn('btn-outline-danger btn-lg')='Danger'
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Button group', [])
+          span.bold-text="Icon group"
+          .card__title
+            h5.subhead="Use default btn group with class  "
+             +red-text="btn-group-icons"
+          .btn-toolbar
+            .btn-group--icons.btn-group
+              +btn('btn-outline-secondary', null, 'pushpin', true)=''
+              +btn('btn-outline-secondary', null, 'heart-pulse', true)=''
+              +btn('btn-outline-secondary', null, 'cog', true)=''
+              +btn('btn-outline-secondary', null, 'magic-wand', true)=''
+
+          span.bold-text="Large buttons"
+          .card__title
+            h5.subhead="Use default btn group"
+          .btn-toolbar
+            .btn-group
+              +btn('btn-outline-secondary')='Left'
+              +btn('btn-outline-secondary')='Middle'
+              +btn('btn-outline-secondary')='Right'
+          span.bold-text="Justify buttons"
+          .card__title
+            h5.subhead="Use default btn group with class "
+              +red-text="btn-group-justified"
+          .btn-toolbar
+            .btn-group--justified.btn-group
+              +btn('btn-primary')='Left'
+              +btn('btn-primary')='Middle'
+              +btn('btn-primary')='Right'
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Button dropdown', [], null, "Basic buttons with dropdown")
+          .card__title
+            h5.subhead="Use default dropdown toggle"
+          .btn-toolbar
+            +btn-dropdown({
+              classButton: 'icon icon--right btn-outline-secondary',
+              right: true,
+              list: ["Action", "Another Action", null, "Another Action"]
+            })
+              | Dropdown
+            +btn-dropdown({
+              classButton: 'icon icon--right btn-secondary',
+              right: true,
+              list: ["Action", "Another Action", null, "Another Action"]
+            })
+              | Dropdown
+            +btn-dropdown({
+              classButton: 'icon icon--right btn-outline-primary',
+              right: true,
+              list: ["Action", "Another Action", null, "Another Action"]
+            })
+              | Dropdown
+          span.bold-text="Buttons with divided dropdown"
+          .card__title
+            h5.subhead="Use default dropdown toggle with "
+              +red-text="button"
+          .btn-toolbar
+            +btn-dropdown({
+              classButton: 'btn-outline-secondary',
+              classIcon: 'btn btn-outline-secondary',
+              right: false,
+              separated: true,
+              list: ["Action", "Another Action", null, "Another Action"]
+            })
+              | Dropdown
+            +btn-dropdown({
+              classButton: 'btn-outline-primary',
+              classIcon: 'btn btn-outline-primary',
+              right: false,
+              separated: true,
+              list: ["Action", "Another Action", null, "Another Action"]
+            })
+              | Dropdown
+            +btn-dropdown({
+              classButton: 'btn-outline-primary',
+              classIcon: 'btn btn-primary',
+              right: false,
+              separated: true,
+              list: ["Action", "Another Action", null, "Another Action"]
+            })
+              | Dropdown
+            +btn-dropdown({
+              classButton: 'btn-primary',
+              classIcon: 'btn btn-primary',
+              right: false,
+              separated: true,
+              list: ["Action", "Another Action", null, "Another Action"]
+            })
+              | Dropdown
+            +btn-dropdown({
+              classButton: 'btn-primary disabled',
+              classIcon: 'btn btn-primary disabled',
+              right: false,
+              separated: true,
+              list: ["Action", "Another Action", null, "Another Action"]
+            })
+              | Dropdown

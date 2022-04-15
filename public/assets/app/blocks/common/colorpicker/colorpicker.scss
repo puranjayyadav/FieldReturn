@@ -1,0 +1,80 @@
+.color-picker {
+  width: 160px;
+  .color-picker__color {
+    margin: auto auto auto 0;
+    padding-left: 10px;
+  }
+}
+.pickr{
+  display: none;
+}
+.color-picker__button {
+  height: 32px;
+  width: 160px;
+  display: flex;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: transparent;
+  padding: 0;
+
+  @include themify($themes) {
+    border: 1px solid themed('colorFieldsBorder');
+  }
+
+  &.active {
+    border-color: $color-accent;
+  }
+}
+
+.color-picker__color-view {
+  height: 30px;
+  width: 50px;
+}
+
+.color-picker__popover.popover {
+  width: auto;
+
+  .block-picker {
+
+    & > div:first-child {
+      display: none;
+    }
+  }
+
+  .block-picker, .chrome-picker, .sketch-picker {
+    box-shadow: none !important;
+  }
+}
+
+input[type='color'] {
+  padding: 0 !important;
+  height: 30px !important;
+  width: 50px !important;
+}
+
+.standard-color-picker {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid #f2f4f7;
+  height: 100%;
+  p {
+    height: 100%;
+
+    margin: auto auto auto 0;
+    padding-left: 10px;
+  }
+}
+
+
+.standard-picker {
+
+  width: 50px;
+  height: 30px;
+
+  input {
+    opacity: 0;
+    width: 50px;
+    height: 30px;
+  }
+}

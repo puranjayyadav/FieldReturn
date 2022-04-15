@@ -1,0 +1,68 @@
+extends ../../blocks/layout
+block layout
+  - var active_page = 'ecommerce_product_page'
+
+block content
+  .container.todo-app
+    .row
+      .col-md-12
+        h3.page-title='Product Page'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-md-12.col-lg-12
+        .card
+          .card-body
+            +product()
+    .row
+      .col-md-12
+        h3.page-title.page-title--not-last='Related Items'
+    .row
+      .col-md-12.col-lg-12
+        .catalog-items__wrap
+          .catalog-items
+            +catalog-item(
+              'new_lable',
+              '25',
+              'Blue Vase',
+              'Awesome item from GLassy brand',
+              '$12',
+              [
+                'rgb(0, 179, 198)',
+                'rgb(80, 227, 194)',
+                'rgb(250, 74, 134)'
+              ]
+            )
+            +catalog-item(
+              'new_lable',
+              '26',
+              'Pink Vase',
+              'Awesome item from GLassy brand',
+              '$17',
+              [
+                'rgb(212, 212, 212)',
+                'rgb(95, 227, 194)',
+                'rgb(247, 169, 196)'
+              ]
+            )
+            +catalog-item(
+              'sale_lable',
+              '27',
+              'Bulldog Pillow',
+              'Awesome item from GLassy brand',
+              '$17',
+              [
+                'rgb(250, 147, 189)',
+              ],
+              '$23'
+            )
+            +catalog-item(
+              null,
+              '28',
+              'Yellow Pillow',
+              'Awesome item from GLassy brand',
+              '$16',
+              [
+                'rgb(198, 137, 10)',
+                'rgb(250, 238, 90)',
+              ]
+            )

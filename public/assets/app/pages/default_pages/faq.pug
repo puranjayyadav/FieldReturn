@@ -1,0 +1,30 @@
+extends ../../blocks/layout
+block layout
+  - var active_page = 'default_pages_faq'
+
+block content
+  .container.todo-app
+    .row
+      .col-md-12
+        h3.page-title='FAQs'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-md-12.col-lg-12
+        .card.cart
+          .card-body
+            +collapse("How I can manage my account?", "minimalCollapse-1", "with-shadow")
+              div
+                p
+                  | Breakfast agreeable incommode departure it an. By ignorant at on wondered relation. Enough at tastes really so cousin am of. Extensive therefore supported by extremity of contented. Is pursuit compact demesne invited elderly be. View him she roof tell her case has sigh. Moreover is possible he admitted sociable concerns. By in cold no less been sent hard hill.
+            +collapse("How much a annual subscribe?", "minimalCollapse-2", "with-shadow")
+              div
+                p
+                  | Breakfast agreeable incommode departure it an. By ignorant at on wondered relation. Enough at tastes really so cousin am of. Extensive therefore supported by extremity of contented. Is pursuit compact demesne invited elderly be. View him she roof tell her case has sigh. Moreover is possible he admitted sociable concerns. By in cold no less been sent hard hill.
+            +collapse("How to modify Admin Template UI?", "minimalCollapse-3", "with-shadow")
+              div
+                p
+                  | Breakfast agreeable incommode departure it an. By ignorant at on wondered relation. Enough at tastes really so cousin am of. Extensive therefore supported by extremity of contented. Is pursuit compact demesne invited elderly be. View him she roof tell her case has sigh. Moreover is possible he admitted sociable concerns. By in cold no less been sent hard hill.
+            +collapse("How to get support? How often can I get technical consultations?", "minimalCollapse-4", "with-shadow")
+              div
+                p
+                  | Breakfast agreeable incommode departure it an. By ignorant at on wondered relation. Enough at tastes really so cousin am of. Extensive therefore supported by extremity of contented. Is pursuit compact demesne invited elderly be. View him she roof tell her case has sigh. Moreover is possible he admitted sociable concerns. By in cold no less been sent hard hill.

@@ -1,0 +1,81 @@
+extends ../blocks/layout
+block layout
+  - var active_page = 'inbox'
+
+block content
+  .container.todo-app
+    .row
+      .col-md-12
+        h3.page-title='Basic Form'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Horizontal form', [{'type': 'normal', 'text': 'Labels are left from fields'}])
+          +table(
+            {wrap: 'table-responsive', table: 'table table-hover'}, {
+            header: ['#', 'First Name', 'Last Name', 'Username', 'Status'],
+            items:[
+              ['Maria', 'Morrison', '@dragon', {badge: true, type: 'warning', value: 'Work'}],
+              ['Maria', 'Morrison', '@dragon', {badge: true, value: 'Work', type: 'warning'}],
+              ['Maria', 'Morrison', '@dragon', {badge: true, value: 'Work', type: 'success'}],
+              ['Maria', 'Morrison', '@dragon', {badge: true, value: 'Work', type: 'success'}],
+              ['Maria', 'Morrison', '@dragon', {badge: true, value: 'Work', type: 'danger'}],
+              ['Maria', 'Morrison', '@dragon', {badge: true, value: 'Work', type: 'success'}],
+            ]})
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Horizontal form', [{'type': 'normal', 'text': 'Labels are left from fields'}])
+          +table(
+            {wrap: 'table-responsive', table: 'table table--bordered'}, {
+            header: ['#', 'First Name', 'Last Name', 'Username', 'Status'],
+            items: [
+              ['Maria', 'Morrison', '@dragon', {badge: true, type: 'warning', value: 'Work'}],
+              ['Maria', 'Morrison', '@dragon', {badge: true, value: 'Work', type: 'warning'}],
+              ['Maria', 'Morrison', '@dragon', {badge: true, value: 'Work', type: 'success'}],
+              ['Maria', 'Morrison', '@dragon', {badge: true, value: 'Work', type: 'success'}],
+              ['Maria', 'Morrison', '@dragon', {badge: true, value: 'Work', type: 'danger'}],
+              ['Maria', 'Morrison', '@dragon', {badge: true, value: 'Work', type: 'success'}],
+            ]
+          })
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Horizontal form', [{'type': 'normal', 'text': 'Labels are left from fields'}])
+          +table(
+            {wrap: 'table-responsive', table: 'table--bordered table--head-accent table table-hover'}, {
+            header: ['#', 'First Name', 'Last Name', 'Username', 'Status'],
+            items: [
+              ['Maria', 'Morrison', '@dragon', {badge: true, type: 'warning', value: 'Work'}],
+              ['Maria', 'Morrison', '@dragon', {badge: true, value: 'Work', type: 'warning'}],
+              ['Maria', 'Morrison', '@dragon', {badge: true, value: 'Work', type: 'success'}],
+              ['Maria', 'Morrison', '@dragon', {badge: true, value: 'Work', type: 'success'}],
+              ['Maria', 'Morrison', '@dragon', {badge: true, value: 'Work', type: 'danger'}],
+              ['Maria', 'Morrison', '@dragon', {badge: true, value: 'Work', type: 'success'}],
+            ]
+          })
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Horizontal form', [{'type': 'normal', 'text': 'Labels are left from fields'}])
+          +table(
+            {wrap: 'table-responsive', table: 'table table-striped'}, {
+            header: ['#', 'First Name', 'Last Name', 'Username', 'Status'],
+            items: [
+              ['Maria', 'Morrison', '@dragon', {badge: true, type: 'warning', value: 'Work'}],
+              ['Maria', 'Morrison', '@dragon', {badge: true, value: 'Work', type: 'warning'}],
+              ['Maria', 'Morrison', '@dragon', {badge: true, value: 'Work', type: 'success'}],
+              ['Maria', 'Morrison', '@dragon', {badge: true, value: 'Work', type: 'success'}],
+              ['Maria', 'Morrison', '@dragon', {badge: true, value: 'Work', type: 'danger'}],
+              ['Maria', 'Morrison', '@dragon', {badge: true, value: 'Work', type: 'success'}],
+            ]
+          })
+    .row
+      .col-md-12.col-lg-12
+        +card('Horizontal form', [{'type': 'normal', 'text': 'Labels are left from fields'}])
+          +table(
+            {wrap: 'table-responsive', table: 'table--bordered table--head-accent table table-hover'}, {
+            header: ['#', 'First Name', 'Last Name', 'Username', 'Age', 'Date', 'Location', 'Status'],
+            items: [
+              ['Maria', 'Morrison', '@dragon','21', '1990/12/01', 'Melbourne', {badge: true, type: 'warning', value: 'Work'}],
+              ['Maria', 'Morrison', '@dragon','21', '1990/12/01', 'Melbourne',{badge: true, value: 'Work', type: 'warning'}],
+              ['Maria', 'Morrison', '@dragon','21', '1990/12/01', 'Melbourne',{badge: true, value: 'Work', type: 'success'}],
+              ['Maria', 'Morrison', '@dragon','21', '1990/12/01', 'Melbourne',{badge: true, value: 'Work', type: 'success'}],
+              ['Maria', 'Morrison', '@dragon','21', '1990/12/01', 'Melbourne',{badge: true, value: 'Work', type: 'danger'}],
+              ['Maria', 'Morrison', '@dragon', '21', '1990/12/01', 'Melbourne',{badge: true, value: 'Work', type: 'success'}],
+            ]
+          })

@@ -1,0 +1,27 @@
+extends ../../blocks/layout
+block layout
+  - var active_page = 'default_pages_faq'
+
+block content
+  .container.todo-app
+    .row
+      .col-md-12
+        h3.page-title='Search Results'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-md-12.col-lg-12
+        .card
+          .card-body
+            .card__title
+              h5.bold-text='Search here'
+            form.form
+              .form__form-group
+                .form__form-group-field
+                  input(name='search', type='text', placeholder='Search...', value='Invoice template')
+                  .form__form-group-icon
+                    +icon('inbox', 'magnify')(width=24, height=24)
+            h4="Search result for 'Invoice template'"
+            h4.subhead='Found 18 results'
+            div
+              each item in (new Array(18).fill(0).map(()=>({title: ['Invoice template', 'Open Invoice template', 'Some ... Invoice template'][Math.floor((Math.random() * 3))], url: '/default_pages/invoice_template', text:['Breakfast agreeable incommode departure it an. By ignorant at on wondered relation. Enough at tastes really so cousin am of. Extensive therefore supported by extremity of contented. Is pursuit compact demesne invited elderly be. View him she roof tell her case has sigh. Moreover is possible he admitted sociable concerns...','By ignorant at on wondered relation. Enough at tastes really so cousin am of. Extensive therefore supported by extremity of contented. Is pursuit compact demesne invited elderly be. View him she roof tell her case has sigh. Moreover is possible he admitted sociable concerns... ', 'View him she roof tell her case has sigh. Moreover is possible he admitted sociable concerns... '][Math.floor((Math.random() * 3))]})))
+                +search-result(item)

@@ -1,0 +1,33 @@
+extends base
+block content			
+				// Main Content
+				.main-content
+					section.section
+						.section-body
+							.row.clearfix
+								.col-lg-12.col-md-12.col-sm-12.col-xs-12
+									.card
+										.card-header
+											h4 Vertical Layout
+										.card-body
+											form#wizard_with_validation
+												h3 Pump Data
+												fieldset
+													.form-group.form-float
+														.form-line
+															label.form-label Pump Type
+															input#pumpType.form-control(type='text' required='')
+														.form-line
+															label.form-label Serial Number
+															input#serialNumber.form-control(type='text' required='')
+													.section-title Upload Photos of Microstructure , NTZ , NHZ
+													.custom-file
+														input#image.custom-file-input(type='file',accept ='image/*' ,name='image', multiple="multiple")
+														label.custom-file-label(for='image') Microstructure , NTZ , NHZ
+													 
+												 
+												 
+
+										.card-footer.text-right
+											button.btn.btn-primary.mr-1.finalform(type='submit') Submit			 
+												 

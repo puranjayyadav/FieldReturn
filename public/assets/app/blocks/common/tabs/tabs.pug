@@ -1,0 +1,46 @@
+mixin tabs(tabs, extra, prefix, active)
+  div(class=`tabs ${extra ? extra : ''}`)
+    .tabs__wrap
+      ul.nav.nav-tabs(role="tablist")
+        each item in tabs.links
+          li.nav-item
+            a(class=`nav-link ${active === item ? 'active show' : 'false'}`,
+              id=`${item}-tab-${Math.random()}`
+              data-toggle="tab"
+              href=`#${item}${prefix}`
+              role="tab"
+              aria-controls=`${item}${prefix}`
+              aria-selected=`${active === item ? 'true' : 'false'}`)=item
+      .tab-content
+        each item, index in (tabs.contents || [])
+          div(class=`tab-pane ${active === tabs.links[index] ? 'active show' : 'false'}`, id=`${tabs.links[index]}${prefix}` role="tabpanel")
+            p=item
+
+
+- blocks={};
+
+mixin tabs-set(mixin , blockid, id)
+  if block
+    - blocks[mixin] = blocks[mixin] || {}
+    - blocks[mixin][blockid+id] = function() { return block.call(this) };
+
+mixin tabs-call(mixin , blockid, id)
+  - blocks[mixin][blockid+id].call();
+
+mixin tabs-blocks(tabs, extra, prefix, active)
+  div(class=`tabs ${extra ? extra : ''}`)
+    .tabs__wrap
+      ul.nav.nav-tabs(role="tablist")
+        each item in tabs.links
+          li.nav-item
+            a(class=`nav-link ${active === item ? 'active show' : 'false'}`,
+              id=`${item}-tab`
+              data-toggle="tab"
+              href=`#${item}${prefix}`
+              role="tab"
+              aria-controls=`${item}${prefix}`
+              aria-selected=`${active === item ? 'true' : 'false'}`)=item
+      .tab-content
+        each item, index in (tabs.contents || [])
+          div(class=`tab-pane ${active === tabs.links[index] ? 'active show' : 'false'}`, id=`${tabs.links[index]}${prefix}` role="tabpanel")
+            +tabs-call('tabs','tabs', item)

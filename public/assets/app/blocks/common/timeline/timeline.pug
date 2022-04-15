@@ -1,0 +1,13 @@
+mixin timeline(items)
+  .timeline
+    each item in items
+      .timeline__item
+        div(class=`timeline__icon ${item.icon ? item.icon.type : ''}`)
+          if(item.icon)
+            span(class=`lnr lnr-${item.icon.icon}`)
+          if(item.img)
+            img(src=item.img, alt=item.title)
+        .timeline__content
+          h5.timeline__title=item.title
+          h4.subhead.timeline__date=item.subhead
+          p=item.text

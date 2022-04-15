@@ -1,0 +1,12 @@
+mixin table-colored(classes, items, colors)
+  div(class=`${classes.wrap}`)
+    table(class=`table ${classes.table}`)
+      tbody
+        each item, index in items.items
+          tr
+            each item_td, second_index in item
+              if (second_index == 0) 
+                td(class='td-head')=item_td
+              else
+                td(class=`${colors.colors[index] ? 'td-' + colors.colors[index] : ''}`)=item_td
+

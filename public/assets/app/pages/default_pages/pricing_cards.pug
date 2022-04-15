@@ -1,0 +1,19 @@
+extends ../../blocks/layout
+block layout
+  - var active_page = 'default_pages_faq'
+
+block content
+  .container.todo-app
+    .row
+      .col-md-12
+        h3.page-title='Pricing Cards'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-sm-12.col-md-6.col-xl-3
+        +pricing-card('primary','static/topbar/img/pricing_cards/004-paper-plane.svg', 'Basic', 0, 2, '500 Gb', 'Monthly update', 'Free support')
+      .col-sm-12.col-md-6.col-xl-3
+        +pricing-card('info','static/topbar/img/pricing_cards/002-hot-air-balloon.svg', 'Special', 5, 4, '1 Tb', 'Monthly update', 'Free support')
+      .col-sm-12.col-md-6.col-xl-3
+        +pricing-card('warning','static/topbar/img/pricing_cards/003-airplane.svg', 'Pro', 10, 6, '1 Tb', 'Monthly update', 'Free support')
+      .col-sm-12.col-md-6.col-xl-3
+        +pricing-card('danger','static/topbar/img/pricing_cards/001-rocket.svg', 'Premium', 15, 'Unlimited', '100 Tb', 'Monthly update', 'Free support')

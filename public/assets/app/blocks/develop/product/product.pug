@@ -1,0 +1,53 @@
+mixin product()
+  .product-card.product
+    .product-gallery
+      a.product-gallery__current-img(href='#')
+        img(src='static/topbar/img/for_store/dog/1.png', alt="1")
+      .product_gallery__gallery
+        button.product-gallery__img-preview(type='button')
+          img(src='static/topbar/img/for_store/dog/1.png', alt="1")
+        button.product-gallery__img-preview(type='button')
+          img(src='static/topbar/img/for_store/dog/2.png', alt="2")
+        button.product-gallery__img-preview(type='button')
+          img(src='static/topbar/img/for_store/dog/3.png', alt="3")
+        button.product-gallery__img-preview(type='button')
+          img(src='static/topbar/img/for_store/dog/4.png', alt="4")
+        button.product-gallery__img-preview(type='button')
+          img(src='static/topbar/img/for_store/dog/5.png', alt="5")
+    .product-card__info
+      h3.product-card__title='French bulldog pillow'
+      .product-card__rate
+        +icon('product', 'star')
+        +icon('product', 'star')
+        +icon('product', 'star')
+        +icon('product', 'star')
+        +icon('product', 'star-outline')
+        a.product-card__link(href='#')='See all reviews'
+      h1.product-card__price='$17.19'
+        span.product-card__old-price=' $23'
+      p='Knowledge nay estimable questions repulsive daughters boy. Solicitude gay way unaffected expression for. His mistress ladyship required off horrible disposed rejoiced. Unpleasing pianoforte unreserved as oh he unpleasant no inquietude insipidity. Advantages can discretion possession add favourable cultivated admiration far.'
+      form.product-card__form
+        .form__form-group
+          span.form__form-group-label='Select Color'
+          div.form__form-group-field
+            select(data-placeholder="", class="without_search chosen-select ", style="width: 100%;", name='select')
+              option.pink(value='one')='Pink Sugar'
+              option.pink(value='one')='Pink Sugar'
+              option.pink(value='one')='Pink Sugar'
+        .product-card__btn-toolbar.btn-toolbar(role='toolbar')
+          a.btn.btn-primary(href='ecommerce/cart')='Add to cart'
+          button.product-card__wish-btn(type='button')
+            +icon('product', 'heart')(width=24, height=24)
+            ='Add to wishlist'
+      .tabs
+        +tabs-set('tabs', 'tabs', 1)
+          p='Direction has strangers now believing. Respect enjoyed gay far exposed parlors towards. Enjoyment use tolerably dependent listening men. No peculiar in handsome together unlocked do by. Article concern joy anxious did picture sir her. Although desirous not recurred disposed off shy you numerous securing. Knowledge nay estimable questions repulsive daughters boy. Solicitude gay way unaffected expression for.'
+          p='His mistress ladyship required off horrible disposed rejoiced. Unpleasing pianoforte unreserved as oh he unpleasant no inquietude insipidity. Advantages can discretion possession add favourable cultivated admiration far'
+        +tabs-set('tabs','tabs', 2)
+          p='Direction has strangers now believing. Respect enjoyed gay far exposed parlors towards. Enjoyment use tolerably dependent listening men. No peculiar in handsome together unlocked do by.'
+        +tabs-set('tabs','tabs', 3)
+          p='Direction has strangers now believing. Respect enjoyed gay far exposed parlors towards. Enjoyment use tolerably dependent listening men. No peculiar in handsome together unlocked do by.'
+        +tabs-blocks({
+          links: ['Description', 'Delivery', 'Refounds'],
+          contents: [1, 2, 3]
+        }, null,'default', 'Description')

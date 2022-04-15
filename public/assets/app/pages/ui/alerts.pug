@@ -1,0 +1,45 @@
+extends ../../blocks/layout
+
+block layout
+  - const active_page = 'ui_alerts'
+
+block content
+  .container
+    .row
+      .col-md-12
+        h3.page-title='Alerts'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Basic alerts', [{'type': 'normal', 'text': 'Basic configuration of alert'}], null, null, 'alert--colored')
+          each item in [['info', '', 'Information: '], ['success', '', 'Congratulations! '], ['warning', '', 'Attention! '], ['danger', '', 'Warning! ']]
+            +alert(item[0], item[1])
+              span.bold-text=`${item[2]}`
+              | Learning day desirous informed expenses material returned six the. She enabled invited exposed him another.
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Bordered alerts with icons', [{'type': 'normal', 'text': 'Use basic alert with class'}, {
+          'type': 'red',
+          'text': 'alert--bordered'
+        }])
+          each item in [['info', 'information-outline', 'Information:'], ['success', 'thumb-up-outline', 'Congratulations!'], ['warning', 'comment-alert-outline', 'Attention!'], ['danger', 'close-circle', 'Warning!']]
+            +alert(item[0], item[1]).alert--bordered
+              span.bold-text=`${item[2]} `
+              | Learning day desirous informed expenses material returned six the. She enabled invited exposed him another.
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Colored alerts with icons', [{'type': 'normal', 'text': 'Use basic alert with class'}, {
+          'type': 'red',
+          'text': 'alert--colored'
+        }], null, null, 'alert--colored')
+          each item in [['info', 'information-outline', 'Information:'], ['success', 'thumb-up-outline', 'Congratulations!'], ['warning', 'comment-alert-outline', 'Attention!'], ['danger', 'close-circle', 'Warning!']]
+            +alert(item[0], item[1]).alert--colored
+              span.bold-text=`${item[2]} `
+              | Learning day desirous informed expenses material returned six the. She enabled invited exposed him another.
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Neutral alerts with icons', [{'type': 'normal', 'text': 'Use basic alert with class'}, {
+          'type': 'red',
+          'text': 'alert--neutral'
+        }])
+          each item in [['info', 'information-outline', 'Information:'], ['success', 'thumb-up-outline', 'Congratulations!'], ['warning', 'comment-alert-outline', 'Attention!'], ['danger', 'close-circle', 'Warning!']]
+            +alert(item[0], item[1]).alert--neutral
+              span.bold-text=`${item[2]} `
+              | Learning day desirous informed expenses material returned six the. She enabled invited exposed him another.

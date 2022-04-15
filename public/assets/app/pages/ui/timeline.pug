@@ -1,0 +1,52 @@
+extends ../../blocks/layout
+block layout
+  - var active_page = 'ui_timeline'
+block content
+  .container
+    .row
+      .col-md-12
+        h3.page-title='Timeline'
+        h3.page-subhead.subhead='This interface let you to see your activity history'
+    .row
+      .col-md-12
+        +timeline([
+          {
+            'title': 'Business meetup',
+            'text': 'Dependent certainty off discovery him his tolerably offending. Ham for attention remainder sometimes additions recommend fat our.',
+            'subhead': '3 hours ago',
+            'icon': {
+              type: 'work',
+              icon: 'briefcase'
+            }
+          },
+          {
+            'title': 'Video conference with client',
+            'text': 'Dependent certainty off discovery him his tolerably offending. Ham for attention remainder sometimes additions recommend fat our.',
+            'subhead': '5 hours ago',
+            'icon': {
+              type: 'video',
+              icon: 'film-play'
+            }
+          },
+          {
+            'title': 'Call to Jovanna',
+            'text': 'Dependent certainty off discovery him his tolerably offending. Ham for attention remainder sometimes additions recommend fat our.',
+            'subhead': '8 hours ago',
+            'img': 'static/topbar/img/14.png'
+          },
+          {
+            'title': 'Create offer. Prepare document',
+            'text': 'Dependent certainty off discovery him his tolerably offending. Ham for attention remainder sometimes additions recommend fat our.',
+            'subhead': 'Yesterday at 18:30',
+            'icon': {
+              type: 'file',
+              icon: 'file-add'
+            }
+          },
+          {
+            'title': 'Conversation with Philip',
+            'text': 'Dependent certainty off discovery him his tolerably offending. Ham for attention remainder sometimes additions recommend fat our.',
+            'subhead': '21.03.2017',
+            'img': 'static/topbar/img/15.png'
+          },
+        ])

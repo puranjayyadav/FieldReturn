@@ -1,0 +1,19 @@
+mixin inbox-compose()
+  h5.inbox__compose-title.bold-text="Compose new message"
+  .form__form-group
+    .form__form-group-field
+      input(name="to", type="text", placeholder="To:", value="")
+  .form__form-group
+    .form__form-group-field
+      input(name="subject", type="text", placeholder="Subject:", value="")
+  .form__form-group
+    .text-editor
+  .form__form-group
+    +btn('inbox__files-btn btn-outline-secondary btn-sm')
+      ="Add files"
+  .form__form-group
+    +btn('btn btn-primary')(type='submit')
+      ="Send"
+    +btn('btn btn-secondary')
+      ="Cancel"
+  .form__button-toolbar.btn-toolbar(role="toolbar")

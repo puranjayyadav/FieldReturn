@@ -1,0 +1,22 @@
+include ../../../../common/dropdown/dropdown
+
+mixin mail
+  .topbar__collapse
+    +dropdown-set('dropdown','content', "mail")
+      i.mdi.mdi-email
+      //.topbar__btn-new-label
+    button.topbar__back.collapsed(data-target='#mail', data-toggle="collapse")
+    +dropdown-set('dropdown','toggle', "mail")
+      .topbar__collapse-title-wrap
+        p.topbar__collapse-title='Unread messages'
+        button.topbar__collapse-button(type="button")='Mark all as read'
+      each item in global.jsons.topbar.mail.items
+        .topbar__collapse-item
+          .topbar__collapse-img-wrap
+            img.topbar__collapse-img(src=item.link, alt=item.name)
+          p.topbar__collapse-name=item.name
+          p.topbar__collapse-message.topbar__collapse-message--mail=item.message
+          p.topbar__collapse-date=item.date
+      a.topbar__collapse-link(href="/")='See all messages'
+    +dropdown("mail", global.jsons.topbar.mail.classes)
+

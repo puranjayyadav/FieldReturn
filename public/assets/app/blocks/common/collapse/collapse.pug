@@ -1,0 +1,11 @@
+mixin collapse(title, id, classes)
+  div(class=`collapse__wrapper closed ${classes || ""}`)
+    button.collapse__title(data-toggle="collapse", data-target=`#${id}`, aria-expanded="false", aria-controls=id)
+      if(!classes || (classes && !classes.includes("with-shadow")))
+        +icon('collapse', 'plus')(width=24, height=24, class="plus-icon")
+        +icon('collapse', 'minus')(width=24, height=24, class="minus-icon")
+      span=title
+        if(classes && classes.includes("with-shadow"))
+          +icon('collapse', 'chevron-down')
+    .collapse__content.collapse(id=id)
+      block

@@ -1,0 +1,60 @@
+extends ../../blocks/layout
+
+block layout
+  - var active_page = 'ui_progress-bar'
+
+block content
+  .container
+    .row
+      .col-md-12
+        h3.page-title='Progress Bars'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Default progress bar', [{'type': 'normal', 'text': 'Use default progress'}])
+          +progress-bar(null, null, null, 80)
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Data progress bar', [{'type': 'normal', 'text': 'Use default progress with text'}])
+          +progress-bar('middle', null, null, 70)
+            | 70%
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Animated progress bar', [{'type': 'normal', 'text': 'Use default progress with property '}, {'type': 'red', 'text':'animated'}])
+          +progress-bar('middle', 'progress-bar-animated progress-bar-striped', null, 70)
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Colored progress bars', [
+          {'type': 'normal', 'text': 'Use default progress with class '},
+          {'type': 'red', 'text': 'progress-wrap--yellow'},
+          {'type': 'normal', 'text': ', '},
+          {'type': 'red', 'text': 'progress-wrap--violet'},
+          {'type': 'normal', 'text': ', '},
+          {'type': 'red', 'text': 'progress-wrap--pink'},
+          {'type': 'normal', 'text': ', '},
+          {'type': 'red', 'text': 'progress-wrap--blue'},
+        ])
+          +progress-bar(null, null, null, 20)
+          +progress-bar(null, null, 'yellow', 30)
+          +progress-bar(null, null, 'violet', 40)
+          +progress-bar(null, null, 'pink', 50)
+          +progress-bar(null, null, 'blue', 60)
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Multisized progress bars', [
+          {'type': 'normal', 'text': 'Use default progress with class '},
+          {'type': 'red', 'text': 'progress-wrap--small'},
+          {'type': 'normal', 'text': ', '},
+          {'type': 'red', 'text': 'progress-wrap--middle'},
+          {'type': 'normal', 'text': ', '},
+          {'type': 'red', 'text': 'progress-wrap--big'}
+        ])
+          +progress-bar(null, null, null, 20)
+          +progress-bar('small', null, null, 40)
+          +progress-bar('middle', null, null, 60)
+          +progress-bar('big', null, null, 80)
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Animated multisized progress bars', [
+          {'type': 'normal', 'text': 'Use default progress with combination of classes and property '},
+          {'type': 'red', 'text': 'animated'}
+        ])
+          +progress-bar(null, 'progress-bar-animated progress-bar-striped', null, 20)
+          +progress-bar('small', 'progress-bar-animated progress-bar-striped', null, 40)
+          +progress-bar('middle', 'progress-bar-animated progress-bar-striped', null, 60)
+          +progress-bar('big', 'progress-bar-animated progress-bar-striped', null, 80)

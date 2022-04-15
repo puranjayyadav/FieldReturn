@@ -1,0 +1,56 @@
+mixin table(classes, items, edit, indexoff)
+  div(class=`${classes.wrap}`)
+    table(class=`table ${classes.table}`)
+      thead
+        tr
+          each item in items.header
+            if typeof item === 'string'
+              th=item
+            if item.badge
+              th
+                span.badge.badge-warning=item.value
+      tbody
+        each item, index in items.items
+          tr
+            if(!indexoff)
+                td=index+1
+            each item_td in item
+              if typeof item_td === 'string'
+                td!=item_td
+              else
+                if item_td.badge
+                  td
+                    span(class=`badge badge-${item_td.type}`)=item_td.value
+                else
+                  case item_td.type
+                    when 'progress-bar'
+                      td
+                        +progress-bar(item_td.values[0], item_td.values[1],item_td.values[2],item_td.values[3],item_td.values[4])!=item_td.block
+                    when 'echartjs'
+                      td.dashboard__table-finance-chart
+                        +echartjs(item_td.values[0], item_td.values[1], item_td.values[2])!=item_td.block
+                    when 'dropdown'
+                      td
+                        .dashboard__table-more.dropdown
+                          button(type="button").btn.btn-secondary
+                            <svg class="mdi-icon " width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M16,12C16,10.9 16.9,10 18,10C19.1,10 20,10.9 20,12C20,13.1 19.1,14 18,14C16.9,14 16,13.1 16,12M10,12C10,10.9 10.9,10 12,10C13.1,10 14,10.9 14,12C14,13.1 13.1,14 12,14C10.9,14 10,13.1 10,12M4,12C4,10.9 4.9,10 6,10C7.1,10 8,10.9 8,12C8,13.1 7.1,14 6,14C4.9,14 4,13.1 4,12Z"></path></svg>
+                          .dropdown__menu.dropdown-menu.dropdown--table
+                            a(href=edit).dropdown-item="Edit"
+                            button(type="button", onclick=item_td.delete).dropdown-item="Delete"
+                    when 'td-with-image'
+                      td
+                        .dashboard__table-orders-title
+                          .dashboard__table-orders-img-wrap
+                            .dashboard__table-orders-img(style=`background-image: url("${item_td.pathToImg}");`)
+                          span=`${item_td.name}`
+                    when 'td-quantity'
+                      td
+                        div(class=`dashboard__table-orders-amount ${item_td.classes ? item_td.classes : ''}`)
+                          while item_td.amountLevel > 0
+                            div
+                            -item_td.amountLevel--
+                          span=`${item_td.count ? item_td.count : ''}`
+                    when 'td-with-classes'
+                      td(class=item_td.classes)=item_td.value
+                    default
+                      td!=`${item_td.values ? item_td.values : ''}`

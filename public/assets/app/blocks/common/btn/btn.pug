@@ -1,0 +1,19 @@
+mixin btn(type, classes, icon, lnr)
+  button(class=`${['btn', type, classes].filter(x => !!x).join(" ")}`)&attributes(attributes)
+    if(icon)
+      if(!type.includes('expand') && !type.includes('right'))
+        if(!lnr)
+          +icon('btn', icon)
+          block
+        else
+          +lnr(icon)
+      else
+        if(type.includes('expand'))
+          // spinner
+          svg(viewBox="0 0 24 24")
+            path(d="M12,4V2A10,10 0 0,0 2,12H4A8,8 0 0,1 12,4Z")
+        block
+      if(type.includes('right'))
+        +icon('btn', icon)
+    else
+      block

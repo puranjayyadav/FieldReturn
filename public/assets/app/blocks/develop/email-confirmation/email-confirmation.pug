@@ -1,0 +1,11 @@
+mixin email-confirmation()
+  .email-confirmation
+    .email-confirmation__icon
+      +icon('email-confirmation', 'email')(class='email-confirmation__mail', width=24, height=24)
+      +icon('email-confirmation', 'checkbox-marked-circle')(class='email-confirmation__check', width=24, height=24)
+    h3.email-confirmation__title='Your e-mail address has been successfully verified'
+    p.email-confirmation__sub='Thank you for choosing the EasyDev'
+    .email-confirmation__buttons.btn-toolbar(role='toolbar')
+      a.btn.btn-primary(href="dashboards/online_marketing_dashboard")='Go to dashboard'
+      a.btn.btn-primary(href="account/profile")='Go to profile'
+

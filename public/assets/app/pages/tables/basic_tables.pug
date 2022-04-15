@@ -1,0 +1,85 @@
+extends ../../blocks/layout
+block layout
+  - var active_page = 'tables_basic_tables'
+
+block content
+  .container.todo-app
+    .row
+      .col-md-12
+        h3.page-title='Basic tables'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Basic table', [{'type': 'normal', 'text': 'Use default table'}])
+          +table(
+            {wrap: 'table-responsive', table: 'table table-hover'}, {
+            header: ['#', 'First Name', 'Last Name', 'Username', 'Status'],
+            items:[
+              ['Maria', 'Morrison', '@dragon', {badge: true, type: 'success', value: 'Work'}],
+              ['Bobby', 'Brown', '@boboby', {badge: true, value: 'Vacation', type: 'warning'}],
+              ['Alexander', 'Medinberg', '@medimedi', {badge: true, value: 'Vacation', type: 'warning'}],
+              ['Vera', 'Lori', '@lori', {badge: true, value: 'Work', type: 'success'}],
+              ['Maria', 'Morisson', '@dragon', {badge: true, value: 'Vacation', type: 'warning'}],
+              ['Bobby', 'Brown', '@boboby', {badge: true, value: 'Work', type: 'success'}],
+              ['Alexander', 'Medinberg', '@medimedi', {badge: true, value: 'Work', type: 'success'}],
+            ]})
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Bordered table', [{'type': 'normal', 'text': 'Use default table with class '}, {'type': 'red', 'text': 'table-bordered'}])
+          +table(
+            {wrap: 'table-responsive', table: 'table table--bordered'}, {
+            header: ['#', 'First Name', 'Last Name', 'Username', 'Status'],
+            items: [
+              ['Maria', 'Morrison', '@dragon', {badge: true, type: 'success', value: 'Work'}],
+              ['Bobby', 'Brown', '@boboby', {badge: true, value: 'Vacation', type: 'warning'}],
+              ['Alexander', 'Medinberg', '@medimedi', {badge: true, value: 'Vacation', type: 'warning'}],
+              ['Vera', 'Lori', '@lori', {badge: true, value: 'Work', type: 'success'}],
+              ['Maria', 'Morisson', '@dragon', {badge: true, value: 'Vacation', type: 'warning'}],
+              ['Bobby', 'Brown', '@boboby', {badge: true, value: 'Work', type: 'success'}],
+              ['Alexander', 'Medinberg', '@medimedi', {badge: true, value: 'Work', type: 'success'}],
+            ]
+          })
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Head accent table', [{'type': 'normal', 'text': 'Use default table with class '}, {'type': 'red', 'text': 'table--bordered table--head-accent'}])
+          +table(
+            {wrap: 'table-responsive', table: 'table--bordered table--head-accent table table-hover'}, {
+            header: ['#', 'First Name', 'Last Name', 'Username', 'Status'],
+            items: [
+              ['Maria', 'Morrison', '@dragon', {badge: true, type: 'success', value: 'Work'}],
+              ['Bobby', 'Brown', '@boboby', {badge: true, value: 'Vacation', type: 'warning'}],
+              ['Alexander', 'Medinberg', '@medimedi', {badge: true, value: 'Vacation', type: 'warning'}],
+              ['Vera', 'Lori', '@lori', {badge: true, value: 'Work', type: 'success'}],
+              ['Maria', 'Morisson', '@dragon', {badge: true, value: 'Vacation', type: 'warning'}],
+              ['Bobby', 'Brown', '@boboby', {badge: true, value: 'Work', type: 'success'}],
+              ['Alexander', 'Medinberg', '@medimedi', {badge: true, value: 'Work', type: 'success'}],
+            ]
+          })
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Colored string table', [{'type': 'normal', 'text': 'Use default table with property '}, {'type': 'red', 'text': 'striped'}])
+          +table(
+            {wrap: 'table-responsive', table: 'table table-striped'}, {
+            header: ['#', 'First Name', 'Last Name', 'Username', 'Status'],
+            items: [
+              ['Maria', 'Morrison', '@dragon', {badge: true, type: 'success', value: 'Work'}],
+              ['Bobby', 'Brown', '@boboby', {badge: true, value: 'Vacation', type: 'warning'}],
+              ['Alexander', 'Medinberg', '@medimedi', {badge: true, value: 'Vacation', type: 'warning'}],
+              ['Vera', 'Lori', '@lori', {badge: true, value: 'Work', type: 'success'}],
+              ['Maria', 'Morisson', '@dragon', {badge: true, value: 'Vacation', type: 'warning'}],
+              ['Bobby', 'Brown', '@boboby', {badge: true, value: 'Work', type: 'success'}],
+              ['Alexander', 'Medinberg', '@medimedi', {badge: true, value: 'Work', type: 'success'}],
+            ]
+          })
+    .row
+      .col-md-12.col-lg-12
+        +card('Responsive table', [{'type': 'normal', 'text': 'Use default table with property '}, {'type': 'red', 'text': 'striped'}])
+          +table(
+            {wrap: 'table-responsive', table: 'table--bordered table--head-accent table table-hover'}, {
+            header: ['#', 'First Name', 'Last Name', 'Username', 'Age', 'Date', 'Location', 'Status'],
+            items: [
+              ['Maria', 'Morrison', '@dragon','21', '1990/12/01', 'Melbourne', {badge: true, type: 'success', value: 'In Progress'}],
+              ['Bobby', 'Brown', '@boboby','35', '1992/12/01', 'Tokio',{badge: true, value: 'Completed', type: 'primary'}],
+              ['Alexander', 'Medinberg', '@medimedi','41', '1975/12/01', 'Moscow',{badge: true, value: 'In Progress', type: 'success'}],
+              ['Vera', 'Lori', '@lori','44', '1978/12/01', 'Melbourne',{badge: true, value: 'Completed', type: 'primary'}],
+              ['Maria', 'Morisson', '@dragon','25', '1992/12/01', 'London',{badge: true, value: 'Completed', type: 'primary'}],
+              ['Bobby', 'Brown', '@boboby', '29', '1988/12/01', 'Rome',{badge: true, value: 'Completed', type: 'primary'}],
+            ]
+          })

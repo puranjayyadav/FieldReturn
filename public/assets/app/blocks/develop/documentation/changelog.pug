@@ -1,0 +1,18 @@
+include ./components/documentation-nav
+include ./components/documentation-nav-bottom
+mixin documentation-changelog()
+  .documentation__main.row
+    +documentation-nav
+    .col-12.col-sm-12.col-md-12.col-lg-9.col-xl-9
+      .card--not-full-height.card
+        .card-body
+          each val, index in global.jsons.documentation
+            .card__title
+              h5.bold-text=val.version
+              h5.subhead=val.data
+            p=val.text
+            ul
+              each change, index in val.changes
+                li=change
+            b="Stay tuned."
+  +documentation-nav-bottom({path: 'documentation/resources', title: 'Resources'})

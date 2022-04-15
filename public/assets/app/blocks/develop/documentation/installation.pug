@@ -1,0 +1,21 @@
+include ./components/documentation-nav
+include ./components/documentation-nav-bottom
+mixin documentation-installation()
+  .documentation__main.row
+    +documentation-nav
+    .col-12.col-sm-12.col-md-12.col-lg-9.col-xl-9
+      .card--not-full-height.card
+        .card-body
+          .card__title
+            h5.bold-text="INSTALLATION"
+          p="EasyDEV is based on pug and has its README.md which you can find very useful."
+          p='To get started follow this steps:'
+          <ol>
+            <li>Install <a href="https://nodejs.org/en/">Node</a> and npm.</li>
+            <li>Download and open project.</li><li>Install packages: <b>npm i</b>, <b>npm install</b> or <b>yarn install</b>.</li>
+            <li>Start project locally: <b>npm start</b> or <b>yarn start</b> (running on port 3000).</li>
+            <li>Make necessary changes.</li>
+            <li>Build app for production: <b>npm run build</b> or <b>yarn build</b>.
+            </li>
+          </ol>
+  +documentation-nav-bottom({path: 'documentation/introduction', title: 'Introduction'}, {path: 'documentation/file_structure', title: 'File Structure'})

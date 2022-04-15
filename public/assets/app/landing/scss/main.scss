@@ -1,0 +1,64 @@
+/*------------------------------------
+ #MAIN
+\*------------------------------------*/
+/**
+ * SETTINGS
+ * Variables...............Variables for themes.
+ *
+ * GENERIC
+ * Normalize................Normalize browser defaults.
+ * Box-sizing...........More manageable box-model.
+ *
+ * Base
+ * Scaffolding................Style bare tags.
+ * Type................Style of types.
+ *
+ * OBJECTS
+ * Layout...............layout settings.
+ *
+ * COMPONENTS
+ * Header-home................Form styling.
+ * Site-btn..............Button styles.
+ * etc...
+ *
+ * VENDOR
+ * Modifications..............Change vendor style (JS plugins and so on).
+ *
+ */
+
+// Variables
+@import 'settings/variables';
+
+// Vendor
+@import 'vendor/bootstrap/bootstrap';
+@import 'vendor/slick';
+@import 'vendor/slick-theme';
+@import 'vendor/vendors-extensions';
+
+// Main
+@import 'generic/normalize';
+@import 'generic/box-sizing';
+@import 'base/scaffolding';
+@import 'base/type';
+
+//Components
+@import 'components/button';
+@import 'components/section';
+@import 'components/menu';
+@import 'components/header';
+@import 'components/hire-us';
+@import 'components/technology';
+@import 'components/feature';
+@import 'components/code';
+@import 'components/request';
+@import 'components/in_touch';
+@import 'components/footer';
+@import 'components/pricing';
+@import 'components/testimonials';
+@import 'components/demo';
+@import 'components/feedback';
+@import 'components/tabs';
+@import 'components/applications';
+
+// Obj
+@import 'objects/layout';

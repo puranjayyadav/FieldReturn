@@ -1,0 +1,178 @@
+mixin profile()
+  .profile
+    .row
+      .col-md-12.col-lg-12.col-xl-4
+        .row
+          .col-md-12.col-lg-12.col-xl-12
+            .card
+              .profile__card.card-body
+                .profile__information
+                  .profile__avatar
+                    img(src='static/topbar/img/12.png', alt="Larry Boom")
+                  .profile__data
+                    .profile__name='Larry Boom'
+                    .profile__work='Senior Account Manager'
+                    .profile__contact='mailmethisletter@gmail.com'
+                    .profile__contact='+23-12-743-23-21'
+                    button.btn.icon.profile__btn.btn-primary
+                      span
+                        +icon('profile', 'message-text-outline')
+                        ='Message'
+                .profile__stats
+                  .profile__stat
+                    .profile__stat-number='05'
+                    .profile__stat-title='Projects'
+                  .profile__stat
+                    .profile__stat-number='24'
+                    .profile__stat-title='Tasks'
+                  .profile__stat
+                    .profile__stat-number='12'
+                    .profile__stat-title='Reports'
+          .col-md-12.col-lg-12.col-xl-12
+            .card
+              .profile__card--calendar.card-body
+                +calendar()
+          .col-md-12.col-lg-12.col-xl-12
+            .card
+              .profile__card.card-body
+                p.profile__current-tasks-title
+                  ='Current tasks '
+                  span='12'
+                .profile__current-tasks
+                  .profile__current-task
+                    +check-box('checkbox-btn profile__current-task-checkbox', '1')='Create screens of Mobile App'
+                    span.badge.badge-info='New'
+                  .profile__current-task
+                    +check-box('checkbox-btn profile__current-task-checkbox', '2')='Write Cris about the bag report'
+                  .profile__current-task
+                    +check-box('checkbox-btn profile__current-task-checkbox', '3')='Test new system of versions control'
+                    span.badge.badge-danger='Priority'
+                  .profile__current-task
+                    +check-box('checkbox-btn profile__current-task-checkbox', '4')='Design new layout for message page in Partnership project'
+                  .profile__current-task
+                    +check-box('checkbox-btn profile__current-task-checkbox', '5')='Test new system of versions control'
+                    span.badge.badge-danger='Priority'
+                  .profile__current-task
+                    +check-box('checkbox-btn profile__current-task-checkbox', '6')
+                    ='Design new layout for message page in Partnership project'
+                  a.profile__see-all-tasks(href='todo')='See all tasks'
+      .col-md-12.col-lg-12.col-xl-8
+        .card
+          +tabs-set('tabs', 'tabs', 1)
+            div
+              .profile__activity
+                .profile__activity-avatar
+                  img(src='static/topbar/img/12.png', alt="Lora Kolly")
+                div
+                  p.profile__activity-name
+                    ='Lora Kolly '
+                    span.profile__activity-date='1 min ago'
+                  p='Dependent certainty off discovery him his tolerably offending. Ham for attention remainder sometimes additions recommend fat our.'
+              .profile__activity
+                .profile__activity-avatar
+                  img(src='static/topbar/img/12.png', alt="Anna Bro")
+                div
+                  p.profile__activity-name
+                    ='Anna Bro '
+                    span.profile__activity-date='3 hours ago'
+                  p='Dependent certainty off discovery him his tolerably offending. Ham for attention remainder sometimes additions recommend fat our. Dependent certainty off discovery him his tolerably offending. Ham for attention remainder sometimes additions recommend fat our..'
+              .profile__activity
+                .profile__activity-avatar
+                  img(src='static/topbar/img/15.png', alt="Michael Tompson")
+                div
+                  p.profile__activity-name
+                    ='Michael Tompson '
+                    span.profile__activity-date='3 hours ago'
+                  p='Dependent certainty off discovery him his tolerably offending.'
+                  img(src='static/topbar/img/9.png', alt="9")
+                  img(src='static/topbar/img/13.png', alt="13")
+              .profile__activity
+                .profile__activity-avatar
+                  img(src='static/topbar/img/11.png', alt="11")
+                div
+                  p.profile__activity-name
+                    ='Antony Mirrel '
+                    span.profile__activity-date='5 hours ago'
+                  p='Dependent certainty off discovery him his tolerably offending. Ham for attention remainder sometimes additions recommend fat our.'
+              .profile__activity
+                .profile__activity-avatar
+                  img(src='static/topbar/img/photo_notification.png', alt="photo_notification")
+                div
+                  p.profile__activity-name
+                    ='Lora Kolly '
+                    span.profile__activity-date='1 min ago'
+                  p='Dependent certainty off discovery him his tolerably offending. Ham for attention remainder sometimes additions recommend fat our. Dependent certainty off discovery him his tolerably offending. Ham for attention remainder sometimes additions recommend fat our..'
+              .profile__activity
+                .profile__activity-avatar
+                  img(src='static/topbar/img/12.png', alt="Maria Anderson-Bella")
+                div
+                  p.profile__activity-name
+                    ='Maria Anderson-Bella '
+                    span.profile__activity-date='20.05.2017'
+                  p='Dependent certainty off discovery him his tolerably offending. Ham for attention remainder sometimes additions recommend fat our. Dependent certainty off discovery him his tolerably offending. Ham for attention remainder sometimes additions recommend fat our..'
+          +tabs-set('tabs','tabs', 2)
+            +timeline([
+              {
+                'title': 'Business meetup',
+                'text': 'Dependent certainty off discovery him his tolerably offending. Ham for attention remainder sometimes additions recommend fat our.',
+                'subhead': '3 hours ago',
+                'icon': {
+                  type: 'work',
+                  icon: 'briefcase'
+                }
+              },
+              {
+                'title': 'Video conference with client',
+                'text': 'Dependent certainty off discovery him his tolerably offending. Ham for attention remainder sometimes additions recommend fat our.',
+                'subhead': '5 hours ago',
+                'icon': {
+                  type: 'video',
+                  icon: 'film-play'
+                }
+              },
+              {
+                'title': 'Call to Jovanna',
+                'text': 'Dependent certainty off discovery him his tolerably offending. Ham for attention remainder sometimes additions recommend fat our.',
+                'subhead': '8 hours ago',
+                'img': 'static/topbar/img/14.png'
+              },
+              {
+                'title': 'Create offer. Prepare document',
+                'text': 'Dependent certainty off discovery him his tolerably offending. Ham for attention remainder sometimes additions recommend fat our.',
+                'subhead': 'Yesterday at 18:30',
+                'icon': {
+                  type: 'file',
+                  icon: 'file-add'
+                }
+              },
+              {
+                'title': 'Conversation with Philip',
+                'text': 'Dependent certainty off discovery him his tolerably offending. Ham for attention remainder sometimes additions recommend fat our.',
+                'subhead': '21.03.2017',
+                'img': 'static/topbar/img/15.png'
+              },
+            ])
+          +tabs-set('tabs','tabs', 3)
+            .material-form.material.material-class
+              div.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.material-form__field
+                input.mdl-textfield__input(type='text', id='fullname', placeholder='', value='Larry Boom')
+                label.mdl-textfield__label(for='fullname')='Full Name'
+              div.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.material-form__field
+                input.mdl-textfield__input(type='text', id='email', placeholder='', value='boom@mail.com')
+                label.mdl-textfield__label(for='email')='Email'
+              div.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.material-form__field
+                input.mdl-textfield__input(type='text', id='url', placeholder='')
+                label.mdl-textfield__label(for='url')='URL'
+              div.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.material-form__field
+                input.mdl-textfield__input(type='text', id='password', placeholder='')
+                label.mdl-textfield__label(for='password')='Password'
+              div.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label.material-form__field
+                textarea.mdl-textfield__input(id='textarea', placeholder='')
+                label.mdl-textfield__label(for='textarea')='Text Area'
+              .form__button-toolbar.btn-toolbar
+                button.btn.btn-primary='Update profile'
+                button.btn.btn-secondary='Cancel'
+          +tabs-blocks({
+            links: ['ACTIVITY', 'TIMELINE', 'SETTINGS'],
+            contents: [1, 2, 3]
+          }, 'tabs--bordered-bottom profile__card', '', 'ACTIVITY')

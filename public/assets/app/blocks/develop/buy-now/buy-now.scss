@@ -1,0 +1,18 @@
+.buy-now {
+  position: fixed;
+  bottom: 0;
+  right: 4px;
+  z-index: 1;
+  background-color: transparent;
+
+  a {
+    background-color: $color-accent;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.07);
+    color: white;
+
+    &:hover {
+      background-color: white;
+      border-color: $color-accent;
+    }
+  }
+}

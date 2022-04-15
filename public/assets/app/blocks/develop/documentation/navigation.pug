@@ -1,0 +1,111 @@
+include ./components/documentation-nav
+include ./components/documentation-nav-bottom
+mixin documentation-navigation()
+  .documentation__main.row
+    +documentation-nav
+    .col-12.col-sm-12.col-md-12.col-lg-9.col-xl-9
+      .card--not-full-height.card
+        .card-body
+          .card__title
+            h5.bold-text="Navigation"
+          p="Pug mixins are also used to create navigation menus. Now only sadbar navigation is available."
+          p="Example of use:"
+          pre
+            code.language-pug
+              |+menu(global.jsons.sidebar['group-1'], active, global.jsons.sidebar['classes'])
+              |+menu(global.jsons.sidebar['group-2'], active, global.jsons.sidebar['classes'])
+              |+menu(global.jsons.sidebar['group-3'], active, global.jsons.sidebar['classes'])
+          p="Params of menu"
+          +table(
+            {wrap: 'table-responsive', table: 'table--bordered table--head-accent table'}, {
+            header: ['Property', 'Type', 'Description', ''],
+            items: [
+              ['items', 'object', 'Object with menu params'],
+              ['active', 'string', 'Active page'],
+              ['classes', 'object', 'Object with classes for all types of menu items ']
+              ]}, true)
+          p="We recommend creating a json file with settings in the folder with the menu block"
+          p="Example:"
+          pre
+            code.language-json
+              |{
+              | "classes": {
+              |   "href": {
+              |     "active": "sidebar__link-active",
+              |     "li": "sidebar__link",
+              |     "left-icon": "sidebar__link-icon lnr lnr-${item.icon}",
+              |     "title": "sidebar__link-title",
+              |     "badge": "sidebar__link-badge badge badge-secondary"
+              |   },
+              |   "dropdown": {
+              |     "active": "sidebar__link-active",
+              |     "wrap": "sidebar__category-wrap",
+              |     "button": "sidebar__link sidebar__category",
+              |     "left-icon": "sidebar__link-icon lnr lnr-${item.icon}",
+              |     "title": "sidebar__link-title",
+              |     "badge": {
+              |       "exist": "sidebar__link-badge badge badge-secondary",
+              |       "no-exist": "sidebar__category-new"
+              |      },
+              |     "right-icon": "sidebar__category-icon lnr lnr-chevron-right",
+              |     "collapse": "sidebar__submenu-wrap",
+              |
+              |     "submenu": "sidebar__submenu",
+              |     "item": {
+              |       "button": "sidebar__link",
+              |       "title": "sidebar__link-title",
+              |       "badge": "sidebar__link-badge badge badge-secondary"
+              |      }
+              |   }
+              | },
+              | "group-1": [
+              |   {
+              |     "elem": "href",
+              |     "title": "Online Marketing Dashboard",
+              |     "index": "online_marketing_dashboard",
+              |     "href": "/online_marketing_dashboard",
+              |     "icon": "home"
+              |   },
+              |   {
+              |     "elem": "dropdown",
+              |     "title": "Forms",
+              |     "index": "online_marketing_dashboard",
+              |     "href": "/",
+              |     "icon": "file-add",
+              |     "content": [
+              |       {
+              |         "elem": "href",
+              |         "title": "Basic Form",
+              |         "href": "/forms/basic_form",
+              |         "index": "forms_basic_form",
+              |         "icon": "home"
+              |       },
+              |       {
+              |         "elem": "href",
+              |         "title": "Check Form Controls",
+              |         "href": "/forms/check_form_controls",
+              |         "index": "forms_check_form_controls",
+              |         "icon": "home"
+              |       },
+              |     }
+              | ],
+              | "group-2": [...],
+              | "group-3": [...],
+              | }
+          p
+            b='classes '
+            |- here indicate classes for all menu items
+          p
+            b='group-# '
+            |- groups items together
+          +table(
+          {wrap: 'table-responsive', table: 'table--bordered table--head-accent table'}, {
+          header: ['Property', 'Description', ''],
+          items: [
+            ['elem', '<span class="red-text">"href"</span> or <span class="red-text">"dropdown</span>"'],
+            ['title', ''],
+            ['href', ''],
+            ['icon'],
+            ['content<span class="red-text">(Optional)</span>', 'For <b>"elem": "dropdown"</b> use array with items']
+            ]}, true)
+  +documentation-nav-bottom({path: 'documentation/color_scheme', title: 'Color scheme'}, {path: 'documentation/resources', title: 'Resources'})

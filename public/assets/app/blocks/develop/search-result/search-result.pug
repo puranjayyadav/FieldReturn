@@ -1,0 +1,6 @@
+mixin search-result(item)
+  .search-result
+    p.search-result__title=item.title
+    p.search-result__link
+      a(href=item.url)=item.url
+    p.search-result__preview=item.text

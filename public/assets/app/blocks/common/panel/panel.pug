@@ -1,0 +1,35 @@
+
+mixin panel(title, id, subhead, type, badge, icon, tabs, classes)
+  div(class=`panel card ${type ? `panel--${type}` : ''} ${classes ? classes : ''} `)
+    .panel__body.card-body
+      .panel__btns
+        a.panel__btn(data-toggle="collapse" href=`#${id}` role="button" aria-expanded="true" aria-controls=id)
+          svg(width=24, height=24)
+            use(xlink:href=`@symbol#panel__minus`)
+        button.panel__btn(onClick="loading($(this).parent())")
+          svg(width=24, height=24)
+            use(xlink:href=`@symbol#panel__autorenew`)
+        button.panel__btn(onClick="$(this).parent().parent().parent().remove()")
+          svg(width=24, height=24)
+            use(xlink:href=`@symbol#panel__close`)
+      .panel__title
+        h5.bold-text
+          if (icon)
+            span.panel__icon.lnr.lnr-chart-bars
+          =title
+          if (badge)
+            span(class=`panel__label badge badge-${badge.type}`)=badge.text
+        if (subhead)
+          h5.subhead=subhead
+      .collapse__content.collapse.show(id=id)
+        .panel__content
+          if(!block)
+            if(!tabs)
+              p="Folly words widow one downs few age every seven. If miss part by fact he park just shew. Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly."
+            else
+              +tabs({
+                links: tabs.links,
+                contents: tabs.contents
+              }, 'tabs--bordered-bottom', 'panel-tabs', tabs.links[0])
+          else
+            block

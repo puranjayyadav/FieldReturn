@@ -1,0 +1,29 @@
+extends ../../blocks/layout
+block layout
+  - const active_page = 'charts_chart_js'
+
+block content
+  .container.todo-app
+    .row
+      .col-md-12
+        h3.page-title='ChartJS 2'
+        h3.page-subhead.subhead='Use this elements, if you want to show some hints or additional information'
+    .row
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Point sizes', [], null, null, "chart-js")
+          +chartjs('point-sizes')
+      .col-md-12.col-lg-12.col-xl-6
+        +card('Random animated line', [], null, null, "chart-js")
+          +chartjs('random-animated-line')
+      .col-md-12.col-lg-12.col-xl-6
+        +card('random animated bars', [], null, null, "chart-js")
+          +chartjs('random-animated-bars')
+      .col-md-12.col-lg-12.col-xl-6
+        +card('polar area', [])
+          +chartjs('polar-area')
+      .col-md-12.col-lg-12.col-xl-6
+        +card('dynamically refreshed doughnut', [], null, null, "chart-js")
+          +chartjs('dynamically-refreshed-doughnut')
+      .col-md-12.col-lg-12.col-xl-6
+        +card('legend handlers', [])
+          +chartjs('legend-handlers')

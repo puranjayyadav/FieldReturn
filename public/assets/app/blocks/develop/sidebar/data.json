@@ -1,0 +1,619 @@
+{
+  "classes": {
+    "href": {
+      "active": "sidebar__link-active",
+      "li": "sidebar__link",
+      "left-icon": "sidebar__link-icon lnr lnr-${item.icon}",
+      "title": "sidebar__link-title",
+      "badge": "sidebar__link-badge badge badge-secondary"
+    },
+    "dropdown": {
+      "active": "sidebar__link-active",
+      "wrap": "sidebar__category-wrap",
+      "button": "sidebar__link sidebar__category",
+      "left-icon": "sidebar__link-icon lnr lnr-${item.icon}",
+      "title": "sidebar__link-title",
+      "badge": {
+        "exist": "sidebar__link-badge badge badge-secondary",
+        "no-exist": "sidebar__category-new"
+      },
+      "right-icon": "sidebar__category-icon lnr lnr-chevron-right",
+      "collapse": "sidebar__submenu-wrap",
+      "submenu": "sidebar__submenu",
+      "item": {
+        "button": "sidebar__link",
+        "title": "sidebar__link-title",
+        "badge": "sidebar__link-badge badge badge-secondary"
+      }
+    }
+  },
+  "group-1": [
+    {
+      "elem": "href",
+      "title": "Online Marketing Dashboard",
+      "index": "online_marketing_dashboard",
+      "href": "dashboards/online_marketing_dashboard",
+      "icon": "home"
+    },
+    {
+      "elem": "href",
+      "title": "E-commerce Dashboard",
+      "index": "e_commerce_dashboard",
+      "href": "dashboards/e_commerce_dashboard",
+      "icon": "store"
+    },
+    {
+      "elem": "href",
+      "title": "Fitness Dashboard",
+      "index": "fitness_dashboard",
+      "href": "dashboards/fitness_dashboard",
+      "icon": "heart-pulse"
+    },
+    {
+      "elem": "href",
+      "title": "Finance Dashboard",
+      "href": "dashboards/finance_dashboard",
+      "index": "finance_dashboard",
+      "icon": "rocket"
+    },
+    {
+      "elem": "href",
+      "title": "Booking Dashboard",
+      "href": "dashboards/booking_dashboard",
+      "badge": {
+        "title": "New"
+      },
+      "index": "booking_dashboard",
+      "icon": "apartment"
+    },
+    {
+      "elem": "href",
+      "title": "App Dashboard",
+      "badge": {
+        "title": "New"
+      },
+      "href": "dashboards/app_dashboard",
+      "icon": "smartphone",
+      "index": "app_dashboard"
+    }
+  ],
+  "group-2": [
+    {
+      "elem": "dropdown",
+      "title": "UI Elements",
+      "index": "ui",
+      "href": "/",
+      "icon": "diamond",
+      "content": [
+        {
+          "elem": "href",
+          "title": "Alerts",
+          "href": "ui/alerts",
+          "icon": "home",
+          "index": "ui_alerts"
+        },
+        {
+          "elem": "href",
+          "title": "Buttons",
+          "href": "ui/buttons",
+          "index": "ui_buttons"
+        },
+        {
+          "elem": "href",
+          "title": "Carousel",
+          "href": "ui/carousel",
+          "index": "ui_carousel"
+        },
+        {
+          "elem": "href",
+          "title": "Collapse",
+          "href": "ui/collapse",
+          "index": "ui_collapse"
+        },
+        {
+          "elem": "href",
+          "title": "Grids",
+          "href": "ui/grids",
+          "index": "ui_grids"
+        },
+        {
+          "elem": "href",
+          "title": "Modals",
+          "href": "ui/modal",
+          "index": "ui_modals"
+        },
+        {
+          "elem": "href",
+          "title": "Notifications",
+          "href": "ui/notification",
+          "index": "ui_notifications"
+        },
+        {
+          "elem": "href",
+          "title": "Panels",
+          "href": "ui/panels",
+          "index": "ui_panel"
+        },
+        {
+          "elem": "href",
+          "title": "Progress Bars",
+          "href": "ui/progress-bar",
+          "index": "ui_progress-bar"
+        },
+        {
+          "elem": "href",
+          "title": "Range Sliders",
+          "href": "ui/slider",
+          "index": "ui_slider"
+        },
+        {
+          "elem": "href",
+          "title": "Tabs",
+          "href": "ui/tabs",
+          "index": "ui_tabs"
+        },
+        {
+          "elem": "href",
+          "title": "Timeline",
+          "href": "ui/timeline",
+          "index": "ui_timeline"
+        },
+        {
+          "elem": "href",
+          "title": "Tooltips & Popovers",
+          "href": "ui/tooltip",
+          "index": "ui_tooltip"
+        },
+        {
+          "elem": "href",
+          "title": "Typography",
+          "href": "ui/typography",
+          "index": "ui_typography"
+        }
+      ]
+    },
+    {
+      "elem": "href",
+      "title": "Mail Application",
+      "index": "mail",
+      "href": "mail",
+      "icon": "envelope"
+    },
+    {
+      "elem": "href",
+      "title": "Chat Application",
+      "index": "chat",
+      "href": "chat",
+      "icon": "bubble"
+    },
+    {
+      "elem": "href",
+      "title": "Todo Application",
+      "badge": {
+        "title": "New"
+      },
+      "href": "todo",
+      "index": "todo",
+      "icon": "book"
+    },
+    {
+      "elem": "dropdown",
+      "title": "Forms",
+      "index": "online_marketing_dashboard",
+      "href": "/",
+      "icon": "file-add",
+      "content": [
+        {
+          "elem": "href",
+          "title": "Basic Form",
+          "href": "forms/basic_form",
+          "index": "forms_basic_form",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "Check Form Controls",
+          "href": "forms/check_form_controls",
+          "index": "forms_check_form_controls",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "File Upload",
+          "href": "forms/file_upload",
+          "index": "forms_file_upload",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "Floating Labels Form",
+          "href": "forms/floating",
+          "index": "forms_floating",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "Form Dropzone",
+          "href": "forms/form_dropzone",
+          "index": "forms_form_dropzone",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "Form Layouts",
+          "href": "forms/form_layouts",
+          "index": "forms_form_layouts",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "Form Picker",
+          "href": "forms/form_picker",
+          "index": "forms_form_picker",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "Form Validation",
+          "href": "forms/form_validation",
+          "index": "forms_form_validation",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "Mask Form",
+          "href": "forms/mask_form",
+          "index": "forms_mask_form",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "Material Form",
+          "href": "forms/material_form",
+          "index": "forms_material_form",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "Wizard Form",
+          "href": "forms/wizard_form",
+          "index": "forms_wizard_form",
+          "icon": "home"
+        }
+      ]
+    },
+    {
+      "elem": "dropdown",
+      "title": "Tables",
+      "index": "online_marketing_dashboard",
+      "href": "/",
+      "badge": {},
+      "icon": "list",
+      "content": [
+        {
+          "elem": "href",
+          "title": "Basic tables",
+          "href": "tables/basic_tables",
+          "index": "tables_basic_tables",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "Data table",
+          "href": "tables/data_table",
+          "index": "tables_data_table",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "Editable table",
+          "href": "tables/editable_table",
+          "index": "tables_editable_table",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "Material table",
+          "href": "tables/material_table",
+          "index": "tables_material_table",
+          "icon": "home",
+          "badge": {"title": "New"}
+        }
+      ]
+    },
+    {
+      "elem": "dropdown",
+      "title": "Charts",
+      "index": "online_marketing_dashboard",
+      "href": "/",
+      "icon": "chart-bars",
+      "content": [
+        {
+          "elem": "href",
+          "title": "ChartsJS",
+          "href": "charts/chart_js",
+          "index": "charts_chart_js",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "ChartistJS",
+          "href": "charts/chartist_js",
+          "index": "charts_chartist_js",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "Echarts",
+          "href": "charts/echarts",
+          "index": "charts_echarts",
+          "icon": "home"
+        }
+      ]
+    },
+    {
+      "elem": "dropdown",
+      "title": "Maps",
+      "index": "online_marketing_dashboard",
+      "href": "/",
+      "icon": "map",
+      "content": [
+        {
+          "elem": "href",
+          "title": "Google map",
+          "href": "maps/google_map",
+          "index": "maps_google_map",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "Vector map",
+          "href": "maps/vector_map",
+          "index": "maps_vector_map",
+          "icon": "home"
+        }
+      ]
+    }
+  ],
+  "group-3": [
+    {
+      "elem": "dropdown",
+      "title": "Account",
+      "index": "online_marketing_dashboard",
+      "href": "/",
+      "icon": "user",
+      "content": [
+        {
+          "elem": "href",
+          "title": "Email Confirmation",
+          "href": "account/email_confirmation",
+          "index": "account_email_confirmation",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "Lock Screen",
+          "href": "account/lock_screen",
+          "index": "account_lock_screen",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "Log In",
+          "href": "account/log_in",
+          "index": "account_log_in",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "Log In Photo",
+          "href": "account/log_in_photo",
+          "index": "account_log_in_photo",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "Profile",
+          "href": "account/profile",
+          "index": "account_profile",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "Register",
+          "href": "account/register",
+          "index": "account_register",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "Register Photo",
+          "href": "account/register-photo",
+          "index": "account_register_photo",
+          "icon": "home"
+        }
+      ]
+    },
+    {
+      "elem": "dropdown",
+      "title": "E-commerce",
+      "index": "online_marketing_dashboard",
+      "href": "/",
+      "icon": "cart",
+      "content": [
+        {
+          "elem": "href",
+          "title": "Cart",
+          "href": "ecommerce/cart",
+          "index": "ecommerce_cart",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "Catalog",
+          "href": "ecommerce/catalog",
+          "index": "ecommerce_catalog",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "Orders List",
+          "href": "ecommerce/order_list",
+          "index": "ecommerce_order_list",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "Payment",
+          "href": "ecommerce/payment",
+          "index": "ecommerce_payment",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "Product Edit",
+          "href": "ecommerce/product_edit",
+          "index": "ecommerce_product_edit",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "Product Page",
+         "href": "ecommerce/product_page",
+          "index": "ecommerce_product_page",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "Product List",
+         "href": "ecommerce/product_list",
+          "index": "ecommerce_product_list",
+          "icon": "home"
+        }
+      ]
+    },
+    {
+      "elem": "dropdown",
+      "title": "Default Pages",
+      "index": "online_marketing_dashboard",
+      "href": "/",
+      "icon": "file-empty",
+      "content": [
+        {
+          "elem": "href",
+          "title": "404",
+         "href": "404",
+          "index": "404",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "Calendar",
+         "href": "default_pages/calendar",
+          "index": "default_pages_calendar",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "FAQs",
+         "href": "default_pages/faq",
+          "index": "default_pages_faq",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "Gallery",
+         "href": "default_pages/gallery",
+          "index": "gallery",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "Invoice template",
+         "href": "default_pages/invoice_template",
+          "index": "invoice_template",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "Pricing Cards",
+         "href": "default_pages/pricing_cards",
+          "index": "default_pages_pricing_cards",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "Project Summary",
+         "href": "default_pages/project_summary",
+          "index": "default_pages_project_summary",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "Search Results",
+         "href": "default_pages/search_results",
+          "index": "default_pages_search_results",
+          "icon": "home"
+        },
+        {
+          "elem": "href",
+          "title": "Text Editor",
+         "href": "default_pages/text_editor",
+          "index": "default_pages_text_editor",
+          "icon": "home"
+        }
+      ]
+    },
+    {
+      "elem": "dropdown",
+      "title": "Multilevel Menu",
+      "index": "online_marketing_dashboard",
+      "href": "/",
+      "icon": "menu",
+      "content": [
+        {
+          "elem": "href",
+          "title": "Second Level Item",
+          "href": "/",
+          "index": "second_level_item"
+        },
+        {
+          "elem": "dropdown",
+          "title": "Second Level Item",
+          "href": "/",
+          "index": "second_level_item2",
+          "content": [
+            {
+              "elem": "href",
+              "title": "Third Level Item",
+              "href": "/",
+              "index": "third_level_item",
+              "icon": "home"
+            },
+            {
+              "elem": "href",
+              "title": "Third Level Item",
+              "href": "/",
+              "index": "third_level_item2",
+              "icon": "home"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "group-4": [{
+      "elem": "href",
+      "title": "Log Out",
+      "index": "online_marketing_dashboard",
+     "href": "account/log_in",
+      "icon": "exit"
+    }],
+  "group-5": [{
+      "elem": "href",
+      "title": "Documentation",
+      "index": "documentation",
+     "href": "documentation/introduction",
+      "icon": "text-align-justify"
+    }]
+}

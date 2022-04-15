@@ -1,0 +1,32 @@
+extends ./layout
+
+block content
+  body.app
+    // GAP:Header
+    <!-- BEMGO:symbol -->
+    .theme-light
+      .wrapper
+        main
+          .account.log-in
+            .account__wrapper
+              .account__card
+                .account__profile
+                  img.account__avatar(src='static/topbar/img/11.png', alt="11")
+                  p.account__name='Larry Boom'
+                  p.account__sub='Unlock your account'
+                form.form
+                  .form__form-group.form__form-group--forgot
+                    span.form__form-group-label='Password'
+                    div.form__form-group-field
+                      .form__form-group-icon
+                        +icon('form', 'key-variant')(width=24, height=24)
+                      input(placeholder='Password', type='password', id='password')
+                      button.form__form-group-button.press.passwordClick(type="button")
+                        +icon('form', 'eye')(width=24, height=24)
+                    .account__forgot-password
+                      a(href='account/log_in')='Forgot a password?'
+                  a.btn.btn-primary.account__btn(href='dashboards/online_marketing_dashboard')='Unlock'
+                  a.btn.btn-outline-danger.account__btn(href='account/log_in')='Logout'
+
+    script
+      include password.js

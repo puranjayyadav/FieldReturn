@@ -1,0 +1,18 @@
+.panel__title {
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  transition: 0.3s;
+  padding-left: 15px;
+
+  h5 {
+    font-size: 13px;
+  }
+
+  .subhead {
+    text-transform: none;
+    font-size: 12px;
+    line-height: 18px;
+    opacity: 0.7;
+    transition: 0.3s;
+  }
+}

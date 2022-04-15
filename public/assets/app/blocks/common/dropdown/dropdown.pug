@@ -1,0 +1,15 @@
+- blocks={};
+
+mixin dropdown-set(mixin , blockid, id)
+  if block
+    - blocks[mixin] = blocks[mixin] || {}
+    - blocks[mixin][blockid+id] = function() { return block.call(this) };
+
+mixin dropdown-call(mixin , blockid, id)
+  - blocks[mixin][blockid+id].call();
+
+mixin dropdown(id, classes, active)
+  a(class=classes.button, data-target=`#${id}`, data-toggle="collapse")
+    +dropdown-call('dropdown','content', id)
+  div(class=`${classes.collapse} collapse ${active ? 'show' : ''}`, id=id)
+    +dropdown-call('dropdown','toggle', id)

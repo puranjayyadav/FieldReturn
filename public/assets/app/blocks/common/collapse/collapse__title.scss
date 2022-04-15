@@ -1,0 +1,42 @@
+.collapse__title {
+  padding-bottom: 10px;
+  padding-top: 6px;
+  cursor: pointer;
+  position: relative;
+  background: transparent;
+  display: block;
+  width: 100%;
+  border: none;
+  text-align: left;
+
+  span {
+    font-weight: 700;
+    margin-top: 0;
+    transition: all 0.3s;
+    position: relative;
+    margin-left: 10px;
+
+    svg {
+      right: 0;
+      left: auto;
+      display: none;
+    }
+  }
+
+  svg {
+    position: absolute;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    top: 8px;
+    transition: all 0.3s;
+
+    @include themify($themes) {
+      fill: themed('colorText');
+    }
+  }
+
+  .minus-icon {
+    display: none;
+  }
+}

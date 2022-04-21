@@ -1,6 +1,5 @@
 const path = require('path');
 const express = require('express');
-const rateLimit = require('express-rate-limit');
 const morgan = require('morgan');
 const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
@@ -152,14 +151,10 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 //RATE LIMITING BECAUSE OF SECURITY RESASONS
-const Limiter = rateLimit({
-  max: 100,
-  windowMs: 60 * 60 * 1000,
-  message: 'Too many request form this IP , Please try again in an hour'
-});
+ 
 
 //APPLYING THE LIMITER TO THE /API ROUTE OF THE APP SO THAT EVERY ROUTE GOES THROUGHT THIS SECURITY MEASURE
-app.use('/api', Limiter);
+
 
 //BODY PARSER , READING DATA FROM BODY INTO REQ.BODY
 app.use(express.json({ limit: '10kb' }));

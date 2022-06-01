@@ -7,6 +7,7 @@ const mongoSanitize = require('express-mongo-sanitize');
 const hpp = require('hpp');
 const xss = require('xss-clean');
 const cors = require('cors');
+const compression = require('compression');
 const cookieParser = require('cookie-parser');
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
@@ -172,7 +173,7 @@ app.use(xss());
 
 //HTTP paramter pollution
 app.use(hpp());
-
+app.use(compression());
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
   console.log(req.cookies);

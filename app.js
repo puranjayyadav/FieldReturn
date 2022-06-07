@@ -20,7 +20,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: 'http://127.0.0.1:3000',
+    origin: 'http://field-return-ci-fieldreturnanalysis.apps.de1pro.osh.ipz001.internal.bosch.cloud/',
     credentials: true
   })
 );

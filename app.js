@@ -18,12 +18,8 @@ const metalRouter = require('./routes/metallurgicalRoutes');
 
 const app = express();
 
-app.use(
-  cors({
-    origin: 'http://field-return-ci-fieldreturnanalysis.apps.de1pro.osh.ipz001.internal.bosch.cloud/',
-    credentials: true
-  })
-);
+app.use(cors());
+app.options('*',cors());
 
 // SETTING THE VIEW ENGINE TO PUG
 app.set('view engine', 'pug');

@@ -69,7 +69,7 @@ const sendErrorProd = (err, req, res) => {
   }
   return res.status(err.statusCode).render('error', {
     title: 'Something went very wrong',
-    msg: 'Please try again later'
+    msg: err.message
   });
 };
 module.exports = (err, req, res, next) => {

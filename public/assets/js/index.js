@@ -32,18 +32,25 @@ if (loginForm)
 if (updateMetalDataForm)
   updateMetalDataForm.addEventListener('click', e => {
     e.preventDefault();
-    const form = new FormData();
-     
+    const form = new FormData(); 
     //form.append('CamplateHardness', document.getElementById('hardness').value);
-    form.append('pumpType', document.getElementById('pumpType').value);
-    form.append('serialNumber', document.getElementById('serialNumber').value);
-    form.append('failureHours', document.getElementById('failureHours').value);
-    form.append('customer', document.getElementById('Customer').value);
-    form.append('OEM', document.getElementById('OEM').value);
+    form.append('MFD', document.getElementById('MFD').value);
+    form.append('WJC', document.getElementById('WJC').value);
+    form.append('customer', document.getElementById('customer').value);
+    form.append('KM', document.getElementById('KM').value);
     form.append('date', document.getElementById('Date').value);
-    form.append('city', document.getElementById('city').value);
-    form.append('state', document.getElementById('state').value);
-    form.append('country', document.getElementById('country').value);
+    form.append('DateClosing', document.getElementById('DateClosing').value);
+    form.append('BDS', document.getElementById('BDS').value);
+    form.append('OECD', document.getElementById('OECD').value);
+    form.append('partsRecieved', document.getElementById('partsRecieved').value);
+    form.append('FIP', document.getElementById('FIP').value);
+    form.append('complaintDescription', document.getElementById('complaintDescription').value);
+    form.append('complaintDescriptionBDS', document.getElementById('complaintDescriptionBDS').value);
+    form.append('complaintDescriptionI', document.getElementById('complaintDescriptionI').value);
+    form.append('finalStatus', document.getElementById('finalStatus').value);
+
+
+
     form.append('DimensionalCamplateCamptaper', document.getElementById('DimensionalCamplateCamptaper').value);
     form.append('DimensionalCamplateTPI', document.getElementById('DimensionalCamplateTPI').value);
     form.append('DimensionalCamplateCamProfile', document.getElementById('DimensionalCamplateCamProfile').value);
@@ -86,20 +93,7 @@ if (updateMetalDataForm)
     form.append('DimensionalRollerHeight2', document.getElementById('DimensionalRollerHeight2').value);
     form.append('DimensionalRollerHeight3', document.getElementById('DimensionalRollerHeight3').value);
     form.append('DimensionalRollerHeight4', document.getElementById('DimensionalRollerHeight4').value);
-    form.append('ComplateLobes', document.getElementById('ComplateLobes').value);
-    form.append('SlimFacePhoto', document.getElementById('SlimFacePhoto').value);
-    form.append('ClawPhoto', document.getElementById('ClawPhoto').value);
-    form.append('CrossDisk', document.getElementById('CrossDisk').value);
-    form.append('DriveShaft', document.getElementById('DriveShaft').value);
-    form.append('Roller', document.getElementById('Roller').value);
-    form.append('SteelWasherHead', document.getElementById('SteelWasherHead').value);
-    form.append('RollerRing', document.getElementById('RollerRing').value);
-    form.append('Housing', document.getElementById('Housing').value);
-    form.append('faliureSymptom', document.getElementById('faliureSymptom').value);
-    form.append('hypothesis', document.getElementById('hypothesis').value);
-    form.append('rootCauseAnalysis', document.getElementById('rootCauseAnalysis').value);
-    form.append('correctiveAction', document.getElementById('correctiveAction').value);
-    form.append('actionEffectivenessTracking', document.getElementById('actionEffectivenessTracking').value);
+   
 
 
 
@@ -109,33 +103,7 @@ if (updateMetalDataForm)
     for (let i = 0; i < 2; i++) {
       form.append('DimensionalRollerBallekitImages', document.getElementById('DimensionalRollerBallekitImages').files[i]);
     }
-    for (let i = 0; i < 6; i++) {
-      form.append('ComplateLobes', document.getElementById('ComplateLobes').files[i]);
-    }
-    for (let i = 0; i < 2; i++) {
-      form.append('SlimFacePhoto', document.getElementById('SlimFacePhoto').files[i]);
-    }
-    for (let i = 0; i < 2; i++) {
-      form.append('ClawPhoto', document.getElementById('ClawPhoto').files[i]);
-    }
-    for (let i = 0; i < 4; i++) {
-      form.append('CrossDisk', document.getElementById('CrossDisk').files[i]);
-    }
-    for (let i = 0; i < 2; i++) {
-      form.append('DriveShaft', document.getElementById('DriveShaft').files[i]);
-    }
-    for (let i = 0; i < 4; i++) {
-      form.append('Roller', document.getElementById('Roller').files[i]);
-    }
-    for (let i = 0; i < 2; i++) {
-      form.append('SteelWasherHead', document.getElementById('SteelWasherHead').files[i]);
-    }
-    for (let i = 0; i < 2; i++) {
-      form.append('RollerRing', document.getElementById('RollerRing').files[i]);
-    }
-    for (let i = 0; i < 2; i++) {
-      form.append('Housing', document.getElementById('Housing').files[i]);
-    }
+    
      
 
     // form.append('NTZ', document.getElementById('ntz').files[0]);

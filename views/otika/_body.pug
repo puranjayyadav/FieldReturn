@@ -11,12 +11,7 @@
                     li
                         a.nav-link.nav-link-lg.fullscreen-btn(href='#')
                                 i(data-feather='maximize')
-                    li
-                        form.form-inline.mr-auto
-                            .search-element
-                                input.form-control(type='search' placeholder='Search' aria-label='Search' data-width='200')
-                                button.btn(type='submit')
-                                    i.fas.fa-search
+                    
             ul.navbar-nav.navbar-right
                 if user
                     li.dropdown
@@ -25,7 +20,7 @@
                             span.d-sm-none.d-lg-inline-block
                         .dropdown-menu.dropdown-menu-right.pullDown
                             .dropdown-title.span= `Hello ${user.name}` 
-                            a.dropdown-item.has-icon(href='profile.html')
+                            a.dropdown-item.has-icon(href='/account')
                                 i.far.fa-user
                                 |  Profile
                              
@@ -46,19 +41,19 @@
                     li.dropdown.active
                         a.menu-toggle.nav-link.has-dropdown(href='#')
                             i(data-feather='layout')
-                            span Pump Form
+                            span Data Submission
                         ul.dropdown-menu
                              
                             
                             li
-                                a.nav-link(href='/metallurgical') Pump Data Form
+                                a.nav-link(href='/metallurgical') Field data form
                     li.menu-header Data Analysis / Visualization
                     li.dropdown.active
                         a.menu-toggle.nav-link.has-dropdown(href='#')
                             i(data-feather='layout')
-                            span Data Analysis
+                            span Data Analytics
                         ul.dropdown-menu
                             li
-                                a.nav-link(href='/datatable') Technical Analysis 
-                            li.active
-                                a.nav-link(href=`/charts`) Data Analysis 
+                                a.nav-link(href='/datatable') Field data information 
+                            li
+                                a.nav-link(href=`/charts`) Field-Data Analysis 

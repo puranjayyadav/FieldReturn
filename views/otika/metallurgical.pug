@@ -8,75 +8,88 @@ block content
                     .col-lg-12.col-md-12.col-sm-12.col-xs-12
                         .card
                             .card-header
-                                h4 Pump Data Submission
+                                h4 Field Data Submission
                             .card-body
                                 form#wizard_with_validation
                                     h3 Pump Data
                                     fieldset
                                         .form-group.form-float
                                             .form-line
-                                                label Pump Type 
-                                                input#pumpType.form-control(type='text')
+                                                label WJC Number 
+                                                input#WJC.form-control(type='text' required)
+                                            .form-line
+                                                label Pump serial number with MFD. 
+                                                input#MFD.form-control(type='text')
+                                            .form-line
+                                                label Customer 
+                                                input#customer.form-control(type='text')
+                                            .form-line
+                                                label KM's / Hours 
+                                                input#KM.form-control(type='text')
+                                            .form-line
+                                                label Customer Complaint 
+                                                input#complaintDescription.form-control(type='text')
+                                            .form-line
+                                                label BDS Location
+                                                input#BDS.form-control(type='text')
+                                            .form-line
+                                                label  OECD
+                                                input#OECD.form-control(type='text')
+                                            .form-line
+                                                label  Parts recieved
+                                                input#partsRecieved.form-control(type='text')
+                                            
 
                                             .form-line
-                                                label Serial Number
+                                                label FIP type / part type
                                                 .input-group
                                                     .input-group-prepend
                                                         .input-group-text
                                                             i.fas.fa-list-ol 
-                                                    input#serialNumber.form-control(type='text')
+                                                    input#FIP.form-control(type='text')
                                                 #pwindicator.pwindicator
                                                     .bar
                                                     .label
-
-
-
                                             .form-line
-                                                label Failure Hours
-                                                select#failureHours.form-control
-                                                    option  0 - 50
-                                                    option 50 - 100
-                                                    option 100 - 200
-                                                    option 200 - 400
-                                                    option 400 - 500
-                                                    option 500 - 600
-                                                    option 600 - 700
-                                                    option 700 - 800
-                                                    option 800 - 900
-                                                    option  more than 1000 hours  
-                                            .form-line
-                                                label Customer
-                                                input#Customer.form-control.invoice-input(type='text')
-                                            .form-line
-                                                label OEM
-                                                input#OEM.form-control.invoice-input(type='text')
-                                            .form-line
-                                                label Date
+                                                label Sample Entry Date
                                                 input#Date.form-control.datemask(type='date' placeholder='YYYY/MM/DD')
                                             .form-line
-                                                label City
-                                                input#city.form-control.invoice-input(type='text' placeholder='Eg: Jaipur')
-                                            .form-line
-                                                label State
-                                                input#state.form-control.invoice-input(type='text' placeholder='Eg: Rajasthan')
-                                            .form-line
-                                                label Country
-                                                input#country.form-control.invoice-input(type='text' placeholder='Eg: India')
-                                        .section-title Upload Photos of Front  , Top  , Side , Bottom , Right  , Left View
+                                                label Date of closing 
+                                                input#DateClosing.form-control.datemask(type='date' placeholder='YYYY/MM/DD')
+                                             
+                                        .section-title Visual Observation
                                         .custom-file
                                             input#image.custom-file-input(type='file',accept ='image/*' ,name='image', multiple="multiple")
-                                            label.custom-file-label(for='image')   Front  , Top  , Side , Bottom , Right  , Left View
+                                            label.custom-file-label(for='image')   Upload photos of visual inspection
                                             br
                                             br
                                             br
                                             br
                                         .form-group.mb-0.row
-                                            label.col-sm-3.col-form-label Complaint Description
+                                            label.col-sm-3.col-form-label Courrier or docket detail
                                             .col-sm-9
                                                 textarea#complaintDescription.form-control(required='')
                                                 .invalid-feedback
-                                                    | Please specify complaint description
-                                    h3 Dimensional
+                                                    | Please specify Courrier or docket detail
+                                            br
+                                            br
+                                        .form-group.mb-0.row
+                                            label.col-sm-3.col-form-label Complaint reported at BDS
+                                            .col-sm-9
+                                                textarea#complaintDescriptionBDS.form-control(required='')
+                                                .invalid-feedback
+                                                    | Please specify Courrier or docket detail
+                                        .form-group.mb-0.row
+                                            label.col-sm-3.col-form-label Investigation details
+                                            .col-sm-9
+                                                textarea#complaintDescriptionI.form-control(required='')
+                                                .invalid-feedback
+                                                    | Please specify Courrier or docket detail
+                                        .form-line
+                                                label  Final status
+                                                input#finalStatus.form-control(type='text')
+                                        
+                                    h3 Advanced Field data
                                     fieldset
                                         .form-group.form-float
                                             .section-title Camplate Values
@@ -246,85 +259,7 @@ block content
                                                 label.sr-only(for='inlineFormInputGroupUsername2') Roller Height 4
                                                 .input-group.mb-2.mr-sm-2
                                                     input#DimensionalRollerHeight4.form-control(type='text' placeholder='Roller Height 4')
-                                    h3 Component Photos
-                                    fieldset
-                                        .form-group.form-float
-                                            .section-title Camplate Photos
-                                            label Upload photo of Lobe 1 , Lobe 2 , Lobe 3, Lobe 4, Lobe 5, Lobe 6
-                                            .custom-file
-                                                    input#ComplateLobes.custom-file-input(type='file',accept ='image/*' ,name='Ballekitimage', multiple="multiple")
-                                                    label.custom-file-label(for='Ballekitimage')   Ballekit Photo Upload
-                                             
-                                            .section-title Slim face photo 
-                                            label Upload Slim face photo
-                                            .custom-file
-                                                    input#SlimFacePhoto.custom-file-input(type='file',accept ='image/*' ,name='Ballekitimage', multiple="multiple")
-                                                    label.custom-file-label(for='Ballekitimage')   Ballekit Photo Upload
-                                            .section-title Claw Photo
-                                            label Upload Claw Photo1 and 2
-                                            .custom-file
-                                                    input#ClawPhoto.custom-file-input(type='file',accept ='image/*' ,name='Ballekitimage', multiple="multiple")
-                                                    label.custom-file-label(for='Ballekitimage')   Ballekit Photo Upload
-                                             
-                                            .section-title Cross Disc Photo
-                                            label Upload OD1 , OD 2 , Claw 1 , Claw 2
-                                            .custom-file
-                                                    input#CrossDisk.custom-file-input(type='file',accept ='image/*' ,name='Ballekitimage', multiple="multiple")
-                                                    label.custom-file-label(for='Ballekitimage')   Ballekit Photo Upload
-                                             
-                                            .section-title Drive Shaft Photo
-                                            label Lobe 1
-                                            .custom-file
-                                                    input#DriveShaft.custom-file-input(type='file',accept ='image/*' ,name='Ballekitimage', multiple="multiple")
-                                                    label.custom-file-label(for='Ballekitimage')   Ballekit Photo Upload
-                                            .section-title Roller Photo
-                                            label Upload Roller Photo 1 ,2 ,3 , 4
-                                            .custom-file
-                                                    input#Roller.custom-file-input(type='file',accept ='image/*' ,name='Ballekitimage', multiple="multiple")
-                                                    label.custom-file-label(for='Ballekitimage')   Ballekit Photo Upload
-                                             
-                                            .section-title Steel Washer Head Photo
-                                            label Upload Photos of 1 and 2
-                                            .custom-file
-                                                    input#SteelWasherHead.custom-file-input(type='file',accept ='image/*' ,name='Ballekitimage', multiple="multiple")
-                                                    label.custom-file-label(for='Ballekitimage')   Ballekit Photo Upload
-                                             
-                                            .section-title Roller Ring Photo
-                                            label Upload photos OD 1 and OD 2
-                                            .custom-file
-                                                    input#RollerRing.custom-file-input(type='file',accept ='image/*' ,name='Ballekitimage', multiple="multiple")
-                                                    label.custom-file-label(for='Ballekitimage')    OD 1 
-                                             
-                                            .section-title Housing
-                                            label Upload All housing photos
-                                            .custom-file
-                                                    input#Housing.custom-file-input(type='file',accept ='image/*' ,name='Ballekitimage', multiple="multiple")
-                                                    label.custom-file-label(for='Ballekitimage')  Feed Area 
-                                             
-                                    h3 Conclusion
-                                    fieldset
-                                        .form-group.form-float
-                                            .section-title Conclusion 
-                                            label Failure Symptom
-                                            label.sr-only(for='inlineFormInputGroupUsername2') Slot Width 1 
-                                            .input-group.mb-2.mr-sm-2
-                                                input#faliureSymptom.form-control(type='text' placeholder='Slot Width 1')
-                                            label Hypothesis
-                                            label.sr-only(for='inlineFormInputGroupUsername2') Slot Width 2 
-                                            .input-group.mb-2.mr-sm-2
-                                                input#hypothesis.form-control(type='text' placeholder='Slot Width 2')
-                                            label Root Cause Analysis
-                                            label.sr-only(for='inlineFormInputGroupUsername2') Slot Width 3
-                                            .input-group.mb-2.mr-sm-2
-                                                input#rootCauseAnalysis.form-control(type='text' placeholder='Slot Width 3')
-                                            label Permanent Correction Analysis 
-                                            label.sr-only(for='inlineFormInputName2') Slot Width 4 
-                                                input#correctiveAction.form-control(type='text' placeholder='Slot Width 3')
-                                            label Action Effective Tracking 
-                                            label.sr-only(for='inlineFormInputGroupUsername2') Slot Width 5 
-                                            .input-group.mb-2.mr-sm-2
-                                                input#actionEffectivenessTracking.form-control(type='text' placeholder='Slot Width 5')
-                                             
+                                    
                                        
 
 

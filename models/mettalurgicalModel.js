@@ -19,6 +19,10 @@ const metallurgicalData = new mongoose.Schema({
     unique: false,
     trim: true
   },
+  WJC: {
+    type: String
+    //required: [true, 'Please enter the type of pump'],
+  },
   CamplateRA: {
     type: Number,
     // required: true,
@@ -54,7 +58,53 @@ const metallurgicalData = new mongoose.Schema({
     //required: true,
     maxlength: [5000, 'Please limit the amount of words to 5000 characters']
   },
+  complaintDescriptionBDS: {
+    type: String,
+    //required: true,
+    maxlength: [5000, 'Please limit the amount of words to 5000 characters']
+  },
+  complaintDescriptionI: {
+    type: String,
+    //required: true,
+    maxlength: [5000, 'Please limit the amount of words to 5000 characters']
+  },
   OEM: {
+    type: String,
+    //required: true,
+    maxlength: [10, 'Please limit the amount of characters to 10'],
+    trim: true
+  },
+  MFD: {
+    type: String,
+    //required: true,
+    maxlength: [10, 'Please limit the amount of characters to 10'],
+    trim: true
+  },
+  KM: {
+    type: String,
+    //required: true,
+    maxlength: [10, 'Please limit the amount of characters to 10'],
+    trim: true
+  },
+  BDS: {
+    type: String,
+    //required: true,
+    maxlength: [10, 'Please limit the amount of characters to 10'],
+    trim: true
+  },
+  OECD: {
+    type: String,
+    //required: true,
+    maxlength: [10, 'Please limit the amount of characters to 10'],
+    trim: true
+  },
+  FIP: {
+    type: String,
+    //required: true,
+    maxlength: [10, 'Please limit the amount of characters to 10'],
+    trim: true
+  },
+  partsRecieved: {
     type: String,
     //required: true,
     maxlength: [10, 'Please limit the amount of characters to 10'],
@@ -73,6 +123,10 @@ const metallurgicalData = new mongoose.Schema({
     // required: true
   },
   date: {
+    type: Date,
+    default: Date.now
+  },
+  dateClosing: {
     type: Date,
     default: Date.now
   },
@@ -238,11 +292,9 @@ const metallurgicalData = new mongoose.Schema({
 
 //   next();
 // })
-metallurgicalData.index({ serialNumber: 1, failureHours: 1 });
-metallurgicalData.index({ slug: 1 });
 
 metallurgicalData.pre('save', function(next) {
-  this.slug = slugify(this.serialNumber, { lower: true });
+  this.slug = slugify(this.WJC, { lower: true });
   next();
 });
 

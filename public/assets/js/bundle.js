@@ -9217,7 +9217,7 @@ var updateMetalData = /*#__PURE__*/function () {
             _context.next = 3;
             return (0, _axios.default)({
               method: 'POST',
-              url: 'http://localhost:3000/api/v1/metallurgical',
+              url: '/api/v1/metallurgical',
               data: data
             });
 
@@ -9266,7 +9266,7 @@ var updatePumpData = /*#__PURE__*/function () {
             _context2.next = 3;
             return (0, _axios.default)({
               method: 'POST',
-              url: 'http://localhost:3000/api/v1/pump',
+              url: '/api/v1/pump',
               data: data
             });
 

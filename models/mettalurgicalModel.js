@@ -71,14 +71,10 @@ const metallurgicalData = new mongoose.Schema({
   OEM: {
     type: String,
     //required: true,
-    maxlength: [10, 'Please limit the amount of characters to 10'],
-    trim: true
   },
   MFD: {
     type: String,
     //required: true,
-    maxlength: [10, 'Please limit the amount of characters to 10'],
-    trim: true
   },
   KM: {
     type: String,

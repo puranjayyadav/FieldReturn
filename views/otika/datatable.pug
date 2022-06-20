@@ -17,17 +17,15 @@ block content
                               th Pump Type
                               th Serial Number 
                               th Customer
-                              th Failure Hours
-                              th OEM
+                              th Docket Details
                             
                           tbody
                           each pump in pumps
                             tr
-                              td=`${pump.pumpType}`
+                              td=`${pump.MFD}`
                               td=`${pump.serialNumber}`
                               td= `${pump.customer}`
-                              td= `${pump.failureHours}`
-                              td= `${pump.OEM}`
+                              td= `${pump.complaintDescription}`
                               
                         
           

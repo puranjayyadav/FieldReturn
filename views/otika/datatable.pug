@@ -15,7 +15,7 @@ block content
                           thead
                             tr
                               th Pump Type
-                              th Serial Number 
+                              th Date 
                               th Customer
                               th Docket Details
                             
@@ -23,8 +23,8 @@ block content
                           each pump in pumps
                             tr
                               td=`${pump.MFD}`
-                              td=`${pump.serialNumber}`
-                              td= `${pump.date}`
+                              td=`${pump.date}`
+                              td= `${pump.customer}`
                               td= `${pump.complaintDescription}`
                               
                         

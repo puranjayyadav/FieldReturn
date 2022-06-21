@@ -5,8 +5,8 @@ const authController = require('../controllers/authController');
 const router = express.Router();
 
 router.get('/login', viewsController.getLoginForm);
-
 router.use(authController.isLoggedIn);
+
 router.get('/', viewsController.getPumpData);
 
 router.get('/dimensional', viewsController.getDimensionalData);

@@ -59,16 +59,16 @@ exports.resize = catchAsync(async (req, res, next) => {
   console.log('Resize body');
   console.log(req.files);
   req.body.Images = [];
-  req.body.DimensionalRollerBallekitImages = [];
-  req.body.ComplateLobes = [];
-  req.body.SlimFacePhoto = [];
-  req.body.ClawPhoto = [];
-  req.body.CrossDisk = [];
-  req.body.DriveShaft = [];
-  req.body.Roller = [];
-  req.body.SteelWasherHead = [];
-  req.body.RollerRing = [];
-  req.body.Housing = [];
+  // req.body.DimensionalRollerBallekitImages = [];
+  // req.body.ComplateLobes = [];
+  // req.body.SlimFacePhoto = [];
+  // req.body.ClawPhoto = [];
+  // req.body.CrossDisk = [];
+  // req.body.DriveShaft = [];
+  // req.body.Roller = [];
+  // req.body.SteelWasherHead = [];
+  // req.body.RollerRing = [];
+  // req.body.Housing = [];
 
   await Promise.all(
     req.files.Images.map(async (file, i) => {
@@ -83,145 +83,145 @@ exports.resize = catchAsync(async (req, res, next) => {
       req.body.Images.push(filename);
     })
   );
-  await Promise.all(
-    req.files.DimensionalRollerBallekitImages.map(async (file, i) => {
-      const filename = `BallekitImages-${Date.now()}-${i + 1}.jpeg`;
+  // await Promise.all(
+  //   req.files.DimensionalRollerBallekitImages.map(async (file, i) => {
+  //     const filename = `BallekitImages-${Date.now()}-${i + 1}.jpeg`;
 
-      await sharp(file.buffer)
-        .resize(2000, 1333)
-        .toFormat('jpeg')
-        .jpeg({ quality: 90 })
-        .toFile(`public/img/dimensional/${filename}`);
+  //     await sharp(file.buffer)
+  //       .resize(2000, 1333)
+  //       .toFormat('jpeg')
+  //       .jpeg({ quality: 90 })
+  //       .toFile(`public/img/dimensional/${filename}`);
 
-      req.body.DimensionalRollerBallekitImages.push(filename);
-    })
-  );
+  //     req.body.DimensionalRollerBallekitImages.push(filename);
+  //   })
+  // );
 
-  await Promise.all(
-    req.files.ComplateLobes.map(async (file, i) => {
-      const filename = `BallekitImages-${Date.now()}-${i + 1}.jpeg`;
+  // await Promise.all(
+  //   req.files.ComplateLobes.map(async (file, i) => {
+  //     const filename = `BallekitImages-${Date.now()}-${i + 1}.jpeg`;
 
-      await sharp(file.buffer)
-        .resize(2000, 1333)
-        .toFormat('jpeg')
-        .jpeg({ quality: 90 })
-        .toFile(`public/img/dimensional/${filename}`);
+  //     await sharp(file.buffer)
+  //       .resize(2000, 1333)
+  //       .toFormat('jpeg')
+  //       .jpeg({ quality: 90 })
+  //       .toFile(`public/img/dimensional/${filename}`);
 
-      req.body.ComplateLobes.push(filename);
-    })
-  );
+  //     req.body.ComplateLobes.push(filename);
+  //   })
+  // );
 
-  await Promise.all(
-    req.files.SlimFacePhoto.map(async (file, i) => {
-      const filename = `BallekitImages-${Date.now()}-${i + 1}.jpeg`;
+  // await Promise.all(
+  //   req.files.SlimFacePhoto.map(async (file, i) => {
+  //     const filename = `BallekitImages-${Date.now()}-${i + 1}.jpeg`;
 
-      await sharp(file.buffer)
-        .resize(2000, 1333)
-        .toFormat('jpeg')
-        .jpeg({ quality: 90 })
-        .toFile(`public/img/dimensional/${filename}`);
+  //     await sharp(file.buffer)
+  //       .resize(2000, 1333)
+  //       .toFormat('jpeg')
+  //       .jpeg({ quality: 90 })
+  //       .toFile(`public/img/dimensional/${filename}`);
 
-      req.body.SlimFacePhoto.push(filename);
-    })
-  );
+  //     req.body.SlimFacePhoto.push(filename);
+  //   })
+  // );
 
-  await Promise.all(
-    req.files.ClawPhoto.map(async (file, i) => {
-      const filename = `BallekitImages-${Date.now()}-${i + 1}.jpeg`;
+  // await Promise.all(
+  //   req.files.ClawPhoto.map(async (file, i) => {
+  //     const filename = `BallekitImages-${Date.now()}-${i + 1}.jpeg`;
 
-      await sharp(file.buffer)
-        .resize(2000, 1333)
-        .toFormat('jpeg')
-        .jpeg({ quality: 90 })
-        .toFile(`public/img/dimensional/${filename}`);
+  //     await sharp(file.buffer)
+  //       .resize(2000, 1333)
+  //       .toFormat('jpeg')
+  //       .jpeg({ quality: 90 })
+  //       .toFile(`public/img/dimensional/${filename}`);
 
-      req.body.ClawPhoto.push(filename);
-    })
-  );
+  //     req.body.ClawPhoto.push(filename);
+  //   })
+  // );
 
-  await Promise.all(
-    req.files.CrossDisk.map(async (file, i) => {
-      const filename = `BallekitImages-${Date.now()}-${i + 1}.jpeg`;
+  // await Promise.all(
+  //   req.files.CrossDisk.map(async (file, i) => {
+  //     const filename = `BallekitImages-${Date.now()}-${i + 1}.jpeg`;
 
-      await sharp(file.buffer)
-        .resize(2000, 1333)
-        .toFormat('jpeg')
-        .jpeg({ quality: 90 })
-        .toFile(`public/img/dimensional/${filename}`);
+  //     await sharp(file.buffer)
+  //       .resize(2000, 1333)
+  //       .toFormat('jpeg')
+  //       .jpeg({ quality: 90 })
+  //       .toFile(`public/img/dimensional/${filename}`);
 
-      req.body.CrossDisk.push(filename);
-    })
-  );
+  //     req.body.CrossDisk.push(filename);
+  //   })
+  // );
 
-  await Promise.all(
-    req.files.DriveShaft.map(async (file, i) => {
-      const filename = `BallekitImages-${Date.now()}-${i + 1}.jpeg`;
+  // await Promise.all(
+  //   req.files.DriveShaft.map(async (file, i) => {
+  //     const filename = `BallekitImages-${Date.now()}-${i + 1}.jpeg`;
 
-      await sharp(file.buffer)
-        .resize(2000, 1333)
-        .toFormat('jpeg')
-        .jpeg({ quality: 90 })
-        .toFile(`public/img/dimensional/${filename}`);
+  //     await sharp(file.buffer)
+  //       .resize(2000, 1333)
+  //       .toFormat('jpeg')
+  //       .jpeg({ quality: 90 })
+  //       .toFile(`public/img/dimensional/${filename}`);
 
-      req.body.DriveShaft.push(filename);
-    })
-  );
+  //     req.body.DriveShaft.push(filename);
+  //   })
+  // );
 
-  await Promise.all(
-    req.files.Roller.map(async (file, i) => {
-      const filename = `BallekitImages-${Date.now()}-${i + 1}.jpeg`;
+  // await Promise.all(
+  //   req.files.Roller.map(async (file, i) => {
+  //     const filename = `BallekitImages-${Date.now()}-${i + 1}.jpeg`;
 
-      await sharp(file.buffer)
-        .resize(2000, 1333)
-        .toFormat('jpeg')
-        .jpeg({ quality: 90 })
-        .toFile(`public/img/dimensional/${filename}`);
+  //     await sharp(file.buffer)
+  //       .resize(2000, 1333)
+  //       .toFormat('jpeg')
+  //       .jpeg({ quality: 90 })
+  //       .toFile(`public/img/dimensional/${filename}`);
 
-      req.body.Roller.push(filename);
-    })
-  );
+  //     req.body.Roller.push(filename);
+  //   })
+  // );
 
-  await Promise.all(
-    req.files.SteelWasherHead.map(async (file, i) => {
-      const filename = `BallekitImages-${Date.now()}-${i + 1}.jpeg`;
+  // await Promise.all(
+  //   req.files.SteelWasherHead.map(async (file, i) => {
+  //     const filename = `BallekitImages-${Date.now()}-${i + 1}.jpeg`;
 
-      await sharp(file.buffer)
-        .resize(2000, 1333)
-        .toFormat('jpeg')
-        .jpeg({ quality: 90 })
-        .toFile(`public/img/dimensional/${filename}`);
+  //     await sharp(file.buffer)
+  //       .resize(2000, 1333)
+  //       .toFormat('jpeg')
+  //       .jpeg({ quality: 90 })
+  //       .toFile(`public/img/dimensional/${filename}`);
 
-      req.body.SteelWasherHead.push(filename);
-    })
-  );
+  //     req.body.SteelWasherHead.push(filename);
+  //   })
+  // );
 
-  await Promise.all(
-    req.files.RollerRing.map(async (file, i) => {
-      const filename = `BallekitImages-${Date.now()}-${i + 1}.jpeg`;
+  // await Promise.all(
+  //   req.files.RollerRing.map(async (file, i) => {
+  //     const filename = `BallekitImages-${Date.now()}-${i + 1}.jpeg`;
 
-      await sharp(file.buffer)
-        .resize(2000, 1333)
-        .toFormat('jpeg')
-        .jpeg({ quality: 90 })
-        .toFile(`public/img/dimensional/${filename}`);
+  //     await sharp(file.buffer)
+  //       .resize(2000, 1333)
+  //       .toFormat('jpeg')
+  //       .jpeg({ quality: 90 })
+  //       .toFile(`public/img/dimensional/${filename}`);
 
-      req.body.RollerRing.push(filename);
-    })
-  );
+  //     req.body.RollerRing.push(filename);
+  //   })
+  // );
 
-  await Promise.all(
-    req.files.Housing.map(async (file, i) => {
-      const filename = `BallekitImages-${Date.now()}-${i + 1}.jpeg`;
+  // await Promise.all(
+  //   req.files.Housing.map(async (file, i) => {
+  //     const filename = `BallekitImages-${Date.now()}-${i + 1}.jpeg`;
 
-      await sharp(file.buffer)
-        .resize(2000, 1333)
-        .toFormat('jpeg')
-        .jpeg({ quality: 90 })
-        .toFile(`public/img/dimensional/${filename}`);
+  //     await sharp(file.buffer)
+  //       .resize(2000, 1333)
+  //       .toFormat('jpeg')
+  //       .jpeg({ quality: 90 })
+  //       .toFile(`public/img/dimensional/${filename}`);
 
-      req.body.Housing.push(filename);
-    })
-  );
+  //     req.body.Housing.push(filename);
+  //   })
+  // );
 
   console.log(req.files);
   next();

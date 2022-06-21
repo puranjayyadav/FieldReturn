@@ -25,7 +25,7 @@ export const updateMetalData = async (
   try {
     const res = await axios({
       method: 'POST',
-      url: 'http://localhost:3000/api/v1/metallurgical',
+      url: '/api/v1/metallurgical',
       data
     });
     if (res.data.status === 'success') {
@@ -46,7 +46,7 @@ export const updatePumpData = async (data) => {
   try {
     const res = await axios({
       method: 'POST',
-      url: 'http://localhost:3000/api/v1/pump',
+      url: '/api/v1/pump',
       data
     });
     if (res.data.status === 'success') {

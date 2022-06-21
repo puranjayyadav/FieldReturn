@@ -1,34 +1,124 @@
-extends base
-block content 
-        // Main Content
-        .main-content
-          section.section
-            .section-body      
-              .row
-                .col-12
-                  .card
-                    .card-header
-                      h4 Pump Data Overview
-                    .card-body
-                      .table-responsive
-                        table#save-stage.table.table-striped.table-hover(style='width:100%;')
-                          thead
-                            tr
-                              th Pump Type
-                              th Serial Number 
-                              th Customer
-                              th Failure Hours
-                              th OEM
+doctype html
+html(lang='en')
+  // export-table.html  21 Nov 2019 03:55:25 GMT
+  head
+    meta(charset='UTF-8')
+    meta(content='width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no' name='viewport')
+    title Bosch - Invented for life
+    // General CSS Files
+    link(rel='stylesheet' href='assets/css/app.min.css')
+    // Template CSS
+    link(rel='stylesheet' href='assets/bundles/datatables/datatables.min.css')
+    link(rel='stylesheet' href='assets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css')
+    link(rel='stylesheet' href='assets/css/style.css')
+    link(rel='stylesheet' href='assets/css/components.css')
+    // Custom style CSS
+    link(rel='stylesheet' href='assets/css/custom.css')
+    link(rel='shortcut icon' type='image/x-icon' href='assets/img/favicon1.ico')
+  body
+    .loader
+#app
+  .main-wrapper.main-wrapper-1
+    .navbar-bg
+    nav.navbar.navbar-expand-lg.main-navbar.sticky
+      .form-inline.mr-auto
+        ul.navbar-nav.mr-3
+          li
+            a.nav-link.nav-link-lg.collapse-btn(href='#' data-toggle='sidebar')
+              i(data-feather='align-justify')
+          li
+            a.nav-link.nav-link-lg.fullscreen-btn(href='#')
+              i(data-feather='maximize')
+
+      ul.navbar-nav.navbar-right
+        if user
+          li.dropdown
+            a.nav-link.dropdown-toggle.nav-link-lg.nav-link-user(href='#' data-toggle='dropdown')
+              img.user-img-radious-style(alt='image' src='assets/img/user.png')
+              span.d-sm-none.d-lg-inline-block
+            .dropdown-menu.dropdown-menu-right.pullDown
+              .dropdown-title.span= `Hello ${user.name}` 
+              a.dropdown-item.has-icon(href='/account')
+                i.far.fa-user
+                |  Profile
+
+              a.dropdown-item.has-icon.text-danger(href='/login')
+                i.fas.fa-sign-out-alt
+                |                 Logout
+        else 
+          .buttons
+            a.btn.btn-primary(href='#') Login
+    .main-sidebar.sidebar-style-2
+      aside#sidebar-wrapper
+        .sidebar-brand
+          a(href='index.html')
+            img.header-logo(alt='image' src='assets/img/logo.png')
+        ul.sidebar-menu
+
+          li.menu-header Pump Data
+          li.dropdown.active
+            a.menu-toggle.nav-link.has-dropdown(href='#')
+              i(data-feather='layout')
+              span Data Submission
+            ul.dropdown-menu
+
+
+              li
+                a.nav-link(href='/metallurgical') Field data form
+          li.menu-header Data Analysis / Visualization
+          li.dropdown.active
+            a.menu-toggle.nav-link.has-dropdown(href='#')
+              i(data-feather='layout')
+              span Data Analytics
+            ul.dropdown-menu
+              li
+                a.nav-link(href='/datatable') Field data information 
+              li
+                a.nav-link(href=`/charts`) Field-Data Analysis 
+    // Main Content
+    .main-content
+      section.section
+        .section-body
+          .row
+            .col-12
+              .card
+                .card-header
+                  h4 Field Data
+                .card-body
+                  .table-responsive
+                    table#tableExport.table.table-striped.table-hover(style='width:100%;')
+                      thead
+                        tr
+                          th WJC No.
+                          th Pump Type 
+                          th Serial Number
+                          th Customer
+                          th Complain
+                          th Location
+                          th Final Status
                             
-                          tbody
-                          each pump in pumps
-                            tr
-                              td=`${pump.pumpType}`
-                              td=`${pump.serialNumber}`
-                              td= `${pump.customer}`
-                              td= `${pump.failureHours}`
-                              td= `${pump.OEM}`
-                              
-                        
-          
- 
+
+                      tbody
+
+
+
+
+
+  // General JS Scripts
+  script(src='assets/js/app.min.js')
+  // JS Libraies
+  // Page Specific JS File
+  script(src='assets/bundles/datatables/datatables.min.js')
+  script(src='assets/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js')
+  script(src='assets/bundles/datatables/export-tables/dataTables.buttons.min.js')
+  script(src='assets/bundles/datatables/export-tables/buttons.flash.min.js')
+  script(src='assets/bundles/datatables/export-tables/jszip.min.js')
+  script(src='assets/bundles/datatables/export-tables/pdfmake.min.js')
+  script(src='assets/bundles/datatables/export-tables/vfs_fonts.js')
+  script(src='assets/bundles/datatables/export-tables/buttons.print.min.js')
+  script(src='assets/js/page/datatables.js')
+  // Template JS File
+  script(src='assets/js/scripts.js')
+  // Custom JS File
+  script(src='assets/js/custom.js')
+  // export-table.html  21 Nov 2019 03:56:01 GMT

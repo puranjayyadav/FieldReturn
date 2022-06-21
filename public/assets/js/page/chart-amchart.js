@@ -22,50 +22,58 @@ function barChart() {
   // Add data
   chart.data = [
     {
-      Customer: 'CNHI',
+      country: 'USA',
       visits: 3025
     },
     {
-      Customer: 'Mahindera',
+      country: 'China',
       visits: 1882
     },
     {
-      Customer: 'JCB',
+      country: 'Japan',
       visits: 1809
     },
     {
-      Customer: 'Massey Furgerson',
+      country: 'Germany',
       visits: 1322
     },
     {
-      Customer: 'Ford',
+      country: 'UK',
       visits: 1122
     },
     {
-      Customer: 'Value',
+      country: 'France',
       visits: 1114
     },
     {
-      Customer: 'Volvo',
+      country: 'India',
       visits: 984
     },
     {
-      Customer: 'Toyota',
+      country: 'Spain',
       visits: 711
     },
     {
-      Customer: 'Mercedes',
+      country: 'Netherlands',
       visits: 665
     },
     {
-      Customer: 'KOEH',
+      country: 'Russia',
       visits: 580
+    },
+    {
+      country: 'South Korea',
+      visits: 443
+    },
+    {
+      country: 'Canada',
+      visits: 441
     }
   ];
 
   // Create axes
   const categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-  categoryAxis.dataFields.category = 'Customer';
+  categoryAxis.dataFields.category = 'country';
   categoryAxis.renderer.grid.template.location = 0;
   categoryAxis.renderer.minGridDistance = 30;
   categoryAxis.renderer.labels.template.horizontalCenter = 'right';
@@ -83,7 +91,7 @@ function barChart() {
   const series = chart.series.push(new am4charts.ColumnSeries());
   series.sequencedInterpolation = true;
   series.dataFields.valueY = 'visits';
-  series.dataFields.categoryX = 'Customer';
+  series.dataFields.categoryX = 'country';
   series.tooltipText = '[{categoryX}: bold]{valueY}[/]';
   series.columns.template.strokeWidth = 0;
 
@@ -117,40 +125,34 @@ function barChartWithImg() {
   // Add data
   chart.data = [
     {
-      name: 'TML',
+      name: 'John',
       points: 35654,
-      color: chart.colors.next(),
-      bullet: 'assets/img/users/user1-round.png'
+      color: chart.colors.next()
     },
     {
-      name: 'TPM',
+      name: 'Damon',
       points: 65456,
-      color: chart.colors.next(),
-      bullet: 'assets/img/users/user2-round.png'
+      color: chart.colors.next()
     },
     {
-      name: 'VE',
+      name: 'Patrick',
       points: 45724,
-      color: chart.colors.next(),
-      bullet: 'assets/img/users/user3-round.png'
+      color: chart.colors.next()
     },
     {
-      name: 'BY',
+      name: 'Sarah',
       points: 13654,
-      color: chart.colors.next(),
-      bullet: 'assets/img/users/user4-round.png'
+      color: chart.colors.next()
     },
     {
-      name: 'SD',
+      name: 'Pooja',
       points: 32589,
-      color: chart.colors.next(),
-      bullet: 'assets/img/users/user5-round.png'
+      color: chart.colors.next()
     },
     {
-      name: 'GTR',
+      name: 'jatin',
       points: 45895,
-      color: chart.colors.next(),
-      bullet: 'assets/img/users/user6-round.png'
+      color: chart.colors.next()
     }
   ];
 

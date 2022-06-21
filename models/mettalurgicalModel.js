@@ -29,6 +29,9 @@ const metallurgicalData = new mongoose.Schema({
     unique: false,
     trim: true
   },
+  finalStatus: {
+    type: String
+  },
   Images: [String],
   pumpType: {
     type: String
@@ -71,43 +74,36 @@ const metallurgicalData = new mongoose.Schema({
   OEM: {
     type: String,
     //required: true,
-    maxlength: [10, 'Please limit the amount of characters to 10'],
     trim: true
   },
   MFD: {
     type: String,
     //required: true,
-    maxlength: [10, 'Please limit the amount of characters to 10'],
     trim: true
   },
   KM: {
     type: String,
     //required: true,
-    maxlength: [10, 'Please limit the amount of characters to 10'],
     trim: true
   },
   BDS: {
     type: String,
     //required: true,
-    maxlength: [10, 'Please limit the amount of characters to 10'],
     trim: true
   },
   OECD: {
     type: String,
     //required: true,
-    maxlength: [10, 'Please limit the amount of characters to 10'],
     trim: true
   },
   FIP: {
     type: String,
     //required: true,
-    maxlength: [10, 'Please limit the amount of characters to 10'],
     trim: true
   },
   partsRecieved: {
     type: String,
     //required: true,
-    maxlength: [10, 'Please limit the amount of characters to 10'],
     trim: true
   },
   city: {

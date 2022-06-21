@@ -109,7 +109,7 @@ if (updateMetalDataForm)
     // form.append('NTZ', document.getElementById('ntz').files[0]);
 
     updateMetalData(form, 'data');
-    // location.reload();
+    location.reload();
   });
 
 if (finalform)

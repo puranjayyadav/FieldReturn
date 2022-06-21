@@ -568,6 +568,7 @@ var t,r=function(t){"use strict";var r,e=Object.prototype,n=e.hasOwnProperty,o="
 var t,e,n=module.exports={};function r(){throw new Error("setTimeout has not been defined")}function o(){throw new Error("clearTimeout has not been defined")}function i(e){if(t===setTimeout)return setTimeout(e,0);if((t===r||!t)&&setTimeout)return t=setTimeout,setTimeout(e,0);try{return t(e,0)}catch(n){try{return t.call(null,e,0)}catch(n){return t.call(this,e,0)}}}function u(t){if(e===clearTimeout)return clearTimeout(t);if((e===o||!e)&&clearTimeout)return e=clearTimeout,clearTimeout(t);try{return e(t)}catch(n){try{return e.call(null,t)}catch(n){return e.call(this,t)}}}!function(){try{t="function"==typeof setTimeout?setTimeout:r}catch(n){t=r}try{e="function"==typeof clearTimeout?clearTimeout:o}catch(n){e=o}}();var c,s=[],l=!1,a=-1;function f(){l&&c&&(l=!1,c.length?s=c.concat(s):a=-1,s.length&&h())}function h(){if(!l){var t=i(f);l=!0;for(var e=s.length;e;){for(c=s,s=[];++a<e;)c&&c[a].run();a=-1,e=s.length}c=null,l=!1,u(t)}}function m(t,e){this.fun=t,this.array=e}function p(){}n.nextTick=function(t){var e=new Array(arguments.length-1);if(arguments.length>1)for(var n=1;n<arguments.length;n++)e[n-1]=arguments[n];s.push(new m(t,e)),1!==s.length||l||i(h)},m.prototype.run=function(){this.fun.apply(null,this.array)},n.title="browser",n.env={},n.argv=[],n.version="",n.versions={},n.on=p,n.addListener=p,n.once=p,n.off=p,n.removeListener=p,n.removeAllListeners=p,n.emit=p,n.prependListener=p,n.prependOnceListener=p,n.listeners=function(t){return[]},n.binding=function(t){throw new Error("process.binding is not supported")},n.cwd=function(){return"/"},n.chdir=function(t){throw new Error("process.chdir is not supported")},n.umask=function(){return 0};
 },{}],"Jtvp":[function(require,module,exports) {
 var process = require("process");
+<<<<<<< HEAD
 var e=require("process"),r=require("../utils"),t=require("../helpers/normalizeHeaderName"),n=require("../core/enhanceError"),i=require("./transitional"),a={"Content-Type":"application/x-www-form-urlencoded"};function o(e,t){!r.isUndefined(e)&&r.isUndefined(e["Content-Type"])&&(e["Content-Type"]=t)}function s(){var r;return"undefined"!=typeof XMLHttpRequest?r=require("../adapters/xhr"):void 0!==e&&"[object process]"===Object.prototype.toString.call(e)&&(r=require("../adapters/http")),r}function c(e,t,n){if(r.isString(e))try{return(t||JSON.parse)(e),r.trim(e)}catch(i){if("SyntaxError"!==i.name)throw i}return(n||JSON.stringify)(e)}var p={transitional:i,adapter:s(),transformRequest:[function(e,n){return t(n,"Accept"),t(n,"Content-Type"),r.isFormData(e)||r.isArrayBuffer(e)||r.isBuffer(e)||r.isStream(e)||r.isFile(e)||r.isBlob(e)?e:r.isArrayBufferView(e)?e.buffer:r.isURLSearchParams(e)?(o(n,"application/x-www-form-urlencoded;charset=utf-8"),e.toString()):r.isObject(e)||n&&"application/json"===n["Content-Type"]?(o(n,"application/json"),c(e)):e}],transformResponse:[function(e){var t=this.transitional||p.transitional,i=t&&t.silentJSONParsing,a=t&&t.forcedJSONParsing,o=!i&&"json"===this.responseType;if(o||a&&r.isString(e)&&e.length)try{return JSON.parse(e)}catch(s){if(o){if("SyntaxError"===s.name)throw n(s,this,"E_JSON_PARSE");throw s}}return e}],timeout:0,xsrfCookieName:"XSRF-TOKEN",xsrfHeaderName:"X-XSRF-TOKEN",maxContentLength:-1,maxBodyLength:-1,validateStatus:function(e){return e>=200&&e<300},headers:{common:{Accept:"application/json, text/plain, */*"}}};r.forEach(["delete","get","head"],function(e){p.headers[e]={}}),r.forEach(["post","put","patch"],function(e){p.headers[e]=r.merge(a)}),module.exports=p;
 },{"../utils":"La2s","../helpers/normalizeHeaderName":"feM3","../core/enhanceError":"ZBIb","./transitional":"BEuN","../adapters/xhr":"DiA2","../adapters/http":"DiA2","process":"FT5O"}],"tLbi":[function(require,module,exports) {
 "use strict";var r=require("./../utils"),e=require("../defaults");module.exports=function(t,u,i){var s=this||e;return r.forEach(i,function(r){t=r.call(s,t,u)}),t};
@@ -603,3 +604,1958 @@ module.exports=require("./lib/axios");
 "use strict";require("core-js/modules/es6.array.copy-within.js"),require("core-js/modules/es6.array.fill.js"),require("core-js/modules/es6.array.filter.js"),require("core-js/modules/es6.array.find.js"),require("core-js/modules/es6.array.find-index.js"),require("core-js/modules/es7.array.flat-map.js"),require("core-js/modules/es6.array.from.js"),require("core-js/modules/es7.array.includes.js"),require("core-js/modules/es6.array.iterator.js"),require("core-js/modules/es6.array.map.js"),require("core-js/modules/es6.array.of.js"),require("core-js/modules/es6.array.slice.js"),require("core-js/modules/es6.array.sort.js"),require("core-js/modules/es6.array.species.js"),require("core-js/modules/es6.date.to-primitive.js"),require("core-js/modules/es6.function.has-instance.js"),require("core-js/modules/es6.function.name.js"),require("core-js/modules/es6.map.js"),require("core-js/modules/es6.math.acosh.js"),require("core-js/modules/es6.math.asinh.js"),require("core-js/modules/es6.math.atanh.js"),require("core-js/modules/es6.math.cbrt.js"),require("core-js/modules/es6.math.clz32.js"),require("core-js/modules/es6.math.cosh.js"),require("core-js/modules/es6.math.expm1.js"),require("core-js/modules/es6.math.fround.js"),require("core-js/modules/es6.math.hypot.js"),require("core-js/modules/es6.math.imul.js"),require("core-js/modules/es6.math.log1p.js"),require("core-js/modules/es6.math.log10.js"),require("core-js/modules/es6.math.log2.js"),require("core-js/modules/es6.math.sign.js"),require("core-js/modules/es6.math.sinh.js"),require("core-js/modules/es6.math.tanh.js"),require("core-js/modules/es6.math.trunc.js"),require("core-js/modules/es6.number.constructor.js"),require("core-js/modules/es6.number.epsilon.js"),require("core-js/modules/es6.number.is-finite.js"),require("core-js/modules/es6.number.is-integer.js"),require("core-js/modules/es6.number.is-nan.js"),require("core-js/modules/es6.number.is-safe-integer.js"),require("core-js/modules/es6.number.max-safe-integer.js"),require("core-js/modules/es6.number.min-safe-integer.js"),require("core-js/modules/es6.number.parse-float.js"),require("core-js/modules/es6.number.parse-int.js"),require("core-js/modules/es6.object.assign.js"),require("core-js/modules/es7.object.define-getter.js"),require("core-js/modules/es7.object.define-setter.js"),require("core-js/modules/es7.object.entries.js"),require("core-js/modules/es6.object.freeze.js"),require("core-js/modules/es6.object.get-own-property-descriptor.js"),require("core-js/modules/es7.object.get-own-property-descriptors.js"),require("core-js/modules/es6.object.get-own-property-names.js"),require("core-js/modules/es6.object.get-prototype-of.js"),require("core-js/modules/es7.object.lookup-getter.js"),require("core-js/modules/es7.object.lookup-setter.js"),require("core-js/modules/es6.object.prevent-extensions.js"),require("core-js/modules/es6.object.to-string.js"),require("core-js/modules/es6.object.is.js"),require("core-js/modules/es6.object.is-frozen.js"),require("core-js/modules/es6.object.is-sealed.js"),require("core-js/modules/es6.object.is-extensible.js"),require("core-js/modules/es6.object.keys.js"),require("core-js/modules/es6.object.seal.js"),require("core-js/modules/es6.object.set-prototype-of.js"),require("core-js/modules/es7.object.values.js"),require("core-js/modules/es6.promise.js"),require("core-js/modules/es7.promise.finally.js"),require("core-js/modules/es6.reflect.apply.js"),require("core-js/modules/es6.reflect.construct.js"),require("core-js/modules/es6.reflect.define-property.js"),require("core-js/modules/es6.reflect.delete-property.js"),require("core-js/modules/es6.reflect.get.js"),require("core-js/modules/es6.reflect.get-own-property-descriptor.js"),require("core-js/modules/es6.reflect.get-prototype-of.js"),require("core-js/modules/es6.reflect.has.js"),require("core-js/modules/es6.reflect.is-extensible.js"),require("core-js/modules/es6.reflect.own-keys.js"),require("core-js/modules/es6.reflect.prevent-extensions.js"),require("core-js/modules/es6.reflect.set.js"),require("core-js/modules/es6.reflect.set-prototype-of.js"),require("core-js/modules/es6.regexp.constructor.js"),require("core-js/modules/es6.regexp.flags.js"),require("core-js/modules/es6.regexp.match.js"),require("core-js/modules/es6.regexp.replace.js"),require("core-js/modules/es6.regexp.split.js"),require("core-js/modules/es6.regexp.search.js"),require("core-js/modules/es6.regexp.to-string.js"),require("core-js/modules/es6.set.js"),require("core-js/modules/es6.symbol.js"),require("core-js/modules/es7.symbol.async-iterator.js"),require("core-js/modules/es6.string.anchor.js"),require("core-js/modules/es6.string.big.js"),require("core-js/modules/es6.string.blink.js"),require("core-js/modules/es6.string.bold.js"),require("core-js/modules/es6.string.code-point-at.js"),require("core-js/modules/es6.string.ends-with.js"),require("core-js/modules/es6.string.fixed.js"),require("core-js/modules/es6.string.fontcolor.js"),require("core-js/modules/es6.string.fontsize.js"),require("core-js/modules/es6.string.from-code-point.js"),require("core-js/modules/es6.string.includes.js"),require("core-js/modules/es6.string.italics.js"),require("core-js/modules/es6.string.iterator.js"),require("core-js/modules/es6.string.link.js"),require("core-js/modules/es7.string.pad-start.js"),require("core-js/modules/es7.string.pad-end.js"),require("core-js/modules/es6.string.raw.js"),require("core-js/modules/es6.string.repeat.js"),require("core-js/modules/es6.string.small.js"),require("core-js/modules/es6.string.starts-with.js"),require("core-js/modules/es6.string.strike.js"),require("core-js/modules/es6.string.sub.js"),require("core-js/modules/es6.string.sup.js"),require("core-js/modules/es7.string.trim-left.js"),require("core-js/modules/es7.string.trim-right.js"),require("core-js/modules/es6.typed.array-buffer.js"),require("core-js/modules/es6.typed.int8-array.js"),require("core-js/modules/es6.typed.uint8-array.js"),require("core-js/modules/es6.typed.uint8-clamped-array.js"),require("core-js/modules/es6.typed.int16-array.js"),require("core-js/modules/es6.typed.uint16-array.js"),require("core-js/modules/es6.typed.int32-array.js"),require("core-js/modules/es6.typed.uint32-array.js"),require("core-js/modules/es6.typed.float32-array.js"),require("core-js/modules/es6.typed.float64-array.js"),require("core-js/modules/es6.weak-map.js"),require("core-js/modules/es6.weak-set.js"),require("core-js/modules/web.timers.js"),require("core-js/modules/web.immediate.js"),require("core-js/modules/web.dom.iterable.js");var e=require("./custom");require("regenerator-runtime/runtime.js");var r=require("./updateSettings");function s(e,r){var s="undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(!s){if(Array.isArray(e)||(s=o(e))||r&&e&&"number"==typeof e.length){s&&(e=s);var t=0,l=function(){};return{s:l,n:function(){return t>=e.length?{done:!0}:{done:!1,value:e[t++]}},e:function(e){throw e},f:l}}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}var n,i=!0,u=!1;return{s:function(){s=s.call(e)},n:function(){var e=s.next();return i=e.done,e},e:function(e){u=!0,n=e},f:function(){try{i||null==s.return||s.return()}finally{if(u)throw n}}}}function o(e,r){if(e){if("string"==typeof e)return t(e,r);var s=Object.prototype.toString.call(e).slice(8,-1);return"Object"===s&&e.constructor&&(s=e.constructor.name),"Map"===s||"Set"===s?Array.from(e):"Arguments"===s||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(s)?t(e,r):void 0}}function t(e,r){(null==r||r>e.length)&&(r=e.length);for(var s=0,o=new Array(r);s<r;s++)o[s]=e[s];return o}var l=document.querySelector(".form-group.login-button"),n=document.querySelector(".text-danger"),i=document.querySelector(".btn.btn-primary"),u=document.querySelector(".updateMetal"),a=document.querySelector(".btn.btn-primary.finalform");l&&l.addEventListener("click",function(r){r.preventDefault();var s=document.getElementById("email").value,o=document.getElementById("password").value;(0,e.login)(s,o)}),u&&u.addEventListener("click",function(e){e.preventDefault();var s=new FormData;s.append("MFD",document.getElementById("MFD").value),s.append("WJC",document.getElementById("WJC").value),s.append("customer",document.getElementById("customer").value),s.append("KM",document.getElementById("KM").value),s.append("date",document.getElementById("Date").value),s.append("DateClosing",document.getElementById("DateClosing").value),s.append("BDS",document.getElementById("BDS").value),s.append("OECD",document.getElementById("OECD").value),s.append("partsRecieved",document.getElementById("partsRecieved").value),s.append("FIP",document.getElementById("FIP").value),s.append("complaintDescription",document.getElementById("complaintDescription").value),s.append("complaintDescriptionBDS",document.getElementById("complaintDescriptionBDS").value),s.append("complaintDescriptionI",document.getElementById("complaintDescriptionI").value),s.append("finalStatus",document.getElementById("finalStatus").value),s.append("DimensionalCamplateCamptaper",document.getElementById("DimensionalCamplateCamptaper").value),s.append("DimensionalCamplateTPI",document.getElementById("DimensionalCamplateTPI").value),s.append("DimensionalCamplateCamProfile",document.getElementById("DimensionalCamplateCamProfile").value),s.append("DimensionalCamplateRZMax",document.getElementById("DimensionalCamplateRZMax").value),s.append("DimensionalCamplateRZMin",document.getElementById("DimensionalCamplateRZMin").value),s.append("DimensionalRollerSphericity",document.getElementById("DimensionalRollerSphericity").value),s.append("DimensionalRollerLineProfile",document.getElementById("DimensionalRollerLineProfile").value),s.append("DimensionalRolleRunout",document.getElementById("DimensionalRolleRunout").value),s.append("DimensionalCrossDiscClawValue1",document.getElementById("DimensionalCrossDiscClawValue1").value),s.append("DimensionalCrossDiscClawValue2",document.getElementById("DimensionalCrossDiscClawValue2").value),s.append("DimensionalCrossDiscClawValue3",document.getElementById("DimensionalCrossDiscClawValue3").value),s.append("DimensionalCrossDiscClawValue4",document.getElementById("DimensionalCrossDiscClawValue4").value),s.append("DimensionalPerpendicularity1",document.getElementById("DimensionalPerpendicularity1").value),s.append("DimensionalPerpendicularity2",document.getElementById("DimensionalPerpendicularity2").value),s.append("DimensionalVaneHeight1",document.getElementById("DimensionalVaneHeight1").value),s.append("DimensionalVaneHeight2",document.getElementById("DimensionalVaneHeight2").value),s.append("DimensionalVaneHeight3",document.getElementById("DimensionalVaneHeight3").value),s.append("DimensionalVaneHeight4",document.getElementById("DimensionalVaneHeight4").value),s.append("DimensionalVaneHeightEC1",document.getElementById("DimensionalVaneHeightEC1").value),s.append("DimensionalVaneHeightEC2",document.getElementById("DimensionalVaneHeightEC2").value),s.append("FeederBoreRunout",document.getElementById("FeederBoreRunout").value),s.append("HousingBoreConcentricity",document.getElementById("HousingBoreConcentricity").value),s.append("DimensionalRollerSlotHeight1",document.getElementById("DimensionalRollerSlotHeight1").value),s.append("DimensionalRollerSlotHeight2",document.getElementById("DimensionalRollerSlotHeight2").value),s.append("DimensionalRollerSlotHeight3",document.getElementById("DimensionalRollerSlotHeight3").value),s.append("DimensionalRollerSlotHeight4",document.getElementById("DimensionalRollerSlotHeight4").value),s.append("DimensionalRollerSlotHeight5",document.getElementById("DimensionalRollerSlotHeight5").value),s.append("DimensionalRollerSlotHeight6",document.getElementById("DimensionalRollerSlotHeight6").value),s.append("DimensionalRollerSlotHeight7",document.getElementById("DimensionalRollerSlotHeight7").value),s.append("DimensionalRollerSlotHeight8",document.getElementById("DimensionalRollerSlotHeight8").value),s.append("DimensionalRollerSlotWidth1",document.getElementById("DimensionalRollerSlotWidth1").value),s.append("DimensionalRollerSlotWidth2",document.getElementById("DimensionalRollerSlotWidth2").value),s.append("DimensionalRollerSlotWidth3",document.getElementById("DimensionalRollerSlotWidth3").value),s.append("DimensionalRollerSlotWidth4",document.getElementById("DimensionalRollerSlotWidth4").value),s.append("DimensionalRollerSlotWidth5",document.getElementById("DimensionalRollerSlotWidth5").value),s.append("DimensionalRollerSlotWidth6",document.getElementById("DimensionalRollerSlotWidth6").value),s.append("DimensionalRollerSlotWidth7",document.getElementById("DimensionalRollerSlotWidth7").value),s.append("DimensionalRollerSlotWidth8",document.getElementById("DimensionalRollerSlotWidth8").value),s.append("DimensionalRollerHeight1",document.getElementById("DimensionalRollerHeight1").value),s.append("DimensionalRollerHeight2",document.getElementById("DimensionalRollerHeight2").value),s.append("DimensionalRollerHeight3",document.getElementById("DimensionalRollerHeight3").value),s.append("DimensionalRollerHeight4",document.getElementById("DimensionalRollerHeight4").value);for(var o=0;o<6;o++)s.append("Images",document.getElementById("image").files[o]);for(var t=0;t<2;t++)s.append("DimensionalRollerBallekitImages",document.getElementById("DimensionalRollerBallekitImages").files[t]);(0,r.updateMetalData)(s,"data")}),a&&a.addEventListener("click",function(e){e.preventDefault();var o=new FormData;o.append("pumpType",document.getElementById("pumpType").value),o.append("serialNumber",document.getElementById("serialNumber").value);var t,l=s(o.entries());try{for(l.s();!(t=l.n()).done;){var n=t.value;console.log(n[0],n[1])}}catch(i){l.e(i)}finally{l.f()}(0,r.updatePumpData)(o,"data")});
 },{"core-js/modules/es6.array.copy-within.js":"s95x","core-js/modules/es6.array.fill.js":"JMur","core-js/modules/es6.array.filter.js":"ZvxO","core-js/modules/es6.array.find.js":"DVgS","core-js/modules/es6.array.find-index.js":"sQB3","core-js/modules/es7.array.flat-map.js":"mVE7","core-js/modules/es6.array.from.js":"uVTc","core-js/modules/es7.array.includes.js":"XhQx","core-js/modules/es6.array.iterator.js":"R0Z1","core-js/modules/es6.array.map.js":"Nt7m","core-js/modules/es6.array.of.js":"O361","core-js/modules/es6.array.slice.js":"Ieno","core-js/modules/es6.array.sort.js":"TCVS","core-js/modules/es6.array.species.js":"YdDJ","core-js/modules/es6.date.to-primitive.js":"dEOk","core-js/modules/es6.function.has-instance.js":"IFs1","core-js/modules/es6.function.name.js":"kO8w","core-js/modules/es6.map.js":"scRr","core-js/modules/es6.math.acosh.js":"mVyg","core-js/modules/es6.math.asinh.js":"JSXC","core-js/modules/es6.math.atanh.js":"cyt3","core-js/modules/es6.math.cbrt.js":"brlm","core-js/modules/es6.math.clz32.js":"kT76","core-js/modules/es6.math.cosh.js":"TO4X","core-js/modules/es6.math.expm1.js":"PplL","core-js/modules/es6.math.fround.js":"DTXs","core-js/modules/es6.math.hypot.js":"zM1C","core-js/modules/es6.math.imul.js":"sSEw","core-js/modules/es6.math.log1p.js":"TQit","core-js/modules/es6.math.log10.js":"p6WZ","core-js/modules/es6.math.log2.js":"wCoU","core-js/modules/es6.math.sign.js":"oYvZ","core-js/modules/es6.math.sinh.js":"N2rY","core-js/modules/es6.math.tanh.js":"cgNK","core-js/modules/es6.math.trunc.js":"X7iv","core-js/modules/es6.number.constructor.js":"BsxJ","core-js/modules/es6.number.epsilon.js":"luZo","core-js/modules/es6.number.is-finite.js":"XgfH","core-js/modules/es6.number.is-integer.js":"U18y","core-js/modules/es6.number.is-nan.js":"AeAQ","core-js/modules/es6.number.is-safe-integer.js":"khEz","core-js/modules/es6.number.max-safe-integer.js":"dRhU","core-js/modules/es6.number.min-safe-integer.js":"BWFi","core-js/modules/es6.number.parse-float.js":"BVwL","core-js/modules/es6.number.parse-int.js":"RN5j","core-js/modules/es6.object.assign.js":"q1Bq","core-js/modules/es7.object.define-getter.js":"Z3zM","core-js/modules/es7.object.define-setter.js":"Wcig","core-js/modules/es7.object.entries.js":"aNgU","core-js/modules/es6.object.freeze.js":"yoMt","core-js/modules/es6.object.get-own-property-descriptor.js":"hxYo","core-js/modules/es7.object.get-own-property-descriptors.js":"KZ7J","core-js/modules/es6.object.get-own-property-names.js":"FmSW","core-js/modules/es6.object.get-prototype-of.js":"eKPx","core-js/modules/es7.object.lookup-getter.js":"SmKU","core-js/modules/es7.object.lookup-setter.js":"lNWP","core-js/modules/es6.object.prevent-extensions.js":"EuFr","core-js/modules/es6.object.to-string.js":"JsDG","core-js/modules/es6.object.is.js":"n3oA","core-js/modules/es6.object.is-frozen.js":"hoz0","core-js/modules/es6.object.is-sealed.js":"qCTx","core-js/modules/es6.object.is-extensible.js":"VhFU","core-js/modules/es6.object.keys.js":"UPoR","core-js/modules/es6.object.seal.js":"cIJi","core-js/modules/es6.object.set-prototype-of.js":"UBTL","core-js/modules/es7.object.values.js":"lmEY","core-js/modules/es6.promise.js":"IKuy","core-js/modules/es7.promise.finally.js":"lqgY","core-js/modules/es6.reflect.apply.js":"rv6E","core-js/modules/es6.reflect.construct.js":"EYid","core-js/modules/es6.reflect.define-property.js":"JSMr","core-js/modules/es6.reflect.delete-property.js":"vyYx","core-js/modules/es6.reflect.get.js":"Xwl7","core-js/modules/es6.reflect.get-own-property-descriptor.js":"iOag","core-js/modules/es6.reflect.get-prototype-of.js":"aUcI","core-js/modules/es6.reflect.has.js":"FJ0f","core-js/modules/es6.reflect.is-extensible.js":"Nv4u","core-js/modules/es6.reflect.own-keys.js":"GxoL","core-js/modules/es6.reflect.prevent-extensions.js":"W8WG","core-js/modules/es6.reflect.set.js":"w2jp","core-js/modules/es6.reflect.set-prototype-of.js":"hcPy","core-js/modules/es6.regexp.constructor.js":"pQ0C","core-js/modules/es6.regexp.flags.js":"UHTP","core-js/modules/es6.regexp.match.js":"TWjs","core-js/modules/es6.regexp.replace.js":"X0aj","core-js/modules/es6.regexp.split.js":"rSll","core-js/modules/es6.regexp.search.js":"tWkY","core-js/modules/es6.regexp.to-string.js":"Q8Ex","core-js/modules/es6.set.js":"RUEc","core-js/modules/es6.symbol.js":"CLMS","core-js/modules/es7.symbol.async-iterator.js":"boDi","core-js/modules/es6.string.anchor.js":"Wjj3","core-js/modules/es6.string.big.js":"qqKg","core-js/modules/es6.string.blink.js":"ih0q","core-js/modules/es6.string.bold.js":"sjz7","core-js/modules/es6.string.code-point-at.js":"aXri","core-js/modules/es6.string.ends-with.js":"S9Ej","core-js/modules/es6.string.fixed.js":"Ul7E","core-js/modules/es6.string.fontcolor.js":"S22g","core-js/modules/es6.string.fontsize.js":"o6MI","core-js/modules/es6.string.from-code-point.js":"asQ6","core-js/modules/es6.string.includes.js":"SxiA","core-js/modules/es6.string.italics.js":"zaWd","core-js/modules/es6.string.iterator.js":"BSat","core-js/modules/es6.string.link.js":"ID6l","core-js/modules/es7.string.pad-start.js":"Uh3D","core-js/modules/es7.string.pad-end.js":"Tj12","core-js/modules/es6.string.raw.js":"IoUV","core-js/modules/es6.string.repeat.js":"pvEg","core-js/modules/es6.string.small.js":"OwgP","core-js/modules/es6.string.starts-with.js":"Tgrn","core-js/modules/es6.string.strike.js":"C3ft","core-js/modules/es6.string.sub.js":"zUU3","core-js/modules/es6.string.sup.js":"rFzE","core-js/modules/es7.string.trim-left.js":"rqYJ","core-js/modules/es7.string.trim-right.js":"MtdB","core-js/modules/es6.typed.array-buffer.js":"QhR4","core-js/modules/es6.typed.int8-array.js":"snaB","core-js/modules/es6.typed.uint8-array.js":"eMMX","core-js/modules/es6.typed.uint8-clamped-array.js":"z1ek","core-js/modules/es6.typed.int16-array.js":"pR52","core-js/modules/es6.typed.uint16-array.js":"gES0","core-js/modules/es6.typed.int32-array.js":"xNOZ","core-js/modules/es6.typed.uint32-array.js":"i5wF","core-js/modules/es6.typed.float32-array.js":"fRd8","core-js/modules/es6.typed.float64-array.js":"RTJR","core-js/modules/es6.weak-map.js":"zxJR","core-js/modules/es6.weak-set.js":"n34Z","core-js/modules/web.timers.js":"INLk","core-js/modules/web.immediate.js":"Ooxe","core-js/modules/web.dom.iterable.js":"WWuG","./custom":"jbf7","regenerator-runtime/runtime.js":"dgxz","./updateSettings":"FxPS"}]},{},["Focm"], null)
 //# sourceMappingURL=/bundle.js.map
+=======
+'use strict';
+
+var utils = require('../utils');
+var normalizeHeaderName = require('../helpers/normalizeHeaderName');
+var enhanceError = require('../core/enhanceError');
+var transitionalDefaults = require('./transitional');
+
+var DEFAULT_CONTENT_TYPE = {
+  'Content-Type': 'application/x-www-form-urlencoded'
+};
+
+function setContentTypeIfUnset(headers, value) {
+  if (!utils.isUndefined(headers) && utils.isUndefined(headers['Content-Type'])) {
+    headers['Content-Type'] = value;
+  }
+}
+
+function getDefaultAdapter() {
+  var adapter;
+  if (typeof XMLHttpRequest !== 'undefined') {
+    // For browsers use XHR adapter
+    adapter = require('../adapters/xhr');
+  } else if (typeof process !== 'undefined' && Object.prototype.toString.call(process) === '[object process]') {
+    // For node use HTTP adapter
+    adapter = require('../adapters/http');
+  }
+  return adapter;
+}
+
+function stringifySafely(rawValue, parser, encoder) {
+  if (utils.isString(rawValue)) {
+    try {
+      (parser || JSON.parse)(rawValue);
+      return utils.trim(rawValue);
+    } catch (e) {
+      if (e.name !== 'SyntaxError') {
+        throw e;
+      }
+    }
+  }
+
+  return (encoder || JSON.stringify)(rawValue);
+}
+
+var defaults = {
+
+  transitional: transitionalDefaults,
+
+  adapter: getDefaultAdapter(),
+
+  transformRequest: [function transformRequest(data, headers) {
+    normalizeHeaderName(headers, 'Accept');
+    normalizeHeaderName(headers, 'Content-Type');
+
+    if (utils.isFormData(data) ||
+      utils.isArrayBuffer(data) ||
+      utils.isBuffer(data) ||
+      utils.isStream(data) ||
+      utils.isFile(data) ||
+      utils.isBlob(data)
+    ) {
+      return data;
+    }
+    if (utils.isArrayBufferView(data)) {
+      return data.buffer;
+    }
+    if (utils.isURLSearchParams(data)) {
+      setContentTypeIfUnset(headers, 'application/x-www-form-urlencoded;charset=utf-8');
+      return data.toString();
+    }
+    if (utils.isObject(data) || (headers && headers['Content-Type'] === 'application/json')) {
+      setContentTypeIfUnset(headers, 'application/json');
+      return stringifySafely(data);
+    }
+    return data;
+  }],
+
+  transformResponse: [function transformResponse(data) {
+    var transitional = this.transitional || defaults.transitional;
+    var silentJSONParsing = transitional && transitional.silentJSONParsing;
+    var forcedJSONParsing = transitional && transitional.forcedJSONParsing;
+    var strictJSONParsing = !silentJSONParsing && this.responseType === 'json';
+
+    if (strictJSONParsing || (forcedJSONParsing && utils.isString(data) && data.length)) {
+      try {
+        return JSON.parse(data);
+      } catch (e) {
+        if (strictJSONParsing) {
+          if (e.name === 'SyntaxError') {
+            throw enhanceError(e, this, 'E_JSON_PARSE');
+          }
+          throw e;
+        }
+      }
+    }
+
+    return data;
+  }],
+
+  /**
+   * A timeout in milliseconds to abort a request. If set to 0 (default) a
+   * timeout is not created.
+   */
+  timeout: 0,
+
+  xsrfCookieName: 'XSRF-TOKEN',
+  xsrfHeaderName: 'X-XSRF-TOKEN',
+
+  maxContentLength: -1,
+  maxBodyLength: -1,
+
+  validateStatus: function validateStatus(status) {
+    return status >= 200 && status < 300;
+  },
+
+  headers: {
+    common: {
+      'Accept': 'application/json, text/plain, */*'
+    }
+  }
+};
+
+utils.forEach(['delete', 'get', 'head'], function forEachMethodNoData(method) {
+  defaults.headers[method] = {};
+});
+
+utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
+  defaults.headers[method] = utils.merge(DEFAULT_CONTENT_TYPE);
+});
+
+module.exports = defaults;
+
+},{"../utils":"../../../node_modules/axios/lib/utils.js","../helpers/normalizeHeaderName":"../../../node_modules/axios/lib/helpers/normalizeHeaderName.js","../core/enhanceError":"../../../node_modules/axios/lib/core/enhanceError.js","./transitional":"../../../node_modules/axios/lib/defaults/transitional.js","../adapters/xhr":"../../../node_modules/axios/lib/adapters/xhr.js","../adapters/http":"../../../node_modules/axios/lib/adapters/xhr.js","process":"../../../node_modules/process/browser.js"}],"../../../node_modules/axios/lib/core/transformData.js":[function(require,module,exports) {
+'use strict';
+
+var utils = require('./../utils');
+var defaults = require('../defaults');
+
+/**
+ * Transform the data for a request or a response
+ *
+ * @param {Object|String} data The data to be transformed
+ * @param {Array} headers The headers for the request or response
+ * @param {Array|Function} fns A single function or Array of functions
+ * @returns {*} The resulting transformed data
+ */
+module.exports = function transformData(data, headers, fns) {
+  var context = this || defaults;
+  /*eslint no-param-reassign:0*/
+  utils.forEach(fns, function transform(fn) {
+    data = fn.call(context, data, headers);
+  });
+
+  return data;
+};
+
+},{"./../utils":"../../../node_modules/axios/lib/utils.js","../defaults":"../../../node_modules/axios/lib/defaults/index.js"}],"../../../node_modules/axios/lib/cancel/isCancel.js":[function(require,module,exports) {
+'use strict';
+
+module.exports = function isCancel(value) {
+  return !!(value && value.__CANCEL__);
+};
+
+},{}],"../../../node_modules/axios/lib/core/dispatchRequest.js":[function(require,module,exports) {
+'use strict';
+
+var utils = require('./../utils');
+var transformData = require('./transformData');
+var isCancel = require('../cancel/isCancel');
+var defaults = require('../defaults');
+var Cancel = require('../cancel/Cancel');
+
+/**
+ * Throws a `Cancel` if cancellation has been requested.
+ */
+function throwIfCancellationRequested(config) {
+  if (config.cancelToken) {
+    config.cancelToken.throwIfRequested();
+  }
+
+  if (config.signal && config.signal.aborted) {
+    throw new Cancel('canceled');
+  }
+}
+
+/**
+ * Dispatch a request to the server using the configured adapter.
+ *
+ * @param {object} config The config that is to be used for the request
+ * @returns {Promise} The Promise to be fulfilled
+ */
+module.exports = function dispatchRequest(config) {
+  throwIfCancellationRequested(config);
+
+  // Ensure headers exist
+  config.headers = config.headers || {};
+
+  // Transform request data
+  config.data = transformData.call(
+    config,
+    config.data,
+    config.headers,
+    config.transformRequest
+  );
+
+  // Flatten headers
+  config.headers = utils.merge(
+    config.headers.common || {},
+    config.headers[config.method] || {},
+    config.headers
+  );
+
+  utils.forEach(
+    ['delete', 'get', 'head', 'post', 'put', 'patch', 'common'],
+    function cleanHeaderConfig(method) {
+      delete config.headers[method];
+    }
+  );
+
+  var adapter = config.adapter || defaults.adapter;
+
+  return adapter(config).then(function onAdapterResolution(response) {
+    throwIfCancellationRequested(config);
+
+    // Transform response data
+    response.data = transformData.call(
+      config,
+      response.data,
+      response.headers,
+      config.transformResponse
+    );
+
+    return response;
+  }, function onAdapterRejection(reason) {
+    if (!isCancel(reason)) {
+      throwIfCancellationRequested(config);
+
+      // Transform response data
+      if (reason && reason.response) {
+        reason.response.data = transformData.call(
+          config,
+          reason.response.data,
+          reason.response.headers,
+          config.transformResponse
+        );
+      }
+    }
+
+    return Promise.reject(reason);
+  });
+};
+
+},{"./../utils":"../../../node_modules/axios/lib/utils.js","./transformData":"../../../node_modules/axios/lib/core/transformData.js","../cancel/isCancel":"../../../node_modules/axios/lib/cancel/isCancel.js","../defaults":"../../../node_modules/axios/lib/defaults/index.js","../cancel/Cancel":"../../../node_modules/axios/lib/cancel/Cancel.js"}],"../../../node_modules/axios/lib/core/mergeConfig.js":[function(require,module,exports) {
+'use strict';
+
+var utils = require('../utils');
+
+/**
+ * Config-specific merge-function which creates a new config-object
+ * by merging two configuration objects together.
+ *
+ * @param {Object} config1
+ * @param {Object} config2
+ * @returns {Object} New object resulting from merging config2 to config1
+ */
+module.exports = function mergeConfig(config1, config2) {
+  // eslint-disable-next-line no-param-reassign
+  config2 = config2 || {};
+  var config = {};
+
+  function getMergedValue(target, source) {
+    if (utils.isPlainObject(target) && utils.isPlainObject(source)) {
+      return utils.merge(target, source);
+    } else if (utils.isPlainObject(source)) {
+      return utils.merge({}, source);
+    } else if (utils.isArray(source)) {
+      return source.slice();
+    }
+    return source;
+  }
+
+  // eslint-disable-next-line consistent-return
+  function mergeDeepProperties(prop) {
+    if (!utils.isUndefined(config2[prop])) {
+      return getMergedValue(config1[prop], config2[prop]);
+    } else if (!utils.isUndefined(config1[prop])) {
+      return getMergedValue(undefined, config1[prop]);
+    }
+  }
+
+  // eslint-disable-next-line consistent-return
+  function valueFromConfig2(prop) {
+    if (!utils.isUndefined(config2[prop])) {
+      return getMergedValue(undefined, config2[prop]);
+    }
+  }
+
+  // eslint-disable-next-line consistent-return
+  function defaultToConfig2(prop) {
+    if (!utils.isUndefined(config2[prop])) {
+      return getMergedValue(undefined, config2[prop]);
+    } else if (!utils.isUndefined(config1[prop])) {
+      return getMergedValue(undefined, config1[prop]);
+    }
+  }
+
+  // eslint-disable-next-line consistent-return
+  function mergeDirectKeys(prop) {
+    if (prop in config2) {
+      return getMergedValue(config1[prop], config2[prop]);
+    } else if (prop in config1) {
+      return getMergedValue(undefined, config1[prop]);
+    }
+  }
+
+  var mergeMap = {
+    'url': valueFromConfig2,
+    'method': valueFromConfig2,
+    'data': valueFromConfig2,
+    'baseURL': defaultToConfig2,
+    'transformRequest': defaultToConfig2,
+    'transformResponse': defaultToConfig2,
+    'paramsSerializer': defaultToConfig2,
+    'timeout': defaultToConfig2,
+    'timeoutMessage': defaultToConfig2,
+    'withCredentials': defaultToConfig2,
+    'adapter': defaultToConfig2,
+    'responseType': defaultToConfig2,
+    'xsrfCookieName': defaultToConfig2,
+    'xsrfHeaderName': defaultToConfig2,
+    'onUploadProgress': defaultToConfig2,
+    'onDownloadProgress': defaultToConfig2,
+    'decompress': defaultToConfig2,
+    'maxContentLength': defaultToConfig2,
+    'maxBodyLength': defaultToConfig2,
+    'transport': defaultToConfig2,
+    'httpAgent': defaultToConfig2,
+    'httpsAgent': defaultToConfig2,
+    'cancelToken': defaultToConfig2,
+    'socketPath': defaultToConfig2,
+    'responseEncoding': defaultToConfig2,
+    'validateStatus': mergeDirectKeys
+  };
+
+  utils.forEach(Object.keys(config1).concat(Object.keys(config2)), function computeConfigValue(prop) {
+    var merge = mergeMap[prop] || mergeDeepProperties;
+    var configValue = merge(prop);
+    (utils.isUndefined(configValue) && merge !== mergeDirectKeys) || (config[prop] = configValue);
+  });
+
+  return config;
+};
+
+},{"../utils":"../../../node_modules/axios/lib/utils.js"}],"../../../node_modules/axios/lib/env/data.js":[function(require,module,exports) {
+module.exports = {
+  "version": "0.26.1"
+};
+},{}],"../../../node_modules/axios/lib/helpers/validator.js":[function(require,module,exports) {
+'use strict';
+
+var VERSION = require('../env/data').version;
+
+var validators = {};
+
+// eslint-disable-next-line func-names
+['object', 'boolean', 'number', 'function', 'string', 'symbol'].forEach(function(type, i) {
+  validators[type] = function validator(thing) {
+    return typeof thing === type || 'a' + (i < 1 ? 'n ' : ' ') + type;
+  };
+});
+
+var deprecatedWarnings = {};
+
+/**
+ * Transitional option validator
+ * @param {function|boolean?} validator - set to false if the transitional option has been removed
+ * @param {string?} version - deprecated version / removed since version
+ * @param {string?} message - some message with additional info
+ * @returns {function}
+ */
+validators.transitional = function transitional(validator, version, message) {
+  function formatMessage(opt, desc) {
+    return '[Axios v' + VERSION + '] Transitional option \'' + opt + '\'' + desc + (message ? '. ' + message : '');
+  }
+
+  // eslint-disable-next-line func-names
+  return function(value, opt, opts) {
+    if (validator === false) {
+      throw new Error(formatMessage(opt, ' has been removed' + (version ? ' in ' + version : '')));
+    }
+
+    if (version && !deprecatedWarnings[opt]) {
+      deprecatedWarnings[opt] = true;
+      // eslint-disable-next-line no-console
+      console.warn(
+        formatMessage(
+          opt,
+          ' has been deprecated since v' + version + ' and will be removed in the near future'
+        )
+      );
+    }
+
+    return validator ? validator(value, opt, opts) : true;
+  };
+};
+
+/**
+ * Assert object's properties type
+ * @param {object} options
+ * @param {object} schema
+ * @param {boolean?} allowUnknown
+ */
+
+function assertOptions(options, schema, allowUnknown) {
+  if (typeof options !== 'object') {
+    throw new TypeError('options must be an object');
+  }
+  var keys = Object.keys(options);
+  var i = keys.length;
+  while (i-- > 0) {
+    var opt = keys[i];
+    var validator = schema[opt];
+    if (validator) {
+      var value = options[opt];
+      var result = value === undefined || validator(value, opt, options);
+      if (result !== true) {
+        throw new TypeError('option ' + opt + ' must be ' + result);
+      }
+      continue;
+    }
+    if (allowUnknown !== true) {
+      throw Error('Unknown option ' + opt);
+    }
+  }
+}
+
+module.exports = {
+  assertOptions: assertOptions,
+  validators: validators
+};
+
+},{"../env/data":"../../../node_modules/axios/lib/env/data.js"}],"../../../node_modules/axios/lib/core/Axios.js":[function(require,module,exports) {
+'use strict';
+
+var utils = require('./../utils');
+var buildURL = require('../helpers/buildURL');
+var InterceptorManager = require('./InterceptorManager');
+var dispatchRequest = require('./dispatchRequest');
+var mergeConfig = require('./mergeConfig');
+var validator = require('../helpers/validator');
+
+var validators = validator.validators;
+/**
+ * Create a new instance of Axios
+ *
+ * @param {Object} instanceConfig The default config for the instance
+ */
+function Axios(instanceConfig) {
+  this.defaults = instanceConfig;
+  this.interceptors = {
+    request: new InterceptorManager(),
+    response: new InterceptorManager()
+  };
+}
+
+/**
+ * Dispatch a request
+ *
+ * @param {Object} config The config specific for this request (merged with this.defaults)
+ */
+Axios.prototype.request = function request(configOrUrl, config) {
+  /*eslint no-param-reassign:0*/
+  // Allow for axios('example/url'[, config]) a la fetch API
+  if (typeof configOrUrl === 'string') {
+    config = config || {};
+    config.url = configOrUrl;
+  } else {
+    config = configOrUrl || {};
+  }
+
+  config = mergeConfig(this.defaults, config);
+
+  // Set config.method
+  if (config.method) {
+    config.method = config.method.toLowerCase();
+  } else if (this.defaults.method) {
+    config.method = this.defaults.method.toLowerCase();
+  } else {
+    config.method = 'get';
+  }
+
+  var transitional = config.transitional;
+
+  if (transitional !== undefined) {
+    validator.assertOptions(transitional, {
+      silentJSONParsing: validators.transitional(validators.boolean),
+      forcedJSONParsing: validators.transitional(validators.boolean),
+      clarifyTimeoutError: validators.transitional(validators.boolean)
+    }, false);
+  }
+
+  // filter out skipped interceptors
+  var requestInterceptorChain = [];
+  var synchronousRequestInterceptors = true;
+  this.interceptors.request.forEach(function unshiftRequestInterceptors(interceptor) {
+    if (typeof interceptor.runWhen === 'function' && interceptor.runWhen(config) === false) {
+      return;
+    }
+
+    synchronousRequestInterceptors = synchronousRequestInterceptors && interceptor.synchronous;
+
+    requestInterceptorChain.unshift(interceptor.fulfilled, interceptor.rejected);
+  });
+
+  var responseInterceptorChain = [];
+  this.interceptors.response.forEach(function pushResponseInterceptors(interceptor) {
+    responseInterceptorChain.push(interceptor.fulfilled, interceptor.rejected);
+  });
+
+  var promise;
+
+  if (!synchronousRequestInterceptors) {
+    var chain = [dispatchRequest, undefined];
+
+    Array.prototype.unshift.apply(chain, requestInterceptorChain);
+    chain = chain.concat(responseInterceptorChain);
+
+    promise = Promise.resolve(config);
+    while (chain.length) {
+      promise = promise.then(chain.shift(), chain.shift());
+    }
+
+    return promise;
+  }
+
+
+  var newConfig = config;
+  while (requestInterceptorChain.length) {
+    var onFulfilled = requestInterceptorChain.shift();
+    var onRejected = requestInterceptorChain.shift();
+    try {
+      newConfig = onFulfilled(newConfig);
+    } catch (error) {
+      onRejected(error);
+      break;
+    }
+  }
+
+  try {
+    promise = dispatchRequest(newConfig);
+  } catch (error) {
+    return Promise.reject(error);
+  }
+
+  while (responseInterceptorChain.length) {
+    promise = promise.then(responseInterceptorChain.shift(), responseInterceptorChain.shift());
+  }
+
+  return promise;
+};
+
+Axios.prototype.getUri = function getUri(config) {
+  config = mergeConfig(this.defaults, config);
+  return buildURL(config.url, config.params, config.paramsSerializer).replace(/^\?/, '');
+};
+
+// Provide aliases for supported request methods
+utils.forEach(['delete', 'get', 'head', 'options'], function forEachMethodNoData(method) {
+  /*eslint func-names:0*/
+  Axios.prototype[method] = function(url, config) {
+    return this.request(mergeConfig(config || {}, {
+      method: method,
+      url: url,
+      data: (config || {}).data
+    }));
+  };
+});
+
+utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
+  /*eslint func-names:0*/
+  Axios.prototype[method] = function(url, data, config) {
+    return this.request(mergeConfig(config || {}, {
+      method: method,
+      url: url,
+      data: data
+    }));
+  };
+});
+
+module.exports = Axios;
+
+},{"./../utils":"../../../node_modules/axios/lib/utils.js","../helpers/buildURL":"../../../node_modules/axios/lib/helpers/buildURL.js","./InterceptorManager":"../../../node_modules/axios/lib/core/InterceptorManager.js","./dispatchRequest":"../../../node_modules/axios/lib/core/dispatchRequest.js","./mergeConfig":"../../../node_modules/axios/lib/core/mergeConfig.js","../helpers/validator":"../../../node_modules/axios/lib/helpers/validator.js"}],"../../../node_modules/axios/lib/cancel/CancelToken.js":[function(require,module,exports) {
+'use strict';
+
+var Cancel = require('./Cancel');
+
+/**
+ * A `CancelToken` is an object that can be used to request cancellation of an operation.
+ *
+ * @class
+ * @param {Function} executor The executor function.
+ */
+function CancelToken(executor) {
+  if (typeof executor !== 'function') {
+    throw new TypeError('executor must be a function.');
+  }
+
+  var resolvePromise;
+
+  this.promise = new Promise(function promiseExecutor(resolve) {
+    resolvePromise = resolve;
+  });
+
+  var token = this;
+
+  // eslint-disable-next-line func-names
+  this.promise.then(function(cancel) {
+    if (!token._listeners) return;
+
+    var i;
+    var l = token._listeners.length;
+
+    for (i = 0; i < l; i++) {
+      token._listeners[i](cancel);
+    }
+    token._listeners = null;
+  });
+
+  // eslint-disable-next-line func-names
+  this.promise.then = function(onfulfilled) {
+    var _resolve;
+    // eslint-disable-next-line func-names
+    var promise = new Promise(function(resolve) {
+      token.subscribe(resolve);
+      _resolve = resolve;
+    }).then(onfulfilled);
+
+    promise.cancel = function reject() {
+      token.unsubscribe(_resolve);
+    };
+
+    return promise;
+  };
+
+  executor(function cancel(message) {
+    if (token.reason) {
+      // Cancellation has already been requested
+      return;
+    }
+
+    token.reason = new Cancel(message);
+    resolvePromise(token.reason);
+  });
+}
+
+/**
+ * Throws a `Cancel` if cancellation has been requested.
+ */
+CancelToken.prototype.throwIfRequested = function throwIfRequested() {
+  if (this.reason) {
+    throw this.reason;
+  }
+};
+
+/**
+ * Subscribe to the cancel signal
+ */
+
+CancelToken.prototype.subscribe = function subscribe(listener) {
+  if (this.reason) {
+    listener(this.reason);
+    return;
+  }
+
+  if (this._listeners) {
+    this._listeners.push(listener);
+  } else {
+    this._listeners = [listener];
+  }
+};
+
+/**
+ * Unsubscribe from the cancel signal
+ */
+
+CancelToken.prototype.unsubscribe = function unsubscribe(listener) {
+  if (!this._listeners) {
+    return;
+  }
+  var index = this._listeners.indexOf(listener);
+  if (index !== -1) {
+    this._listeners.splice(index, 1);
+  }
+};
+
+/**
+ * Returns an object that contains a new `CancelToken` and a function that, when called,
+ * cancels the `CancelToken`.
+ */
+CancelToken.source = function source() {
+  var cancel;
+  var token = new CancelToken(function executor(c) {
+    cancel = c;
+  });
+  return {
+    token: token,
+    cancel: cancel
+  };
+};
+
+module.exports = CancelToken;
+
+},{"./Cancel":"../../../node_modules/axios/lib/cancel/Cancel.js"}],"../../../node_modules/axios/lib/helpers/spread.js":[function(require,module,exports) {
+'use strict';
+
+/**
+ * Syntactic sugar for invoking a function and expanding an array for arguments.
+ *
+ * Common use case would be to use `Function.prototype.apply`.
+ *
+ *  ```js
+ *  function f(x, y, z) {}
+ *  var args = [1, 2, 3];
+ *  f.apply(null, args);
+ *  ```
+ *
+ * With `spread` this example can be re-written.
+ *
+ *  ```js
+ *  spread(function(x, y, z) {})([1, 2, 3]);
+ *  ```
+ *
+ * @param {Function} callback
+ * @returns {Function}
+ */
+module.exports = function spread(callback) {
+  return function wrap(arr) {
+    return callback.apply(null, arr);
+  };
+};
+
+},{}],"../../../node_modules/axios/lib/helpers/isAxiosError.js":[function(require,module,exports) {
+'use strict';
+
+var utils = require('./../utils');
+
+/**
+ * Determines whether the payload is an error thrown by Axios
+ *
+ * @param {*} payload The value to test
+ * @returns {boolean} True if the payload is an error thrown by Axios, otherwise false
+ */
+module.exports = function isAxiosError(payload) {
+  return utils.isObject(payload) && (payload.isAxiosError === true);
+};
+
+},{"./../utils":"../../../node_modules/axios/lib/utils.js"}],"../../../node_modules/axios/lib/axios.js":[function(require,module,exports) {
+'use strict';
+
+var utils = require('./utils');
+var bind = require('./helpers/bind');
+var Axios = require('./core/Axios');
+var mergeConfig = require('./core/mergeConfig');
+var defaults = require('./defaults');
+
+/**
+ * Create an instance of Axios
+ *
+ * @param {Object} defaultConfig The default config for the instance
+ * @return {Axios} A new instance of Axios
+ */
+function createInstance(defaultConfig) {
+  var context = new Axios(defaultConfig);
+  var instance = bind(Axios.prototype.request, context);
+
+  // Copy axios.prototype to instance
+  utils.extend(instance, Axios.prototype, context);
+
+  // Copy context to instance
+  utils.extend(instance, context);
+
+  // Factory for creating new instances
+  instance.create = function create(instanceConfig) {
+    return createInstance(mergeConfig(defaultConfig, instanceConfig));
+  };
+
+  return instance;
+}
+
+// Create the default instance to be exported
+var axios = createInstance(defaults);
+
+// Expose Axios class to allow class inheritance
+axios.Axios = Axios;
+
+// Expose Cancel & CancelToken
+axios.Cancel = require('./cancel/Cancel');
+axios.CancelToken = require('./cancel/CancelToken');
+axios.isCancel = require('./cancel/isCancel');
+axios.VERSION = require('./env/data').version;
+
+// Expose all/spread
+axios.all = function all(promises) {
+  return Promise.all(promises);
+};
+axios.spread = require('./helpers/spread');
+
+// Expose isAxiosError
+axios.isAxiosError = require('./helpers/isAxiosError');
+
+module.exports = axios;
+
+// Allow use of default import syntax in TypeScript
+module.exports.default = axios;
+
+},{"./utils":"../../../node_modules/axios/lib/utils.js","./helpers/bind":"../../../node_modules/axios/lib/helpers/bind.js","./core/Axios":"../../../node_modules/axios/lib/core/Axios.js","./core/mergeConfig":"../../../node_modules/axios/lib/core/mergeConfig.js","./defaults":"../../../node_modules/axios/lib/defaults/index.js","./cancel/Cancel":"../../../node_modules/axios/lib/cancel/Cancel.js","./cancel/CancelToken":"../../../node_modules/axios/lib/cancel/CancelToken.js","./cancel/isCancel":"../../../node_modules/axios/lib/cancel/isCancel.js","./env/data":"../../../node_modules/axios/lib/env/data.js","./helpers/spread":"../../../node_modules/axios/lib/helpers/spread.js","./helpers/isAxiosError":"../../../node_modules/axios/lib/helpers/isAxiosError.js"}],"../../../node_modules/axios/index.js":[function(require,module,exports) {
+module.exports = require('./lib/axios');
+},{"./lib/axios":"../../../node_modules/axios/lib/axios.js"}],"alerts.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.showAlert = exports.hideAlert = void 0;
+
+/* eslint-disable */
+var hideAlert = function hideAlert() {
+  var el = document.querySelector('.alert');
+  if (el) el.parentElement.removeChild(el);
+};
+
+exports.hideAlert = hideAlert;
+
+var showAlert = function showAlert(type, msg) {
+  hideAlert();
+  var markup = " <div class=\"alert alert-".concat(type, " alert-has-icon\" >\n    <div class=\"alert-icon\"><i class=\"far fa-lightbulb\"></i></div>\n    <div class=\"alert-body\">\n      <div class=\"alert-title\" >").concat(type, "</div>\n      ").concat(msg, "\n    </div>\n  </div>");
+  document.querySelector('body').insertAdjacentHTML('afterbegin', markup);
+  window.setTimeout(hideAlert, 7000);
+};
+
+exports.showAlert = showAlert;
+},{}],"custom.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.logout = exports.login = void 0;
+
+require("core-js/modules/es6.array.copy-within.js");
+
+require("core-js/modules/es6.array.fill.js");
+
+require("core-js/modules/es6.array.filter.js");
+
+require("core-js/modules/es6.array.find.js");
+
+require("core-js/modules/es6.array.find-index.js");
+
+require("core-js/modules/es7.array.flat-map.js");
+
+require("core-js/modules/es6.array.from.js");
+
+require("core-js/modules/es7.array.includes.js");
+
+require("core-js/modules/es6.array.iterator.js");
+
+require("core-js/modules/es6.array.map.js");
+
+require("core-js/modules/es6.array.of.js");
+
+require("core-js/modules/es6.array.slice.js");
+
+require("core-js/modules/es6.array.sort.js");
+
+require("core-js/modules/es6.array.species.js");
+
+require("core-js/modules/es6.date.to-primitive.js");
+
+require("core-js/modules/es6.function.has-instance.js");
+
+require("core-js/modules/es6.function.name.js");
+
+require("core-js/modules/es6.map.js");
+
+require("core-js/modules/es6.math.acosh.js");
+
+require("core-js/modules/es6.math.asinh.js");
+
+require("core-js/modules/es6.math.atanh.js");
+
+require("core-js/modules/es6.math.cbrt.js");
+
+require("core-js/modules/es6.math.clz32.js");
+
+require("core-js/modules/es6.math.cosh.js");
+
+require("core-js/modules/es6.math.expm1.js");
+
+require("core-js/modules/es6.math.fround.js");
+
+require("core-js/modules/es6.math.hypot.js");
+
+require("core-js/modules/es6.math.imul.js");
+
+require("core-js/modules/es6.math.log1p.js");
+
+require("core-js/modules/es6.math.log10.js");
+
+require("core-js/modules/es6.math.log2.js");
+
+require("core-js/modules/es6.math.sign.js");
+
+require("core-js/modules/es6.math.sinh.js");
+
+require("core-js/modules/es6.math.tanh.js");
+
+require("core-js/modules/es6.math.trunc.js");
+
+require("core-js/modules/es6.number.constructor.js");
+
+require("core-js/modules/es6.number.epsilon.js");
+
+require("core-js/modules/es6.number.is-finite.js");
+
+require("core-js/modules/es6.number.is-integer.js");
+
+require("core-js/modules/es6.number.is-nan.js");
+
+require("core-js/modules/es6.number.is-safe-integer.js");
+
+require("core-js/modules/es6.number.max-safe-integer.js");
+
+require("core-js/modules/es6.number.min-safe-integer.js");
+
+require("core-js/modules/es6.number.parse-float.js");
+
+require("core-js/modules/es6.number.parse-int.js");
+
+require("core-js/modules/es6.object.assign.js");
+
+require("core-js/modules/es7.object.define-getter.js");
+
+require("core-js/modules/es7.object.define-setter.js");
+
+require("core-js/modules/es7.object.entries.js");
+
+require("core-js/modules/es6.object.freeze.js");
+
+require("core-js/modules/es6.object.get-own-property-descriptor.js");
+
+require("core-js/modules/es7.object.get-own-property-descriptors.js");
+
+require("core-js/modules/es6.object.get-own-property-names.js");
+
+require("core-js/modules/es6.object.get-prototype-of.js");
+
+require("core-js/modules/es7.object.lookup-getter.js");
+
+require("core-js/modules/es7.object.lookup-setter.js");
+
+require("core-js/modules/es6.object.prevent-extensions.js");
+
+require("core-js/modules/es6.object.to-string.js");
+
+require("core-js/modules/es6.object.is.js");
+
+require("core-js/modules/es6.object.is-frozen.js");
+
+require("core-js/modules/es6.object.is-sealed.js");
+
+require("core-js/modules/es6.object.is-extensible.js");
+
+require("core-js/modules/es6.object.keys.js");
+
+require("core-js/modules/es6.object.seal.js");
+
+require("core-js/modules/es6.object.set-prototype-of.js");
+
+require("core-js/modules/es7.object.values.js");
+
+require("core-js/modules/es6.promise.js");
+
+require("core-js/modules/es7.promise.finally.js");
+
+require("core-js/modules/es6.reflect.apply.js");
+
+require("core-js/modules/es6.reflect.construct.js");
+
+require("core-js/modules/es6.reflect.define-property.js");
+
+require("core-js/modules/es6.reflect.delete-property.js");
+
+require("core-js/modules/es6.reflect.get.js");
+
+require("core-js/modules/es6.reflect.get-own-property-descriptor.js");
+
+require("core-js/modules/es6.reflect.get-prototype-of.js");
+
+require("core-js/modules/es6.reflect.has.js");
+
+require("core-js/modules/es6.reflect.is-extensible.js");
+
+require("core-js/modules/es6.reflect.own-keys.js");
+
+require("core-js/modules/es6.reflect.prevent-extensions.js");
+
+require("core-js/modules/es6.reflect.set.js");
+
+require("core-js/modules/es6.reflect.set-prototype-of.js");
+
+require("core-js/modules/es6.regexp.constructor.js");
+
+require("core-js/modules/es6.regexp.flags.js");
+
+require("core-js/modules/es6.regexp.match.js");
+
+require("core-js/modules/es6.regexp.replace.js");
+
+require("core-js/modules/es6.regexp.split.js");
+
+require("core-js/modules/es6.regexp.search.js");
+
+require("core-js/modules/es6.regexp.to-string.js");
+
+require("core-js/modules/es6.set.js");
+
+require("core-js/modules/es6.symbol.js");
+
+require("core-js/modules/es7.symbol.async-iterator.js");
+
+require("core-js/modules/es6.string.anchor.js");
+
+require("core-js/modules/es6.string.big.js");
+
+require("core-js/modules/es6.string.blink.js");
+
+require("core-js/modules/es6.string.bold.js");
+
+require("core-js/modules/es6.string.code-point-at.js");
+
+require("core-js/modules/es6.string.ends-with.js");
+
+require("core-js/modules/es6.string.fixed.js");
+
+require("core-js/modules/es6.string.fontcolor.js");
+
+require("core-js/modules/es6.string.fontsize.js");
+
+require("core-js/modules/es6.string.from-code-point.js");
+
+require("core-js/modules/es6.string.includes.js");
+
+require("core-js/modules/es6.string.italics.js");
+
+require("core-js/modules/es6.string.iterator.js");
+
+require("core-js/modules/es6.string.link.js");
+
+require("core-js/modules/es7.string.pad-start.js");
+
+require("core-js/modules/es7.string.pad-end.js");
+
+require("core-js/modules/es6.string.raw.js");
+
+require("core-js/modules/es6.string.repeat.js");
+
+require("core-js/modules/es6.string.small.js");
+
+require("core-js/modules/es6.string.starts-with.js");
+
+require("core-js/modules/es6.string.strike.js");
+
+require("core-js/modules/es6.string.sub.js");
+
+require("core-js/modules/es6.string.sup.js");
+
+require("core-js/modules/es7.string.trim-left.js");
+
+require("core-js/modules/es7.string.trim-right.js");
+
+require("core-js/modules/es6.typed.array-buffer.js");
+
+require("core-js/modules/es6.typed.int8-array.js");
+
+require("core-js/modules/es6.typed.uint8-array.js");
+
+require("core-js/modules/es6.typed.uint8-clamped-array.js");
+
+require("core-js/modules/es6.typed.int16-array.js");
+
+require("core-js/modules/es6.typed.uint16-array.js");
+
+require("core-js/modules/es6.typed.int32-array.js");
+
+require("core-js/modules/es6.typed.uint32-array.js");
+
+require("core-js/modules/es6.typed.float32-array.js");
+
+require("core-js/modules/es6.typed.float64-array.js");
+
+require("core-js/modules/es6.weak-map.js");
+
+require("core-js/modules/es6.weak-set.js");
+
+require("core-js/modules/web.timers.js");
+
+require("core-js/modules/web.immediate.js");
+
+require("core-js/modules/web.dom.iterable.js");
+
+require("regenerator-runtime/runtime.js");
+
+var _axios = _interopRequireDefault(require("axios"));
+
+var _alerts = require("./alerts");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+var login = /*#__PURE__*/function () {
+  var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(employeeNumber, password) {
+    var res;
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            console.log(employeeNumber, password);
+            _axios.default.defaults.withCredentials = true;
+            _context.prev = 2;
+            _context.next = 5;
+            return (0, _axios.default)({
+              method: 'POST',
+              url: '/api/v1/users/login',
+              data: {
+                employeeNumber: employeeNumber,
+                password: password
+              },
+              withCredentials: true //correct
+
+            });
+
+          case 5:
+            res = _context.sent;
+
+            if (res.data.status === 'success') {
+              //
+              (0, _alerts.showAlert)('success', 'Logged in Succesfully');
+              window.setTimeout(function () {
+                location.assign('/metallurgical');
+              }, 1000);
+            }
+
+            _context.next = 12;
+            break;
+
+          case 9:
+            _context.prev = 9;
+            _context.t0 = _context["catch"](2);
+            (0, _alerts.showAlert)('danger', _context.t0.response.data.message);
+
+          case 12:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee, null, [[2, 9]]);
+  }));
+
+  return function login(_x, _x2) {
+    return _ref.apply(this, arguments);
+  };
+}();
+
+exports.login = login;
+
+var logout = /*#__PURE__*/function () {
+  var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+    var res;
+    return regeneratorRuntime.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            _context2.prev = 0;
+            _context2.next = 3;
+            return (0, _axios.default)({
+              method: 'GET',
+              url: '/api/v1/users/logout'
+            });
+
+          case 3:
+            res = _context2.sent;
+            if (res.data.status = 'success') location.reload(true);
+            _context2.next = 10;
+            break;
+
+          case 7:
+            _context2.prev = 7;
+            _context2.t0 = _context2["catch"](0);
+            (0, _alerts.showAlert)('danger', 'Error logging out! Try again later');
+
+          case 10:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, _callee2, null, [[0, 7]]);
+  }));
+
+  return function logout() {
+    return _ref2.apply(this, arguments);
+  };
+}(); // document
+//   .querySelector('.card-body')
+//   .getElementsByTagName('.login-button', () => {
+//     alert('hi');
+//   });
+
+
+exports.logout = logout;
+},{"core-js/modules/es6.array.copy-within.js":"../../../node_modules/core-js/modules/es6.array.copy-within.js","core-js/modules/es6.array.fill.js":"../../../node_modules/core-js/modules/es6.array.fill.js","core-js/modules/es6.array.filter.js":"../../../node_modules/core-js/modules/es6.array.filter.js","core-js/modules/es6.array.find.js":"../../../node_modules/core-js/modules/es6.array.find.js","core-js/modules/es6.array.find-index.js":"../../../node_modules/core-js/modules/es6.array.find-index.js","core-js/modules/es7.array.flat-map.js":"../../../node_modules/core-js/modules/es7.array.flat-map.js","core-js/modules/es6.array.from.js":"../../../node_modules/core-js/modules/es6.array.from.js","core-js/modules/es7.array.includes.js":"../../../node_modules/core-js/modules/es7.array.includes.js","core-js/modules/es6.array.iterator.js":"../../../node_modules/core-js/modules/es6.array.iterator.js","core-js/modules/es6.array.map.js":"../../../node_modules/core-js/modules/es6.array.map.js","core-js/modules/es6.array.of.js":"../../../node_modules/core-js/modules/es6.array.of.js","core-js/modules/es6.array.slice.js":"../../../node_modules/core-js/modules/es6.array.slice.js","core-js/modules/es6.array.sort.js":"../../../node_modules/core-js/modules/es6.array.sort.js","core-js/modules/es6.array.species.js":"../../../node_modules/core-js/modules/es6.array.species.js","core-js/modules/es6.date.to-primitive.js":"../../../node_modules/core-js/modules/es6.date.to-primitive.js","core-js/modules/es6.function.has-instance.js":"../../../node_modules/core-js/modules/es6.function.has-instance.js","core-js/modules/es6.function.name.js":"../../../node_modules/core-js/modules/es6.function.name.js","core-js/modules/es6.map.js":"../../../node_modules/core-js/modules/es6.map.js","core-js/modules/es6.math.acosh.js":"../../../node_modules/core-js/modules/es6.math.acosh.js","core-js/modules/es6.math.asinh.js":"../../../node_modules/core-js/modules/es6.math.asinh.js","core-js/modules/es6.math.atanh.js":"../../../node_modules/core-js/modules/es6.math.atanh.js","core-js/modules/es6.math.cbrt.js":"../../../node_modules/core-js/modules/es6.math.cbrt.js","core-js/modules/es6.math.clz32.js":"../../../node_modules/core-js/modules/es6.math.clz32.js","core-js/modules/es6.math.cosh.js":"../../../node_modules/core-js/modules/es6.math.cosh.js","core-js/modules/es6.math.expm1.js":"../../../node_modules/core-js/modules/es6.math.expm1.js","core-js/modules/es6.math.fround.js":"../../../node_modules/core-js/modules/es6.math.fround.js","core-js/modules/es6.math.hypot.js":"../../../node_modules/core-js/modules/es6.math.hypot.js","core-js/modules/es6.math.imul.js":"../../../node_modules/core-js/modules/es6.math.imul.js","core-js/modules/es6.math.log1p.js":"../../../node_modules/core-js/modules/es6.math.log1p.js","core-js/modules/es6.math.log10.js":"../../../node_modules/core-js/modules/es6.math.log10.js","core-js/modules/es6.math.log2.js":"../../../node_modules/core-js/modules/es6.math.log2.js","core-js/modules/es6.math.sign.js":"../../../node_modules/core-js/modules/es6.math.sign.js","core-js/modules/es6.math.sinh.js":"../../../node_modules/core-js/modules/es6.math.sinh.js","core-js/modules/es6.math.tanh.js":"../../../node_modules/core-js/modules/es6.math.tanh.js","core-js/modules/es6.math.trunc.js":"../../../node_modules/core-js/modules/es6.math.trunc.js","core-js/modules/es6.number.constructor.js":"../../../node_modules/core-js/modules/es6.number.constructor.js","core-js/modules/es6.number.epsilon.js":"../../../node_modules/core-js/modules/es6.number.epsilon.js","core-js/modules/es6.number.is-finite.js":"../../../node_modules/core-js/modules/es6.number.is-finite.js","core-js/modules/es6.number.is-integer.js":"../../../node_modules/core-js/modules/es6.number.is-integer.js","core-js/modules/es6.number.is-nan.js":"../../../node_modules/core-js/modules/es6.number.is-nan.js","core-js/modules/es6.number.is-safe-integer.js":"../../../node_modules/core-js/modules/es6.number.is-safe-integer.js","core-js/modules/es6.number.max-safe-integer.js":"../../../node_modules/core-js/modules/es6.number.max-safe-integer.js","core-js/modules/es6.number.min-safe-integer.js":"../../../node_modules/core-js/modules/es6.number.min-safe-integer.js","core-js/modules/es6.number.parse-float.js":"../../../node_modules/core-js/modules/es6.number.parse-float.js","core-js/modules/es6.number.parse-int.js":"../../../node_modules/core-js/modules/es6.number.parse-int.js","core-js/modules/es6.object.assign.js":"../../../node_modules/core-js/modules/es6.object.assign.js","core-js/modules/es7.object.define-getter.js":"../../../node_modules/core-js/modules/es7.object.define-getter.js","core-js/modules/es7.object.define-setter.js":"../../../node_modules/core-js/modules/es7.object.define-setter.js","core-js/modules/es7.object.entries.js":"../../../node_modules/core-js/modules/es7.object.entries.js","core-js/modules/es6.object.freeze.js":"../../../node_modules/core-js/modules/es6.object.freeze.js","core-js/modules/es6.object.get-own-property-descriptor.js":"../../../node_modules/core-js/modules/es6.object.get-own-property-descriptor.js","core-js/modules/es7.object.get-own-property-descriptors.js":"../../../node_modules/core-js/modules/es7.object.get-own-property-descriptors.js","core-js/modules/es6.object.get-own-property-names.js":"../../../node_modules/core-js/modules/es6.object.get-own-property-names.js","core-js/modules/es6.object.get-prototype-of.js":"../../../node_modules/core-js/modules/es6.object.get-prototype-of.js","core-js/modules/es7.object.lookup-getter.js":"../../../node_modules/core-js/modules/es7.object.lookup-getter.js","core-js/modules/es7.object.lookup-setter.js":"../../../node_modules/core-js/modules/es7.object.lookup-setter.js","core-js/modules/es6.object.prevent-extensions.js":"../../../node_modules/core-js/modules/es6.object.prevent-extensions.js","core-js/modules/es6.object.to-string.js":"../../../node_modules/core-js/modules/es6.object.to-string.js","core-js/modules/es6.object.is.js":"../../../node_modules/core-js/modules/es6.object.is.js","core-js/modules/es6.object.is-frozen.js":"../../../node_modules/core-js/modules/es6.object.is-frozen.js","core-js/modules/es6.object.is-sealed.js":"../../../node_modules/core-js/modules/es6.object.is-sealed.js","core-js/modules/es6.object.is-extensible.js":"../../../node_modules/core-js/modules/es6.object.is-extensible.js","core-js/modules/es6.object.keys.js":"../../../node_modules/core-js/modules/es6.object.keys.js","core-js/modules/es6.object.seal.js":"../../../node_modules/core-js/modules/es6.object.seal.js","core-js/modules/es6.object.set-prototype-of.js":"../../../node_modules/core-js/modules/es6.object.set-prototype-of.js","core-js/modules/es7.object.values.js":"../../../node_modules/core-js/modules/es7.object.values.js","core-js/modules/es6.promise.js":"../../../node_modules/core-js/modules/es6.promise.js","core-js/modules/es7.promise.finally.js":"../../../node_modules/core-js/modules/es7.promise.finally.js","core-js/modules/es6.reflect.apply.js":"../../../node_modules/core-js/modules/es6.reflect.apply.js","core-js/modules/es6.reflect.construct.js":"../../../node_modules/core-js/modules/es6.reflect.construct.js","core-js/modules/es6.reflect.define-property.js":"../../../node_modules/core-js/modules/es6.reflect.define-property.js","core-js/modules/es6.reflect.delete-property.js":"../../../node_modules/core-js/modules/es6.reflect.delete-property.js","core-js/modules/es6.reflect.get.js":"../../../node_modules/core-js/modules/es6.reflect.get.js","core-js/modules/es6.reflect.get-own-property-descriptor.js":"../../../node_modules/core-js/modules/es6.reflect.get-own-property-descriptor.js","core-js/modules/es6.reflect.get-prototype-of.js":"../../../node_modules/core-js/modules/es6.reflect.get-prototype-of.js","core-js/modules/es6.reflect.has.js":"../../../node_modules/core-js/modules/es6.reflect.has.js","core-js/modules/es6.reflect.is-extensible.js":"../../../node_modules/core-js/modules/es6.reflect.is-extensible.js","core-js/modules/es6.reflect.own-keys.js":"../../../node_modules/core-js/modules/es6.reflect.own-keys.js","core-js/modules/es6.reflect.prevent-extensions.js":"../../../node_modules/core-js/modules/es6.reflect.prevent-extensions.js","core-js/modules/es6.reflect.set.js":"../../../node_modules/core-js/modules/es6.reflect.set.js","core-js/modules/es6.reflect.set-prototype-of.js":"../../../node_modules/core-js/modules/es6.reflect.set-prototype-of.js","core-js/modules/es6.regexp.constructor.js":"../../../node_modules/core-js/modules/es6.regexp.constructor.js","core-js/modules/es6.regexp.flags.js":"../../../node_modules/core-js/modules/es6.regexp.flags.js","core-js/modules/es6.regexp.match.js":"../../../node_modules/core-js/modules/es6.regexp.match.js","core-js/modules/es6.regexp.replace.js":"../../../node_modules/core-js/modules/es6.regexp.replace.js","core-js/modules/es6.regexp.split.js":"../../../node_modules/core-js/modules/es6.regexp.split.js","core-js/modules/es6.regexp.search.js":"../../../node_modules/core-js/modules/es6.regexp.search.js","core-js/modules/es6.regexp.to-string.js":"../../../node_modules/core-js/modules/es6.regexp.to-string.js","core-js/modules/es6.set.js":"../../../node_modules/core-js/modules/es6.set.js","core-js/modules/es6.symbol.js":"../../../node_modules/core-js/modules/es6.symbol.js","core-js/modules/es7.symbol.async-iterator.js":"../../../node_modules/core-js/modules/es7.symbol.async-iterator.js","core-js/modules/es6.string.anchor.js":"../../../node_modules/core-js/modules/es6.string.anchor.js","core-js/modules/es6.string.big.js":"../../../node_modules/core-js/modules/es6.string.big.js","core-js/modules/es6.string.blink.js":"../../../node_modules/core-js/modules/es6.string.blink.js","core-js/modules/es6.string.bold.js":"../../../node_modules/core-js/modules/es6.string.bold.js","core-js/modules/es6.string.code-point-at.js":"../../../node_modules/core-js/modules/es6.string.code-point-at.js","core-js/modules/es6.string.ends-with.js":"../../../node_modules/core-js/modules/es6.string.ends-with.js","core-js/modules/es6.string.fixed.js":"../../../node_modules/core-js/modules/es6.string.fixed.js","core-js/modules/es6.string.fontcolor.js":"../../../node_modules/core-js/modules/es6.string.fontcolor.js","core-js/modules/es6.string.fontsize.js":"../../../node_modules/core-js/modules/es6.string.fontsize.js","core-js/modules/es6.string.from-code-point.js":"../../../node_modules/core-js/modules/es6.string.from-code-point.js","core-js/modules/es6.string.includes.js":"../../../node_modules/core-js/modules/es6.string.includes.js","core-js/modules/es6.string.italics.js":"../../../node_modules/core-js/modules/es6.string.italics.js","core-js/modules/es6.string.iterator.js":"../../../node_modules/core-js/modules/es6.string.iterator.js","core-js/modules/es6.string.link.js":"../../../node_modules/core-js/modules/es6.string.link.js","core-js/modules/es7.string.pad-start.js":"../../../node_modules/core-js/modules/es7.string.pad-start.js","core-js/modules/es7.string.pad-end.js":"../../../node_modules/core-js/modules/es7.string.pad-end.js","core-js/modules/es6.string.raw.js":"../../../node_modules/core-js/modules/es6.string.raw.js","core-js/modules/es6.string.repeat.js":"../../../node_modules/core-js/modules/es6.string.repeat.js","core-js/modules/es6.string.small.js":"../../../node_modules/core-js/modules/es6.string.small.js","core-js/modules/es6.string.starts-with.js":"../../../node_modules/core-js/modules/es6.string.starts-with.js","core-js/modules/es6.string.strike.js":"../../../node_modules/core-js/modules/es6.string.strike.js","core-js/modules/es6.string.sub.js":"../../../node_modules/core-js/modules/es6.string.sub.js","core-js/modules/es6.string.sup.js":"../../../node_modules/core-js/modules/es6.string.sup.js","core-js/modules/es7.string.trim-left.js":"../../../node_modules/core-js/modules/es7.string.trim-left.js","core-js/modules/es7.string.trim-right.js":"../../../node_modules/core-js/modules/es7.string.trim-right.js","core-js/modules/es6.typed.array-buffer.js":"../../../node_modules/core-js/modules/es6.typed.array-buffer.js","core-js/modules/es6.typed.int8-array.js":"../../../node_modules/core-js/modules/es6.typed.int8-array.js","core-js/modules/es6.typed.uint8-array.js":"../../../node_modules/core-js/modules/es6.typed.uint8-array.js","core-js/modules/es6.typed.uint8-clamped-array.js":"../../../node_modules/core-js/modules/es6.typed.uint8-clamped-array.js","core-js/modules/es6.typed.int16-array.js":"../../../node_modules/core-js/modules/es6.typed.int16-array.js","core-js/modules/es6.typed.uint16-array.js":"../../../node_modules/core-js/modules/es6.typed.uint16-array.js","core-js/modules/es6.typed.int32-array.js":"../../../node_modules/core-js/modules/es6.typed.int32-array.js","core-js/modules/es6.typed.uint32-array.js":"../../../node_modules/core-js/modules/es6.typed.uint32-array.js","core-js/modules/es6.typed.float32-array.js":"../../../node_modules/core-js/modules/es6.typed.float32-array.js","core-js/modules/es6.typed.float64-array.js":"../../../node_modules/core-js/modules/es6.typed.float64-array.js","core-js/modules/es6.weak-map.js":"../../../node_modules/core-js/modules/es6.weak-map.js","core-js/modules/es6.weak-set.js":"../../../node_modules/core-js/modules/es6.weak-set.js","core-js/modules/web.timers.js":"../../../node_modules/core-js/modules/web.timers.js","core-js/modules/web.immediate.js":"../../../node_modules/core-js/modules/web.immediate.js","core-js/modules/web.dom.iterable.js":"../../../node_modules/core-js/modules/web.dom.iterable.js","regenerator-runtime/runtime.js":"../../../node_modules/regenerator-runtime/runtime.js","axios":"../../../node_modules/axios/index.js","./alerts":"alerts.js"}],"updateSettings.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.updatePumpData = exports.updateMetalData = void 0;
+
+var _axios = _interopRequireDefault(require("axios"));
+
+var _alerts = require("/alerts");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+// export const updateData = async (name, email) => {
+//   try {
+//     const res = await axios({
+//       method: 'PATCH',
+//       url: 'http://localhost:3000/api/v1/users/updateMe',
+//       data: {
+//         name
+//       }
+//     });
+//     if (res.data.status === 'success') {
+//       showAlert('success', 'Profile updated successfully');
+//     }
+//   } catch (err) {
+//     showAlert('danger', err.response.data.message);
+//   }
+// };
+var updateMetalData = /*#__PURE__*/function () {
+  var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(data) {
+    var res;
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.prev = 0;
+            _context.next = 3;
+            return (0, _axios.default)({
+              method: 'POST',
+              url: '/api/v1/metallurgical',
+              data: data
+            });
+
+          case 3:
+            res = _context.sent;
+
+            if (res.data.status === 'success') {
+              (0, _alerts.showAlert)('success', 'Metal data updated successfully');
+              console.log(res.data); // window.setTimeout(() => {
+              //   location.assign('/metallurgical');
+              // }, 1000);
+            }
+
+            _context.next = 11;
+            break;
+
+          case 7:
+            _context.prev = 7;
+            _context.t0 = _context["catch"](0);
+            console.log(_context.t0.response.data.message);
+            (0, _alerts.showAlert)('danger', _context.t0.response.data.message);
+
+          case 11:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee, null, [[0, 7]]);
+  }));
+
+  return function updateMetalData(_x) {
+    return _ref.apply(this, arguments);
+  };
+}();
+
+exports.updateMetalData = updateMetalData;
+
+var updatePumpData = /*#__PURE__*/function () {
+  var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(data) {
+    var res;
+    return regeneratorRuntime.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            _context2.prev = 0;
+            _context2.next = 3;
+            return (0, _axios.default)({
+              method: 'POST',
+              url: '/api/v1/pump',
+              data: data
+            });
+
+          case 3:
+            res = _context2.sent;
+
+            if (res.data.status === 'success') {
+              (0, _alerts.showAlert)('success', 'Pump data upladed successfully');
+              console.log(res.data); // window.setTimeout(() => {
+              //   location.assign('/metallurgical');
+              // }, 1000);
+            }
+
+            _context2.next = 12;
+            break;
+
+          case 7:
+            _context2.prev = 7;
+            _context2.t0 = _context2["catch"](0);
+            console.log(data.body);
+            console.log(_context2.t0.response.data.message);
+            (0, _alerts.showAlert)('danger', _context2.t0.response.data.message);
+
+          case 12:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, _callee2, null, [[0, 7]]);
+  }));
+
+  return function updatePumpData(_x2) {
+    return _ref2.apply(this, arguments);
+  };
+}();
+
+exports.updatePumpData = updatePumpData;
+},{"axios":"../../../node_modules/axios/index.js","/alerts":"alerts.js"}],"index.js":[function(require,module,exports) {
+"use strict";
+
+require("core-js/modules/es6.array.copy-within.js");
+
+require("core-js/modules/es6.array.fill.js");
+
+require("core-js/modules/es6.array.filter.js");
+
+require("core-js/modules/es6.array.find.js");
+
+require("core-js/modules/es6.array.find-index.js");
+
+require("core-js/modules/es7.array.flat-map.js");
+
+require("core-js/modules/es6.array.from.js");
+
+require("core-js/modules/es7.array.includes.js");
+
+require("core-js/modules/es6.array.iterator.js");
+
+require("core-js/modules/es6.array.map.js");
+
+require("core-js/modules/es6.array.of.js");
+
+require("core-js/modules/es6.array.slice.js");
+
+require("core-js/modules/es6.array.sort.js");
+
+require("core-js/modules/es6.array.species.js");
+
+require("core-js/modules/es6.date.to-primitive.js");
+
+require("core-js/modules/es6.function.has-instance.js");
+
+require("core-js/modules/es6.function.name.js");
+
+require("core-js/modules/es6.map.js");
+
+require("core-js/modules/es6.math.acosh.js");
+
+require("core-js/modules/es6.math.asinh.js");
+
+require("core-js/modules/es6.math.atanh.js");
+
+require("core-js/modules/es6.math.cbrt.js");
+
+require("core-js/modules/es6.math.clz32.js");
+
+require("core-js/modules/es6.math.cosh.js");
+
+require("core-js/modules/es6.math.expm1.js");
+
+require("core-js/modules/es6.math.fround.js");
+
+require("core-js/modules/es6.math.hypot.js");
+
+require("core-js/modules/es6.math.imul.js");
+
+require("core-js/modules/es6.math.log1p.js");
+
+require("core-js/modules/es6.math.log10.js");
+
+require("core-js/modules/es6.math.log2.js");
+
+require("core-js/modules/es6.math.sign.js");
+
+require("core-js/modules/es6.math.sinh.js");
+
+require("core-js/modules/es6.math.tanh.js");
+
+require("core-js/modules/es6.math.trunc.js");
+
+require("core-js/modules/es6.number.constructor.js");
+
+require("core-js/modules/es6.number.epsilon.js");
+
+require("core-js/modules/es6.number.is-finite.js");
+
+require("core-js/modules/es6.number.is-integer.js");
+
+require("core-js/modules/es6.number.is-nan.js");
+
+require("core-js/modules/es6.number.is-safe-integer.js");
+
+require("core-js/modules/es6.number.max-safe-integer.js");
+
+require("core-js/modules/es6.number.min-safe-integer.js");
+
+require("core-js/modules/es6.number.parse-float.js");
+
+require("core-js/modules/es6.number.parse-int.js");
+
+require("core-js/modules/es6.object.assign.js");
+
+require("core-js/modules/es7.object.define-getter.js");
+
+require("core-js/modules/es7.object.define-setter.js");
+
+require("core-js/modules/es7.object.entries.js");
+
+require("core-js/modules/es6.object.freeze.js");
+
+require("core-js/modules/es6.object.get-own-property-descriptor.js");
+
+require("core-js/modules/es7.object.get-own-property-descriptors.js");
+
+require("core-js/modules/es6.object.get-own-property-names.js");
+
+require("core-js/modules/es6.object.get-prototype-of.js");
+
+require("core-js/modules/es7.object.lookup-getter.js");
+
+require("core-js/modules/es7.object.lookup-setter.js");
+
+require("core-js/modules/es6.object.prevent-extensions.js");
+
+require("core-js/modules/es6.object.to-string.js");
+
+require("core-js/modules/es6.object.is.js");
+
+require("core-js/modules/es6.object.is-frozen.js");
+
+require("core-js/modules/es6.object.is-sealed.js");
+
+require("core-js/modules/es6.object.is-extensible.js");
+
+require("core-js/modules/es6.object.keys.js");
+
+require("core-js/modules/es6.object.seal.js");
+
+require("core-js/modules/es6.object.set-prototype-of.js");
+
+require("core-js/modules/es7.object.values.js");
+
+require("core-js/modules/es6.promise.js");
+
+require("core-js/modules/es7.promise.finally.js");
+
+require("core-js/modules/es6.reflect.apply.js");
+
+require("core-js/modules/es6.reflect.construct.js");
+
+require("core-js/modules/es6.reflect.define-property.js");
+
+require("core-js/modules/es6.reflect.delete-property.js");
+
+require("core-js/modules/es6.reflect.get.js");
+
+require("core-js/modules/es6.reflect.get-own-property-descriptor.js");
+
+require("core-js/modules/es6.reflect.get-prototype-of.js");
+
+require("core-js/modules/es6.reflect.has.js");
+
+require("core-js/modules/es6.reflect.is-extensible.js");
+
+require("core-js/modules/es6.reflect.own-keys.js");
+
+require("core-js/modules/es6.reflect.prevent-extensions.js");
+
+require("core-js/modules/es6.reflect.set.js");
+
+require("core-js/modules/es6.reflect.set-prototype-of.js");
+
+require("core-js/modules/es6.regexp.constructor.js");
+
+require("core-js/modules/es6.regexp.flags.js");
+
+require("core-js/modules/es6.regexp.match.js");
+
+require("core-js/modules/es6.regexp.replace.js");
+
+require("core-js/modules/es6.regexp.split.js");
+
+require("core-js/modules/es6.regexp.search.js");
+
+require("core-js/modules/es6.regexp.to-string.js");
+
+require("core-js/modules/es6.set.js");
+
+require("core-js/modules/es6.symbol.js");
+
+require("core-js/modules/es7.symbol.async-iterator.js");
+
+require("core-js/modules/es6.string.anchor.js");
+
+require("core-js/modules/es6.string.big.js");
+
+require("core-js/modules/es6.string.blink.js");
+
+require("core-js/modules/es6.string.bold.js");
+
+require("core-js/modules/es6.string.code-point-at.js");
+
+require("core-js/modules/es6.string.ends-with.js");
+
+require("core-js/modules/es6.string.fixed.js");
+
+require("core-js/modules/es6.string.fontcolor.js");
+
+require("core-js/modules/es6.string.fontsize.js");
+
+require("core-js/modules/es6.string.from-code-point.js");
+
+require("core-js/modules/es6.string.includes.js");
+
+require("core-js/modules/es6.string.italics.js");
+
+require("core-js/modules/es6.string.iterator.js");
+
+require("core-js/modules/es6.string.link.js");
+
+require("core-js/modules/es7.string.pad-start.js");
+
+require("core-js/modules/es7.string.pad-end.js");
+
+require("core-js/modules/es6.string.raw.js");
+
+require("core-js/modules/es6.string.repeat.js");
+
+require("core-js/modules/es6.string.small.js");
+
+require("core-js/modules/es6.string.starts-with.js");
+
+require("core-js/modules/es6.string.strike.js");
+
+require("core-js/modules/es6.string.sub.js");
+
+require("core-js/modules/es6.string.sup.js");
+
+require("core-js/modules/es7.string.trim-left.js");
+
+require("core-js/modules/es7.string.trim-right.js");
+
+require("core-js/modules/es6.typed.array-buffer.js");
+
+require("core-js/modules/es6.typed.int8-array.js");
+
+require("core-js/modules/es6.typed.uint8-array.js");
+
+require("core-js/modules/es6.typed.uint8-clamped-array.js");
+
+require("core-js/modules/es6.typed.int16-array.js");
+
+require("core-js/modules/es6.typed.uint16-array.js");
+
+require("core-js/modules/es6.typed.int32-array.js");
+
+require("core-js/modules/es6.typed.uint32-array.js");
+
+require("core-js/modules/es6.typed.float32-array.js");
+
+require("core-js/modules/es6.typed.float64-array.js");
+
+require("core-js/modules/es6.weak-map.js");
+
+require("core-js/modules/es6.weak-set.js");
+
+require("core-js/modules/web.timers.js");
+
+require("core-js/modules/web.immediate.js");
+
+require("core-js/modules/web.dom.iterable.js");
+
+var _custom = require("./custom");
+
+require("regenerator-runtime/runtime.js");
+
+var _updateSettings = require("./updateSettings");
+
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+var loginForm = document.querySelector('.form-group.login-button');
+var logOutBtn = document.querySelector('.text-danger');
+var userdataFrom = document.querySelector('.btn.btn-primary');
+var updateMetalDataForm = document.querySelector('.updateMetal');
+var finalform = document.querySelector('.btn.btn-primary.finalform'); //Metal FOrm Data Update
+
+if (loginForm) loginForm.addEventListener('click', function (e) {
+  e.preventDefault();
+  var employeeNumber = document.getElementById('email').value;
+  var password = document.getElementById('password').value;
+  (0, _custom.login)(employeeNumber, password);
+}); // if (userdataFrom)
+//   userdataFrom.addEventListener('click', e => {
+//     e.preventDefault();
+//     const name = document.getElementById('firstname').value;
+//     const email = document.getElementById('email').value;
+//     updateData(name, email);
+//   });
+
+if (updateMetalDataForm) updateMetalDataForm.addEventListener('click', function (e) {
+  e.preventDefault();
+  var form = new FormData(); //form.append('CamplateHardness', document.getElementById('hardness').value);
+
+  form.append('MFD', document.getElementById('MFD').value);
+  form.append('WJC', document.getElementById('WJC').value);
+  form.append('customer', document.getElementById('customer').value);
+  form.append('KM', document.getElementById('KM').value);
+  form.append('date', document.getElementById('Date').value);
+  form.append('DateClosing', document.getElementById('DateClosing').value);
+  form.append('BDS', document.getElementById('BDS').value);
+  form.append('OECD', document.getElementById('OECD').value);
+  form.append('partsRecieved', document.getElementById('partsRecieved').value);
+  form.append('FIP', document.getElementById('FIP').value);
+  form.append('complaintDescription', document.getElementById('complaintDescription').value);
+  form.append('complaintDescriptionBDS', document.getElementById('complaintDescriptionBDS').value);
+  form.append('complaintDescriptionI', document.getElementById('complaintDescriptionI').value);
+  form.append('finalStatus', document.getElementById('finalStatus').value);
+  form.append('DimensionalCamplateCamptaper', document.getElementById('DimensionalCamplateCamptaper').value);
+  form.append('DimensionalCamplateTPI', document.getElementById('DimensionalCamplateTPI').value);
+  form.append('DimensionalCamplateCamProfile', document.getElementById('DimensionalCamplateCamProfile').value);
+  form.append('DimensionalCamplateRZMax', document.getElementById('DimensionalCamplateRZMax').value);
+  form.append('DimensionalCamplateRZMin', document.getElementById('DimensionalCamplateRZMin').value);
+  form.append('DimensionalRollerSphericity', document.getElementById('DimensionalRollerSphericity').value);
+  form.append('DimensionalRollerLineProfile', document.getElementById('DimensionalRollerLineProfile').value);
+  form.append('DimensionalRolleRunout', document.getElementById('DimensionalRolleRunout').value);
+  form.append('DimensionalCrossDiscClawValue1', document.getElementById('DimensionalCrossDiscClawValue1').value);
+  form.append('DimensionalCrossDiscClawValue2', document.getElementById('DimensionalCrossDiscClawValue2').value);
+  form.append('DimensionalCrossDiscClawValue3', document.getElementById('DimensionalCrossDiscClawValue3').value);
+  form.append('DimensionalCrossDiscClawValue4', document.getElementById('DimensionalCrossDiscClawValue4').value);
+  form.append('DimensionalPerpendicularity1', document.getElementById('DimensionalPerpendicularity1').value);
+  form.append('DimensionalPerpendicularity2', document.getElementById('DimensionalPerpendicularity2').value);
+  form.append('DimensionalVaneHeight1', document.getElementById('DimensionalVaneHeight1').value);
+  form.append('DimensionalVaneHeight2', document.getElementById('DimensionalVaneHeight2').value);
+  form.append('DimensionalVaneHeight3', document.getElementById('DimensionalVaneHeight3').value);
+  form.append('DimensionalVaneHeight4', document.getElementById('DimensionalVaneHeight4').value);
+  form.append('DimensionalVaneHeightEC1', document.getElementById('DimensionalVaneHeightEC1').value);
+  form.append('DimensionalVaneHeightEC2', document.getElementById('DimensionalVaneHeightEC2').value);
+  form.append('FeederBoreRunout', document.getElementById('FeederBoreRunout').value);
+  form.append('HousingBoreConcentricity', document.getElementById('HousingBoreConcentricity').value);
+  form.append('DimensionalRollerSlotHeight1', document.getElementById('DimensionalRollerSlotHeight1').value);
+  form.append('DimensionalRollerSlotHeight2', document.getElementById('DimensionalRollerSlotHeight2').value);
+  form.append('DimensionalRollerSlotHeight3', document.getElementById('DimensionalRollerSlotHeight3').value);
+  form.append('DimensionalRollerSlotHeight4', document.getElementById('DimensionalRollerSlotHeight4').value);
+  form.append('DimensionalRollerSlotHeight5', document.getElementById('DimensionalRollerSlotHeight5').value);
+  form.append('DimensionalRollerSlotHeight6', document.getElementById('DimensionalRollerSlotHeight6').value);
+  form.append('DimensionalRollerSlotHeight7', document.getElementById('DimensionalRollerSlotHeight7').value);
+  form.append('DimensionalRollerSlotHeight8', document.getElementById('DimensionalRollerSlotHeight8').value);
+  form.append('DimensionalRollerSlotWidth1', document.getElementById('DimensionalRollerSlotWidth1').value);
+  form.append('DimensionalRollerSlotWidth2', document.getElementById('DimensionalRollerSlotWidth2').value);
+  form.append('DimensionalRollerSlotWidth3', document.getElementById('DimensionalRollerSlotWidth3').value);
+  form.append('DimensionalRollerSlotWidth4', document.getElementById('DimensionalRollerSlotWidth4').value);
+  form.append('DimensionalRollerSlotWidth5', document.getElementById('DimensionalRollerSlotWidth5').value);
+  form.append('DimensionalRollerSlotWidth6', document.getElementById('DimensionalRollerSlotWidth6').value);
+  form.append('DimensionalRollerSlotWidth7', document.getElementById('DimensionalRollerSlotWidth7').value);
+  form.append('DimensionalRollerSlotWidth8', document.getElementById('DimensionalRollerSlotWidth8').value);
+  form.append('DimensionalRollerHeight1', document.getElementById('DimensionalRollerHeight1').value);
+  form.append('DimensionalRollerHeight2', document.getElementById('DimensionalRollerHeight2').value);
+  form.append('DimensionalRollerHeight3', document.getElementById('DimensionalRollerHeight3').value);
+  form.append('DimensionalRollerHeight4', document.getElementById('DimensionalRollerHeight4').value);
+
+  for (var i = 0; i < 6; i++) {
+    form.append('Images', document.getElementById('image').files[i]);
+  }
+
+  for (var _i = 0; _i < 2; _i++) {
+    form.append('DimensionalRollerBallekitImages', document.getElementById('DimensionalRollerBallekitImages').files[_i]);
+  } // form.append('NTZ', document.getElementById('ntz').files[0]);
+
+
+  (0, _updateSettings.updateMetalData)(form, 'data'); // location.reload();
+});
+if (finalform) finalform.addEventListener('click', function (e) {
+  e.preventDefault();
+  var form = new FormData();
+  form.append('pumpType', document.getElementById('pumpType').value);
+  form.append('serialNumber', document.getElementById('serialNumber').value); //  for (let i = 0; i < 6; i++) {
+  //   form.append('images', document.getElementById('image').files[i]);
+  // }
+
+  var _iterator = _createForOfIteratorHelper(form.entries()),
+      _step;
+
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var key = _step.value;
+      console.log(key[0], key[1]);
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+
+  (0, _updateSettings.updatePumpData)(form, 'data');
+});
+},{"core-js/modules/es6.array.copy-within.js":"../../../node_modules/core-js/modules/es6.array.copy-within.js","core-js/modules/es6.array.fill.js":"../../../node_modules/core-js/modules/es6.array.fill.js","core-js/modules/es6.array.filter.js":"../../../node_modules/core-js/modules/es6.array.filter.js","core-js/modules/es6.array.find.js":"../../../node_modules/core-js/modules/es6.array.find.js","core-js/modules/es6.array.find-index.js":"../../../node_modules/core-js/modules/es6.array.find-index.js","core-js/modules/es7.array.flat-map.js":"../../../node_modules/core-js/modules/es7.array.flat-map.js","core-js/modules/es6.array.from.js":"../../../node_modules/core-js/modules/es6.array.from.js","core-js/modules/es7.array.includes.js":"../../../node_modules/core-js/modules/es7.array.includes.js","core-js/modules/es6.array.iterator.js":"../../../node_modules/core-js/modules/es6.array.iterator.js","core-js/modules/es6.array.map.js":"../../../node_modules/core-js/modules/es6.array.map.js","core-js/modules/es6.array.of.js":"../../../node_modules/core-js/modules/es6.array.of.js","core-js/modules/es6.array.slice.js":"../../../node_modules/core-js/modules/es6.array.slice.js","core-js/modules/es6.array.sort.js":"../../../node_modules/core-js/modules/es6.array.sort.js","core-js/modules/es6.array.species.js":"../../../node_modules/core-js/modules/es6.array.species.js","core-js/modules/es6.date.to-primitive.js":"../../../node_modules/core-js/modules/es6.date.to-primitive.js","core-js/modules/es6.function.has-instance.js":"../../../node_modules/core-js/modules/es6.function.has-instance.js","core-js/modules/es6.function.name.js":"../../../node_modules/core-js/modules/es6.function.name.js","core-js/modules/es6.map.js":"../../../node_modules/core-js/modules/es6.map.js","core-js/modules/es6.math.acosh.js":"../../../node_modules/core-js/modules/es6.math.acosh.js","core-js/modules/es6.math.asinh.js":"../../../node_modules/core-js/modules/es6.math.asinh.js","core-js/modules/es6.math.atanh.js":"../../../node_modules/core-js/modules/es6.math.atanh.js","core-js/modules/es6.math.cbrt.js":"../../../node_modules/core-js/modules/es6.math.cbrt.js","core-js/modules/es6.math.clz32.js":"../../../node_modules/core-js/modules/es6.math.clz32.js","core-js/modules/es6.math.cosh.js":"../../../node_modules/core-js/modules/es6.math.cosh.js","core-js/modules/es6.math.expm1.js":"../../../node_modules/core-js/modules/es6.math.expm1.js","core-js/modules/es6.math.fround.js":"../../../node_modules/core-js/modules/es6.math.fround.js","core-js/modules/es6.math.hypot.js":"../../../node_modules/core-js/modules/es6.math.hypot.js","core-js/modules/es6.math.imul.js":"../../../node_modules/core-js/modules/es6.math.imul.js","core-js/modules/es6.math.log1p.js":"../../../node_modules/core-js/modules/es6.math.log1p.js","core-js/modules/es6.math.log10.js":"../../../node_modules/core-js/modules/es6.math.log10.js","core-js/modules/es6.math.log2.js":"../../../node_modules/core-js/modules/es6.math.log2.js","core-js/modules/es6.math.sign.js":"../../../node_modules/core-js/modules/es6.math.sign.js","core-js/modules/es6.math.sinh.js":"../../../node_modules/core-js/modules/es6.math.sinh.js","core-js/modules/es6.math.tanh.js":"../../../node_modules/core-js/modules/es6.math.tanh.js","core-js/modules/es6.math.trunc.js":"../../../node_modules/core-js/modules/es6.math.trunc.js","core-js/modules/es6.number.constructor.js":"../../../node_modules/core-js/modules/es6.number.constructor.js","core-js/modules/es6.number.epsilon.js":"../../../node_modules/core-js/modules/es6.number.epsilon.js","core-js/modules/es6.number.is-finite.js":"../../../node_modules/core-js/modules/es6.number.is-finite.js","core-js/modules/es6.number.is-integer.js":"../../../node_modules/core-js/modules/es6.number.is-integer.js","core-js/modules/es6.number.is-nan.js":"../../../node_modules/core-js/modules/es6.number.is-nan.js","core-js/modules/es6.number.is-safe-integer.js":"../../../node_modules/core-js/modules/es6.number.is-safe-integer.js","core-js/modules/es6.number.max-safe-integer.js":"../../../node_modules/core-js/modules/es6.number.max-safe-integer.js","core-js/modules/es6.number.min-safe-integer.js":"../../../node_modules/core-js/modules/es6.number.min-safe-integer.js","core-js/modules/es6.number.parse-float.js":"../../../node_modules/core-js/modules/es6.number.parse-float.js","core-js/modules/es6.number.parse-int.js":"../../../node_modules/core-js/modules/es6.number.parse-int.js","core-js/modules/es6.object.assign.js":"../../../node_modules/core-js/modules/es6.object.assign.js","core-js/modules/es7.object.define-getter.js":"../../../node_modules/core-js/modules/es7.object.define-getter.js","core-js/modules/es7.object.define-setter.js":"../../../node_modules/core-js/modules/es7.object.define-setter.js","core-js/modules/es7.object.entries.js":"../../../node_modules/core-js/modules/es7.object.entries.js","core-js/modules/es6.object.freeze.js":"../../../node_modules/core-js/modules/es6.object.freeze.js","core-js/modules/es6.object.get-own-property-descriptor.js":"../../../node_modules/core-js/modules/es6.object.get-own-property-descriptor.js","core-js/modules/es7.object.get-own-property-descriptors.js":"../../../node_modules/core-js/modules/es7.object.get-own-property-descriptors.js","core-js/modules/es6.object.get-own-property-names.js":"../../../node_modules/core-js/modules/es6.object.get-own-property-names.js","core-js/modules/es6.object.get-prototype-of.js":"../../../node_modules/core-js/modules/es6.object.get-prototype-of.js","core-js/modules/es7.object.lookup-getter.js":"../../../node_modules/core-js/modules/es7.object.lookup-getter.js","core-js/modules/es7.object.lookup-setter.js":"../../../node_modules/core-js/modules/es7.object.lookup-setter.js","core-js/modules/es6.object.prevent-extensions.js":"../../../node_modules/core-js/modules/es6.object.prevent-extensions.js","core-js/modules/es6.object.to-string.js":"../../../node_modules/core-js/modules/es6.object.to-string.js","core-js/modules/es6.object.is.js":"../../../node_modules/core-js/modules/es6.object.is.js","core-js/modules/es6.object.is-frozen.js":"../../../node_modules/core-js/modules/es6.object.is-frozen.js","core-js/modules/es6.object.is-sealed.js":"../../../node_modules/core-js/modules/es6.object.is-sealed.js","core-js/modules/es6.object.is-extensible.js":"../../../node_modules/core-js/modules/es6.object.is-extensible.js","core-js/modules/es6.object.keys.js":"../../../node_modules/core-js/modules/es6.object.keys.js","core-js/modules/es6.object.seal.js":"../../../node_modules/core-js/modules/es6.object.seal.js","core-js/modules/es6.object.set-prototype-of.js":"../../../node_modules/core-js/modules/es6.object.set-prototype-of.js","core-js/modules/es7.object.values.js":"../../../node_modules/core-js/modules/es7.object.values.js","core-js/modules/es6.promise.js":"../../../node_modules/core-js/modules/es6.promise.js","core-js/modules/es7.promise.finally.js":"../../../node_modules/core-js/modules/es7.promise.finally.js","core-js/modules/es6.reflect.apply.js":"../../../node_modules/core-js/modules/es6.reflect.apply.js","core-js/modules/es6.reflect.construct.js":"../../../node_modules/core-js/modules/es6.reflect.construct.js","core-js/modules/es6.reflect.define-property.js":"../../../node_modules/core-js/modules/es6.reflect.define-property.js","core-js/modules/es6.reflect.delete-property.js":"../../../node_modules/core-js/modules/es6.reflect.delete-property.js","core-js/modules/es6.reflect.get.js":"../../../node_modules/core-js/modules/es6.reflect.get.js","core-js/modules/es6.reflect.get-own-property-descriptor.js":"../../../node_modules/core-js/modules/es6.reflect.get-own-property-descriptor.js","core-js/modules/es6.reflect.get-prototype-of.js":"../../../node_modules/core-js/modules/es6.reflect.get-prototype-of.js","core-js/modules/es6.reflect.has.js":"../../../node_modules/core-js/modules/es6.reflect.has.js","core-js/modules/es6.reflect.is-extensible.js":"../../../node_modules/core-js/modules/es6.reflect.is-extensible.js","core-js/modules/es6.reflect.own-keys.js":"../../../node_modules/core-js/modules/es6.reflect.own-keys.js","core-js/modules/es6.reflect.prevent-extensions.js":"../../../node_modules/core-js/modules/es6.reflect.prevent-extensions.js","core-js/modules/es6.reflect.set.js":"../../../node_modules/core-js/modules/es6.reflect.set.js","core-js/modules/es6.reflect.set-prototype-of.js":"../../../node_modules/core-js/modules/es6.reflect.set-prototype-of.js","core-js/modules/es6.regexp.constructor.js":"../../../node_modules/core-js/modules/es6.regexp.constructor.js","core-js/modules/es6.regexp.flags.js":"../../../node_modules/core-js/modules/es6.regexp.flags.js","core-js/modules/es6.regexp.match.js":"../../../node_modules/core-js/modules/es6.regexp.match.js","core-js/modules/es6.regexp.replace.js":"../../../node_modules/core-js/modules/es6.regexp.replace.js","core-js/modules/es6.regexp.split.js":"../../../node_modules/core-js/modules/es6.regexp.split.js","core-js/modules/es6.regexp.search.js":"../../../node_modules/core-js/modules/es6.regexp.search.js","core-js/modules/es6.regexp.to-string.js":"../../../node_modules/core-js/modules/es6.regexp.to-string.js","core-js/modules/es6.set.js":"../../../node_modules/core-js/modules/es6.set.js","core-js/modules/es6.symbol.js":"../../../node_modules/core-js/modules/es6.symbol.js","core-js/modules/es7.symbol.async-iterator.js":"../../../node_modules/core-js/modules/es7.symbol.async-iterator.js","core-js/modules/es6.string.anchor.js":"../../../node_modules/core-js/modules/es6.string.anchor.js","core-js/modules/es6.string.big.js":"../../../node_modules/core-js/modules/es6.string.big.js","core-js/modules/es6.string.blink.js":"../../../node_modules/core-js/modules/es6.string.blink.js","core-js/modules/es6.string.bold.js":"../../../node_modules/core-js/modules/es6.string.bold.js","core-js/modules/es6.string.code-point-at.js":"../../../node_modules/core-js/modules/es6.string.code-point-at.js","core-js/modules/es6.string.ends-with.js":"../../../node_modules/core-js/modules/es6.string.ends-with.js","core-js/modules/es6.string.fixed.js":"../../../node_modules/core-js/modules/es6.string.fixed.js","core-js/modules/es6.string.fontcolor.js":"../../../node_modules/core-js/modules/es6.string.fontcolor.js","core-js/modules/es6.string.fontsize.js":"../../../node_modules/core-js/modules/es6.string.fontsize.js","core-js/modules/es6.string.from-code-point.js":"../../../node_modules/core-js/modules/es6.string.from-code-point.js","core-js/modules/es6.string.includes.js":"../../../node_modules/core-js/modules/es6.string.includes.js","core-js/modules/es6.string.italics.js":"../../../node_modules/core-js/modules/es6.string.italics.js","core-js/modules/es6.string.iterator.js":"../../../node_modules/core-js/modules/es6.string.iterator.js","core-js/modules/es6.string.link.js":"../../../node_modules/core-js/modules/es6.string.link.js","core-js/modules/es7.string.pad-start.js":"../../../node_modules/core-js/modules/es7.string.pad-start.js","core-js/modules/es7.string.pad-end.js":"../../../node_modules/core-js/modules/es7.string.pad-end.js","core-js/modules/es6.string.raw.js":"../../../node_modules/core-js/modules/es6.string.raw.js","core-js/modules/es6.string.repeat.js":"../../../node_modules/core-js/modules/es6.string.repeat.js","core-js/modules/es6.string.small.js":"../../../node_modules/core-js/modules/es6.string.small.js","core-js/modules/es6.string.starts-with.js":"../../../node_modules/core-js/modules/es6.string.starts-with.js","core-js/modules/es6.string.strike.js":"../../../node_modules/core-js/modules/es6.string.strike.js","core-js/modules/es6.string.sub.js":"../../../node_modules/core-js/modules/es6.string.sub.js","core-js/modules/es6.string.sup.js":"../../../node_modules/core-js/modules/es6.string.sup.js","core-js/modules/es7.string.trim-left.js":"../../../node_modules/core-js/modules/es7.string.trim-left.js","core-js/modules/es7.string.trim-right.js":"../../../node_modules/core-js/modules/es7.string.trim-right.js","core-js/modules/es6.typed.array-buffer.js":"../../../node_modules/core-js/modules/es6.typed.array-buffer.js","core-js/modules/es6.typed.int8-array.js":"../../../node_modules/core-js/modules/es6.typed.int8-array.js","core-js/modules/es6.typed.uint8-array.js":"../../../node_modules/core-js/modules/es6.typed.uint8-array.js","core-js/modules/es6.typed.uint8-clamped-array.js":"../../../node_modules/core-js/modules/es6.typed.uint8-clamped-array.js","core-js/modules/es6.typed.int16-array.js":"../../../node_modules/core-js/modules/es6.typed.int16-array.js","core-js/modules/es6.typed.uint16-array.js":"../../../node_modules/core-js/modules/es6.typed.uint16-array.js","core-js/modules/es6.typed.int32-array.js":"../../../node_modules/core-js/modules/es6.typed.int32-array.js","core-js/modules/es6.typed.uint32-array.js":"../../../node_modules/core-js/modules/es6.typed.uint32-array.js","core-js/modules/es6.typed.float32-array.js":"../../../node_modules/core-js/modules/es6.typed.float32-array.js","core-js/modules/es6.typed.float64-array.js":"../../../node_modules/core-js/modules/es6.typed.float64-array.js","core-js/modules/es6.weak-map.js":"../../../node_modules/core-js/modules/es6.weak-map.js","core-js/modules/es6.weak-set.js":"../../../node_modules/core-js/modules/es6.weak-set.js","core-js/modules/web.timers.js":"../../../node_modules/core-js/modules/web.timers.js","core-js/modules/web.immediate.js":"../../../node_modules/core-js/modules/web.immediate.js","core-js/modules/web.dom.iterable.js":"../../../node_modules/core-js/modules/web.dom.iterable.js","./custom":"custom.js","regenerator-runtime/runtime.js":"../../../node_modules/regenerator-runtime/runtime.js","./updateSettings":"updateSettings.js"}],"../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+var global = arguments[3];
+var OVERLAY_ID = '__parcel__error__overlay__';
+var OldModule = module.bundle.Module;
+
+function Module(moduleName) {
+  OldModule.call(this, moduleName);
+  this.hot = {
+    data: module.bundle.hotData,
+    _acceptCallbacks: [],
+    _disposeCallbacks: [],
+    accept: function (fn) {
+      this._acceptCallbacks.push(fn || function () {});
+    },
+    dispose: function (fn) {
+      this._disposeCallbacks.push(fn);
+    }
+  };
+  module.bundle.hotData = null;
+}
+
+module.bundle.Module = Module;
+var checkedAssets, assetsToAccept;
+var parent = module.bundle.parent;
+
+if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
+  var hostname = "" || location.hostname;
+  var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62730" + '/');
+
+  ws.onmessage = function (event) {
+    checkedAssets = {};
+    assetsToAccept = [];
+    var data = JSON.parse(event.data);
+
+    if (data.type === 'update') {
+      var handled = false;
+      data.assets.forEach(function (asset) {
+        if (!asset.isNew) {
+          var didAccept = hmrAcceptCheck(global.parcelRequire, asset.id);
+
+          if (didAccept) {
+            handled = true;
+          }
+        }
+      }); // Enable HMR for CSS by default.
+
+      handled = handled || data.assets.every(function (asset) {
+        return asset.type === 'css' && asset.generated.js;
+      });
+
+      if (handled) {
+        console.clear();
+        data.assets.forEach(function (asset) {
+          hmrApply(global.parcelRequire, asset);
+        });
+        assetsToAccept.forEach(function (v) {
+          hmrAcceptRun(v[0], v[1]);
+        });
+      } else if (location.reload) {
+        // `location` global exists in a web worker context but lacks `.reload()` function.
+        location.reload();
+      }
+    }
+
+    if (data.type === 'reload') {
+      ws.close();
+
+      ws.onclose = function () {
+        location.reload();
+      };
+    }
+
+    if (data.type === 'error-resolved') {
+      console.log('[parcel] ✨ Error resolved');
+      removeErrorOverlay();
+    }
+
+    if (data.type === 'error') {
+      console.error('[parcel] 🚨  ' + data.error.message + '\n' + data.error.stack);
+      removeErrorOverlay();
+      var overlay = createErrorOverlay(data);
+      document.body.appendChild(overlay);
+    }
+  };
+}
+
+function removeErrorOverlay() {
+  var overlay = document.getElementById(OVERLAY_ID);
+
+  if (overlay) {
+    overlay.remove();
+  }
+}
+
+function createErrorOverlay(data) {
+  var overlay = document.createElement('div');
+  overlay.id = OVERLAY_ID; // html encode message and stack trace
+
+  var message = document.createElement('div');
+  var stackTrace = document.createElement('pre');
+  message.innerText = data.error.message;
+  stackTrace.innerText = data.error.stack;
+  overlay.innerHTML = '<div style="background: black; font-size: 16px; color: white; position: fixed; height: 100%; width: 100%; top: 0px; left: 0px; padding: 30px; opacity: 0.85; font-family: Menlo, Consolas, monospace; z-index: 9999;">' + '<span style="background: red; padding: 2px 4px; border-radius: 2px;">ERROR</span>' + '<span style="top: 2px; margin-left: 5px; position: relative;">🚨</span>' + '<div style="font-size: 18px; font-weight: bold; margin-top: 20px;">' + message.innerHTML + '</div>' + '<pre>' + stackTrace.innerHTML + '</pre>' + '</div>';
+  return overlay;
+}
+
+function getParents(bundle, id) {
+  var modules = bundle.modules;
+
+  if (!modules) {
+    return [];
+  }
+
+  var parents = [];
+  var k, d, dep;
+
+  for (k in modules) {
+    for (d in modules[k][1]) {
+      dep = modules[k][1][d];
+
+      if (dep === id || Array.isArray(dep) && dep[dep.length - 1] === id) {
+        parents.push(k);
+      }
+    }
+  }
+
+  if (bundle.parent) {
+    parents = parents.concat(getParents(bundle.parent, id));
+  }
+
+  return parents;
+}
+
+function hmrApply(bundle, asset) {
+  var modules = bundle.modules;
+
+  if (!modules) {
+    return;
+  }
+
+  if (modules[asset.id] || !bundle.parent) {
+    var fn = new Function('require', 'module', 'exports', asset.generated.js);
+    asset.isNew = !modules[asset.id];
+    modules[asset.id] = [fn, asset.deps];
+  } else if (bundle.parent) {
+    hmrApply(bundle.parent, asset);
+  }
+}
+
+function hmrAcceptCheck(bundle, id) {
+  var modules = bundle.modules;
+
+  if (!modules) {
+    return;
+  }
+
+  if (!modules[id] && bundle.parent) {
+    return hmrAcceptCheck(bundle.parent, id);
+  }
+
+  if (checkedAssets[id]) {
+    return;
+  }
+
+  checkedAssets[id] = true;
+  var cached = bundle.cache[id];
+  assetsToAccept.push([bundle, id]);
+
+  if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
+    return true;
+  }
+
+  return getParents(global.parcelRequire, id).some(function (id) {
+    return hmrAcceptCheck(global.parcelRequire, id);
+  });
+}
+
+function hmrAcceptRun(bundle, id) {
+  var cached = bundle.cache[id];
+  bundle.hotData = {};
+
+  if (cached) {
+    cached.hot.data = bundle.hotData;
+  }
+
+  if (cached && cached.hot && cached.hot._disposeCallbacks.length) {
+    cached.hot._disposeCallbacks.forEach(function (cb) {
+      cb(bundle.hotData);
+    });
+  }
+
+  delete bundle.cache[id];
+  bundle(id);
+  cached = bundle.cache[id];
+
+  if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
+    cached.hot._acceptCallbacks.forEach(function (cb) {
+      cb();
+    });
+
+    return true;
+  }
+}
+},{}]},{},["../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
+//# sourceMappingURL=/js/bundle.js.map
+>>>>>>> 9f118fdbd9c215eced9f8e1a925b883495ba6ea1

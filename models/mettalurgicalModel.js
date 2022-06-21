@@ -44,12 +44,7 @@ const metallurgicalData = new mongoose.Schema({
   customer: {
     type: String,
     //required: true,
-    unique: false,
-
-    maxlength: [
-      40,
-      'You have exceeded the amount of characters for the supplier'
-    ]
+    unique: false
   },
   failureHours: {
     type: String,
@@ -58,28 +53,31 @@ const metallurgicalData = new mongoose.Schema({
   },
   complaintDescription: {
     type: String,
-    //required: true,
-    maxlength: [5000, 'Please limit the amount of words to 5000 characters']
+    //required: true
   },
   complaintDescriptionBDS: {
     type: String,
-    //required: true,
-    maxlength: [5000, 'Please limit the amount of words to 5000 characters']
+    //required: true
   },
   complaintDescriptionI: {
     type: String,
-    //required: true,
-    maxlength: [5000, 'Please limit the amount of words to 5000 characters']
+    //required: true
   },
   OEM: {
     type: String,
     //required: true,
+<<<<<<< HEAD
     trim: true
+=======
+>>>>>>> 9f118fdbd9c215eced9f8e1a925b883495ba6ea1
   },
   MFD: {
     type: String,
     //required: true,
+<<<<<<< HEAD
     trim: true
+=======
+>>>>>>> 9f118fdbd9c215eced9f8e1a925b883495ba6ea1
   },
   KM: {
     type: String,

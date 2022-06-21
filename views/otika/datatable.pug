@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 doctype html
 html(lang='en')
   // export-table.html  21 Nov 2019 03:55:25 GMT
@@ -123,37 +122,3 @@ html(lang='en')
   // Custom JS File
   script(src='assets/js/custom.js')
   // export-table.html  21 Nov 2019 03:56:01 GMT
-=======
-extends base
-block content 
-        // Main Content
-        .main-content
-          section.section
-            .section-body      
-              .row
-                .col-12
-                  .card
-                    .card-header
-                      h4 Pump Data Overview
-                    .card-body
-                      .table-responsive
-                        table#save-stage.table.table-striped.table-hover(style='width:100%;')
-                          thead
-                            tr
-                              th Pump Type
-                              th Date 
-                              th Customer
-                              th Docket Details
-                            
-                          tbody
-                          each pump in pumps
-                            tr
-                              td=`${pump.MFD}`
-                              td=`${pump.date}`
-                              td= `${pump.customer}`
-                              td= `${pump.complaintDescription}`
-                              
-                        
-          
- 
->>>>>>> 9f118fdbd9c215eced9f8e1a925b883495ba6ea1

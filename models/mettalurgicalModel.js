@@ -52,32 +52,27 @@ const metallurgicalData = new mongoose.Schema({
     unique: false
   },
   complaintDescription: {
-    type: String,
+    type: String
     //required: true
   },
   complaintDescriptionBDS: {
-    type: String,
+    type: String
     //required: true
   },
   complaintDescriptionI: {
-    type: String,
+    type: String
     //required: true
   },
   OEM: {
     type: String,
     //required: true,
-<<<<<<< HEAD
+
     trim: true
-=======
->>>>>>> 9f118fdbd9c215eced9f8e1a925b883495ba6ea1
   },
   MFD: {
     type: String,
     //required: true,
-<<<<<<< HEAD
     trim: true
-=======
->>>>>>> 9f118fdbd9c215eced9f8e1a925b883495ba6ea1
   },
   KM: {
     type: String,

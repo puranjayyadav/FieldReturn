@@ -1,5 +1,62 @@
- 
-   
+extends base
+block content	
+    // Main Content
+    .main-content
+        section.section
+            .section-body
+                .row.clearfix
+                .col-lg-12.col-md-12.col-sm-12.col-xs-12.col-12
+                    .card
+                        .card-header
+                            h4 Recently Uploaded Photos of Components
+                        .card-body
+                            #aniimated-thumbnials.list-unstyled.row.clearfix
+                                each pump in pumps.Images
+                                    .col-lg-3.col-md-4.col-sm-6.col-xs-12
+                                        a(href=`/img/mettalurgical/${pump}`)
+                                            img.img-responsive.thumbnail(src=`/img/mettalurgical/${pump }` alt='')
 
-               
-        
+                .card
+                    .card-header
+                        h4 Pump Data entered
+                    .card-body
+                        table.table
+                            thead
+                                tr
+
+                                    th(scope='col') JaP Reg. No.
+                                    th(scope='col') Sample Entry Date
+                                    th(scope='col') Courier/docket detail
+                                    th(scope='col') Complaint reported at BDS
+                                    th(scope='col') WJC No.
+                                    th(scope='col') FIP Type/Part No.
+                                    th(scope='col') Customer
+                                    th(scope='col') KMs/Hr.
+                                    th(scope='col') Location BDS
+                                    th(scope='col') OECD
+                                    th(scope='col') Parts Recieved
+                                        th(scope='col') Investigtion Details
+                                    th(scope='col') Date of closing
+                                    th(scope='col') Final State
+
+
+
+                            tbody
+                                tr
+                                    th= pumps.registrationNumber
+                                    td= pumps.date
+                                    td= pumps.complaintDescription
+                                    td= pumps.complaintDescriptionBDS
+                                    td= pumps.WJC
+                                    td= pumps.FIP
+                                    td= pumps.customer
+                                    td= pumps.KM
+                                    td= pumps.BDS
+                                    td= pumps.OECD
+                                    td= pumps.partsRecieved
+                                    td= pumps.complaintDescriptionI
+                                    td= pumps.DateClosing
+                                    td= pumps.finalStatus
+
+
+

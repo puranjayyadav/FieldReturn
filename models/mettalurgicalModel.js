@@ -273,6 +273,9 @@ const metallurgicalData = new mongoose.Schema({
   },
   actionEffectivenessTracking: {
     type: String
+  },
+  registrationNumber: {
+    type: String
   }
 });
 

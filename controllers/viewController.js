@@ -11,8 +11,8 @@ exports.getPumpData = catchAsync(async (req, res, next) => {
   });
 });
 exports.getPumpDetails = catchAsync(async (req, res, next) => {
-  const pumps = await Pump.findOne({ slug: req.params.slug });
-  res.status(200).render('pumpDetail', {
+  const pumps = await Metal.findOne({ slug: req.params.slug });
+   res.status(200).render('pumpDetail', {
     title: 'Pump Details',
     pumps
   });

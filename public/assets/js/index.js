@@ -48,6 +48,8 @@ if (updateMetalDataForm)
     form.append('complaintDescriptionBDS', document.getElementById('complaintDescriptionBDS').value);
     form.append('complaintDescriptionI', document.getElementById('complaintDescriptionI').value);
     form.append('finalStatus', document.getElementById('finalStatus').value);
+    form.append('registrationNumber', document.getElementById('registrationNumber').value);
+
 
 
 

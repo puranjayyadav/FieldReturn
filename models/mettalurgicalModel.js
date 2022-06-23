@@ -286,7 +286,7 @@ const metallurgicalData = new mongoose.Schema({
 // })
 
 metallurgicalData.pre('save', function(next) {
-  this.slug = slugify(this.WJC, { lower: true });
+  this.slug = slugify(this.registrationNumber, { lower: true });
   next();
 });
 

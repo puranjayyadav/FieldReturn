@@ -51,7 +51,7 @@ $(document).ready(function() {
       // console.log(metaldata);
       for (let i = 0; i < metaldata.length; i++) {
         tr += '<tr>';
-        tr += `<td>${metaldata[i].WJC}</td>`;
+        tr += `<td>${metaldata[i].registrationNumber}</td>`;
         tr += `<td>${metaldata[i].FIP}</td>`;
         tr += `<td>${metaldata[i].MFD}</td>`;
         tr += `<td>${metaldata[i].customer}</td>`;

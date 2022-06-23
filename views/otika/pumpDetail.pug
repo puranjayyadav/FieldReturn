@@ -20,7 +20,7 @@ block content
                     .card-header
                         h4 Pump Data entered
                     .card-body
-                        table.table
+                        table.table.table-bordered.table-md
                             thead
                                 tr
 
@@ -31,13 +31,7 @@ block content
                                     th(scope='col') WJC No.
                                     th(scope='col') FIP Type/Part No.
                                     th(scope='col') Customer
-                                    th(scope='col') KMs/Hr.
-                                    th(scope='col') Location BDS
-                                    th(scope='col') OECD
-                                    th(scope='col') Parts Recieved
-                                        th(scope='col') Investigtion Details
-                                    th(scope='col') Date of closing
-                                    th(scope='col') Final State
+
 
 
 
@@ -50,7 +44,28 @@ block content
                                     td= pumps.WJC
                                     td= pumps.FIP
                                     td= pumps.customer
-                                    td= pumps.KM
+
+                .card
+                    .card-header
+                        h4 Pump Data entered ( Continued )
+                    .card-body
+                        table.table.table-bordered.table-md
+                            thead
+                                tr
+
+
+                                    th(scope='col') Location BDS
+                                    th(scope='col') OECD
+                                    th(scope='col') Parts Recieved
+                                        th(scope='col') Investigtion Details
+                                    th(scope='col') Date of closing
+                                    th(scope='col') Final State
+
+
+
+                            tbody
+                                tr
+
                                     td= pumps.BDS
                                     td= pumps.OECD
                                     td= pumps.partsRecieved

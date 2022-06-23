@@ -14,5 +14,8 @@ router
   )
   .get(metallurgicalController.getMetalurgicalData);
 
-router.route('/:id').get(metallurgicalController.getSpecificMetalurgicalData);
+router
+  .route('/:id')
+  .get(metallurgicalController.getSpecificMetalurgicalData)
+  .patch(metallurgicalController.updateSpecificMetaldata);
 module.exports = router;

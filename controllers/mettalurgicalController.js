@@ -230,3 +230,4 @@ exports.resize = catchAsync(async (req, res, next) => {
 exports.createMetalurgicalData = factory.createOne(Metal);
 exports.getMetalurgicalData = factory.getAll(Metal);
 exports.getSpecificMetalurgicalData = factory.getOne(Metal);
+exports.updateSpecificMetaldata = factory.updateOne(Metal);

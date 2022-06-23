@@ -53,11 +53,11 @@ block content
                             thead
                                 tr
 
-
+                                    th(scope='col') Failure Hours
                                     th(scope='col') Location BDS
                                     th(scope='col') OECD
                                     th(scope='col') Parts Recieved
-                                        th(scope='col') Investigtion Details
+                                    th(scope='col') Investigtion Details
                                     th(scope='col') Date of closing
                                     th(scope='col') Final State
 
@@ -65,13 +65,394 @@ block content
 
                             tbody
                                 tr
-
+                                    td= pumps.KM
                                     td= pumps.BDS
                                     td= pumps.OECD
                                     td= pumps.partsRecieved
                                     td= pumps.complaintDescriptionI
                                     td= pumps.DateClosing
                                     td= pumps.finalStatus
+                .card
+                    .padding-20
+                        ul#myTab2.nav.nav-tabs(role='tablist')
+                            li.nav-item
+                                a#home-tab2.nav-link.active(data-toggle='tab' href='#about' role='tab' aria-selected='true') Current Information
+                            li.nav-item
+                                a#profile-tab2.nav-link(data-toggle='tab' href='#settings' role='tab' aria-selected='false') Table
+                        #myTab3Content.tab-content.tab-bordered
+                            #about.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='home-tab2')
+                                .row
+                                    .card
+                                        .card-header
+                                            h4 Investigation Details
+                                        .card-body
+                                            table.table.table-bordered.table-md
+                                                thead
+                                                    tr
+
+                                                        th(scope='col') Failure Hours
+                                                        th(scope='col') Location BDS
+                                                        th(scope='col') OECD
+                                                        th(scope='col') Parts Recieved
+                                                        th(scope='col') Investigtion Details
+                                                        th(scope='col') Date of closing
+                                                        th(scope='col') Final State
+
+
+
+                                                tbody
+                                                    tr
+                                                        td= pumps.KM
+                                                        td= pumps.BDS
+                                                        td= pumps.OECD
+                                                        td= pumps.partsRecieved
+                                                        td= pumps.complaintDescriptionI
+                                                        td= pumps.DateClosing
+                                                        td= pumps.finalStatus
+
+                            #settings.tab-pane.fade(role='tabpanel' aria-labelledby='profile-tab2')
+
+                                .card
+                                    .card-header
+                                        h4 Field Data Submission
+                                    .card-body
+                                        form#wizard_with_validation
+                                            h3 Pump Data
+                                            fieldset
+                                                .form-group.form-float
+                                                    .form-line
+                                                        label Date 
+                                                        input#date1.form-control(type='text' required)
+                                                    .form-line
+                                                        label Part Name 
+                                                        input#PartName1.form-control(type='text')
+                                                    .form-line
+                                                        label Characterstic 
+                                                        input#characteristic1.form-control(type='text')
+                                                    .form-line
+                                                        label Spec value 
+                                                        input#MFD.form-control(type='text')
+                                                    .form-line
+                                                        label Unit 
+                                                        input#unit1.form-control(type='text')
+                                                    .form-line
+                                                        label Max. 
+                                                        input#max1.form-control(type='text')
+                                                    .form-line
+                                                        label Min. 
+                                                        input#min1.form-control(type='text')
+                                                    .form-line
+                                                        label Actual value 
+                                                        input#actualValue1.form-control(type='text')
+                                                    .form-line
+                                                        label Delta 
+                                                        input#delta1.form-control(type='text')
+                                                    .form-line
+                                                        label Remark 
+                                                        input#remark1.form-control(type='text')
+                                            h3 Pump Data
+                                            fieldset
+                                                .form-group.form-float
+                                                    .form-line
+                                                        label Date 
+                                                        input#date2.form-control(type='text' required)
+                                                    .form-line
+                                                        label Part Name 
+                                                        input#PartName2.form-control(type='text')
+                                                    .form-line
+                                                        label Characterstic 
+                                                        input#characteristic2.form-control(type='text')
+                                                    .form-line
+                                                        label Spec value 
+                                                        input#specValue2.form-control(type='text')
+                                                    .form-line
+                                                        label Unit 
+                                                        input#unit2.form-control(type='text')
+                                                    .form-line
+                                                        label Max. 
+                                                        input#max2.form-control(type='text')
+                                                    .form-line
+                                                        label Min. 
+                                                        input#min2.form-control(type='text')
+                                                    .form-line
+                                                        label Actual value 
+                                                        input#actualValue2.form-control(type='text')
+                                                    .form-line
+                                                        label Delta 
+                                                        input#delta2.form-control(type='text')
+                                                    .form-line
+                                                        label Remark 
+                                                        input#remark2.form-control(type='text')
+                                            h3 Pump Data
+                                            fieldset
+                                                .form-group.form-float
+                                                    .form-line
+                                                        label Date 
+                                                        input#date3.form-control(type='text' required)
+                                                    .form-line
+                                                        label Part Name 
+                                                        input#PartName3.form-control(type='text')
+                                                    .form-line
+                                                        label Characterstic 
+                                                        input#characteristic13.form-control(type='text')
+                                                    .form-line
+                                                        label Spec value 
+                                                        input#specValue3.form-control(type='text')
+                                                    .form-line
+                                                        label Unit 
+                                                        input#unit3.form-control(type='text')
+                                                    .form-line
+                                                        label Max. 
+                                                        input#max3.form-control(type='text')
+                                                    .form-line
+                                                        label Min. 
+                                                        input#min3.form-control(type='text')
+                                                    .form-line
+                                                        label Actual value 
+                                                        input#actualValue3.form-control(type='text')
+                                                    .form-line
+                                                        label Delta 
+                                                        input#delta3.form-control(type='text')
+                                                    .form-line
+                                                        label Remark 
+                                                        input#remark3.form-control(type='text')
+                                            h3 Pump Data
+                                            fieldset
+                                                .form-group.form-float
+                                                    .form-line
+                                                        label Date 
+                                                        input#date4.form-control(type='text' required)
+                                                    .form-line
+                                                        label Part Name 
+                                                        input#PartName4.form-control(type='text')
+                                                    .form-line
+                                                        label Characterstic 
+                                                        input#characteristic4.form-control(type='text')
+                                                    .form-line
+                                                        label Spec value 
+                                                        input#specValue4.form-control(type='text')
+                                                    .form-line
+                                                        label Unit 
+                                                        input#unit4.form-control(type='text')
+                                                    .form-line
+                                                        label Max. 
+                                                        input#max4.form-control(type='text')
+                                                    .form-line
+                                                        label Min. 
+                                                        input#min4.form-control(type='text')
+                                                    .form-line
+                                                        label Actual value 
+                                                        input#actualValue4.form-control(type='text')
+                                                    .form-line
+                                                        label Delta 
+                                                        input#delta4.form-control(type='text')
+                                                    .form-line
+                                                        label Remark 
+                                                        input#remark4.form-control(type='text')
+                                            h3 Pump Data
+                                            fieldset
+                                                .form-group.form-float
+                                                    .form-line
+                                                        label Date 
+                                                        input#date5.form-control(type='text' required)
+                                                    .form-line
+                                                        label Part Name 
+                                                        input#PartName5.form-control(type='text')
+                                                    .form-line
+                                                        label Characterstic 
+                                                        input#characteristic5.form-control(type='text')
+                                                    .form-line
+                                                        label Spec value 
+                                                        input#specValue5.form-control(type='text')
+                                                    .form-line
+                                                        label Unit 
+                                                        input#unit5.form-control(type='text')
+                                                    .form-line
+                                                        label Max. 
+                                                        input#max5.form-control(type='text')
+                                                    .form-line
+                                                        label Min. 
+                                                        input#min5.form-control(type='text')
+                                                    .form-line
+                                                        label Actual value 
+                                                        input#actualValue5.form-control(type='text')
+                                                    .form-line
+                                                        label Delta 
+                                                        input#delta5.form-control(type='text')
+                                                    .form-line
+                                                        label Remark 
+                                                        input#remark5.form-control(type='text')
+                                            h3 Pump Data
+                                            fieldset
+                                                .form-group.form-float
+                                                    .form-line
+                                                        label Date 
+                                                        input#date6.form-control(type='text' required)
+                                                    .form-line
+                                                        label Part Name 
+                                                        input#PartName6.form-control(type='text')
+                                                    .form-line
+                                                        label Characterstic 
+                                                        input#characteristic6.form-control(type='text')
+                                                    .form-line
+                                                        label Spec value 
+                                                        input#specValue6.form-control(type='text')
+                                                    .form-line
+                                                        label Unit 
+                                                        input#unit6.form-control(type='text')
+                                                    .form-line
+                                                        label Max. 
+                                                        input#max6.form-control(type='text')
+                                                    .form-line
+                                                        label Min. 
+                                                        input#min6.form-control(type='text')
+                                                    .form-line
+                                                        label Actual value 
+                                                        input#actualValue6.form-control(type='text')
+                                                    .form-line
+                                                        label Delta 
+                                                        input#delta6.form-control(type='text')
+                                                    .form-line
+                                                        label Remark 
+                                                        input#remark6.form-control(type='text')
+                                            h3 Pump Data
+                                            fieldset
+                                                .form-group.form-float
+                                                    .form-line
+                                                        label Date 
+                                                        input#date7.form-control(type='text' required)
+                                                    .form-line
+                                                        label Part Name 
+                                                        input#PartName7.form-control(type='text')
+                                                    .form-line
+                                                        label Characterstic 
+                                                        input#characteristic7.form-control(type='text')
+                                                    .form-line
+                                                        label Spec value 
+                                                        input#specValue7.form-control(type='text')
+                                                    .form-line
+                                                        label Unit 
+                                                        input#unit7.form-control(type='text')
+                                                    .form-line
+                                                        label Max. 
+                                                        input#max7.form-control(type='text')
+                                                    .form-line
+                                                        label Min. 
+                                                        input#min7.form-control(type='text')
+                                                    .form-line
+                                                        label Actual value 
+                                                        input#actualValue7.form-control(type='text')
+                                                    .form-line
+                                                        label Delta 
+                                                        input#delta7.form-control(type='text')
+                                                    .form-line
+                                                        label Remark 
+                                                        input#remark7.form-control(type='text')
+                                            h3 Pump Data
+                                            fieldset
+                                                .form-group.form-float
+                                                    .form-line
+                                                        label Date 
+                                                        input#date8.form-control(type='text' required)
+                                                    .form-line
+                                                        label Part Name 
+                                                        input#PartName8.form-control(type='text')
+                                                    .form-line
+                                                        label Characterstic 
+                                                        input#characteristic8.form-control(type='text')
+                                                    .form-line
+                                                        label Spec value 
+                                                        input#specValue8.form-control(type='text')
+                                                    .form-line
+                                                        label Unit 
+                                                        input#unit8.form-control(type='text')
+                                                    .form-line
+                                                        label Max. 
+                                                        input#max8.form-control(type='text')
+                                                    .form-line
+                                                        label Min. 
+                                                        input#min8.form-control(type='text')
+                                                    .form-line
+                                                        label Actual value 
+                                                        input#actualValue8.form-control(type='text')
+                                                    .form-line
+                                                        label Delta 
+                                                        input#delta8.form-control(type='text')
+                                                    .form-line
+                                                        label Remark 
+                                                        input#remark8.form-control(type='text')
+                                            h3 Pump Data
+                                            fieldset
+                                                .form-group.form-float
+                                                    .form-line
+                                                        label Date 
+                                                        input#date9.form-control(type='text' required)
+                                                    .form-line
+                                                        label Part Name 
+                                                        input#PartName9.form-control(type='text')
+                                                    .form-line
+                                                        label Characterstic 
+                                                        input#characteristic9.form-control(type='text')
+                                                    .form-line
+                                                        label Spec value 
+                                                        input#specValue9.form-control(type='text')
+                                                    .form-line
+                                                        label Unit 
+                                                        input#unit9.form-control(type='text')
+                                                    .form-line
+                                                        label Max. 
+                                                        input#max9.form-control(type='text')
+                                                    .form-line
+                                                        label Min. 
+                                                        input#min9.form-control(type='text')
+                                                    .form-line
+                                                        label Actual value 
+                                                        input#actualValue9.form-control(type='text')
+                                                    .form-line
+                                                        label Delta 
+                                                        input#delta9.form-control(type='text')
+                                                    .form-line
+                                                        label Remark 
+                                                        input#remark9.form-control(type='text')
+                                            h3 Pump Data
+                                            fieldset
+                                                .form-group.form-float
+                                                    .form-line
+                                                        label Date 
+                                                        input#date10.form-control(type='text' required)
+                                                    .form-line
+                                                        label Part Name 
+                                                        input#PartName10.form-control(type='text')
+                                                    .form-line
+                                                        label Characterstic 
+                                                        input#characteristic10.form-control(type='text')
+                                                    .form-line
+                                                        label Spec value 
+                                                        input#specValue10.form-control(type='text')
+                                                    .form-line
+                                                        label Unit 
+                                                        input#unit10.form-control(type='text')
+                                                    .form-line
+                                                        label Max. 
+                                                        input#max10.form-control(type='text')
+                                                    .form-line
+                                                        label Min. 
+                                                        input#min10.form-control(type='text')
+                                                    .form-line
+                                                        label Actual value 
+                                                        input#actualValue9.form-control(type='text')
+                                                    .form-line
+                                                        label Delta 
+                                                        input#delta10.form-control(type='text')
+                                                    .form-line
+                                                        label Remark 
+                                                        input#remark10.form-control(type='text')
+                                            
+                                                    
+
+                                        .card-footer.text-right
+                                            button#swal-6.btn.btn-primary.mr-1(type='submit') Save changes                
+
 
 
 

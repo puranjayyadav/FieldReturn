@@ -59,6 +59,7 @@ $(document).ready(function() {
         tr += `<td>${metaldata[i].BDS}</td>`;
         tr += `<td>${metaldata[i].finalStatus}</td>`;
         tr += `<td><a href="/metallurgical/${metaldata[i].slug}" class="btn btn-success">Details</a></td>`;
+
         tr += '</tr>';
       }
       $('#tableExport').append(tr);

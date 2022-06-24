@@ -108,7 +108,7 @@ if (process.env.NODE_ENV === 'development') {
 //APPLYING THE LIMITER TO THE /API ROUTE OF THE APP SO THAT EVERY ROUTE GOES THROUGHT THIS SECURITY MEASURE
 
 //BODY PARSER , READING DATA FROM BODY INTO REQ.BODY
-app.use(express.json({ limit: '10kb' }));
+app.use(express.json({ limit: '70000kb' }));
 app.use(cookieParser());
 //Data sanitization so that user cannot input malicious code
 app.use(mongoSanitize());

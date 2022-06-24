@@ -55,10 +55,10 @@ $('#swal-8').click(function() {
   swal('Submitting form , please wait', {
     buttons: false,
     icon: 'success',
-    timer: 5000
+    timer: 10000
   }).then(
     window.setTimeout(() => {
       location.assign('/metallurgical');
-    }, 5000)
+    }, 10000)
   );
 });

@@ -43,16 +43,16 @@ function barChart() {
   const categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
   categoryAxis.dataFields.category = 'country';
   categoryAxis.renderer.grid.template.location = 0;
-  categoryAxis.renderer.minGridDistance = 30;
+  categoryAxis.renderer.minGridDistance = 3;
   categoryAxis.renderer.labels.template.horizontalCenter = 'right';
   categoryAxis.renderer.labels.template.verticalCenter = 'middle';
   categoryAxis.renderer.labels.template.rotation = 270;
   categoryAxis.tooltip.disabled = true;
-  categoryAxis.renderer.minHeight = 110;
+  categoryAxis.renderer.minHeight = 1;
   categoryAxis.renderer.labels.template.fill = am4core.color('#9aa0ac');
 
   const valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-  valueAxis.renderer.minWidth = 50;
+  valueAxis.renderer.minWidth = 10;
   valueAxis.renderer.labels.template.fill = am4core.color('#9aa0ac');
 
   // Create series

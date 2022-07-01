@@ -209,6 +209,7 @@ function lineChart() {
     },{
       date: '2022-06-1',
       value: 4
+    }
   ];
 
   // Create axes

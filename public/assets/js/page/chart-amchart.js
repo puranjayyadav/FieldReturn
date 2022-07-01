@@ -22,52 +22,20 @@ function barChart() {
   // Add data
   chart.data = [
     {
-      country: 'USA',
-      visits: 3025
+      country: 'CNHI',
+      visits: 9
     },
     {
-      country: 'China',
-      visits: 1882
+      country: 'TCL',
+      visits: 1
     },
     {
-      country: 'Japan',
-      visits: 1809
+      country: 'FPT',
+      visits: 3
     },
     {
-      country: 'Germany',
-      visits: 1322
-    },
-    {
-      country: 'UK',
-      visits: 1122
-    },
-    {
-      country: 'France',
-      visits: 1114
-    },
-    {
-      country: 'India',
-      visits: 984
-    },
-    {
-      country: 'Spain',
-      visits: 711
-    },
-    {
-      country: 'Netherlands',
-      visits: 665
-    },
-    {
-      country: 'Russia',
-      visits: 580
-    },
-    {
-      country: 'South Korea',
-      visits: 443
-    },
-    {
-      country: 'Canada',
-      visits: 441
+      country: 'Mahindra',
+      visits: 1
     }
   ];
 
@@ -125,33 +93,48 @@ function barChartWithImg() {
   // Add data
   chart.data = [
     {
-      name: 'John',
-      points: 35654,
+      name: '0460.426.547',
+      points: 7,
       color: chart.colors.next()
     },
     {
-      name: 'Damon',
-      points: 65456,
+      name: '0460.424.471',
+      points: 1,
       color: chart.colors.next()
     },
     {
-      name: 'Patrick',
-      points: 45724,
+      name: '0460.424.491',
+      points: 1,
       color: chart.colors.next()
     },
     {
-      name: 'Sarah',
-      points: 13654,
+      name: '0460.424.542',
+      points: 1,
       color: chart.colors.next()
     },
     {
-      name: 'Pooja',
-      points: 32589,
+      name: '0460.426.472',
+      points: 1,
       color: chart.colors.next()
     },
     {
-      name: 'jatin',
-      points: 45895,
+      name: '0460.424.424',
+      points: 2,
+      color: chart.colors.next()
+    },
+    {
+      name: '0460.423.078',
+      points: 1,
+      color: chart.colors.next()
+    },
+    {
+      name: '0460.424.491',
+      points: 1,
+      color: chart.colors.next()
+    },
+    {
+      name: '0460.424.496',
+      points: 1,
       color: chart.colors.next()
     }
   ];
@@ -210,421 +193,22 @@ function lineChart() {
   // Add data
   chart.data = [
     {
-      date: '2012-08-12',
-      value: 32
+      date: '2022-02-21',
+      value: 2
     },
     {
-      date: '2012-08-13',
-      value: 18
+      date: '2022-03-12',
+      value: 2
     },
     {
-      date: '2012-08-14',
-      value: 24
-    },
-    {
-      date: '2012-08-15',
-      value: 22
-    },
-    {
-      date: '2012-08-16',
-      value: 18
-    },
-    {
-      date: '2012-08-17',
-      value: 19
-    },
-    {
-      date: '2012-08-18',
-      value: 14
-    },
-    {
-      date: '2012-08-19',
-      value: 15
-    },
-    {
-      date: '2012-08-20',
-      value: 12
-    },
-    {
-      date: '2012-08-28',
-      value: 18
-    },
-    {
-      date: '2012-08-29',
-      value: 20
-    },
-    {
-      date: '2012-08-30',
-      value: 29
-    },
-    {
-      date: '2012-08-31',
-      value: 33
-    },
-    {
-      date: '2012-09-01',
-      value: 42
-    },
-    {
-      date: '2012-09-02',
-      value: 35
-    },
-    {
-      date: '2012-09-03',
-      value: 31
-    },
-    {
-      date: '2012-09-04',
-      value: 47
-    },
-    {
-      date: '2012-09-05',
-      value: 52
-    },
-    {
-      date: '2012-09-06',
-      value: 46
-    },
-    {
-      date: '2012-09-07',
-      value: 41
-    },
-    {
-      date: '2012-09-08',
-      value: 43
-    },
-    {
-      date: '2012-09-09',
-      value: 40
-    },
-    {
-      date: '2012-09-10',
-      value: 39
-    },
-    {
-      date: '2012-09-11',
-      value: 34
-    },
-    {
-      date: '2012-09-12',
-      value: 29
-    },
-    {
-      date: '2012-09-13',
-      value: 34
-    },
-    {
-      date: '2012-11-14',
-      value: 81
-    },
-    {
-      date: '2012-11-15',
-      value: 87
-    },
-    {
-      date: '2012-11-16',
-      value: 82
-    },
-    {
-      date: '2012-11-17',
-      value: 86
-    },
-    {
-      date: '2012-11-18',
-      value: 80
-    },
-    {
-      date: '2012-11-19',
-      value: 87
-    },
-    {
-      date: '2012-11-20',
-      value: 83
-    },
-    {
-      date: '2012-11-21',
-      value: 85
-    },
-    {
-      date: '2012-11-22',
-      value: 84
-    },
-    {
-      date: '2012-11-23',
-      value: 82
-    },
-    {
-      date: '2012-11-24',
-      value: 73
-    },
-    {
-      date: '2012-11-25',
-      value: 71
-    },
-    {
-      date: '2012-11-26',
-      value: 75
-    },
-    {
-      date: '2012-11-27',
-      value: 79
-    },
-    {
-      date: '2012-11-28',
-      value: 70
-    },
-    {
-      date: '2012-11-29',
-      value: 73
-    },
-    {
-      date: '2012-11-30',
-      value: 61
-    },
-    {
-      date: '2012-12-01',
-      value: 62
-    },
-    {
-      date: '2012-12-02',
-      value: 66
-    },
-    {
-      date: '2012-12-03',
-      value: 65
-    },
-    {
-      date: '2012-12-04',
-      value: 73
-    },
-    {
-      date: '2012-12-05',
-      value: 79
-    },
-    {
-      date: '2012-12-06',
-      value: 78
-    },
-    {
-      date: '2012-12-07',
-      value: 78
-    },
-    {
-      date: '2012-12-08',
-      value: 78
-    },
-    {
-      date: '2012-12-09',
-      value: 74
-    },
-    {
-      date: '2012-12-10',
-      value: 73
-    },
-    {
-      date: '2012-12-11',
-      value: 75
-    },
-    {
-      date: '2012-12-12',
-      value: 70
-    },
-    {
-      date: '2012-12-13',
-      value: 77
-    },
-    {
-      date: '2012-12-14',
-      value: 67
-    },
-    {
-      date: '2012-12-15',
-      value: 62
-    },
-    {
-      date: '2012-12-16',
-      value: 64
-    },
-    {
-      date: '2012-12-17',
-      value: 61
-    },
-    {
-      date: '2012-12-18',
-      value: 59
-    },
-    {
-      date: '2012-12-19',
-      value: 53
-    },
-    {
-      date: '2012-12-20',
-      value: 54
-    },
-    {
-      date: '2012-12-21',
-      value: 56
-    },
-    {
-      date: '2012-12-22',
-      value: 59
-    },
-    {
-      date: '2012-12-23',
-      value: 58
-    },
-    {
-      date: '2012-12-24',
-      value: 55
-    },
-    {
-      date: '2012-12-25',
-      value: 52
-    },
-    {
-      date: '2012-12-26',
-      value: 54
-    },
-    {
-      date: '2012-12-27',
-      value: 50
-    },
-    {
-      date: '2012-12-28',
-      value: 50
-    },
-    {
-      date: '2012-12-29',
-      value: 51
-    },
-    {
-      date: '2012-12-30',
-      value: 52
-    },
-    {
-      date: '2012-12-31',
-      value: 58
-    },
-    {
-      date: '2013-01-01',
-      value: 60
-    },
-    {
-      date: '2013-01-02',
-      value: 67
-    },
-    {
-      date: '2013-01-03',
-      value: 64
-    },
-    {
-      date: '2013-01-04',
-      value: 66
-    },
-    {
-      date: '2013-01-05',
-      value: 60
-    },
-    {
-      date: '2013-01-06',
-      value: 63
-    },
-    {
-      date: '2013-01-07',
-      value: 61
-    },
-    {
-      date: '2013-01-08',
-      value: 60
-    },
-    {
-      date: '2013-01-09',
-      value: 65
-    },
-    {
-      date: '2013-01-10',
-      value: 75
-    },
-    {
-      date: '2013-01-11',
-      value: 77
-    },
-    {
-      date: '2013-01-12',
-      value: 78
-    },
-    {
-      date: '2013-01-13',
-      value: 70
-    },
-    {
-      date: '2013-01-14',
-      value: 70
-    },
-    {
-      date: '2013-01-15',
-      value: 73
-    },
-    {
-      date: '2013-01-16',
-      value: 71
-    },
-    {
-      date: '2013-01-17',
-      value: 74
-    },
-    {
-      date: '2013-01-18',
-      value: 78
-    },
-    {
-      date: '2013-01-19',
-      value: 85
-    },
-    {
-      date: '2013-01-20',
-      value: 82
-    },
-    {
-      date: '2013-01-21',
-      value: 83
-    },
-    {
-      date: '2013-01-22',
-      value: 88
-    },
-    {
-      date: '2013-01-23',
-      value: 85
-    },
-    {
-      date: '2013-01-24',
-      value: 85
-    },
-    {
-      date: '2013-01-25',
-      value: 80
-    },
-    {
-      date: '2013-01-26',
-      value: 87
-    },
-    {
-      date: '2013-01-27',
-      value: 84
-    },
-    {
-      date: '2013-01-28',
-      value: 83
-    },
-    {
-      date: '2013-01-29',
-      value: 84
-    },
-    {
-      date: '2013-01-30',
-      value: 81
-    }
+      date: '2022-04-18',
+      value: 1
+    },{
+      date: '2022-05-12',
+      value: 4
+    },{
+      date: '2022-06-1',
+      value: 4
   ];
 
   // Create axes
@@ -691,40 +275,20 @@ function donutChart() {
   // Add data
   chart.data = [
     {
-      country: 'Lithuania',
-      litres: 501.9
+      country: 'Russia',
+      litres: 2
     },
     {
-      country: 'Czech Republic',
-      litres: 301.9
+      country: 'China',
+      litres: 9
     },
     {
-      country: 'Ireland',
-      litres: 201.1
+      country: 'Brazil',
+      litres: 3
     },
     {
-      country: 'Germany',
-      litres: 165.8
-    },
-    {
-      country: 'Australia',
-      litres: 139.9
-    },
-    {
-      country: 'Austria',
-      litres: 128.3
-    },
-    {
-      country: 'UK',
-      litres: 99
-    },
-    {
-      country: 'Belgium',
-      litres: 60
-    },
-    {
-      country: 'The Netherlands',
-      litres: 50
+      country: 'Turkey',
+      litres: 2
     }
   ];
 

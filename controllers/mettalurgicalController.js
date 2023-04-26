@@ -4,6 +4,7 @@ const Metal = require('../models/mettalurgicalModel');
 const factory = require('./handlerFactory');
 const AppError = require('../utils/appError');
 const catchAsync = require('../utils/catchAsync');
+const client = require('@jsreport/nodejs-client')('http://localhost:5488');
 
 // const multerStorage = multer.diskStorage({
 //   destination: (req, file, cb) => {
@@ -230,4 +231,16 @@ exports.resize = catchAsync(async (req, res, next) => {
 exports.createMetalurgicalData = factory.createOne(Metal);
 exports.getMetalurgicalData = factory.getAll(Metal);
 exports.getSpecificMetalurgicalData = factory.getOne(Metal);
-exports.updateSpecificMetaldata = factory.updateOne(Metal);
+exports.updateSpecificMetaldata = factory.updateOneMetal(Metal);
+exports.getReportData = factory.getReport(Metal);
+// exports.updateSpecificMetaldata = catchAsync(async (req, res, next) => {
+//   // const filteredBody = filterObj(req.body, 'name', 'email');
+//   const updatedMetal = await Metal.findByIdAndUpdate(req.params.id, {
+//     new: true,
+//     runValidators: true
+//   });
+//   res.status(200).json({
+//     status: 'success',
+//     data: { updatedMetal }
+//   });
+// });

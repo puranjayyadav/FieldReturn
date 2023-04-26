@@ -11,8 +11,11 @@ exports.getPumpData = catchAsync(async (req, res, next) => {
   });
 });
 exports.getPumpDetails = catchAsync(async (req, res, next) => {
-  const pumps = await Metal.findOne({ slug: req.params.slug });
-   res.status(200).render('pumpDetail', {
+  const pumps = await Metal.findById(req.params.id);
+  // let query = Metal.findById(req.params.id);
+  // console.log('getpumpdetails');
+  // console.log(query);
+  res.status(200).render('pumpDetail', {
     title: 'Pump Details',
     pumps
   });
@@ -85,4 +88,8 @@ exports.getDataAnalytics = (req, res) => {
   res.status(200).render('widgets', {
     title: 'Data Analytics'
   });
+};
+
+exports.updateInvestData = (req, res, next) => {
+  console.log('UPDAATING USER', req.body);
 };

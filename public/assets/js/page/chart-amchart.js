@@ -1,3 +1,6 @@
+const xhr = new XMLHttpRequest();
+let count = 0;
+
 $(function() {
   barChart();
   barChartWithImg();
@@ -15,104 +18,89 @@ function barChart() {
   am4core.useTheme(am4themes_animated);
   // Themes end
 
-  // Create chart instance
-  const chart = am4core.create('barChart', am4charts.XYChart);
-  chart.scrollbarX = new am4core.Scrollbar();
+  // REQUEST TO SERVER API
+  xhr.open('GET', '/api/v1/metallurgical');
+  xhr.send();
+  xhr.responseType = 'json';
+  xhr.onload = () => {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      const serv = xhr.response.data.data;
 
-  // Add data
-  chart.data = [
-    {
-      country: 'USA',
-      visits: 3025
-    },
-    {
-      country: 'China',
-      visits: 1882
-    },
-    {
-      country: 'Japan',
-      visits: 1809
-    },
-    {
-      country: 'Germany',
-      visits: 1322
-    },
-    {
-      country: 'UK',
-      visits: 1122
-    },
-    {
-      country: 'France',
-      visits: 1114
-    },
-    {
-      country: 'India',
-      visits: 984
-    },
-    {
-      country: 'Spain',
-      visits: 711
-    },
-    {
-      country: 'Netherlands',
-      visits: 665
-    },
-    {
-      country: 'Russia',
-      visits: 580
-    },
-    {
-      country: 'South Korea',
-      visits: 443
-    },
-    {
-      country: 'Canada',
-      visits: 441
+      // Create a map to store the count of occurrences for each customer
+      const customerMap = new Map();
+      for (let i = 0; i < serv.length; i++) {
+        const customer = serv[i].customer;
+        if (customerMap.has(customer)) {
+          // Increment count if customer already exists in the map
+          customerMap.set(customer, customerMap.get(customer) + 1);
+        } else {
+          // Initialize count to 1 if customer does not exist in the map
+          customerMap.set(customer, 1);
+        }
+      }
+
+      // Create an array of objects to store the data for the chart
+      const chartData = [];
+      for (const [customer, count] of customerMap.entries()) {
+        chartData.push({
+          customer: customer,
+          visits: count
+        });
+      }
+
+      // Create chart instance
+      const chart = am4core.create('barChart', am4charts.XYChart);
+      chart.scrollbarX = new am4core.Scrollbar();
+
+      // Create axes
+      const categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+      categoryAxis.dataFields.category = 'customer';
+      categoryAxis.renderer.grid.template.location = 0;
+      categoryAxis.renderer.minGridDistance = 30;
+      categoryAxis.renderer.labels.template.horizontalCenter = 'right';
+      categoryAxis.renderer.labels.template.verticalCenter = 'middle';
+      categoryAxis.renderer.labels.template.rotation = 270;
+      categoryAxis.tooltip.disabled = true;
+      categoryAxis.renderer.minHeight = 110;
+      categoryAxis.renderer.labels.template.fill = am4core.color('#9aa0ac');
+
+      const valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+      valueAxis.renderer.minWidth = 50;
+      valueAxis.renderer.labels.template.fill = am4core.color('#9aa0ac');
+
+      // Create series
+      const series = chart.series.push(new am4charts.ColumnSeries());
+      series.sequencedInterpolation = true;
+      series.dataFields.valueY = 'visits';
+      series.dataFields.categoryX = 'customer';
+      series.tooltipText = '[{categoryX}: bold]{valueY}[/]';
+      series.columns.template.strokeWidth = 0;
+
+      series.tooltip.pointerOrientation = 'vertical';
+
+      series.columns.template.column.cornerRadiusTopLeft = 10;
+      series.columns.template.column.cornerRadiusTopRight = 10;
+      series.columns.template.column.fillOpacity = 0.8;
+
+      // On hover, make corner radiuses bigger
+      const hoverState = series.columns.template.column.states.create('hover');
+      hoverState.properties.cornerRadiusTopLeft = 0;
+      hoverState.properties.cornerRadiusTopRight = 0;
+      hoverState.properties.fillOpacity = 1;
+
+      series.columns.template.adapter.add('fill', (fill, target) => {
+        return chart.colors.getIndex(target.dataItem.index);
+      });
+
+      // Set data for the chart
+      chart.data = chartData;
+
+      // Cursor
+      chart.cursor = new am4charts.XYCursor();
+    } else {
+      console.log(`Error: ${xhr.status}`);
     }
-  ];
-
-  // Create axes
-  const categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-  categoryAxis.dataFields.category = 'country';
-  categoryAxis.renderer.grid.template.location = 0;
-  categoryAxis.renderer.minGridDistance = 30;
-  categoryAxis.renderer.labels.template.horizontalCenter = 'right';
-  categoryAxis.renderer.labels.template.verticalCenter = 'middle';
-  categoryAxis.renderer.labels.template.rotation = 270;
-  categoryAxis.tooltip.disabled = true;
-  categoryAxis.renderer.minHeight = 110;
-  categoryAxis.renderer.labels.template.fill = am4core.color('#9aa0ac');
-
-  const valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-  valueAxis.renderer.minWidth = 50;
-  valueAxis.renderer.labels.template.fill = am4core.color('#9aa0ac');
-
-  // Create series
-  const series = chart.series.push(new am4charts.ColumnSeries());
-  series.sequencedInterpolation = true;
-  series.dataFields.valueY = 'visits';
-  series.dataFields.categoryX = 'country';
-  series.tooltipText = '[{categoryX}: bold]{valueY}[/]';
-  series.columns.template.strokeWidth = 0;
-
-  series.tooltip.pointerOrientation = 'vertical';
-
-  series.columns.template.column.cornerRadiusTopLeft = 10;
-  series.columns.template.column.cornerRadiusTopRight = 10;
-  series.columns.template.column.fillOpacity = 0.8;
-
-  // on hover, make corner radiuses bigger
-  const hoverState = series.columns.template.column.states.create('hover');
-  hoverState.properties.cornerRadiusTopLeft = 0;
-  hoverState.properties.cornerRadiusTopRight = 0;
-  hoverState.properties.fillOpacity = 1;
-
-  series.columns.template.adapter.add('fill', (fill, target) => {
-    return chart.colors.getIndex(target.dataItem.index);
-  });
-
-  // Cursor
-  chart.cursor = new am4charts.XYCursor();
+  };
 }
 function barChartWithImg() {
   // Themes begin
@@ -123,80 +111,70 @@ function barChartWithImg() {
   const chart = am4core.create('barImg', am4charts.XYChart);
 
   // Add data
-  chart.data = [
-    {
-      name: 'John',
-      points: 35654,
-      color: chart.colors.next()
-    },
-    {
-      name: 'Damon',
-      points: 65456,
-      color: chart.colors.next()
-    },
-    {
-      name: 'Patrick',
-      points: 45724,
-      color: chart.colors.next()
-    },
-    {
-      name: 'Sarah',
-      points: 13654,
-      color: chart.colors.next()
-    },
-    {
-      name: 'Pooja',
-      points: 32589,
-      color: chart.colors.next()
-    },
-    {
-      name: 'jatin',
-      points: 45895,
-      color: chart.colors.next()
+  // Replace the static data with a dynamic data source, such as an API or JSON response from the server
+  // You can use XMLHttpRequest (XHR) or any other method to make an API request and fetch the data
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', '/api/v1/metallurgical'); // Replace with the actual API URL
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      const data = JSON.parse(xhr.responseText);
+      const serv = data.data.data;
+
+      // Extract the FIP names and count the occurrences
+      const fipCounts = {};
+      for (let i = 0; i < serv.length; i++) {
+        const fip = serv[i].FIP;
+        if (fipCounts[fip]) {
+          fipCounts[fip]++;
+        } else {
+          fipCounts[fip] = 1;
+        }
+      }
+
+      // Convert the fipCounts object into an array of objects for chart data
+      const chartData = Object.keys(fipCounts).map(fip => {
+        return {
+          name: fip,
+          fipCount: fipCounts[fip],
+          color: chart.colors.next()
+        };
+      });
+      console.log(chartData);
+      chart.data = chartData;
+
+      // Create axes
+      const categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+      categoryAxis.dataFields.category = 'name';
+      categoryAxis.renderer.grid.template.disabled = true;
+      categoryAxis.renderer.minGridDistance = 30;
+      categoryAxis.renderer.inside = true;
+      categoryAxis.renderer.labels.template.fill = am4core.color('#fff');
+      categoryAxis.renderer.labels.template.fontSize = 14;
+
+      const valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+      valueAxis.renderer.grid.template.strokeDasharray = '4,4';
+      valueAxis.renderer.labels.template.disabled = true;
+      valueAxis.min = 0;
+
+      // Do not crop bullets
+      chart.maskBullets = false;
+
+      // Remove padding
+      chart.paddingBottom = 0;
+
+      // Create series for FIP count
+      const seriesFIPCount = chart.series.push(new am4charts.ColumnSeries());
+      seriesFIPCount.dataFields.valueY = 'fipCount';
+      seriesFIPCount.dataFields.categoryX = 'name';
+      seriesFIPCount.columns.template.propertyFields.fill = 'color';
+      seriesFIPCount.columns.template.propertyFields.stroke = 'color';
+      seriesFIPCount.columns.template.column.cornerRadiusTopLeft = 15;
+      seriesFIPCount.columns.template.column.cornerRadiusTopRight = 15;
+      seriesFIPCount.columns.template.tooltipText =
+        '{categoryX}: [bold]{valueY}[/b] FIP Count';
     }
-  ];
-
-  // Create axes
-  const categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-  categoryAxis.dataFields.category = 'name';
-  categoryAxis.renderer.grid.template.disabled = true;
-  categoryAxis.renderer.minGridDistance = 30;
-  categoryAxis.renderer.inside = true;
-  categoryAxis.renderer.labels.template.fill = am4core.color('#fff');
-  categoryAxis.renderer.labels.template.fontSize = 14;
-
-  const valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-  valueAxis.renderer.grid.template.strokeDasharray = '4,4';
-  valueAxis.renderer.labels.template.disabled = true;
-  valueAxis.min = 0;
-
-  // Do not crop bullets
-  chart.maskBullets = false;
-
-  // Remove padding
-  chart.paddingBottom = 0;
-
-  // Create series
-  const series = chart.series.push(new am4charts.ColumnSeries());
-  series.dataFields.valueY = 'points';
-  series.dataFields.categoryX = 'name';
-  series.columns.template.propertyFields.fill = 'color';
-  series.columns.template.propertyFields.stroke = 'color';
-  series.columns.template.column.cornerRadiusTopLeft = 15;
-  series.columns.template.column.cornerRadiusTopRight = 15;
-  series.columns.template.tooltipText = '{categoryX}: [bold]{valueY}[/b]';
-
-  // Add bullets
-  const bullet = series.bullets.push(new am4charts.Bullet());
-  const image = bullet.createChild(am4core.Image);
-  image.horizontalCenter = 'middle';
-  image.verticalCenter = 'bottom';
-  image.dy = 20;
-  image.y = am4core.percent(100);
-  image.propertyFields.href = 'bullet';
-  image.tooltipText = series.columns.template.tooltipText;
-  image.propertyFields.fill = 'color';
-  image.filters.push(new am4core.DropShadowFilter());
+  };
+  xhr.send();
 }
 
 function lineChart() {
@@ -204,428 +182,67 @@ function lineChart() {
   am4core.useTheme(am4themes_animated);
   // Themes end
 
-  // Create chart instance
   const chart = am4core.create('lineChart', am4charts.XYChart);
 
-  // Add data
-  chart.data = [
-    {
-      date: '2012-08-12',
-      value: 32
-    },
-    {
-      date: '2012-08-13',
-      value: 18
-    },
-    {
-      date: '2012-08-14',
-      value: 24
-    },
-    {
-      date: '2012-08-15',
-      value: 22
-    },
-    {
-      date: '2012-08-16',
-      value: 18
-    },
-    {
-      date: '2012-08-17',
-      value: 19
-    },
-    {
-      date: '2012-08-18',
-      value: 14
-    },
-    {
-      date: '2012-08-19',
-      value: 15
-    },
-    {
-      date: '2012-08-20',
-      value: 12
-    },
-    {
-      date: '2012-08-28',
-      value: 18
-    },
-    {
-      date: '2012-08-29',
-      value: 20
-    },
-    {
-      date: '2012-08-30',
-      value: 29
-    },
-    {
-      date: '2012-08-31',
-      value: 33
-    },
-    {
-      date: '2012-09-01',
-      value: 42
-    },
-    {
-      date: '2012-09-02',
-      value: 35
-    },
-    {
-      date: '2012-09-03',
-      value: 31
-    },
-    {
-      date: '2012-09-04',
-      value: 47
-    },
-    {
-      date: '2012-09-05',
-      value: 52
-    },
-    {
-      date: '2012-09-06',
-      value: 46
-    },
-    {
-      date: '2012-09-07',
-      value: 41
-    },
-    {
-      date: '2012-09-08',
-      value: 43
-    },
-    {
-      date: '2012-09-09',
-      value: 40
-    },
-    {
-      date: '2012-09-10',
-      value: 39
-    },
-    {
-      date: '2012-09-11',
-      value: 34
-    },
-    {
-      date: '2012-09-12',
-      value: 29
-    },
-    {
-      date: '2012-09-13',
-      value: 34
-    },
-    {
-      date: '2012-11-14',
-      value: 81
-    },
-    {
-      date: '2012-11-15',
-      value: 87
-    },
-    {
-      date: '2012-11-16',
-      value: 82
-    },
-    {
-      date: '2012-11-17',
-      value: 86
-    },
-    {
-      date: '2012-11-18',
-      value: 80
-    },
-    {
-      date: '2012-11-19',
-      value: 87
-    },
-    {
-      date: '2012-11-20',
-      value: 83
-    },
-    {
-      date: '2012-11-21',
-      value: 85
-    },
-    {
-      date: '2012-11-22',
-      value: 84
-    },
-    {
-      date: '2012-11-23',
-      value: 82
-    },
-    {
-      date: '2012-11-24',
-      value: 73
-    },
-    {
-      date: '2012-11-25',
-      value: 71
-    },
-    {
-      date: '2012-11-26',
-      value: 75
-    },
-    {
-      date: '2012-11-27',
-      value: 79
-    },
-    {
-      date: '2012-11-28',
-      value: 70
-    },
-    {
-      date: '2012-11-29',
-      value: 73
-    },
-    {
-      date: '2012-11-30',
-      value: 61
-    },
-    {
-      date: '2012-12-01',
-      value: 62
-    },
-    {
-      date: '2012-12-02',
-      value: 66
-    },
-    {
-      date: '2012-12-03',
-      value: 65
-    },
-    {
-      date: '2012-12-04',
-      value: 73
-    },
-    {
-      date: '2012-12-05',
-      value: 79
-    },
-    {
-      date: '2012-12-06',
-      value: 78
-    },
-    {
-      date: '2012-12-07',
-      value: 78
-    },
-    {
-      date: '2012-12-08',
-      value: 78
-    },
-    {
-      date: '2012-12-09',
-      value: 74
-    },
-    {
-      date: '2012-12-10',
-      value: 73
-    },
-    {
-      date: '2012-12-11',
-      value: 75
-    },
-    {
-      date: '2012-12-12',
-      value: 70
-    },
-    {
-      date: '2012-12-13',
-      value: 77
-    },
-    {
-      date: '2012-12-14',
-      value: 67
-    },
-    {
-      date: '2012-12-15',
-      value: 62
-    },
-    {
-      date: '2012-12-16',
-      value: 64
-    },
-    {
-      date: '2012-12-17',
-      value: 61
-    },
-    {
-      date: '2012-12-18',
-      value: 59
-    },
-    {
-      date: '2012-12-19',
-      value: 53
-    },
-    {
-      date: '2012-12-20',
-      value: 54
-    },
-    {
-      date: '2012-12-21',
-      value: 56
-    },
-    {
-      date: '2012-12-22',
-      value: 59
-    },
-    {
-      date: '2012-12-23',
-      value: 58
-    },
-    {
-      date: '2012-12-24',
-      value: 55
-    },
-    {
-      date: '2012-12-25',
-      value: 52
-    },
-    {
-      date: '2012-12-26',
-      value: 54
-    },
-    {
-      date: '2012-12-27',
-      value: 50
-    },
-    {
-      date: '2012-12-28',
-      value: 50
-    },
-    {
-      date: '2012-12-29',
-      value: 51
-    },
-    {
-      date: '2012-12-30',
-      value: 52
-    },
-    {
-      date: '2012-12-31',
-      value: 58
-    },
-    {
-      date: '2013-01-01',
-      value: 60
-    },
-    {
-      date: '2013-01-02',
-      value: 67
-    },
-    {
-      date: '2013-01-03',
-      value: 64
-    },
-    {
-      date: '2013-01-04',
-      value: 66
-    },
-    {
-      date: '2013-01-05',
-      value: 60
-    },
-    {
-      date: '2013-01-06',
-      value: 63
-    },
-    {
-      date: '2013-01-07',
-      value: 61
-    },
-    {
-      date: '2013-01-08',
-      value: 60
-    },
-    {
-      date: '2013-01-09',
-      value: 65
-    },
-    {
-      date: '2013-01-10',
-      value: 75
-    },
-    {
-      date: '2013-01-11',
-      value: 77
-    },
-    {
-      date: '2013-01-12',
-      value: 78
-    },
-    {
-      date: '2013-01-13',
-      value: 70
-    },
-    {
-      date: '2013-01-14',
-      value: 70
-    },
-    {
-      date: '2013-01-15',
-      value: 73
-    },
-    {
-      date: '2013-01-16',
-      value: 71
-    },
-    {
-      date: '2013-01-17',
-      value: 74
-    },
-    {
-      date: '2013-01-18',
-      value: 78
-    },
-    {
-      date: '2013-01-19',
-      value: 85
-    },
-    {
-      date: '2013-01-20',
-      value: 82
-    },
-    {
-      date: '2013-01-21',
-      value: 83
-    },
-    {
-      date: '2013-01-22',
-      value: 88
-    },
-    {
-      date: '2013-01-23',
-      value: 85
-    },
-    {
-      date: '2013-01-24',
-      value: 85
-    },
-    {
-      date: '2013-01-25',
-      value: 80
-    },
-    {
-      date: '2013-01-26',
-      value: 87
-    },
-    {
-      date: '2013-01-27',
-      value: 84
-    },
-    {
-      date: '2013-01-28',
-      value: 83
-    },
-    {
-      date: '2013-01-29',
-      value: 84
-    },
-    {
-      date: '2013-01-30',
-      value: 81
+  // Create a new XHR object
+  const xhr = new XMLHttpRequest();
+
+  // Open the XHR request
+  xhr.open('GET', '/api/v1/metallurgical', true);
+
+  // Define the onload callback function
+  // Define the onload callback function
+  xhr.onload = () => {
+    if (xhr.status === 200) {
+      const data = JSON.parse(xhr.responseText);
+      const exactData = data.data.data;
+
+      // Create an empty object to store the frequency of objects by date
+      const frequencyData = {};
+
+      // Loop through each date in exactData
+      for (const key in exactData) {
+        if (exactData.hasOwnProperty(key)) {
+          const { date } = exactData[key];
+          const newDate = new Date(date);
+          // Get the day and date using Date object methods
+          const day = newDate.toLocaleString('en-US', { weekday: 'short' });
+          const dateNum = newDate.getDate();
+          const month = newDate.getMonth();
+          const hours = newDate.getHours();
+          const minutes = newDate.getMinutes();
+          const years = newDate.getFullYear();
+          const shortenedDateString = `${dateNum}-${month}-${years}`;
+
+          // Check if the date is already present in frequencyData, if not, add it with a count of 1, otherwise increment the count by 1
+          if (frequencyData.hasOwnProperty(shortenedDateString)) {
+            frequencyData[shortenedDateString] += 1;
+          } else {
+            frequencyData[shortenedDateString] = 1;
+          }
+        }
+      }
+
+      // Create an array of objects with the required properties for the chart data
+      const chartData = [];
+      for (const key in frequencyData) {
+        if (frequencyData.hasOwnProperty(key)) {
+          const [dateNum, month, years] = key.split('-');
+          const date = new Date(`${years}-${month}-${dateNum}`);
+          const value = frequencyData[key];
+          chartData.push({ date, value });
+        }
+      }
+
+      // Set the chart data
+      chart.data = chartData;
     }
-  ];
+  };
+
+  // Send the XHR request
+  xhr.send();
+
+  // Add data
 
   // Create axes
   const dateAxis = chart.xAxes.push(new am4charts.DateAxis());
@@ -688,62 +305,60 @@ function donutChart() {
   // Create chart instance
   const chart = am4core.create('donutChart', am4charts.PieChart);
 
-  // Add data
-  chart.data = [
-    {
-      country: 'Lithuania',
-      litres: 501.9
-    },
-    {
-      country: 'Czech Republic',
-      litres: 301.9
-    },
-    {
-      country: 'Ireland',
-      litres: 201.1
-    },
-    {
-      country: 'Germany',
-      litres: 165.8
-    },
-    {
-      country: 'Australia',
-      litres: 139.9
-    },
-    {
-      country: 'Austria',
-      litres: 128.3
-    },
-    {
-      country: 'UK',
-      litres: 99
-    },
-    {
-      country: 'Belgium',
-      litres: 60
-    },
-    {
-      country: 'The Netherlands',
-      litres: 50
+  // Create an XHR object
+  const xhr = new XMLHttpRequest();
+
+  // Configure and send the XHR request
+  xhr.open('GET', '/api/v1/metallurgical'); // Replace with your API endpoint
+  xhr.onload = () => {
+    if (xhr.status === 200) {
+      const data = JSON.parse(xhr.responseText);
+      const exactData = data.data.data;
+
+      // Calculate country counts
+      const countryCounts = {};
+      exactData.forEach(obj => {
+        if (countryCounts[obj.BDS]) {
+          countryCounts[obj.BDS]++;
+        } else {
+          countryCounts[obj.BDS] = 1;
+        }
+      });
+
+      // Convert country counts to an array of objects
+      const chartData = Object.entries(countryCounts).map(
+        ([country, count]) => ({
+          country,
+          count
+        })
+      );
+
+      // Set inner radius
+      chart.innerRadius = am4core.percent(50);
+
+      // Add and configure Series
+      const pieSeries = chart.series.push(new am4charts.PieSeries());
+      pieSeries.dataFields.value = 'count';
+      pieSeries.dataFields.category = 'country';
+      pieSeries.slices.template.stroke = am4core.color('#fff');
+      pieSeries.slices.template.strokeWidth = 2;
+      pieSeries.slices.template.strokeOpacity = 1;
+      pieSeries.labels.template.fill = am4core.color('#9aa0ac');
+
+      // Set chart data
+      chart.data = chartData;
+      pieSeries.data = chartData;
+
+      // This creates initial animation
+      pieSeries.hiddenState.properties.opacity = 1;
+      pieSeries.hiddenState.properties.endAngle = -90;
+      pieSeries.hiddenState.properties.startAngle = -90;
+
+      // Display country counts
+      //console.log(countryCounts);
     }
-  ];
-
-  // Set inner radius
-  chart.innerRadius = am4core.percent(50);
-
-  // Add and configure Series
-  const pieSeries = chart.series.push(new am4charts.PieSeries());
-  pieSeries.dataFields.value = 'litres';
-  pieSeries.dataFields.category = 'country';
-  pieSeries.slices.template.stroke = am4core.color('#fff');
-  pieSeries.slices.template.strokeWidth = 2;
-  pieSeries.slices.template.strokeOpacity = 1;
-  pieSeries.labels.template.fill = am4core.color('#9aa0ac');
-
-  // This creates initial animation
-  pieSeries.hiddenState.properties.opacity = 1;
-  pieSeries.hiddenState.properties.endAngle = -90;
-  pieSeries.hiddenState.properties.startAngle = -90;
+  };
+  xhr.send();
 }
 
 function pieChart() {

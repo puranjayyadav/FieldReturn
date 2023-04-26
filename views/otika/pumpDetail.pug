@@ -14,445 +14,515 @@ block content
                                 each pump in pumps.Images
                                     .col-lg-3.col-md-4.col-sm-6.col-xs-12
                                         a(href=`/img/mettalurgical/${pump}`)
-                                            img.img-responsive.thumbnail(src=`/img/mettalurgical/${pump }` alt='')
+                                            img.img-responsive.thumbnail(src=`/img/mettalurgical/${pump}` alt='')
+            .row
+                .col-12
+                    .card
+                        .card-header
+                            h4 Field Data
+                        .card-body
 
-                .card
-                    .card-header
-                        h4 Pump Data entered
-                    .card-body
-                        table.table.table-bordered.table-md
-                            thead
-                                tr
-
-                                    th(scope='col') JaP Reg. No.
-                                    th(scope='col') Sample Entry Date
-                                    th(scope='col') Courier/docket detail
-                                    th(scope='col') Complaint reported at BDS
-                                    th(scope='col') WJC No.
-                                    th(scope='col') FIP Type/Part No.
-                                    th(scope='col') Customer
-
-
-
-
-                            tbody
-                                tr
-                                    th= pumps.registrationNumber
-                                    td= pumps.date
-                                    td= pumps.complaintDescription
-                                    td= pumps.complaintDescriptionBDS
-                                    td= pumps.WJC
-                                    td= pumps.FIP
-                                    td= pumps.customer
-
-                .card
-                    .card-header
-                        h4 Pump Data entered ( Continued )
-                    .card-body
-                        table.table.table-bordered.table-md
-                            thead
-                                tr
-
-                                    th(scope='col') Failure Hours
-                                    th(scope='col') Location BDS
-                                    th(scope='col') OECD
-                                    th(scope='col') Parts Recieved
-                                    th(scope='col') Investigtion Details
-                                    th(scope='col') Date of closing
-                                    th(scope='col') Final State
-
-
-
-                            tbody
-                                tr
-                                    td= pumps.KM
-                                    td= pumps.BDS
-                                    td= pumps.OECD
-                                    td= pumps.partsRecieved
-                                    td= pumps.complaintDescriptionI
-                                    td= pumps.DateClosing
-                                    td= pumps.finalStatus
-                .card
-                    .padding-20
-                        ul#myTab2.nav.nav-tabs(role='tablist')
-                            li.nav-item
-                                a#home-tab2.nav-link.active(data-toggle='tab' href='#about' role='tab' aria-selected='true') Current Information
-                            li.nav-item
-                                a#profile-tab2.nav-link(data-toggle='tab' href='#settings' role='tab' aria-selected='false') Table
-                        #myTab3Content.tab-content.tab-bordered
-                            #about.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='home-tab2')
-                                .row
-                                    .card
-                                        .card-header
-                                            h4 Investigation Details
-                                        .card-body
-                                            table.table.table-bordered.table-md
-                                                thead
-                                                    tr
-
-                                                        th(scope='col') Failure Hours
-                                                        th(scope='col') Location BDS
-                                                        th(scope='col') OECD
-                                                        th(scope='col') Parts Recieved
-                                                        th(scope='col') Investigtion Details
-                                                        th(scope='col') Date of closing
-                                                        th(scope='col') Final State
-
-
-
-                                                tbody
-                                                    tr
-                                                        td= pumps.KM
-                                                        td= pumps.BDS
-                                                        td= pumps.OECD
-                                                        td= pumps.partsRecieved
-                                                        td= pumps.complaintDescriptionI
-                                                        td= pumps.DateClosing
-                                                        td= pumps.finalStatus
-
-                            #settings.tab-pane.fade(role='tabpanel' aria-labelledby='profile-tab2')
-
-                                .card
-                                    .card-header
-                                        h4 Field Data Submission
-                                    .card-body
-                                        form#wizard_with_validation
-                                            h3 Pump Data
-                                            fieldset
-                                                .form-group.form-float
-                                                    .form-line
-                                                        label Date 
-                                                        input#date1.form-control(type='text' required)
-                                                    .form-line
-                                                        label Part Name 
-                                                        input#PartName1.form-control(type='text')
-                                                    .form-line
-                                                        label Characterstic 
-                                                        input#characteristic1.form-control(type='text')
-                                                    .form-line
-                                                        label Spec value 
-                                                        input#MFD.form-control(type='text')
-                                                    .form-line
-                                                        label Unit 
-                                                        input#unit1.form-control(type='text')
-                                                    .form-line
-                                                        label Max. 
-                                                        input#max1.form-control(type='text')
-                                                    .form-line
-                                                        label Min. 
-                                                        input#min1.form-control(type='text')
-                                                    .form-line
-                                                        label Actual value 
-                                                        input#actualValue1.form-control(type='text')
-                                                    .form-line
-                                                        label Delta 
-                                                        input#delta1.form-control(type='text')
-                                                    .form-line
-                                                        label Remark 
-                                                        input#remark1.form-control(type='text')
-                                            h3 Pump Data
-                                            fieldset
-                                                .form-group.form-float
-                                                    .form-line
-                                                        label Date 
-                                                        input#date2.form-control(type='text' required)
-                                                    .form-line
-                                                        label Part Name 
-                                                        input#PartName2.form-control(type='text')
-                                                    .form-line
-                                                        label Characterstic 
-                                                        input#characteristic2.form-control(type='text')
-                                                    .form-line
-                                                        label Spec value 
-                                                        input#specValue2.form-control(type='text')
-                                                    .form-line
-                                                        label Unit 
-                                                        input#unit2.form-control(type='text')
-                                                    .form-line
-                                                        label Max. 
-                                                        input#max2.form-control(type='text')
-                                                    .form-line
-                                                        label Min. 
-                                                        input#min2.form-control(type='text')
-                                                    .form-line
-                                                        label Actual value 
-                                                        input#actualValue2.form-control(type='text')
-                                                    .form-line
-                                                        label Delta 
-                                                        input#delta2.form-control(type='text')
-                                                    .form-line
-                                                        label Remark 
-                                                        input#remark2.form-control(type='text')
-                                            h3 Pump Data
-                                            fieldset
-                                                .form-group.form-float
-                                                    .form-line
-                                                        label Date 
-                                                        input#date3.form-control(type='text' required)
-                                                    .form-line
-                                                        label Part Name 
-                                                        input#PartName3.form-control(type='text')
-                                                    .form-line
-                                                        label Characterstic 
-                                                        input#characteristic13.form-control(type='text')
-                                                    .form-line
-                                                        label Spec value 
-                                                        input#specValue3.form-control(type='text')
-                                                    .form-line
-                                                        label Unit 
-                                                        input#unit3.form-control(type='text')
-                                                    .form-line
-                                                        label Max. 
-                                                        input#max3.form-control(type='text')
-                                                    .form-line
-                                                        label Min. 
-                                                        input#min3.form-control(type='text')
-                                                    .form-line
-                                                        label Actual value 
-                                                        input#actualValue3.form-control(type='text')
-                                                    .form-line
-                                                        label Delta 
-                                                        input#delta3.form-control(type='text')
-                                                    .form-line
-                                                        label Remark 
-                                                        input#remark3.form-control(type='text')
-                                            h3 Pump Data
-                                            fieldset
-                                                .form-group.form-float
-                                                    .form-line
-                                                        label Date 
-                                                        input#date4.form-control(type='text' required)
-                                                    .form-line
-                                                        label Part Name 
-                                                        input#PartName4.form-control(type='text')
-                                                    .form-line
-                                                        label Characterstic 
-                                                        input#characteristic4.form-control(type='text')
-                                                    .form-line
-                                                        label Spec value 
-                                                        input#specValue4.form-control(type='text')
-                                                    .form-line
-                                                        label Unit 
-                                                        input#unit4.form-control(type='text')
-                                                    .form-line
-                                                        label Max. 
-                                                        input#max4.form-control(type='text')
-                                                    .form-line
-                                                        label Min. 
-                                                        input#min4.form-control(type='text')
-                                                    .form-line
-                                                        label Actual value 
-                                                        input#actualValue4.form-control(type='text')
-                                                    .form-line
-                                                        label Delta 
-                                                        input#delta4.form-control(type='text')
-                                                    .form-line
-                                                        label Remark 
-                                                        input#remark4.form-control(type='text')
-                                            h3 Pump Data
-                                            fieldset
-                                                .form-group.form-float
-                                                    .form-line
-                                                        label Date 
-                                                        input#date5.form-control(type='text' required)
-                                                    .form-line
-                                                        label Part Name 
-                                                        input#PartName5.form-control(type='text')
-                                                    .form-line
-                                                        label Characterstic 
-                                                        input#characteristic5.form-control(type='text')
-                                                    .form-line
-                                                        label Spec value 
-                                                        input#specValue5.form-control(type='text')
-                                                    .form-line
-                                                        label Unit 
-                                                        input#unit5.form-control(type='text')
-                                                    .form-line
-                                                        label Max. 
-                                                        input#max5.form-control(type='text')
-                                                    .form-line
-                                                        label Min. 
-                                                        input#min5.form-control(type='text')
-                                                    .form-line
-                                                        label Actual value 
-                                                        input#actualValue5.form-control(type='text')
-                                                    .form-line
-                                                        label Delta 
-                                                        input#delta5.form-control(type='text')
-                                                    .form-line
-                                                        label Remark 
-                                                        input#remark5.form-control(type='text')
-                                            h3 Pump Data
-                                            fieldset
-                                                .form-group.form-float
-                                                    .form-line
-                                                        label Date 
-                                                        input#date6.form-control(type='text' required)
-                                                    .form-line
-                                                        label Part Name 
-                                                        input#PartName6.form-control(type='text')
-                                                    .form-line
-                                                        label Characterstic 
-                                                        input#characteristic6.form-control(type='text')
-                                                    .form-line
-                                                        label Spec value 
-                                                        input#specValue6.form-control(type='text')
-                                                    .form-line
-                                                        label Unit 
-                                                        input#unit6.form-control(type='text')
-                                                    .form-line
-                                                        label Max. 
-                                                        input#max6.form-control(type='text')
-                                                    .form-line
-                                                        label Min. 
-                                                        input#min6.form-control(type='text')
-                                                    .form-line
-                                                        label Actual value 
-                                                        input#actualValue6.form-control(type='text')
-                                                    .form-line
-                                                        label Delta 
-                                                        input#delta6.form-control(type='text')
-                                                    .form-line
-                                                        label Remark 
-                                                        input#remark6.form-control(type='text')
-                                            h3 Pump Data
-                                            fieldset
-                                                .form-group.form-float
-                                                    .form-line
-                                                        label Date 
-                                                        input#date7.form-control(type='text' required)
-                                                    .form-line
-                                                        label Part Name 
-                                                        input#PartName7.form-control(type='text')
-                                                    .form-line
-                                                        label Characterstic 
-                                                        input#characteristic7.form-control(type='text')
-                                                    .form-line
-                                                        label Spec value 
-                                                        input#specValue7.form-control(type='text')
-                                                    .form-line
-                                                        label Unit 
-                                                        input#unit7.form-control(type='text')
-                                                    .form-line
-                                                        label Max. 
-                                                        input#max7.form-control(type='text')
-                                                    .form-line
-                                                        label Min. 
-                                                        input#min7.form-control(type='text')
-                                                    .form-line
-                                                        label Actual value 
-                                                        input#actualValue7.form-control(type='text')
-                                                    .form-line
-                                                        label Delta 
-                                                        input#delta7.form-control(type='text')
-                                                    .form-line
-                                                        label Remark 
-                                                        input#remark7.form-control(type='text')
-                                            h3 Pump Data
-                                            fieldset
-                                                .form-group.form-float
-                                                    .form-line
-                                                        label Date 
-                                                        input#date8.form-control(type='text' required)
-                                                    .form-line
-                                                        label Part Name 
-                                                        input#PartName8.form-control(type='text')
-                                                    .form-line
-                                                        label Characterstic 
-                                                        input#characteristic8.form-control(type='text')
-                                                    .form-line
-                                                        label Spec value 
-                                                        input#specValue8.form-control(type='text')
-                                                    .form-line
-                                                        label Unit 
-                                                        input#unit8.form-control(type='text')
-                                                    .form-line
-                                                        label Max. 
-                                                        input#max8.form-control(type='text')
-                                                    .form-line
-                                                        label Min. 
-                                                        input#min8.form-control(type='text')
-                                                    .form-line
-                                                        label Actual value 
-                                                        input#actualValue8.form-control(type='text')
-                                                    .form-line
-                                                        label Delta 
-                                                        input#delta8.form-control(type='text')
-                                                    .form-line
-                                                        label Remark 
-                                                        input#remark8.form-control(type='text')
-                                            h3 Pump Data
-                                            fieldset
-                                                .form-group.form-float
-                                                    .form-line
-                                                        label Date 
-                                                        input#date9.form-control(type='text' required)
-                                                    .form-line
-                                                        label Part Name 
-                                                        input#PartName9.form-control(type='text')
-                                                    .form-line
-                                                        label Characterstic 
-                                                        input#characteristic9.form-control(type='text')
-                                                    .form-line
-                                                        label Spec value 
-                                                        input#specValue9.form-control(type='text')
-                                                    .form-line
-                                                        label Unit 
-                                                        input#unit9.form-control(type='text')
-                                                    .form-line
-                                                        label Max. 
-                                                        input#max9.form-control(type='text')
-                                                    .form-line
-                                                        label Min. 
-                                                        input#min9.form-control(type='text')
-                                                    .form-line
-                                                        label Actual value 
-                                                        input#actualValue9.form-control(type='text')
-                                                    .form-line
-                                                        label Delta 
-                                                        input#delta9.form-control(type='text')
-                                                    .form-line
-                                                        label Remark 
-                                                        input#remark9.form-control(type='text')
-                                            h3 Pump Data
-                                            fieldset
-                                                .form-group.form-float
-                                                    .form-line
-                                                        label Date 
-                                                        input#date10.form-control(type='text' required)
-                                                    .form-line
-                                                        label Part Name 
-                                                        input#PartName10.form-control(type='text')
-                                                    .form-line
-                                                        label Characterstic 
-                                                        input#characteristic10.form-control(type='text')
-                                                    .form-line
-                                                        label Spec value 
-                                                        input#specValue10.form-control(type='text')
-                                                    .form-line
-                                                        label Unit 
-                                                        input#unit10.form-control(type='text')
-                                                    .form-line
-                                                        label Max. 
-                                                        input#max10.form-control(type='text')
-                                                    .form-line
-                                                        label Min. 
-                                                        input#min10.form-control(type='text')
-                                                    .form-line
-                                                        label Actual value 
-                                                        input#actualValue9.form-control(type='text')
-                                                    .form-line
-                                                        label Delta 
-                                                        input#delta10.form-control(type='text')
-                                                    .form-line
-                                                        label Remark 
-                                                        input#remark10.form-control(type='text')
-                                            
+                            h4 Click on each card to display data
+                        .card-body
+                            #accordion
+                                .accordion
+                                    .accordion-header(role='button' data-toggle='collapse' data-target='#panel-body-1' aria-expanded='true')
+                                        h4 Field Data form details
+                                    #panel-body-1.accordion-body.collapse.show(data-parent='#accordion')
+                                        p.mb-0
+                                            p.card-text
+                                                strong JaP Registration Number:
+                                                |  #{pumps.registrationNumber}
+                                                br
+                                                strong Courier/docket detail:
+                                                |  #{pumps.complaintDescription}
+                                                br
+                                                strong Complaint reported at BDS:
+                                                |  #{pumps.complaintDescriptionBDS}
+                                                br
+                                                strong WJC No.:
+                                                |  #{pumps.WJC}
+                                                br
+                                                strong FIP Type/Part No.:
+                                                |  #{pumps.FIP}
+                                                br
+                                                strong Customer:
+                                                |  #{pumps.customer}
+                                                br
+                                                strong Failure Hours:
+                                                |  #{pumps.KM}
+                                                br
+                                                strong Location BDS:
+                                                |  #{pumps.BDS}
+                                                br
+                                                strong OECD:
+                                                |  #{pumps.OECD}
+                                                br
+                                                strong Parts Recieved:
+                                                |  #{pumps.partsRecieved}
+                                                br
+                                                strong Investigtion Details:
+                                                |  #{pumps.partsRecieved}
+                                                br
+                                                strong Date of closing:
+                                                |  #{pumps.partsRecieved}
+                                                br
+                                                strong Final State:
+                                                |  #{pumps.partsRecieved}
+                                                br
+                                .accordion
+                                    .accordion-header(role='button' data-toggle='collapse' data-target='#panel-body-2')
+                                        h4 Pre-Investigation Details
+                                    #panel-body-2.accordion-body.collapse(data-parent='#accordion')
+                                        p.mb-0
+                                            p.card-text
+                                                strong Date:
+                                                |  #{pumps.date1}
+                                                br
+                                                strong Pump Part Number:
+                                                |  #{pumps.PartName1}
+                                                br
+                                                strong Serial Number:
+                                                |  #{pumps.characteristic1}
+                                                br
+                                                strong LAC:
+                                                |  #{pumps.specValue1}
+                                                br
+                                                strong eJC Number:
+                                                |  #{pumps.unit1}
+                                                br
+                                                strong Dealer:
+                                                |  #{pumps.max1}
+                                                br
+                                                strong Application:
+                                                |  #{pumps.min1}
+                                                br
+                                                strong Voice of customer:
+                                                |  #{pumps.actualValue1}
+                                                br
+                                                strong Failure Hours:
+                                                |  #{pumps.delta1}
+                                                br
+                                                strong Seal Condition:
+                                                |  #{pumps.remark1}
+                                                br
+                                .accordion
+                                    .accordion-header(role='button' data-toggle='collapse' data-target='#panel-body-3')
+                                        h4 Observation Details
+                                    #panel-body-3.accordion-body.collapse(data-parent='#accordion')
+                                        p.mb-0
+                                            p.card-text
+                                                    strong Date:
+                                                    |  #{pumps.date2}
+                                                    br
+                                                    strong Fuel Related Issues:
+                                                    |  #{pumps.PartName2}
+                                                    br
+                                                    strong Hitting mark on timer plate:
+                                                    |  #{pumps.characteristic2}
+                                                    br
+                                                    strong Blueish mark on camplate/rollers:
+                                                    |  #{pumps.specValue2}
+                                                    br
+                                                    strong Pitting on camplate ( Inner edge/outer edge):
+                                                    |  #{pumps.unit2}
+                                                    br
+                                                    strong Number of camplate lobes damaged:
+                                                    |  #{pumps.max2}
+                                                    br
+                                                    strong Number of roller damaged:
+                                                    |  #{pumps.min2}
+                                                    br
+                                                    strong Rubbing marks - cross disk:
+                                                    |  #{pumps.actualValue2}
+                                                    br
+                                                    strong Delta:
+                                                    |  #{pumps.delta2}
+                                                    br
+                                                    strong Rubbing mark - drive shaft claw:
+                                                    |  #{pumps.remark2}
+                                        
+                                                    br
+                                .accordion
+                                    .accordion-header(role='button' data-toggle='collapse' data-target='#panel-body-4')
+                                        h4 Batch Traceablility Details
+                                    #panel-body-4.accordion-body.collapse(data-parent='#accordion')
+                                        p.mb-0
+                                            p.card-text
+                                                    strong Date:
+                                                    |  #{pumps.date3}
+                                                    br
+                                                    strong Camplate Type:
+                                                    |  #{pumps.PartName3}
+                                                    br
+                                                    strong Specified Cam Lift:
+                                                    |  #{pumps.characteristic3}
+                                                    br
+                                                    strong Camplate Batch:
+                                                    |  #{pumps.specValue3}
+                                                    br
+                                                    strong Machine:
+                                                    |  #{pumps.unit3}
+                                                    br
+                                                    strong Camplate MFD:
+                                                    |  #{pumps.max3}
+                                                    br
+                                                    strong Roller 1:
+                                                    |  #{pumps.min3}
+                                                    br
+                                                    strong Roller 2:
+                                                    |  #{pumps.actualValue3}
+                                                    br
+                                                    strong Roller 3:
+                                                    |  #{pumps.delta3}
+                                                    br
+                                                    strong Roller 4:
+                                                    |  #{pumps.remark3}
+                                                    br
+                                                    
+                                .accordion
+                                    .accordion-header(role='button' data-toggle='collapse' data-target='#panel-body-5')
+                                        h4 Camplate FMR Measurements Details
+                                    #panel-body-5.accordion-body.collapse(data-parent='#accordion')
+                                        p.mb-0
+                                            p.card-text
+                                                    strong Date:
+                                                    |  #{pumps.date4}
+                                                    br
+                                                    strong Camplate taper #1:
+                                                    |  #{pumps.PartName4}
+                                                    br
+                                                    strong Camplate taper #2:
+                                                    |  #{pumps.characteristic4}
+                                                    br
+                                                    strong Camplate taper #3:
+                                                    |  #{pumps.specValue4}
+                                                    br
+                                                    strong Camplate taper #4:
+                                                    |  #{pumps.unit4}
+                                                    br
+                                                    strong Camplate taper #5:
+                                                    |  #{pumps.max4}
+                                                    br
+                                                    strong Camplate taper #6:
+                                                    |  #{pumps.min4}
+                                                    br
+                                                    strong Actual value:
+                                                    |  #{pumps.actualValue4}
+                                                    br
+                                                    strong Delta:
+                                                    |  #{pumps.delta4}
+                                                    br
+                                                    strong Remark:
+                                                    |  #{pumps.remark4}
+                                                    br
                                                     
 
-                                        .card-footer.text-right
-                                            button#swal-6.btn.btn-primary.mr-1(type='submit') Save changes                
+                                .accordion
+                                    .accordion-header(role='button' data-toggle='collapse' data-target='#panel-body-6')
+                                        h4 Roller FMR Measurements
+                                    #panel-body-6.accordion-body.collapse(data-parent='#accordion')
+                                        p.mb-0
+                                            p.card-text
+                                                    strong Date:
+                                                    |  #{pumps.date5}
+                                                    br
+                                                    strong Sphericity:
+                                                    |  #{pumps.PartName5}
+                                                    br
+                                                    strong Profile:
+                                                    |  #{pumps.characteristic5}
+                                                    br
+                                                    strong Balliskiet:
+                                                    |  #{pumps.specValue5}
+                                                    br
+                                                    strong Roundness:
+                                                    |  #{pumps.unit5}
+                                                    br
+                                                    strong Straightness:
+                                                    |  #{pumps.max5}
+                                                    br
+                                                    strong Parallelity:
+                                                    |  #{pumps.min5}
+                                                    br
+                                                    strong Actual value:
+                                                    |  #{pumps.actualValue5}
+                                                    br
+                                                    strong Delta:
+                                                    |  #{pumps.delta5}
+                                                    br
+                                                    strong Remark:
+                                                    |  #{pumps.remark5}
+                                                    br
+                                                   
+                                .accordion
+                                    .accordion-header(role='button' data-toggle='collapse' data-target='#panel-body-7')
+                                        h4 Cross Disk FMR Measurements Details
+                                    #panel-body-7.accordion-body.collapse(data-parent='#accordion')
+                                        p.mb-0
+                                            p.card-text
+                                                    strong Date:
+                                                    |  #{pumps.date6}
+                                                    br
+                                                    strong S1 center face:
+                                                    |  #{pumps.PartName6}
+                                                    br
+                                                    strong Perpendicularity 1:
+                                                    |  #{pumps.characteristic6}
+                                                    br
+                                                    strong Perpendicularity 2:
+                                                    |  #{pumps.specValue6}
+                                                    br
+                                                    strong S2 center face:
+                                                    |  #{pumps.unit6}
+                                                    br
+                                                    strong Perpendicularity 1:
+                                                    |  #{pumps.max6}
+                                                    br
+                                                    strong Perpendicularity 2:
+                                                    |  #{pumps.min6}
+                                                    br
+                                                    strong S3 center face:
+                                                    |  #{pumps.actualValue6}
+                                                    br
+                                                    strong Perpendicularity 2:
+                                                    |  #{pumps.remark6}
+                                                    br
+                                                    strong S3 center face:
+                                                    |  #{pumps.feedgroving}
+                                                    br
+                                                    strong Perpendicularity 1:
+                                                    |  #{pumps.RollerRing}
+                                                    br
+                                                    strong Perpendicularity 2:
+                                                    |  #{pumps.SpringClass}
+                                                    br
+                                                    strong Hyd. Head KOT:
+                                                    |  #{pumps.HydHead}
+                                                    br
+                                .accordion
+                                    .accordion-header(role='button' data-toggle='collapse' data-target='#panel-body-8')
+                                        h4 Mettalurgical Analysis Details 
+                                    #panel-body-8.accordion-body.collapse(data-parent='#accordion')
+                                        p.mb-0
+                                            p.card-text
+                                                    strong Date:
+                                                    |  #{pumps.date7}
+                                                    br
+                                                    strong Camplate Hardness:
+                                                    |  #{pumps.PartName7}
+                                                    br
+                                                    strong Camplate:
+                                                    |  #{pumps.characteristic7}
+                                                    br
+                                                    strong Roller residual stress:
+                                                    |  #{pumps.specValue7}
+                                                    br
+                                                    strong Roller Hardness:
+                                                    |  #{pumps.unit7}
+                                                    br
+                                                    strong Max:
+                                                    |  #{pumps.max7}
+                                                    br
+                                                    strong Min:
+                                                    |  #{pumps.min7}
+                                                    br
+                                                    strong Actual Value:
+                                                    |  #{pumps.actualValue7}
+                                                    br
+                                                    strong Delta:
+                                                    |  #{pumps.delta7}
+                                                    br
+                                                    strong Remark:
+                                                    |  #{pumps.remark7}
+                                                    br
+                                                    
+                                                                  
+                                br
+                                div(style="position: absolute; top: 0; right: 0;padding: 10px;")
+                                    a.btn.btn-success(href=`/api/v1/metallurgical/${pumps.id}/report`) Generate PDF Summary
 
+                .row.clearfix
+                .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                    .card
+                        .card-header
+                            h4 Update Information
+                        .card-body
+                            #wizard_vertical
+                                h2 Pre-investigation
+                                section
+                                    .form-group
+                                        label Date 
+                                        input#date1.form-control(type='text',value=`${pumps.date1}`)
+                                        label Pump Part Number 
+                                        input#PartName1.form-control(type='Number',value=`${pumps.PartName1}`)
+                                        label Serial Number ( with MFD ) 
+                                        input#characteristic1.form-control(type='Number',value=`${pumps.characteristic1}`)
+                                        label LAC
+                                        input#specValue1.form-control(type='text',value=`${pumps.specValue1}`)
+                                        label eJC Number
+                                        input.form-control(type='text', id='unit1', value=typeof pumps.unit1 !== 'undefined' ? pumps.unit1 : 'Sample Text')
+                                        label Dealer
+                                        input#max1.form-control(type='text',value=`${pumps.max1}`)
+                                        label Application
+                                        input#min1.form-control(type='text',value=`${pumps.min1}`)
+                                        label Voice of customer
+                                        input#actualValue1.form-control(type='text',value=`${pumps.actualValue1}`)
+                                        label Failure Hours 
+                                        input.form-control(type='Number', id='delta1', value=typeof pumps.delta1 !== 'undefined' ? pumps.delta1 : 'Sample Text')
+                                        label Seal Condition 
+                                        input#remark1.form-control(type='text',value=`${pumps.remark1}`)
+
+                                h2 Observations
+                                section
+                                    .form-group
+                                        label Date 
+                                        input#date2.form-control(type='text',value=`${pumps.date2}`)
+                                        label Fuel Related issues 
+                                        input#PartName2.form-control(type='text',value=`${pumps.PartName2}`)
+                                        label Hitting mark on timer plate 
+                                        input#characteristic2.form-control(type='text',value=`${pumps.characteristic2}`)
+                                        label Blueish mark on camplate/rollers
+                                        input#specValue2.form-control(type='text',value=`${pumps.specValue2}`)
+                                        label Pitting on camplate ( Inner edge/outer edge) 
+                                        input#unit2.form-control(type='text',value=`${pumps.unit2}`)
+                                        label Number of camplate lobes damaged
+                                        input#max2.form-control(type='text',value=`${pumps.max2}`)
+                                        label Number of roller damaged
+                                        input#min2.form-control(type='text',value=`${pumps.min2}`)
+                                        label Rubbing marks - cross disk
+                                        input#actualValue2.form-control(type='text',value=`${pumps.actualValue2}`)
+                                        label Delta 
+                                        input#delta2.form-control(type='Number',value=`${pumps.delta2}`)
+                                        label Rubbing mark - drive shaft claw 
+                                        input#remark2.form-control(type='text',value=`${pumps.remark2}`)
+                                h2 Batch traceability
+                                section
+                                    .form-group
+                                        label Date 
+                                        input#date3.form-control(type='text',value=`${pumps.date3}`)
+                                        label Camplate type 
+                                        input#PartName3.form-control(type='text',value=`${pumps.PartName3}`)
+                                        label Specified cam lift 
+                                        input#characteristic3.form-control(type='text',value=`${pumps.characteristic3}`)
+                                        label Camplate batch
+                                        input#specValue3.form-control(type='text',value=`${pumps.specValue3}`)
+                                        label Machine 
+                                        input#unit3.form-control(type='text',value=`${pumps.unit3}`)
+                                        label Camplate MFD
+                                        input#max3.form-control(type='text',value=`${pumps.max3}`)
+                                        label Roller 1
+                                        input#min3.form-control(type='text',value=`${pumps.min3}`)
+                                        label Roller 2
+                                        input#actualValue3.form-control(type='text',value=`${pumps.actualValue3}`)
+                                        label Roller 3 
+                                        input#delta3.form-control(type='Number',value=`${pumps.delta3}`)
+                                        label Roller 4 
+                                        input#remark3.form-control(type='text',value=`${pumps.remark3}`)
+                                h2 Camplate FMR Measurements
+                                section
+                                    .form-group
+                                        label Date 
+                                        input#date4.form-control(type='text',value=`${pumps.date4}`)
+                                        label Camplate taper #1 
+                                        input#PartName4.form-control(type='text',value=`${pumps.PartName4}`)
+                                        label Camplate taper #2  
+                                        input#characteristic4.form-control(type='text',value=`${pumps.characteristic4}`)
+                                        label Camplate taper #3 
+                                        input#specValue4.form-control(type='text',value=`${pumps.specValue4}`)
+                                        label Camplate taper #4  
+                                        input#unit4.form-control(type='text',value=`${pumps.unit4}`)
+                                        label Camplate taper #5 
+                                        input#max4.form-control(type='text',value=`${pumps.max4}`)
+                                        label Camplate taper #6 
+                                        input#min4.form-control(type='text',value=`${pumps.min4}`)
+                                        label Actual value
+                                        input#actualValue4.form-control(type='text',value=`${pumps.actualValue4}`)
+                                        label Delta 
+                                        input#delta4.form-control(type='Number',value=`${pumps.delta4}`)
+                                        label Remark 
+                                        input#remark4.form-control(type='text',value=`${pumps.remark4}`)
+                                h2 Roller FMR Measurements
+                                section
+                                    .form-group
+                                        label Date 
+                                        input#date5.form-control(type='text',value=`${pumps.date5}`)
+                                        label Sphericity 
+                                        input#PartName5.form-control(type='text',value=`${pumps.PartName5}`)
+                                        label Profile 
+                                        input#characteristic5.form-control(type='text',value=`${pumps.characteristic5}`)
+                                        label Balliskiet
+                                        input#specValue5.form-control(type='text',value=`${pumps.specValue5}`)
+                                        label Roundness 
+                                        input#unit5.form-control(type='text',value=`${pumps.unit5}`)
+                                        label Straightness
+                                        input#max5.form-control(type='text',value=`${pumps.max5}`)
+                                        label Parallelity
+                                        input#min5.form-control(type='text',value=`${pumps.min5}`)
+                                        label Actual value
+                                        input#actualValue5.form-control(type='text',value=`${pumps.actualValue5}`)
+                                        label Delta 
+                                        input#delta5.form-control(type='Number',value=`${pumps.delta5}`)
+                                        label Remark 
+                                        input#remark5.form-control(type='text',value=`${pumps.remark5}`)
+                                h2 Cross Disk FMR Measurements
+                                section
+                                    .form-group
+                                        label Date 
+                                        input#date6.form-control(type='text',value=`${pumps.date6}`)
+                                        label S1 center face 
+                                        input#PartName6.form-control(type='text',value=`${pumps.PartName6}`)
+                                        label Perpendicularity 1  
+                                        input#characteristic6.form-control(type='text',value=`${pumps.characteristic6}`)
+                                        label Perpendicularity 2
+                                        input#specValue6.form-control(type='text',value=`${pumps.specValue6}`)
+                                        label S2 center face
+                                        input#unit6.form-control(type='text',value=`${pumps.unit6}`)
+                                        label Perpendicularity 1
+                                        input#max6.form-control(type='text',value=`${pumps.max6}`)
+                                        label Perpendicularity 2
+                                        input#min6.form-control(type='text',value=`${pumps.min6}`)
+                                        label S3 center face
+                                        input#actualValue6.form-control(type='text',value=`${pumps.actualValue6}`)
+                                        //- label Perpendicularity 1 
+                                        //- input#delta6.form-control(type='Number',value=`${pumps.delta6}`)
+                                        label Perpendicularity 2 
+                                        input#remark6.form-control(type='text',value=`${pumps.remark6}`)
+                                        label S3 center face
+                                        input#feedgroving.form-control(type='text',value=`${pumps.feedgroving}`)
+                                        label Perpendicularity 1 
+                                        input#RollerRing.form-control(type='text',value=`${pumps.RollerRing}`)
+                                        label Perpendicularity 2 
+                                        input#SpringClass.form-control(type='text',value=`${pumps.SpringClass}`)
+                                        label Hyd. Head KOT
+                                        input#HydHead.form-control(type='text',value=`${pumps.HydHead}`)
+
+                                h2 Mettalurgical Analysis
+                                section
+                                    .form-group
+                                        label Date 
+                                        input#date7.form-control(type='text',value=`${pumps.date7}`)
+                                        label Camplate Hardness 
+                                        input#PartName7.form-control(type='text',value=`${pumps.PartName7}`)
+                                        label Camplate 
+                                        input#characteristic7.form-control(type='text',value=`${pumps.characteristic7}`)
+                                        label Roller residual stress
+                                        input#specValue7.form-control(type='text',value=`${pumps.specValue7}`)
+                                        label Roller hardness 
+                                        input#unit7.form-control(type='text',value=`${pumps.unit7}`)
+                                        label Max
+                                        input#max7.form-control(type='text',value=`${pumps.max7}`)
+                                        label Min
+                                        input#min7.form-control(type='text',value=`${pumps.min7}`)
+                                        label Actual value
+                                        input#actualValue7.form-control(type='text',value=`${pumps.actualValue7}`)
+                                        label Delta 
+                                        input#delta7.form-control(type='Number',value=`${pumps.delta7}`)
+                                        label Remark 
+                                        input#remark7.form-control(type='text',value=`${pumps.remark7}`)
+
+                            .card-footer.text-right
+                                button#swal-6.btn.btn-primary.mr-1.updateData(type='submit') Save changes
 
 
 

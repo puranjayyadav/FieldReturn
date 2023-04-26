@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Field Return Pump Details</title>
+  <style>
+     .logo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 10px;
+    }
+    .logo img {
+      width: 120%;
+      max-width: 100px;
+    }{{asset "style.css" "utf8"}}</style>
+</head>
+<body>
+  <div class="logo">
+    <!-- Add your logo here -->
+    <img src="{{asset "bosch.png" "dataURI"}}">
+  </div>
+  <h1 class="main-heading">Field Return Pump Details</h1>
+  <h3>Pump Number</h3>
+  <h2 class="table-heading">Field Data Details</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>JaP Reg. No.</th>
+        <th>Sample Entry Date</th>
+        <th>Courier/docket detail</th>
+        <th>Complaint reported at BDS</th>
+        <th>WJC No.</th>
+        <th>FIP Type/Part No.</th>
+        <th>Customer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{templateData.someText.Images}}</td>
+        <td>Row 1, Cell 2</td>
+        <td>Row 1, Cell 3</td>
+        <td>Row 1, Cell 4</td>
+        <td>Row 1, Cell 5</td>
+        <td>Row 1, Cell 6</td>
+        <td>Row 1, Cell 7</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Table 2</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Failure Hours</th>
+        <th>Location BDS</th>
+        <th>OECD</th>
+        <th>Parts Recieved</th>
+        <th>Investigtion Details</th>
+        <th>Date of closing</th>
+        <th>Final State</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{someText.MFD}}</td>
+        <td>Row A, Cell 2</td>
+        <td>Row A, Cell 3</td>
+        <td>Row A, Cell 4</td>
+        <td>Row A, Cell 5</td>
+        <td>Row A, Cell 6</td>
+        <td>Row A, Cell 7</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="photo-section">
+    <div class="photo"></div>
+    <div class="photo"></div>
+    <div class="photo"></div>
+    <div class="photo"></div>
+    <div class="photo"></div>
+    <div class="photo"></div>
+  </div>
+  </body>
+</html>
+
+

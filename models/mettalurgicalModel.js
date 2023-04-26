@@ -155,6 +155,18 @@ const metallurgicalData = new mongoose.Schema({
     type: Date,
     default: Date.now
   },
+  HydHead: {
+    type: String
+  },
+  SpringClass: {
+    type: String
+  },
+  RollerRing: {
+    type: String
+  },
+  feedgroving: {
+    type: String
+  },
   PartName1: {
     type: String
   },
@@ -367,34 +379,34 @@ const metallurgicalData = new mongoose.Schema({
     type: String
   },
   delta1: {
-    type: String
+    type: Number
   },
   delta2: {
-    type: String
+    type: Number
   },
   delta3: {
-    type: String
+    type: Number
   },
   delta4: {
-    type: String
+    type: Number
   },
   delta5: {
-    type: String
+    type: Number
   },
   delta6: {
-    type: String
+    type: Number
   },
   delta7: {
-    type: String
+    type: Number
   },
   delta8: {
-    type: String
+    type: Number
   },
   delta9: {
-    type: String
+    type: Number
   },
   delta10: {
-    type: String
+    type: Number
   },
   remark1: {
     type: String

@@ -52,7 +52,7 @@ $('#swal-7').click(function() {
 });
 
 $('#swal-8').click(function() {
-  swal('Submitting form , please wait', {
+  swal('Submitting form, uploading images!, this might take some while', {
     buttons: false,
     icon: 'success',
     timer: 5000

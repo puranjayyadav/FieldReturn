@@ -5,7 +5,7 @@ import axios from 'axios';
 import { showAlert } from './alerts';
 
 export const login = async (employeeNumber, password) => {
-  console.log(employeeNumber, password);
+  //console.log(employeeNumber, password);
   axios.defaults.withCredentials = true;
 
   try {

@@ -129,6 +129,7 @@ app.use((req, res, next) => {
 app.use('/', viewRouter);
 //app.use('/api/v1/pump', pumpRouter);
 app.use('/api/v1/metallurgical', metalRouter);
+app.use('/api/v1/metallurgical/:slug', metalRouter);
 app.use('/api/v1/users', userRouter);
 //app.use('/api/v1/conclusion', conclusionRouter);
 

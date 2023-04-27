@@ -13,7 +13,7 @@
     "start:prod": "NODE_ENV=production nodemon server.js",
     "debug": "ndb server.js",
     "watch:js": "parcel watch ./public/assets/js/index.js --out-dir ./public/assets/js  --out-file bundle.js",
-    "build:js": "parcel build ./public/assets/js/index.js --dist-dir ./public/assets/js --dist-file bundle.js"
+    "build:js": "parcel build ./public/assets/js/index.js --dist-dir ./public/assets/js --out-file bundle.js"
   },
   "author": "Jonas Schmedtmann",
   "license": "ISC",

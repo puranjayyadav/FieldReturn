@@ -235,29 +235,29 @@ exports.getReport = Model =>
     pdfDoc
       .fontSize(12)
       .font('Helvetica')
-      .text(`Date: ${shortenedDateString}`, {
+      .text(`Date: ${doc.date1}`, {
         align: 'left',
         lineGap: 3
       })
-      .text(`Pump Part Number: ${shortenedTime}`, {
+      .text(`Pump Part Number: ${doc.PartName1}`, {
         align: 'left',
         lineGap: 3
       })
-      .text(`Serial Number (with MFD): ${doc.OECD}`, {
+      .text(`Serial Number (with MFD): ${doc.chararcteristic1}`, {
         align: 'left',
         lineGap: 3
       })
-      .text(`LAC: ${shortenedTime}`, {
+      .text(`LAC: ${doc.specValue1}`, {
         align: 'left',
         lineGap: 3
       })
-      .text(`eJC Number: ${doc.partsRecieved}`, {
+      .text(`eJC Number: ${doc.unit1}`, {
         align: 'left',
         lineGap: 3
       });
     pdfDoc
       .text(
-        `Dealer : ${doc.partsRecieved}`,
+        `Dealer : ${doc.max1}`,
         {
           align: 'right',
           lineGap: 3
@@ -265,19 +265,19 @@ exports.getReport = Model =>
         340,
         10
       )
-      .text(`Application: ${doc.partsRecieved}`, {
+      .text(`Application: ${doc.min1}`, {
         align: 'right',
         lineGap: 3
       })
-      .text(`Voice of Customer: ${doc.partsRecieved}`, {
+      .text(`Voice of Customer: ${doc.actualValue1}`, {
         align: 'right',
         lineGap: 3
       })
-      .text(`Failure Hours: ${doc.partsRecieved}`, {
+      .text(`Failure Hours: ${doc.delta1}`, {
         align: 'right',
         lineGap: 3
       })
-      .text(`Seal condition: ${doc.partsRecieved}`, {
+      .text(`Seal condition: ${doc.remark1}`, {
         align: 'right',
         lineGap: 3
       })
@@ -294,188 +294,50 @@ exports.getReport = Model =>
       .fontSize(12)
       .font('Helvetica')
 
-      .text(`Date: ${shortenedDateString}`, {
+      .text(`Date: ${doc.date2}`, {
         align: 'left',
         lineGap: 3
       })
-      .text(`Fuel Related Issues: ${doc.OECD}`, {
+      .text(`Fuel Related Issues: ${doc.PartName2}`, {
         align: 'left',
         lineGap: 3
       })
-      .text(`Hitting mark on timer plate: ${shortenedTime}`, {
+      .text(`Hitting mark on timer plate: ${doc.specValue2}`, {
         align: 'left',
         lineGap: 3
       })
-      .text(`Blueish mark on camplate/rollers: ${doc.partsRecieved}`, {
+      .text(`Blueish mark on camplate/rollers: ${doc.unit2}`, {
         align: 'left',
         lineGap: 3
       })
-      .text(
-        `Pitting on camplate ( Inner edge/outer edge): ${doc.partsRecieved}`,
-        {
-          align: 'left',
-          lineGap: 3
-        }
-      );
-
-    pdfDoc
-      .text(`Number of camplate lobes damaged: ${doc.partsRecieved}`, {
-        align: 'left',
-        lineGap: 3
-      })
-      .text(`Number of roller damaged: ${doc.partsRecieved}`, {
-        align: 'left',
-        lineGap: 3
-      })
-      .text(`Rubbing marks - cross disk: ${doc.partsRecieved}`, {
-        align: 'left',
-        lineGap: 3
-      })
-      .text(`Delta: ${doc.partsRecieved}`, {
-        align: 'left',
-        lineGap: 3
-      })
-      .text(`Rubbing mark - drive shaft claw: ${doc.partsRecieved}`, {
-        align: 'left',
-        lineGap: 3
-      })
-      .moveDown()
-      .moveDown();
-    pdfDoc.addPage();
-    pdfDoc
-      .font('Helvetica-Bold')
-      .fontSize(14)
-      .text('Cross Disk FMR Measurements Details', { align: 'center' })
-      .moveDown();
-    pdfDoc
-      .fontSize(12)
-      .font('Helvetica')
-
-      .text(`Date: ${doc.registrationNumber}`, {
-        align: 'left',
-        lineGap: 3
-      })
-      .text(`S1 center face: ${shortenedDateString}`, {
-        align: 'left',
-        lineGap: 3
-      })
-      .text(`Perpendicularity 1: ${shortenedTime}`, {
-        align: 'left',
-        lineGap: 3
-      })
-      .text(`Perpendicularity 2: ${doc.OECD}`, {
-        align: 'left',
-        lineGap: 3
-      })
-      .text(`S2 center face: ${shortenedTime}`, {
-        align: 'left',
-        lineGap: 3
-      })
-      .text(`Perpendicularity 1: ${doc.partsRecieved}`, {
-        align: 'left',
-        lineGap: 3
-      })
-      .text(`Perpendicularity 2: ${doc.partsRecieved}`, {
-        align: 'left',
-        lineGap: 3
-      })
-      .text(`S3 center face: ${doc.partsRecieved}`, {
-        align: 'left'
-      });
-    pdfDoc
-      .text(
-        `Perpendicularity 2: ${doc.partsRecieved}`,
-        {
-          align: 'right',
-          lineGap: 3
-        },
-        160,
-        10
-      )
-      .text(`S3 center face: ${doc.partsRecieved}`, {
-        align: 'right',
-        lineGap: 3
-      })
-      .text(`Perpendicularity 1: ${doc.partsRecieved}`, {
-        align: 'right',
-        lineGap: 3
-      })
-      .text(`Perpendicularity 2: ${doc.partsRecieved}`, {
-        align: 'right',
-        lineGap: 3
-      })
-      .text(`Hyd. Head KOT: ${doc.partsRecieved}`, {
-        align: 'right',
-        lineGap: 3
-      })
-      .text(`Date of closing: ${doc.partsRecieved}`, {
-        align: 'right',
-        lineGap: 3
-      })
-      .text(`Final State: ${doc.partsRecieved}`, {
-        align: 'right',
-        lineGap: 3
-      })
-      .moveDown()
-      .moveDown();
-
-    pdfDoc
-      .font('Helvetica-Bold')
-      .fontSize(14)
-      .text('Mettalurgical Analysis Details', { align: 'center' })
-      .moveDown();
-    pdfDoc
-      .fontSize(12)
-      .font('Helvetica')
-      .text(`Date: ${shortenedDateString}`, {
-        align: 'left',
-        lineGap: 3
-      })
-      .text(`Camplate Hardness: ${shortenedTime}`, {
-        align: 'left',
-        lineGap: 3
-      })
-      .text(`Camplate: ${doc.OECD}`, {
-        align: 'left',
-        lineGap: 3
-      })
-      .text(`Roller residual stress: ${shortenedTime}`, {
-        align: 'left',
-        lineGap: 3
-      })
-      .text(`Roller Hardness: ${doc.partsRecieved}`, {
+      .text(`Pitting on camplate ( Inner edge/outer edge): ${doc.max2}`, {
         align: 'left',
         lineGap: 3
       });
+
     pdfDoc
-      .text(
-        `Max: ${doc.partsRecieved}`,
-        {
-          align: 'right',
-          lineGap: 3
-        },
-        340,
-        10
-      )
-      .text(`Min: ${doc.partsRecieved}`, {
-        align: 'right',
+      .text(`Number of camplate lobes damaged: ${doc.min2}`, {
+        align: 'left',
         lineGap: 3
       })
-      .text(`Actual value: ${doc.partsRecieved}`, {
-        align: 'right',
+      .text(`Number of roller damaged: ${doc.actualValue2}`, {
+        align: 'left',
         lineGap: 3
       })
-      .text(`Delta: ${doc.partsRecieved}`, {
-        align: 'right',
+      .text(`Rubbing marks - cross disk: ${doc.delta2}`, {
+        align: 'left',
         lineGap: 3
       })
-      .text(`Remark: ${doc.partsRecieved}`, {
-        align: 'right',
+      .text(`Delta: ${doc.remark2}`, {
+        align: 'left',
+        lineGap: 3
+      })
+      .text(`EXTRAAAAs ${doc.partsRecieved}`, {
+        align: 'left',
         lineGap: 3
       })
       .moveDown()
       .moveDown();
-
     pdfDoc.addPage();
     pdfDoc
       .font('Helvetica-Bold')
@@ -486,40 +348,40 @@ exports.getReport = Model =>
       .fontSize(12)
       .font('Helvetica')
 
-      .text(`Date: ${doc.registrationNumber}`, {
+      .text(`Date: ${doc.date3}`, {
         align: 'left',
         lineGap: 3
       })
-      .text(`Camplate Type: ${shortenedDateString}`, {
+      .text(`Camplate Type: ${doc.PartName3}`, {
         align: 'left',
         lineGap: 3
       })
-      .text(`Specified Cam Lift: ${shortenedTime}`, {
+      .text(`Specified Cam Lift: ${doc.characteristic3}`, {
         align: 'left',
         lineGap: 3
       })
-      .text(`Camplate Batch: ${doc.OECD}`, {
+      .text(`Camplate Batch: ${doc.specValue3}`, {
         align: 'left',
         lineGap: 3
       })
-      .text(`Machine: ${shortenedTime}`, {
+      .text(`Machine: ${doc.unit3}`, {
         align: 'left',
         lineGap: 3
       })
-      .text(`Camplate MFD: ${doc.partsRecieved}`, {
+      .text(`Camplate MFD: ${doc.max3}`, {
         align: 'left',
         lineGap: 3
       })
-      .text(`Roller 1: ${doc.partsRecieved}`, {
+      .text(`Roller 1: ${doc.min3}`, {
         align: 'left',
         lineGap: 3
       })
-      .text(`Roller 2: ${doc.partsRecieved}`, {
+      .text(`Roller 2: ${doc.delta3}`, {
         align: 'left'
       });
     pdfDoc
       .text(
-        `Roller 3: ${doc.partsRecieved}`,
+        `Roller 3: ${doc.remark3}`,
         {
           align: 'right',
           lineGap: 3
@@ -527,32 +389,8 @@ exports.getReport = Model =>
         160,
         10
       )
-      .text(`Roller 4: ${doc.partsRecieved}`, {
-        align: 'right',
-        lineGap: 3
-      })
-      .text(`Failure Hours: ${doc.partsRecieved}`, {
-        align: 'right',
-        lineGap: 3
-      })
-      .text(`Location BDS: ${doc.partsRecieved}`, {
-        align: 'right',
-        lineGap: 3
-      })
-      .text(`Investigation Details: ${doc.partsRecieved}`, {
-        align: 'right',
-        lineGap: 3
-      })
-      .text(`Date of closing: ${doc.partsRecieved}`, {
-        align: 'right',
-        lineGap: 3
-      })
-      .text(`Final State: ${doc.partsRecieved}`, {
-        align: 'right',
-        lineGap: 3
-      })
       .moveDown()
-      .moveDown();
+      .moveDown(4);
 
     pdfDoc
       .font('Helvetica-Bold')
@@ -562,49 +400,49 @@ exports.getReport = Model =>
     pdfDoc
       .fontSize(12)
       .font('Helvetica')
-      .text(`Date: ${shortenedDateString}`, {
+      .text(`Date: ${doc.date4}`, {
         align: 'left',
         lineGap: 3
       })
-      .text(`Camplate taper #1: ${shortenedTime}`, {
+      .text(`Camplate taper #1: ${doc.PartName4}`, {
         align: 'left',
         lineGap: 3
       })
-      .text(`Camplate taper #2: ${doc.OECD}`, {
+      .text(`Camplate taper #2: ${doc.characteristic4}`, {
         align: 'left',
         lineGap: 3
       })
-      .text(`Camplate taper #3: ${shortenedTime}`, {
+      .text(`Camplate taper #3: ${doc.specValue4}`, {
         align: 'left',
         lineGap: 3
       })
-      .text(`Camplate taper #4: ${doc.partsRecieved}`, {
+      .text(`Camplate taper #4: ${doc.unit4}`, {
         align: 'left',
         lineGap: 3
       });
     pdfDoc
       .text(
-        `Camplate taper #5 : ${doc.partsRecieved}`,
+        `Camplate taper #5 : ${doc.max4}`,
         {
           align: 'right',
           lineGap: 3
         },
-        340,
+        300,
         10
       )
-      .text(`Camplate taper #6: ${doc.partsRecieved}`, {
+      .text(`Camplate taper #6: ${doc.min4}`, {
         align: 'right',
         lineGap: 3
       })
-      .text(`Actual value: ${doc.partsRecieved}`, {
+      .text(`Actual value: ${doc.actualValue4}`, {
         align: 'right',
         lineGap: 3
       })
-      .text(`Delta: ${doc.partsRecieved}`, {
+      .text(`Delta: ${doc.delta4}`, {
         align: 'right',
         lineGap: 3
       })
-      .text(`Remark: ${doc.partsRecieved}`, {
+      .text(`Remark: ${doc.remark4}`, {
         align: 'right',
         lineGap: 3
       })
@@ -621,69 +459,202 @@ exports.getReport = Model =>
       .fontSize(12)
       .font('Helvetica')
 
-      .text(`Date: ${shortenedDateString}`, {
+      .text(`Date: ${doc.date5}`, {
         align: 'left',
         lineGap: 3
       })
-      .text(`Sphericity: ${doc.OECD}`, {
+      .text(`Sphericity: ${doc.PartName5}`, {
         align: 'left',
         lineGap: 3
       })
-      .text(`Profile: ${shortenedTime}`, {
+      .text(`Profile: ${doc.characteristic5}`, {
         align: 'left',
         lineGap: 3
       })
-      .text(`Balliskiet: ${doc.partsRecieved}`, {
+      .text(`Balliskiet: ${doc.specValue5}`, {
         align: 'left',
         lineGap: 3
       })
-      .text(`Roundness: ${doc.partsRecieved}`, {
+      .text(`Roundness: ${doc.unit5}`, {
         align: 'left',
         lineGap: 3
       });
 
     pdfDoc
-      .text(`Straightness: ${doc.partsRecieved}`, {
+      .text(`Straightness: ${doc.max5}`, {
         align: 'left',
         lineGap: 3
       })
-      .text(`Parallelity: ${doc.partsRecieved}`, {
+      .text(`Parallelity: ${doc.min5}`, {
         align: 'left',
         lineGap: 3
       })
-      .text(`Actual value: ${doc.partsRecieved}`, {
+      .text(`Actual value: ${doc.actualValue5}`, {
         align: 'left',
         lineGap: 3
       })
-      .text(`Delta: ${doc.partsRecieved}`, {
+      .text(`Delta: ${doc.delta5}`, {
         align: 'left',
         lineGap: 3
       })
-      .text(`Remark: ${doc.partsRecieved}`, {
+      .text(`Remark: ${doc.remark5}`, {
         align: 'left',
         lineGap: 3
       })
       .moveDown()
       .moveDown();
     pdfDoc.addPage();
-    // Set initial x and y positions
-    let xPos = 40;
-    let yPos = 310;
+    pdfDoc
+      .font('Helvetica-Bold')
+      .fontSize(14)
+      .text('Cross Disk FMR Measurements Details', { align: 'center' })
+      .moveDown(2);
+    pdfDoc
+      .fontSize(12)
+      .font('Helvetica')
 
-    // Loop through the images and place them side by side with gaps
-    for (let i = 0; i < doc.Images.length; i++) {
-      if (i % 3 === 0 && i !== 0) {
-        xPos = 120; // Reset x position for the new row
-        yPos += 180; // Update y position for the new row
+      .text(`Date: ${doc.date6}`, {
+        align: 'left',
+        lineGap: 3
+      })
+      .text(`S1 center face: ${doc.PartName6}`, {
+        align: 'left',
+        lineGap: 3
+      })
+      .text(`Perpendicularity 1: ${doc.characteristic6}`, {
+        align: 'left',
+        lineGap: 3
+      })
+      .text(`Perpendicularity 2: ${doc.specValue6}`, {
+        align: 'left',
+        lineGap: 3
+      })
+      .text(`S2 center face: ${doc.unit6}`, {
+        align: 'left',
+        lineGap: 3
+      })
+      .text(`Perpendicularity 1: ${doc.max6}`, {
+        align: 'left',
+        lineGap: 3
+      })
+      .text(`Perpendicularity 2: ${doc.min6}`, {
+        align: 'left',
+        lineGap: 3
+      })
+      .text(`S3 center face: ${doc.actualValue6}`, {
+        align: 'left'
+      });
+    pdfDoc
+      .text(
+        `Perpendicularity 2: ${doc.remark6}`,
+        {
+          align: 'right',
+          lineGap: 3
+        },
+        160,
+        10
+      )
+      .text(`S3 center face: ${doc.feedgroving}`, {
+        align: 'right',
+        lineGap: 3
+      })
+      .text(`Perpendicularity 1: ${doc.RollerRing}`, {
+        align: 'right',
+        lineGap: 3
+      })
+      .text(`Perpendicularity 2: ${doc.SpringClass}`, {
+        align: 'right',
+        lineGap: 3
+      })
+      .text(`Hyd. Head KOT: ${doc.HydHead}`, {
+        align: 'right',
+        lineGap: 3
+      })
+
+      .moveDown()
+      .moveDown();
+
+    pdfDoc
+      .font('Helvetica-Bold')
+      .fontSize(14)
+      .text('Mettalurgical Analysis Details', { align: 'center' })
+      .moveDown();
+    pdfDoc
+      .fontSize(12)
+      .font('Helvetica')
+      .text(`Date: ${doc.date7}`, {
+        align: 'left',
+        lineGap: 3
+      })
+      .text(`Camplate Hardness: ${doc.PartName7}`, {
+        align: 'left',
+        lineGap: 3
+      })
+      .text(`Camplate: ${doc.characteristic7}`, {
+        align: 'left',
+        lineGap: 3
+      })
+      .text(`Roller residual stress: ${doc.specValue7}`, {
+        align: 'left',
+        lineGap: 3
+      })
+      .text(`Roller Hardness: ${doc.unit7}`, {
+        align: 'left',
+        lineGap: 3
+      });
+    pdfDoc
+      .text(
+        `Max: ${doc.max7}`,
+        {
+          align: 'right',
+          lineGap: 3
+        },
+        340,
+        10
+      )
+      .text(`Min: ${doc.min7}`, {
+        align: 'right',
+        lineGap: 3
+      })
+      .text(`Actual value: ${doc.actualValue7}`, {
+        align: 'right',
+        lineGap: 3
+      })
+      .text(`Delta: ${doc.delta7}`, {
+        align: 'right',
+        lineGap: 3
+      })
+      .text(`Remark: ${doc.remark7}`, {
+        align: 'right',
+        lineGap: 3
+      })
+      .moveDown()
+      .moveDown();
+
+    pdfDoc.addPage();
+    console.log(doc.Images);
+    if (doc.Images && Array.isArray(doc.Images)) {
+      // Set initial x and y positions
+      let xPos = 40;
+      let yPos = 310;
+
+      // Loop through the images and place them side by side with gaps
+      for (let i = 0; i < doc.Images.length; i++) {
+        if (doc.Images[i] && doc.Images[i].trim() !== 'undefined') {
+          if (i % 3 === 0 && i !== 0) {
+            xPos = 120; // Reset x position for the new row
+            yPos += 180; // Update y position for the new row
+          }
+
+          pdfDoc
+            .image(`public/img/mettalurgical/${doc.Images[i]}`, xPos, yPos, {
+              scale: 0.1
+            })
+            .moveDown();
+
+          xPos += 150; // Update x position for the next image with a gap of 30
+        }
       }
-
-      pdfDoc
-        .image(`public/img/mettalurgical/${doc.Images[i]}`, xPos, yPos, {
-          scale: 0.1
-        })
-        .moveDown();
-
-      xPos += 180; // Update x position for the next image with a gap of 60
     }
 
     pdfDoc.font('Helvetica-Bold').text('Images', { underline: true });
